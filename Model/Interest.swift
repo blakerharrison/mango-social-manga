@@ -28,7 +28,7 @@ class Interest
     static func fetchInterests() -> [Interest]
     {
         return [
-            Interest(title: "Bleach", featuredImage: UIImage(named: "f1")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8))
+            Interest(title: "Bleach", featuredImage: UIImage(named: "f1")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8)), Interest(title: "Naruto", featuredImage: UIImage(named: "f2")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8)), Interest(title: "One Piece", featuredImage: UIImage(named: "f3")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8)), Interest(title: "Tokyo Ghoul", featuredImage: UIImage(named: "f4")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8)), Interest(title: "Dragon Ball Z", featuredImage: UIImage(named: "f5")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.8))
         ]
     }
 }

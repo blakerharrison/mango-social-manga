@@ -76,8 +76,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL0-RN-v0t">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="340"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUd-3I-CbQ">
-                                                            <rect key="frame" x="57" y="159" width="57" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUd-3I-CbQ">
+                                                            <rect key="frame" x="8" y="159" width="154" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -85,9 +85,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.33853274828767121" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="VUd-3I-CbQ" firstAttribute="leading" secondItem="FL0-RN-v0t" secondAttribute="leading" constant="57" id="4CQ-yr-D8a"/>
-                                                        <constraint firstItem="VUd-3I-CbQ" firstAttribute="centerY" secondItem="FL0-RN-v0t" secondAttribute="centerY" id="B3Z-Vm-cEf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="VUd-3I-CbQ" secondAttribute="trailing" constant="56" id="Rne-8Q-poR"/>
+                                                        <constraint firstItem="VUd-3I-CbQ" firstAttribute="leading" secondItem="FL0-RN-v0t" secondAttribute="leading" constant="8" id="h3T-SB-hY0"/>
+                                                        <constraint firstItem="VUd-3I-CbQ" firstAttribute="centerY" secondItem="FL0-RN-v0t" secondAttribute="centerY" id="oSN-0a-pzC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VUd-3I-CbQ" secondAttribute="trailing" constant="8" id="zbc-Lc-fhd"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
