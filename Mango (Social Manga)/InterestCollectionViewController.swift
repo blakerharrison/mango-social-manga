@@ -1,7 +1,7 @@
 //
 //  InterestCollectionViewController.swift
 //  Mango (Social Manga)
-//
+//test
 //  Created by Blake Harrison on 1/25/18.
 //  Copyright © 2018 Blake Harrison. All rights reserved.
 //
