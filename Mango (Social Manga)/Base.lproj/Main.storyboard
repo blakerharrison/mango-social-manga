@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mango" translatesAutoresizingMaskIntoConstraints="NO" id="XkF-ZH-t7x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyprofilepic" translatesAutoresizingMaskIntoConstraints="NO" id="XkF-ZH-t7x">
                                 <rect key="frame" x="264" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="CHg-KP-fvp"/>
@@ -142,7 +142,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Mango" width="600" height="600"/>
+        <image name="dummyprofilepic" width="2480" height="2481"/>
         <image name="f1" width="194" height="259"/>
     </resources>
 </document>
