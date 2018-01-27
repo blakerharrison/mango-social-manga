@@ -28,9 +28,15 @@ class InterestViewController: UIViewController {
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
+        
         collectionView?.dataSource = self
+
     }
+
+    
 }
+
+// Cell Controller
 
 extension InterestViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
