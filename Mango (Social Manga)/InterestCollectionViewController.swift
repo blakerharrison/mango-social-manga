@@ -9,11 +9,17 @@
 import UIKit
 
 class InterestViewController: UIViewController {
+    
+    //MARK: Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var mangaLabel: UILabel!
+    //MARK: Properties
     var interest = Interest.fetchInterests()
     let cellScaling: CGFloat = 0.6
     
+    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +38,19 @@ class InterestViewController: UIViewController {
         collectionView?.dataSource = self
 
     }
+    
+    // Action
+    @IBAction func bleachSegue(_ sender: Any) {
 
+        if mangaLabel.text == "Bleach" {
+        print("Button Clicked 🐶")
+        performSegue(withIdentifier: "segueBleach", sender: self)
+        } else {
+            print("Nothing")
+        }
+    }
+    
+    
     
 }
 

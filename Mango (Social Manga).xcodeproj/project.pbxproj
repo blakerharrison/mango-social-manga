@@ -66,13 +66,13 @@
 		2C69A0032019C2E8001A60AE /* Mango (Social Manga) */ = {
 			isa = PBXGroup;
 			children = (
+				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
 				2C69A00D2019C2E9001A60AE /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
-				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
+				2CC8D13A201A3F4C004789E9 /* InterestCollectionViewController.swift */,
 				2C69A0062019C2E8001A60AE /* HomeViewController.swift */,
 				2CADA48F201C385B00B5B5C1 /* RootPageViewController.swift */,
 				2C69A0162019CC08001A60AE /* MangaCollectionViewController.swift */,
-				2CC8D13A201A3F4C004789E9 /* InterestCollectionViewController.swift */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
 			);

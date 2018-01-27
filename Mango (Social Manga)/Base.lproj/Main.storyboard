@@ -45,9 +45,6 @@
                                 <state key="normal" title="Discover">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="wuj-ee-ZOo" kind="show" id="50H-hG-VCB"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWm-ik-MrI">
                                 <rect key="frame" x="223" y="518" width="81" height="30"/>
@@ -94,6 +91,13 @@
                                                         <constraint firstAttribute="trailing" secondItem="VUd-3I-CbQ" secondAttribute="trailing" constant="8" id="zbc-Lc-fhd"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UP-L3-zvP">
+                                                    <rect key="frame" x="0.0" y="-0.5" width="170" height="340"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="bleachSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Kk-3S-kKV"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -119,6 +123,7 @@
                         <constraints>
                             <constraint firstItem="mgo-nR-QxJ" firstAttribute="top" secondItem="1ey-47-rx2" secondAttribute="bottom" constant="6" id="0AZ-Bo-9de"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mgo-nR-QxJ" secondAttribute="trailing" constant="16" id="2Tk-Jw-KSo"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XEe-ON-Pq7" secondAttribute="trailing" constant="20" symbolic="YES" id="Cei-sQ-ciw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xWm-ik-MrI" secondAttribute="trailing" constant="16" id="GF7-qP-nUs"/>
                             <constraint firstItem="FJy-Jx-hD4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GHc-jg-0I5"/>
                             <constraint firstItem="mgo-nR-QxJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="M8u-lf-aEh"/>
@@ -132,12 +137,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XEe-ON-Pq7" secondAttribute="bottom" constant="20" id="nx3-Hk-jY3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XkF-ZH-t7x" secondAttribute="trailing" constant="16" id="pGj-8V-c0R"/>
                             <constraint firstItem="FJy-Jx-hD4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rLw-Xb-hkm"/>
+                            <constraint firstItem="xWm-ik-MrI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="ssy-oC-s2p"/>
                             <constraint firstItem="1ey-47-rx2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tZc-cM-qSk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="mgo-nR-QxJ" id="FkH-dn-tzW"/>
+                        <outlet property="collectionViewCell" destination="dVz-7o-Rgd" id="PqU-6L-UTg"/>
+                        <outlet property="mangaLabel" destination="VUd-3I-CbQ" id="SoB-zh-1AJ"/>
+                        <segue destination="wuj-ee-ZOo" kind="show" identifier="segueBleach" id="3Bj-se-hjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
