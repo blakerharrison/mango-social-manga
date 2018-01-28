@@ -49,9 +49,6 @@ class InterestViewController: UIViewController {
             print("Nothing")
         }
     }
-    
-    
-    
 }
 
 // Cell Controller
