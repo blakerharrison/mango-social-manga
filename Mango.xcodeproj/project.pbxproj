@@ -8,30 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
-		2C69A0072019C2E8001A60AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0062019C2E8001A60AE /* HomeViewController.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
 		2C69A00F2019C2E9001A60AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00D2019C2E9001A60AE /* LaunchScreen.storyboard */; };
-		2C69A0172019CC08001A60AE /* MangaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0162019CC08001A60AE /* MangaCollectionViewController.swift */; };
-		2CADA490201C385B00B5B5C1 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADA48F201C385B00B5B5C1 /* RootPageViewController.swift */; };
-		2CADA493201C398700B5B5C1 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADA492201C398700B5B5C1 /* PageOneViewController.swift */; };
-		2CC8D139201A3DDA004789E9 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8D138201A3DDA004789E9 /* Interest.swift */; };
-		2CC8D13B201A3F4C004789E9 /* InterestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8D13A201A3F4C004789E9 /* InterestCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C69A0062019C2E8001A60AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2C69A0092019C2E8001A60AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C69A00B2019C2E8001A60AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C69A00E2019C2E9001A60AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C69A0102019C2E9001A60AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C69A0162019CC08001A60AE /* MangaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaCollectionViewController.swift; sourceTree = "<group>"; };
-		2CADA48F201C385B00B5B5C1 /* RootPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
-		2CADA492201C398700B5B5C1 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
-		2CC8D138201A3DDA004789E9 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
-		2CC8D13A201A3F4C004789E9 /* InterestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +38,6 @@
 			children = (
 				2C69A0032019C2E8001A60AE /* Mango (Social Manga) */,
 				2C69A0022019C2E8001A60AE /* Products */,
-				2CADA491201C394600B5B5C1 /* Manga Pages */,
-				2CC8D137201A3DA1004789E9 /* Model */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,30 +55,10 @@
 				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
 				2C69A00D2019C2E9001A60AE /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
-				2CC8D13A201A3F4C004789E9 /* InterestCollectionViewController.swift */,
-				2C69A0062019C2E8001A60AE /* HomeViewController.swift */,
-				2CADA48F201C385B00B5B5C1 /* RootPageViewController.swift */,
-				2C69A0162019CC08001A60AE /* MangaCollectionViewController.swift */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
 			);
 			path = "Mango (Social Manga)";
-			sourceTree = "<group>";
-		};
-		2CADA491201C394600B5B5C1 /* Manga Pages */ = {
-			isa = PBXGroup;
-			children = (
-				2CADA492201C398700B5B5C1 /* PageOneViewController.swift */,
-			);
-			path = "Manga Pages";
-			sourceTree = "<group>";
-		};
-		2CC8D137201A3DA1004789E9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2CC8D138201A3DDA004789E9 /* Interest.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C699FFC2019C2E8001A60AE /* Build configuration list for PBXProject "Mango (Social Manga)" */;
+			buildConfigurationList = 2C699FFC2019C2E8001A60AE /* Build configuration list for PBXProject "Mango" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,13 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C69A0172019CC08001A60AE /* MangaCollectionViewController.swift in Sources */,
-				2C69A0072019C2E8001A60AE /* HomeViewController.swift in Sources */,
-				2CADA493201C398700B5B5C1 /* PageOneViewController.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
-				2CADA490201C385B00B5B5C1 /* RootPageViewController.swift in Sources */,
-				2CC8D13B201A3F4C004789E9 /* InterestCollectionViewController.swift in Sources */,
-				2CC8D139201A3DDA004789E9 /* Interest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +299,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C699FFC2019C2E8001A60AE /* Build configuration list for PBXProject "Mango (Social Manga)" */ = {
+		2C699FFC2019C2E8001A60AE /* Build configuration list for PBXProject "Mango" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C69A0112019C2E9001A60AE /* Debug */,
