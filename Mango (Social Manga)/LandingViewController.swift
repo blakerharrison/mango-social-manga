@@ -10,6 +10,7 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet weak var naruto: UIImageView!
     @IBOutlet weak var onePiece: UIImageView!
     @IBOutlet weak var bleach: UIImageView!
@@ -17,7 +18,8 @@ class LandingViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
+    //MARK: Lifecycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class LandingViewController: UIViewController {
         bleach.addShadow()
     }
     
+    //MARK: Functions
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -48,11 +51,10 @@ class LandingViewController: UIViewController {
         _ = tapGestureRecognizer.view as! UIImageView
         
         performSegue(withIdentifier: "naruto", sender: nil)
-        
-        
     }
 }
 
+//MARK: Extensions
 extension UIView {
     
     func addShadow() {

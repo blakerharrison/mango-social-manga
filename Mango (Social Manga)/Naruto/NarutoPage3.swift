@@ -10,10 +10,11 @@ import UIKit
 
 class NarutoPage3: UIViewController, UIScrollViewDelegate {
     
+    //MARK: Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +24,7 @@ class NarutoPage3: UIViewController, UIScrollViewDelegate {
         self.scrollView.maximumZoomScale = 2.5
     }
     
+    //MARK: Functions
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
