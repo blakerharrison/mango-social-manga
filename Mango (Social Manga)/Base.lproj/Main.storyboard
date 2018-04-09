@@ -134,21 +134,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-BC-OFJ">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-uX-jm5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-BC-OFJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RkP-BC-OFJ" secondAttribute="bottom" id="Erg-nX-7yS"/>
+                                    <constraint firstItem="RkP-BC-OFJ" firstAttribute="centerY" secondItem="XdU-uX-jm5" secondAttribute="centerY" id="JSl-CI-k8C"/>
+                                    <constraint firstItem="RkP-BC-OFJ" firstAttribute="leading" secondItem="XdU-uX-jm5" secondAttribute="leading" id="bpA-3C-ZoO"/>
+                                    <constraint firstItem="RkP-BC-OFJ" firstAttribute="top" secondItem="XdU-uX-jm5" secondAttribute="top" id="ieN-2B-ubA"/>
+                                    <constraint firstAttribute="trailing" secondItem="RkP-BC-OFJ" secondAttribute="trailing" id="oNu-Z9-Tf4"/>
+                                    <constraint firstItem="RkP-BC-OFJ" firstAttribute="centerX" secondItem="XdU-uX-jm5" secondAttribute="centerX" id="rYG-21-Uip"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="xGl-Ax-GvC" id="3uW-qC-6Zv"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IqC-U8-xwp" firstAttribute="bottom" secondItem="RkP-BC-OFJ" secondAttribute="bottom" id="4cB-rn-bqI"/>
-                            <constraint firstItem="RkP-BC-OFJ" firstAttribute="leading" secondItem="IqC-U8-xwp" secondAttribute="leading" id="brC-SH-fAK"/>
-                            <constraint firstItem="IqC-U8-xwp" firstAttribute="trailing" secondItem="RkP-BC-OFJ" secondAttribute="trailing" id="pLQ-gf-70R"/>
-                            <constraint firstItem="RkP-BC-OFJ" firstAttribute="top" secondItem="IqC-U8-xwp" secondAttribute="top" id="rPt-Py-Foc"/>
+                            <constraint firstAttribute="trailing" secondItem="XdU-uX-jm5" secondAttribute="trailing" id="F7i-9O-c2v"/>
+                            <constraint firstItem="XdU-uX-jm5" firstAttribute="bottom" secondItem="IqC-U8-xwp" secondAttribute="bottom" id="LLU-Q5-sc0"/>
+                            <constraint firstItem="XdU-uX-jm5" firstAttribute="leading" secondItem="Pib-pc-f0C" secondAttribute="leading" id="oDn-dI-Kq4"/>
+                            <constraint firstItem="XdU-uX-jm5" firstAttribute="top" secondItem="Pib-pc-f0C" secondAttribute="top" id="tcy-kR-8dj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IqC-U8-xwp"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="RkP-BC-OFJ" id="WY9-qe-3ib"/>
+                        <outlet property="scrollView" destination="XdU-uX-jm5" id="JrE-tY-AMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDA-hP-BJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,21 +180,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzs-Ah-ASd">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3h7-mf-V5V">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzs-Ah-ASd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Hzs-Ah-ASd" firstAttribute="centerY" secondItem="3h7-mf-V5V" secondAttribute="centerY" id="Cpz-jy-vLw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hzs-Ah-ASd" secondAttribute="trailing" id="TVd-aE-kAc"/>
+                                    <constraint firstItem="Hzs-Ah-ASd" firstAttribute="centerX" secondItem="3h7-mf-V5V" secondAttribute="centerX" id="VjH-MK-xU2"/>
+                                    <constraint firstItem="Hzs-Ah-ASd" firstAttribute="top" secondItem="3h7-mf-V5V" secondAttribute="top" id="Zg2-qD-LQq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hzs-Ah-ASd" secondAttribute="bottom" id="bB5-4y-Uf7"/>
+                                    <constraint firstItem="Hzs-Ah-ASd" firstAttribute="leading" secondItem="3h7-mf-V5V" secondAttribute="leading" id="xEf-bd-wUt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="i3L-4J-Qaz" id="hCq-JB-T6C"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Hzs-Ah-ASd" firstAttribute="top" secondItem="UCB-hr-U1v" secondAttribute="top" id="61w-Ir-HgU"/>
-                            <constraint firstItem="UCB-hr-U1v" firstAttribute="bottom" secondItem="Hzs-Ah-ASd" secondAttribute="bottom" id="XGM-0n-G1q"/>
-                            <constraint firstItem="UCB-hr-U1v" firstAttribute="trailing" secondItem="Hzs-Ah-ASd" secondAttribute="trailing" id="clj-AY-3bF"/>
-                            <constraint firstItem="Hzs-Ah-ASd" firstAttribute="leading" secondItem="UCB-hr-U1v" secondAttribute="leading" id="tIT-cF-ITi"/>
+                            <constraint firstAttribute="trailing" secondItem="3h7-mf-V5V" secondAttribute="trailing" id="Yc6-0F-FRU"/>
+                            <constraint firstItem="3h7-mf-V5V" firstAttribute="top" secondItem="m8T-cV-z89" secondAttribute="top" id="hjl-R0-xPL"/>
+                            <constraint firstItem="3h7-mf-V5V" firstAttribute="leading" secondItem="m8T-cV-z89" secondAttribute="leading" id="jOs-7X-kQo"/>
+                            <constraint firstItem="3h7-mf-V5V" firstAttribute="bottom" secondItem="UCB-hr-U1v" secondAttribute="bottom" id="s1q-78-UZc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UCB-hr-U1v"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Hzs-Ah-ASd" id="34c-IH-iOE"/>
+                        <outlet property="scrollView" destination="3h7-mf-V5V" id="Ujq-hL-BZq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUj-Ya-vNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
