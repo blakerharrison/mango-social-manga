@@ -88,21 +88,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l72-dP-J3R">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-F7-QjE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l72-dP-J3R">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="l72-dP-J3R" secondAttribute="bottom" id="IpU-nz-bfI"/>
+                                    <constraint firstAttribute="trailing" secondItem="l72-dP-J3R" secondAttribute="trailing" id="MHJ-je-AfW"/>
+                                    <constraint firstItem="l72-dP-J3R" firstAttribute="leading" secondItem="u5u-F7-QjE" secondAttribute="leading" id="Sd2-SD-ZCw"/>
+                                    <constraint firstItem="l72-dP-J3R" firstAttribute="centerY" secondItem="u5u-F7-QjE" secondAttribute="centerY" id="nfh-ja-id7"/>
+                                    <constraint firstItem="l72-dP-J3R" firstAttribute="centerX" secondItem="u5u-F7-QjE" secondAttribute="centerX" id="oKz-zy-HTa"/>
+                                    <constraint firstItem="l72-dP-J3R" firstAttribute="top" secondItem="u5u-F7-QjE" secondAttribute="top" id="rhi-Hf-cLb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="VbX-CK-f0e" id="v3g-mV-DWc"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jxI-RT-awB" firstAttribute="bottom" secondItem="l72-dP-J3R" secondAttribute="bottom" id="5XZ-oE-QXx"/>
-                            <constraint firstItem="jxI-RT-awB" firstAttribute="trailing" secondItem="l72-dP-J3R" secondAttribute="trailing" id="TJB-DG-D5K"/>
-                            <constraint firstItem="l72-dP-J3R" firstAttribute="top" secondItem="jxI-RT-awB" secondAttribute="top" id="lxW-bl-UWV"/>
-                            <constraint firstItem="l72-dP-J3R" firstAttribute="leading" secondItem="jxI-RT-awB" secondAttribute="leading" id="zlc-eJ-cRG"/>
+                            <constraint firstItem="u5u-F7-QjE" firstAttribute="top" secondItem="9xK-aW-Fth" secondAttribute="top" id="CRo-5F-jwX"/>
+                            <constraint firstItem="u5u-F7-QjE" firstAttribute="leading" secondItem="9xK-aW-Fth" secondAttribute="leading" id="MRF-xf-16N"/>
+                            <constraint firstItem="u5u-F7-QjE" firstAttribute="bottom" secondItem="jxI-RT-awB" secondAttribute="bottom" id="h56-0g-xfM"/>
+                            <constraint firstAttribute="trailing" secondItem="u5u-F7-QjE" secondAttribute="trailing" id="il5-kr-dNL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxI-RT-awB"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="l72-dP-J3R" id="VOY-pB-nBd"/>
+                        <outlet property="scrollView" destination="u5u-F7-QjE" id="Vbc-b1-sEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBP-v9-7HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
