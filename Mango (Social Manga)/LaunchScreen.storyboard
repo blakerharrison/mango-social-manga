@@ -18,22 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="qbi-he-4bL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="4bb-N6-LDc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash1" translatesAutoresizingMaskIntoConstraints="NO" id="sdI-bx-vaH">
-                                <rect key="frame" x="45" y="80" width="285" height="507"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash1" translatesAutoresizingMaskIntoConstraints="NO" id="Mev-a6-fe8">
+                                <rect key="frame" x="66" y="117" width="242" height="432"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sdI-bx-vaH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="AXm-lt-9C4"/>
-                            <constraint firstItem="sdI-bx-vaH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="KFl-JU-mpi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qbi-he-4bL" secondAttribute="trailing" id="RPZ-rT-XQJ"/>
-                            <constraint firstItem="qbi-he-4bL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gPm-Ub-xjb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sdI-bx-vaH" secondAttribute="bottom" constant="80" id="hjb-19-72R"/>
-                            <constraint firstItem="qbi-he-4bL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="jjX-n6-APH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdI-bx-vaH" secondAttribute="trailing" constant="45" id="rar-Ta-g1X"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qbi-he-4bL" secondAttribute="bottom" id="uDQ-6N-ZDy"/>
+                            <constraint firstItem="4bb-N6-LDc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="PpH-I0-hvU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4bb-N6-LDc" secondAttribute="trailing" id="WEQ-0j-42r"/>
+                            <constraint firstItem="4bb-N6-LDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j6i-ln-WyW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4bb-N6-LDc" secondAttribute="bottom" id="rjg-R9-uY5"/>
+                            <constraint firstItem="Mev-a6-fe8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="spI-ep-0iX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mev-a6-fe8" secondAttribute="bottom" constant="118" id="vo5-5m-oEB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mev-a6-fe8" secondAttribute="trailing" constant="67" id="wD4-2k-pLv"/>
+                            <constraint firstItem="Mev-a6-fe8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="zQY-R6-yQl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Manga Background" width="375" height="667"/>
+        <image name="Background2" width="375" height="667"/>
         <image name="Splash1" width="2480" height="3508"/>
     </resources>
 </document>
