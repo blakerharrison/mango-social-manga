@@ -15,11 +15,14 @@ class NarutoPage1: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
 
         loadImage(theUrl: narutoImage(page: 1), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
+        
+
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

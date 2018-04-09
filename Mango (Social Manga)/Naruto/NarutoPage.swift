@@ -9,6 +9,10 @@
 import UIKit
 
 class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     // Sets the Initial Root View
     lazy var viewControllerList: [UIViewController] = {
@@ -29,6 +33,12 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+            
+             self.navigationController?.navigationBar.isHidden = false;
+            
+            // Makes a translucent navigation bar.
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.isTranslucent = true
             
         }
         

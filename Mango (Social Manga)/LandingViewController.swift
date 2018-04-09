@@ -8,21 +8,41 @@
 
 import UIKit
 
-class LandingViewController: UIViewController{
+class LandingViewController: UIViewController {
+    
+    @IBOutlet weak var naruto: UIImageView!
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.isHidden = true;
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        naruto.isUserInteractionEnabled = true
+        naruto.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
-
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        
+        performSegue(withIdentifier: "naruto", sender: nil)
+        
+        
+}
 }
