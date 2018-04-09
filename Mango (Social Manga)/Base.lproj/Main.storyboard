@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VbX-CK-f0e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fxJ-28-HsI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,7 +83,7 @@
         <!--Naruto Page1-->
         <scene sceneID="77v-45-CXy">
             <objects>
-                <viewController storyboardIdentifier="NarutoPage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VbX-CK-f0e" customClass="NarutoPage1" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1" id="VbX-CK-f0e" customClass="NarutoPage1" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xK-aW-Fth">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Naruto Page2-->
         <scene sceneID="9z6-yl-aao">
             <objects>
-                <viewController storyboardIdentifier="NarutoPage2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xGl-Ax-GvC" customClass="NarutoPage2" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" id="xGl-Ax-GvC" customClass="NarutoPage2" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pib-pc-f0C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +141,7 @@
         <!--Naruto Page3-->
         <scene sceneID="FXd-We-gDd">
             <objects>
-                <viewController storyboardIdentifier="NarutoPage3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i3L-4J-Qaz" customClass="NarutoPage3" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page3" id="i3L-4J-Qaz" customClass="NarutoPage3" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m8T-cV-z89">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
