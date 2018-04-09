@@ -18,6 +18,8 @@
 		2CF1E57E207AF99F00161D5F /* NarutoPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */; };
 		2CF1E580207AF9AD00161D5F /* NarutoPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
+		2CF1E5A5207B277A00161D5F /* NarutoPage4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */; };
+		2CF1E5A7207B2B5900161D5F /* NarutoPage5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage2.swift; sourceTree = "<group>"; };
 		2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage3.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage4.swift; sourceTree = "<group>"; };
+		2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				2CF1E574207AED1C00161D5F /* NarutoPage1.swift */,
 				2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */,
 				2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */,
+				2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */,
+				2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */,
 			);
 			path = Naruto;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 				2CF1E57E207AF99F00161D5F /* NarutoPage2.swift in Sources */,
 				2CF1E580207AF9AD00161D5F /* NarutoPage3.swift in Sources */,
 				2CF1E575207AED1C00161D5F /* NarutoPage1.swift in Sources */,
+				2CF1E5A5207B277A00161D5F /* NarutoPage4.swift in Sources */,
 				2CF1E57A207AF3F900161D5F /* ImageArray.swift in Sources */,
+				2CF1E5A7207B2B5900161D5F /* NarutoPage5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

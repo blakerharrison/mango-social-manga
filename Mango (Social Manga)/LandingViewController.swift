@@ -24,8 +24,6 @@ class LandingViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true;
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         naruto.isUserInteractionEnabled = true
         naruto.addGestureRecognizer(tapGestureRecognizer)
@@ -33,6 +31,8 @@ class LandingViewController: UIViewController {
         naruto.addShadow()
         onePiece.addShadow()
         bleach.addShadow()
+        
+        self.navigationController?.navigationBar.isHidden = true;
     }
     
     //MARK: Functions

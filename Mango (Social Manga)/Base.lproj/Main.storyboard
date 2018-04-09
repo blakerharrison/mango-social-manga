@@ -249,6 +249,95 @@
             </objects>
             <point key="canvasLocation" x="211.875" y="375"/>
         </scene>
+        <!--Naruto Page4-->
+        <scene sceneID="B8c-Oh-Xvt">
+            <objects>
+                <viewController storyboardIdentifier="Page4" id="NE6-Hp-oTK" customClass="NarutoPage4" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="58g-Wf-L4l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCd-pq-QYU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-yU-5Gw">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="v5F-yU-5Gw" firstAttribute="centerY" secondItem="MCd-pq-QYU" secondAttribute="centerY" id="QTc-5v-omu"/>
+                                    <constraint firstAttribute="trailing" secondItem="v5F-yU-5Gw" secondAttribute="trailing" id="TnW-CF-p9d"/>
+                                    <constraint firstAttribute="bottom" secondItem="v5F-yU-5Gw" secondAttribute="bottom" id="Uis-bB-f6J"/>
+                                    <constraint firstItem="v5F-yU-5Gw" firstAttribute="top" secondItem="MCd-pq-QYU" secondAttribute="top" id="V1v-Sk-bdl"/>
+                                    <constraint firstItem="v5F-yU-5Gw" firstAttribute="leading" secondItem="MCd-pq-QYU" secondAttribute="leading" id="aWP-kD-cGx"/>
+                                    <constraint firstItem="v5F-yU-5Gw" firstAttribute="centerX" secondItem="MCd-pq-QYU" secondAttribute="centerX" id="d4a-iq-uVL"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="NE6-Hp-oTK" id="CCx-Ua-Xoj"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MCd-pq-QYU" firstAttribute="top" secondItem="58g-Wf-L4l" secondAttribute="top" id="AGT-3Z-Y8g"/>
+                            <constraint firstAttribute="trailing" secondItem="MCd-pq-QYU" secondAttribute="trailing" id="CXS-M8-kQM"/>
+                            <constraint firstItem="MCd-pq-QYU" firstAttribute="bottom" secondItem="h3z-AO-qRf" secondAttribute="bottom" id="hqi-SZ-INN"/>
+                            <constraint firstItem="MCd-pq-QYU" firstAttribute="leading" secondItem="58g-Wf-L4l" secondAttribute="leading" id="z6B-ax-8zq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h3z-AO-qRf"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="v5F-yU-5Gw" id="9Dx-h6-1K4"/>
+                        <outlet property="scrollView" destination="MCd-pq-QYU" id="7Oo-wP-64A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSm-kM-ecm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4646" y="918"/>
+        </scene>
+        <!--Naruto Page5-->
+        <scene sceneID="fBh-LB-3L8">
+            <objects>
+                <viewController storyboardIdentifier="Page5" id="Mf4-Fn-Jsn" customClass="NarutoPage5" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kq4-zy-jpo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-x8-cJZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HqI-3D-Ds6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HqI-3D-Ds6" firstAttribute="centerY" secondItem="Qcf-x8-cJZ" secondAttribute="centerY" id="Lf2-Uf-k1Y"/>
+                                    <constraint firstItem="HqI-3D-Ds6" firstAttribute="leading" secondItem="Qcf-x8-cJZ" secondAttribute="leading" id="esi-nl-Za7"/>
+                                    <constraint firstItem="HqI-3D-Ds6" firstAttribute="centerX" secondItem="Qcf-x8-cJZ" secondAttribute="centerX" id="flR-My-sVU"/>
+                                    <constraint firstItem="HqI-3D-Ds6" firstAttribute="top" secondItem="Qcf-x8-cJZ" secondAttribute="top" id="fxl-im-Qhu"/>
+                                    <constraint firstAttribute="trailing" secondItem="HqI-3D-Ds6" secondAttribute="trailing" id="heF-AJ-UnM"/>
+                                    <constraint firstAttribute="bottom" secondItem="HqI-3D-Ds6" secondAttribute="bottom" id="viw-vr-v6M"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qcf-x8-cJZ" firstAttribute="bottom" secondItem="dRR-Bh-0U1" secondAttribute="bottom" id="Jqg-3R-t8k"/>
+                            <constraint firstItem="Qcf-x8-cJZ" firstAttribute="top" secondItem="Kq4-zy-jpo" secondAttribute="top" id="QZl-G8-bjd"/>
+                            <constraint firstItem="Qcf-x8-cJZ" firstAttribute="leading" secondItem="Kq4-zy-jpo" secondAttribute="leading" id="XgY-gZ-ORe"/>
+                            <constraint firstAttribute="trailing" secondItem="Qcf-x8-cJZ" secondAttribute="trailing" id="z4J-2F-JGd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dRR-Bh-0U1"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="HqI-3D-Ds6" id="6tB-HI-hOu"/>
+                        <outlet property="scrollView" destination="Qcf-x8-cJZ" id="vi4-Aj-HlY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLL-E8-Jej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5480.625" y="926.4084507042254"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bleach" width="785" height="1187"/>
