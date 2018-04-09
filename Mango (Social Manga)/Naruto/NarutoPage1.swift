@@ -17,16 +17,35 @@ class NarutoPage1: UIViewController, UIScrollViewDelegate {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor.black;
+        self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
-        loadImage(theUrl: narutoImage(page: 1), theImageView: imageView)
+//        loadImage(theUrl: narutoImage(page: 1), theImageView: imageView)
+       loadImage(theUrl: narutoImage(chapter: 109088, page: 1), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+         navigationController?.hidesBarsOnTap = true
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return navigationController?.isNavigationBarHidden == true
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     //MARK: Functions
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
+    
 }

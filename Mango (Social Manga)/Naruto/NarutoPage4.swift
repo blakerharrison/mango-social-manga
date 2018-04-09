@@ -18,7 +18,7 @@ class NarutoPage4: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadImage(theUrl: narutoImage(page: 4), theImageView: imageView)
+        loadImage(theUrl: narutoImage(chapter: 109088, page: 4), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5

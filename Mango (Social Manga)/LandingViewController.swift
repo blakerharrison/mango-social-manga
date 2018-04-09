@@ -35,6 +35,10 @@ class LandingViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true;
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     //MARK: Functions
     override func awakeFromNib() {
         super.awakeFromNib()
