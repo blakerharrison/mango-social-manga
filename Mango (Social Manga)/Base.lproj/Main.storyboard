@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaW-5I-ORT">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="YBi-0s-59L">
-                                <rect key="frame" x="0.0" y="24" width="320" height="976"/>
+                                <rect key="frame" x="0.0" y="-44" width="320" height="1078"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-ff-J1d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Naruto 1" translatesAutoresizingMaskIntoConstraints="NO" id="o8R-iI-eco">
                                         <rect key="frame" x="48" y="43" width="224" height="262"/>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggW-Eb-OOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="374.6305418719212"/>
+            <point key="canvasLocation" x="2106" y="-1702"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="RAF-Xa-MwK">
@@ -106,14 +106,14 @@
             <objects>
                 <viewController storyboardIdentifier="Page1" id="VbX-CK-f0e" customClass="NarutoPage1" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xK-aW-Fth">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-F7-QjE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l72-dP-J3R">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -152,14 +152,14 @@
             <objects>
                 <viewController storyboardIdentifier="Page2" id="xGl-Ax-GvC" customClass="NarutoPage2" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pib-pc-f0C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-uX-jm5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-BC-OFJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="imageView" destination="RkP-BC-OFJ" id="WY9-qe-3ib"/>
                         <outlet property="scrollView" destination="XdU-uX-jm5" id="JrE-tY-AMP"/>
+                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="HJM-5p-YAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDA-hP-BJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,14 +199,14 @@
             <objects>
                 <viewController storyboardIdentifier="Page3" id="i3L-4J-Qaz" customClass="NarutoPage3" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m8T-cV-z89">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3h7-mf-V5V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzs-Ah-ASd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -233,6 +234,7 @@
                     <connections>
                         <outlet property="imageView" destination="Hzs-Ah-ASd" id="34c-IH-iOE"/>
                         <outlet property="scrollView" destination="3h7-mf-V5V" id="Ujq-hL-BZq"/>
+                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="koh-ys-oLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUj-Ya-vNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +247,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaW-5I-ORT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nFS-ZC-ixd">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -262,14 +264,14 @@
             <objects>
                 <viewController storyboardIdentifier="Page4" id="NE6-Hp-oTK" customClass="NarutoPage4" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="58g-Wf-L4l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCd-pq-QYU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-yU-5Gw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -297,6 +299,7 @@
                     <connections>
                         <outlet property="imageView" destination="v5F-yU-5Gw" id="9Dx-h6-1K4"/>
                         <outlet property="scrollView" destination="MCd-pq-QYU" id="7Oo-wP-64A"/>
+                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Fvw-k6-sek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSm-kM-ecm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,14 +311,14 @@
             <objects>
                 <viewController storyboardIdentifier="Page5" id="Mf4-Fn-Jsn" customClass="NarutoPage5" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kq4-zy-jpo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-x8-cJZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HqI-3D-Ds6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -343,11 +346,12 @@
                     <connections>
                         <outlet property="imageView" destination="HqI-3D-Ds6" id="6tB-HI-hOu"/>
                         <outlet property="scrollView" destination="Qcf-x8-cJZ" id="vi4-Aj-HlY"/>
+                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Gee-Ot-1xU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLL-E8-Jej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6210" y="-180"/>
+            <point key="canvasLocation" x="6165" y="-179"/>
         </scene>
     </scenes>
     <resources>
@@ -356,4 +360,7 @@
         <image name="Naruto 1" width="1200" height="1800"/>
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fvw-k6-sek"/>
+    </inferredMetricsTieBreakers>
 </document>

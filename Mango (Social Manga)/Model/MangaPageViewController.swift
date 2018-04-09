@@ -8,6 +8,8 @@
 
 import UIKit
 
+public class MangaPageViewController: UIViewController {
+    
 /// A function that impliments a GET request to show an image.
 ///
 /// - Parameters:
@@ -24,6 +26,10 @@ public func loadImage(theUrl: String, theImageView: UIImageView){
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             print("Not a proper HTTPURLResponse or statusCode")
+            
+            let alert = UIAlertController(title: "Connection Error", message: "404", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
             return
         }
         
@@ -31,4 +37,5 @@ public func loadImage(theUrl: String, theImageView: UIImageView){
             theImageView.image = UIImage(data: data!)
         }
         }.resume()
+    }
 }

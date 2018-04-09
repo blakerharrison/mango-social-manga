@@ -22,9 +22,7 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         let vc1 = sb.instantiateViewController(withIdentifier: "Page1")
         let vc2 = sb.instantiateViewController(withIdentifier: "Page2")
         let vc3 = sb.instantiateViewController(withIdentifier: "Page3")
-        
         let vc4 = sb.instantiateViewController(withIdentifier: "Page4")
-        
         let vc5 = sb.instantiateViewController(withIdentifier: "Page5")
         
         return [vc1, vc2, vc3, vc4, vc5]
@@ -73,4 +71,5 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         
         return viewControllerList[nextIndex]
     }
+
 }

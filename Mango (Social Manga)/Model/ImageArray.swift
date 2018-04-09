@@ -10,14 +10,34 @@ import Foundation
 
 //51
 
-
 /// GETS the image of the provided Naruto page number from http://manganelo.com/ .
 ///
 /// - Parameter chapter: Chapter ID. 109088 = Chapter 1
 /// - Parameter page: Page number.
 /// - Returns: URL of the page.
-public func narutoImage(chapter: Int, page: Int)-> String {
-    return "https://res.cloudinary.com/dfd4ae1lw/image/upload/v1523298421/MR-6841-" + String(chapter) + "-" + String(page) + ".jpg.jpg"
+public func mangaImages(manga: String, chapter: Int, page: Int)-> String {
+    
+    if manga == "Naruto" {
+        return "https://res.cloudinary.com/dfd4ae1lw/image/upload/v1523298421/MR-6841-" + String(chapter) + "-" + String(page) + ".jpg.jpg"
+    }
+    
+    return "No Manga"
+}
+
+public func pagesContainedInChapter(manga: String, chapter: Int)-> Int {
+    
+    if manga == "Naruto" {
+        //Chapter 1
+        if chapter == 109088 {
+            return 5
+        } else
+        //Chapter 2
+        if chapter == 109089 {
+            return 5
+        }
+    }
+    
+    return 0
 }
 
 //109088 = Chapter 1

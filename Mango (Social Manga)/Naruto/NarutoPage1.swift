@@ -8,8 +8,10 @@
 
 import UIKit
 
-class NarutoPage1: UIViewController, UIScrollViewDelegate {
+class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
 
+    let currentPage = pageNumber
+    
     //MARK: Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -19,8 +21,7 @@ class NarutoPage1: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
-//        loadImage(theUrl: narutoImage(page: 1), theImageView: imageView)
-       loadImage(theUrl: narutoImage(chapter: 109088, page: 1), theImageView: imageView)
+        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 1), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
@@ -29,6 +30,14 @@ class NarutoPage1: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.shadowImage = UIImage()
         
          navigationController?.hidesBarsOnTap = true
+        
+        
+        print(currentPage)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        endOfChapter(currentPage: currentPage)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -47,5 +56,30 @@ class NarutoPage1: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
+    
+    //MARK: End of Chapter
+    func endOfChapter(currentPage: Int) {
+        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: 109088) {
+            
+            //ALERT
+            let alertController = UIAlertController(title: "End of Chapter", message: "Start next chapter?", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel) { action in
+                self.performSegue(withIdentifier: "Home", sender: self)
+            }
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "Yes", style: .default) { action in
+                print("Next Chapter Placeholder")
+            }
+            alertController.addAction(OKAction)
+            
+            self.present(alertController, animated: true) {
+                // ...
+            }
+            
+        }
+    }
+    
     
 }
