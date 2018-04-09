@@ -11,6 +11,8 @@ import UIKit
 class LandingViewController: UIViewController {
     
     @IBOutlet weak var naruto: UIImageView!
+    @IBOutlet weak var onePiece: UIImageView!
+    @IBOutlet weak var bleach: UIImageView!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -26,9 +28,13 @@ class LandingViewController: UIViewController {
         naruto.isUserInteractionEnabled = true
         naruto.addGestureRecognizer(tapGestureRecognizer)
         
-        
-        
-        
+        naruto.addShadow()
+        onePiece.addShadow()
+        bleach.addShadow()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,5 +50,16 @@ class LandingViewController: UIViewController {
         performSegue(withIdentifier: "naruto", sender: nil)
         
         
+    }
 }
+
+extension UIView {
+    
+    func addShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 0.75
+        layer.shadowRadius = 5
+        clipsToBounds = false
+    }
 }

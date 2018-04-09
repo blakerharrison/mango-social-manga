@@ -75,7 +75,9 @@
                     <navigationItem key="navigationItem" id="xvL-SO-T4C"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
+                        <outlet property="bleach" destination="Ocw-bK-3ZV" id="B6K-E8-7ay"/>
                         <outlet property="naruto" destination="o8R-iI-eco" id="d2A-Z3-Gsw"/>
+                        <outlet property="onePiece" destination="Kq6-2H-bV1" id="qoz-hc-USI"/>
                         <segue destination="fxJ-28-HsI" kind="show" identifier="naruto" id="UMr-ei-TxJ"/>
                     </connections>
                 </viewController>
