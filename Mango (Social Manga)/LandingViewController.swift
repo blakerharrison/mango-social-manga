@@ -10,6 +10,8 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
+    var pref: UserDefaults = UserDefaults.standard
+    
     //MARK: Outlets
     @IBOutlet weak var naruto: UIImageView!
     @IBOutlet weak var onePiece: UIImageView!
@@ -23,6 +25,9 @@ class LandingViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        pref.set(nil, forKey: "Naruto")
+        pref.synchronize()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         naruto.isUserInteractionEnabled = true
@@ -53,6 +58,9 @@ class LandingViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         _ = tapGestureRecognizer.view as! UIImageView
+        
+        pref.set(109088, forKey: "Naruto")
+        pref.synchronize()
         
         performSegue(withIdentifier: "naruto", sender: nil)
     }

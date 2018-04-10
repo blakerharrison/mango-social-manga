@@ -19,6 +19,7 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
         loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 1), theImageView: imageView)

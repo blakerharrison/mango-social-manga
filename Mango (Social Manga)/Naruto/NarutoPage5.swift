@@ -10,11 +10,13 @@ import UIKit
 
 class NarutoPage5: MangaPageViewController, UIScrollViewDelegate {
     
-    let currentPage = pageNumber + 4
+//    childViewControllers.remove()
     
     //MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    let currentPage = pageNumber + 4
     
     //MARK: Lifecycle
     override func viewDidLoad() {
