@@ -59,10 +59,37 @@ class LandingViewController: UIViewController {
     {
         _ = tapGestureRecognizer.view as! UIImageView
         
-        pref.set(109088, forKey: "Naruto")
-        pref.synchronize()
+//        pref.set(109088, forKey: "Naruto")
+//        pref.synchronize()
+//
+//        performSegue(withIdentifier: "naruto", sender: nil)
         
-        performSegue(withIdentifier: "naruto", sender: nil)
+        //Placeholder ALERT
+        let alertController = UIAlertController(title: "Chapter 1 or 2?", message: "", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "1", style: .cancel) { action in
+            
+            self.pref.set(109088, forKey: "Naruto")
+            self.pref.synchronize()
+            
+            self.performSegue(withIdentifier: "naruto", sender: nil)
+            
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "2", style: .default) { action in
+            
+            self.pref.set(109089, forKey: "Naruto")
+            self.pref.synchronize()
+            
+            self.performSegue(withIdentifier: "naruto", sender: nil)
+            
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
     }
 }
 
