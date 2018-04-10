@@ -19,7 +19,7 @@ class NarutoPage22: MangaPageViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 22), theImageView: imageView)
+        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto"), page: 22), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
@@ -38,7 +38,7 @@ class NarutoPage22: MangaPageViewController, UIScrollViewDelegate {
     
     //MARK: End of Chapter
     func endOfChapter(currentPage: Int) {
-        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: 109088) {
+        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto")) {
             
             //ALERT
             let alertController = UIAlertController(title: "End", message: "Start next chapter?", preferredStyle: .alert)

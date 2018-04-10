@@ -18,7 +18,13 @@ import Foundation
 public func mangaImages(manga: String, chapter: Int, page: Int)-> String {
     
     if manga == "Naruto" {
+        if chapter == 109088 {
         return "https://res.cloudinary.com/dfd4ae1lw/image/upload/v1523298421/MR-6841-" + String(chapter) + "-" + String(page) + ".jpg.jpg"
+        } else
+        //Chapter 2
+           if chapter == 109089 {
+           return "https://res.cloudinary.com/dfd4ae1lw/image/upload/v1523298421/MR-6841-" + String(chapter) + "-" + String(page) + ".jpg.jpg"
+        }
     }
     
     return "No Manga"
@@ -33,7 +39,7 @@ public func pagesContainedInChapter(manga: String, chapter: Int)-> Int {
         } else
         //Chapter 2
         if chapter == 109089 {
-            return 5
+            return 24
         }
     }
     return 0
@@ -43,9 +49,13 @@ public func NarutoChapterNumbers(chapter: Int)-> Int {
     
     if chapter == 109088 {
         return 40
+    } else
+        //Chapter 2
+        if chapter == 109089 {
+            return 24
     }
-    
-    return 0
+
+return 0
 }
 
 

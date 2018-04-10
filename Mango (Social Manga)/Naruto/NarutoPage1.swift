@@ -9,7 +9,7 @@
 import UIKit
 
 class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
-
+    
     let currentPage = pageNumber
     
     //MARK: Outlets
@@ -22,7 +22,7 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
         
         self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
-        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 1), theImageView: imageView)
+        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto"), page: 1), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
@@ -60,7 +60,7 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
     
     //MARK: End of Chapter
     func endOfChapter(currentPage: Int) {
-        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: 109088) {
+        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto")) {
             
             //ALERT
             let alertController = UIAlertController(title: "End of Chapter", message: "Start next chapter?", preferredStyle: .alert)

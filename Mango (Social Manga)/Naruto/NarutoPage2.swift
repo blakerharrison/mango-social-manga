@@ -20,7 +20,7 @@ class NarutoPage2: MangaPageViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 2), theImageView: imageView)
+        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto"), page: 2), theImageView: imageView)
         
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.5
@@ -39,7 +39,7 @@ class NarutoPage2: MangaPageViewController, UIScrollViewDelegate {
 
     //MARK: End of Chapter
     func endOfChapter(currentPage: Int) {
-        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: 109088) {
+        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto")) {
             
             
             
