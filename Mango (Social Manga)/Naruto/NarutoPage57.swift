@@ -8,28 +8,56 @@
 
 import UIKit
 
-class NarutoPage57: UIViewController {
+class NarutoPage57: MangaPageViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let currentPage = pageNumber + 56
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        loadImage(theUrl: mangaImages(manga: "Naruto", chapter: 109088, page: 57), theImageView: imageView)
+        
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 2.5
+        
+        print(currentPage)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        endOfChapter(currentPage: currentPage)
     }
-    */
-
+    
+    //MARK: Functions
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+    
+    //MARK: End of Chapter
+    func endOfChapter(currentPage: Int) {
+        if currentPage == pagesContainedInChapter(manga: "Naruto", chapter: 109088) {
+            
+            //ALERT
+            let alertController = UIAlertController(title: "End", message: "Start next chapter?", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel) { action in
+                self.performSegue(withIdentifier: "Home", sender: self)
+            }
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "Yes", style: .default) { action in
+                print("Next Chapter Placeholder")
+            }
+            alertController.addAction(OKAction)
+            
+            self.present(alertController, animated: true) {
+                // ...
+            }
+            
+        }
+    }
 }
+

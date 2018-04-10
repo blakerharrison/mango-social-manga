@@ -594,7 +594,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upC-48-bKh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTR-OU-q4f">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTR-OU-q4f">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1893,51 +1893,6 @@
             </objects>
             <point key="canvasLocation" x="9049" y="1975"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6Hm-e3-cwe">
-            <objects>
-                <viewController id="wnX-Eh-5Ye" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ndd-Wd-nOI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-eI-4Em">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jee-kI-4ZE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="jee-kI-4ZE" firstAttribute="top" secondItem="ydt-eI-4Em" secondAttribute="top" id="36M-ar-5IZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="jee-kI-4ZE" secondAttribute="trailing" id="4kZ-tK-2Uu"/>
-                                    <constraint firstAttribute="bottom" secondItem="jee-kI-4ZE" secondAttribute="bottom" id="9Gf-Tx-1EY"/>
-                                    <constraint firstItem="jee-kI-4ZE" firstAttribute="centerY" secondItem="ydt-eI-4Em" secondAttribute="centerY" id="MgJ-zY-fyw"/>
-                                    <constraint firstItem="jee-kI-4ZE" firstAttribute="centerX" secondItem="ydt-eI-4Em" secondAttribute="centerX" id="YDP-s0-QyR"/>
-                                    <constraint firstItem="jee-kI-4ZE" firstAttribute="leading" secondItem="ydt-eI-4Em" secondAttribute="leading" id="dgk-Rk-HDt"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="wnX-Eh-5Ye" id="jyX-F3-RKj"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yOg-sf-PEZ" firstAttribute="bottom" secondItem="ydt-eI-4Em" secondAttribute="bottom" id="RcC-aF-B0w"/>
-                            <constraint firstItem="yOg-sf-PEZ" firstAttribute="trailing" secondItem="ydt-eI-4Em" secondAttribute="trailing" id="Ze8-Ke-1QK"/>
-                            <constraint firstItem="ydt-eI-4Em" firstAttribute="top" secondItem="yOg-sf-PEZ" secondAttribute="top" constant="-20" id="gyj-aN-12k"/>
-                            <constraint firstItem="ydt-eI-4Em" firstAttribute="leading" secondItem="yOg-sf-PEZ" secondAttribute="leading" id="vsZ-gI-da3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="yOg-sf-PEZ"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="3sB-jf-w22"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zot-qL-dVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9049" y="1975"/>
-        </scene>
         <!--Naruto Page40-->
         <scene sceneID="gHn-pQ-dri">
             <objects>
@@ -1982,51 +1937,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bua-mu-T4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9739" y="1972"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="I6L-JG-Ko1">
-            <objects>
-                <viewController id="yny-mi-LQC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EOc-4g-T6L">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogx-1H-W8h">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HTm-q8-Ps4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HTm-q8-Ps4" secondAttribute="trailing" id="Gs2-4T-vSL"/>
-                                    <constraint firstItem="HTm-q8-Ps4" firstAttribute="centerY" secondItem="ogx-1H-W8h" secondAttribute="centerY" id="Ugm-Uf-bGl"/>
-                                    <constraint firstItem="HTm-q8-Ps4" firstAttribute="leading" secondItem="ogx-1H-W8h" secondAttribute="leading" id="VFU-9u-6Vt"/>
-                                    <constraint firstItem="HTm-q8-Ps4" firstAttribute="top" secondItem="ogx-1H-W8h" secondAttribute="top" id="ZS2-eW-dwy"/>
-                                    <constraint firstAttribute="bottom" secondItem="HTm-q8-Ps4" secondAttribute="bottom" id="x3M-vg-OG2"/>
-                                    <constraint firstItem="HTm-q8-Ps4" firstAttribute="centerX" secondItem="ogx-1H-W8h" secondAttribute="centerX" id="yWI-rL-Hh7"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="yny-mi-LQC" id="qBf-0p-MPL"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ogx-1H-W8h" firstAttribute="top" secondItem="24p-Ob-SOC" secondAttribute="top" constant="-20" id="Kbc-fD-k4N"/>
-                            <constraint firstItem="24p-Ob-SOC" firstAttribute="bottom" secondItem="ogx-1H-W8h" secondAttribute="bottom" id="Oi4-R0-PVT"/>
-                            <constraint firstItem="ogx-1H-W8h" firstAttribute="leading" secondItem="24p-Ob-SOC" secondAttribute="leading" id="TcH-is-PHD"/>
-                            <constraint firstItem="24p-Ob-SOC" firstAttribute="trailing" secondItem="ogx-1H-W8h" secondAttribute="trailing" id="fXy-C3-JDb"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="24p-Ob-SOC"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="7tZ-ny-28c"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8xX-VT-Exz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9739" y="1972"/>
         </scene>
@@ -2303,6 +2213,8 @@
                         <viewLayoutGuide key="safeArea" id="0zf-vb-8Qg"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="e5y-M8-Foj" id="Cfh-P8-jF4"/>
+                        <outlet property="scrollView" destination="WH1-2j-0AS" id="t7K-Po-IiD"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="LFi-Po-kMM"/>
                     </connections>
                 </viewController>
@@ -2348,6 +2260,8 @@
                         <viewLayoutGuide key="safeArea" id="h4w-Tl-jue"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="ZZO-rf-BQz" id="g97-hb-FR8"/>
+                        <outlet property="scrollView" destination="1TA-19-tmW" id="esd-jm-AAc"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="jyf-Yt-fqV"/>
                     </connections>
                 </viewController>
@@ -2393,6 +2307,8 @@
                         <viewLayoutGuide key="safeArea" id="fx1-jz-aGc"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="R1a-P0-d2J" id="Puo-Tz-Zfh"/>
+                        <outlet property="scrollView" destination="3N8-UE-25d" id="eHX-fC-aNU"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="tJP-Un-bOa"/>
                     </connections>
                 </viewController>
@@ -2438,6 +2354,8 @@
                         <viewLayoutGuide key="safeArea" id="tse-a1-lcB"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="nFI-nm-Jgc" id="lK3-81-oDX"/>
+                        <outlet property="scrollView" destination="ofy-ng-2FG" id="zJp-pg-BfC"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Y9b-BD-x1w"/>
                     </connections>
                 </viewController>
@@ -2490,51 +2408,6 @@
             </objects>
             <point key="canvasLocation" x="9049" y="2706"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sni-0U-WHg">
-            <objects>
-                <viewController id="0jg-UF-fTY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yZE-Ko-nxP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBX-mf-qo1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-Bl-GVX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="MEe-Bl-GVX" firstAttribute="centerX" secondItem="hBX-mf-qo1" secondAttribute="centerX" id="IVD-aS-1Hy"/>
-                                    <constraint firstAttribute="trailing" secondItem="MEe-Bl-GVX" secondAttribute="trailing" id="NUB-iD-17R"/>
-                                    <constraint firstItem="MEe-Bl-GVX" firstAttribute="centerY" secondItem="hBX-mf-qo1" secondAttribute="centerY" id="SQK-fB-2dp"/>
-                                    <constraint firstItem="MEe-Bl-GVX" firstAttribute="top" secondItem="hBX-mf-qo1" secondAttribute="top" id="U1T-bE-dX4"/>
-                                    <constraint firstAttribute="bottom" secondItem="MEe-Bl-GVX" secondAttribute="bottom" id="Wfp-T3-BVE"/>
-                                    <constraint firstItem="MEe-Bl-GVX" firstAttribute="leading" secondItem="hBX-mf-qo1" secondAttribute="leading" id="uHx-8z-GEu"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="0jg-UF-fTY" id="nxo-6c-p7W"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="hBX-mf-qo1" firstAttribute="leading" secondItem="aJo-al-Ijf" secondAttribute="leading" id="84E-dW-gN6"/>
-                            <constraint firstItem="aJo-al-Ijf" firstAttribute="trailing" secondItem="hBX-mf-qo1" secondAttribute="trailing" id="jcy-Hg-TfL"/>
-                            <constraint firstItem="aJo-al-Ijf" firstAttribute="bottom" secondItem="hBX-mf-qo1" secondAttribute="bottom" id="m0m-ew-jgc"/>
-                            <constraint firstItem="hBX-mf-qo1" firstAttribute="top" secondItem="aJo-al-Ijf" secondAttribute="top" constant="-20" id="yTB-DR-Mdc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aJo-al-Ijf"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Sd2-fk-E0b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7WW-50-V7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9739" y="2703"/>
-        </scene>
         <!--Naruto Page50-->
         <scene sceneID="vz9-1D-Lo6">
             <objects>
@@ -2573,6 +2446,8 @@
                         <viewLayoutGuide key="safeArea" id="xEy-aK-htD"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="yPT-zs-td0" id="s4e-x7-yfd"/>
+                        <outlet property="scrollView" destination="43l-no-Ht9" id="cBZ-PL-cxa"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Cvc-4V-T5O"/>
                     </connections>
                 </viewController>
@@ -2618,6 +2493,8 @@
                         <viewLayoutGuide key="safeArea" id="vwu-vh-SPv"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="yxY-pQ-e7n" id="GKw-7z-aJT"/>
+                        <outlet property="scrollView" destination="gp8-vq-jAl" id="bFk-SQ-EVf"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="pzD-iO-h6h"/>
                     </connections>
                 </viewController>
@@ -2663,6 +2540,8 @@
                         <viewLayoutGuide key="safeArea" id="Igl-tW-lIe"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="SwA-1K-p4S" id="vuT-2B-xKv"/>
+                        <outlet property="scrollView" destination="rlA-IK-2Dj" id="MPJ-0u-9xE"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="8nh-iG-ZBM"/>
                     </connections>
                 </viewController>
@@ -2708,6 +2587,8 @@
                         <viewLayoutGuide key="safeArea" id="Ywc-Gr-seJ"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="YmC-ss-nFw" id="MpM-c3-Pvt"/>
+                        <outlet property="scrollView" destination="2VB-e0-P61" id="xJx-Q3-ge9"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="fTs-Lj-ysf"/>
                     </connections>
                 </viewController>
@@ -2753,6 +2634,8 @@
                         <viewLayoutGuide key="safeArea" id="lUr-bS-OGo"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Klh-ki-EhI" id="Dsw-hv-N5w"/>
+                        <outlet property="scrollView" destination="t5g-yv-LRC" id="pJX-Ce-lJz"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="abm-ky-50k"/>
                     </connections>
                 </viewController>
@@ -2798,55 +2681,12 @@
                         <viewLayoutGuide key="safeArea" id="OCC-Mp-mev"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Mnq-3s-HUZ" id="d7X-B1-NMX"/>
+                        <outlet property="scrollView" destination="AR1-AB-J7O" id="1Xv-DM-pEn"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="iaI-kw-jIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89e-ok-mJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6165" y="2706"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ers-4C-Gba">
-            <objects>
-                <viewController id="yjt-Fw-Fr2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hLM-gq-5YW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-VQ-Nvf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-ui-2ph">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="oqp-ui-2ph" firstAttribute="leading" secondItem="wZu-VQ-Nvf" secondAttribute="leading" id="Fcs-Le-B0C"/>
-                                    <constraint firstItem="oqp-ui-2ph" firstAttribute="top" secondItem="wZu-VQ-Nvf" secondAttribute="top" id="NhE-KU-vj4"/>
-                                    <constraint firstItem="oqp-ui-2ph" firstAttribute="centerY" secondItem="wZu-VQ-Nvf" secondAttribute="centerY" id="QS4-fl-jNw"/>
-                                    <constraint firstAttribute="trailing" secondItem="oqp-ui-2ph" secondAttribute="trailing" id="Wj3-ro-1ki"/>
-                                    <constraint firstAttribute="bottom" secondItem="oqp-ui-2ph" secondAttribute="bottom" id="dah-N8-NmC"/>
-                                    <constraint firstItem="oqp-ui-2ph" firstAttribute="centerX" secondItem="wZu-VQ-Nvf" secondAttribute="centerX" id="r1A-tb-OhD"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="yjt-Fw-Fr2" id="KBC-mI-rez"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="wZu-VQ-Nvf" firstAttribute="top" secondItem="Ra9-on-LkS" secondAttribute="top" constant="-20" id="0Cx-6a-gSJ"/>
-                            <constraint firstItem="wZu-VQ-Nvf" firstAttribute="leading" secondItem="Ra9-on-LkS" secondAttribute="leading" id="Onf-s9-5p1"/>
-                            <constraint firstItem="Ra9-on-LkS" firstAttribute="trailing" secondItem="wZu-VQ-Nvf" secondAttribute="trailing" id="XTy-CX-esV"/>
-                            <constraint firstItem="Ra9-on-LkS" firstAttribute="bottom" secondItem="wZu-VQ-Nvf" secondAttribute="bottom" id="uqr-uy-IWv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ra9-on-LkS"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Epi-PX-wc8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sjx-LV-RAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6165" y="2706"/>
         </scene>
@@ -2888,6 +2728,8 @@
                         <viewLayoutGuide key="safeArea" id="MGh-uA-YUO"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="bLL-TX-YWj" id="5on-Ug-5fa"/>
+                        <outlet property="scrollView" destination="khN-tA-T7B" id="YHb-jY-Pro"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="458-J5-t1b"/>
                     </connections>
                 </viewController>
@@ -2933,6 +2775,8 @@
                         <viewLayoutGuide key="safeArea" id="Cfn-32-xbI"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="zR9-Un-Kem" id="aLe-Zl-dqT"/>
+                        <outlet property="scrollView" destination="Vzp-Zy-2n9" id="Ovm-qW-bPB"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="t3j-en-TFh"/>
                     </connections>
                 </viewController>
@@ -2978,6 +2822,8 @@
                         <viewLayoutGuide key="safeArea" id="D9w-4b-2ev"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="X5t-0p-rRi" id="8CO-sj-jfE"/>
+                        <outlet property="scrollView" destination="J0S-vX-kAP" id="eJJ-yf-Feg"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="5Qm-gm-Vu0"/>
                     </connections>
                 </viewController>
@@ -3068,6 +2914,8 @@
                         <viewLayoutGuide key="safeArea" id="ccO-0h-xMu"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="cXv-d2-A1f" id="969-i3-eUz"/>
+                        <outlet property="scrollView" destination="gnc-8D-htk" id="aIt-fN-Zq3"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="fXK-Lb-iIf"/>
                     </connections>
                 </viewController>
@@ -3158,6 +3006,8 @@
                         <viewLayoutGuide key="safeArea" id="77g-bV-gca"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="HDm-Wi-nFU" id="E08-ks-t58"/>
+                        <outlet property="scrollView" destination="5Nt-nv-zzX" id="T9h-Nz-lUg"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="oiN-1a-M4k"/>
                     </connections>
                 </viewController>
@@ -3203,6 +3053,8 @@
                         <viewLayoutGuide key="safeArea" id="V9d-vI-0r0"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="gHa-br-Kr9" id="9Fb-uG-2N1"/>
+                        <outlet property="scrollView" destination="BbW-x2-zdl" id="uyC-rQ-IlH"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="ZHk-DI-54n"/>
                     </connections>
                 </viewController>
@@ -3248,6 +3100,8 @@
                         <viewLayoutGuide key="safeArea" id="nX8-CX-OaG"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="AGF-UP-8Df" id="ZE4-le-yQM"/>
+                        <outlet property="scrollView" destination="xxP-Zg-tM2" id="iNc-PW-6RV"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="Pbl-As-hcr"/>
                     </connections>
                 </viewController>
@@ -3293,6 +3147,8 @@
                         <viewLayoutGuide key="safeArea" id="alh-gR-fkl"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="pWg-ec-488" id="0DT-oV-1ii"/>
+                        <outlet property="scrollView" destination="63I-Fl-rqf" id="tKr-SC-nIn"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="eAX-1G-Wfr"/>
                     </connections>
                 </viewController>
@@ -3338,57 +3194,14 @@
                         <viewLayoutGuide key="safeArea" id="B2C-Cv-L1j"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="A1D-Wv-JG7" id="pkf-VY-lmm"/>
+                        <outlet property="scrollView" destination="s8H-HO-goL" id="aLx-UF-d0C"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="gex-wl-kcL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ww-EQ-dPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5474" y="3426"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="kWe-95-edQ">
-            <objects>
-                <viewController id="Fkf-5T-FfL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bGh-yK-eTE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-fs-4Fu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bIT-aw-2Ds">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="bIT-aw-2Ds" firstAttribute="top" secondItem="OFC-fs-4Fu" secondAttribute="top" id="8EZ-kg-QGi"/>
-                                    <constraint firstItem="bIT-aw-2Ds" firstAttribute="centerX" secondItem="OFC-fs-4Fu" secondAttribute="centerX" id="8h2-zR-Jlu"/>
-                                    <constraint firstItem="bIT-aw-2Ds" firstAttribute="leading" secondItem="OFC-fs-4Fu" secondAttribute="leading" id="N3T-tV-cxS"/>
-                                    <constraint firstItem="bIT-aw-2Ds" firstAttribute="centerY" secondItem="OFC-fs-4Fu" secondAttribute="centerY" id="aao-xa-2I2"/>
-                                    <constraint firstAttribute="trailing" secondItem="bIT-aw-2Ds" secondAttribute="trailing" id="fEB-yY-2kM"/>
-                                    <constraint firstAttribute="bottom" secondItem="bIT-aw-2Ds" secondAttribute="bottom" id="pX0-4g-pZ3"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="Fkf-5T-FfL" id="F5n-Nx-QuH"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dgs-5j-sNr" firstAttribute="bottom" secondItem="OFC-fs-4Fu" secondAttribute="bottom" id="DN8-oa-G0F"/>
-                            <constraint firstItem="OFC-fs-4Fu" firstAttribute="top" secondItem="dgs-5j-sNr" secondAttribute="top" constant="-20" id="cKw-D5-5z8"/>
-                            <constraint firstItem="OFC-fs-4Fu" firstAttribute="leading" secondItem="dgs-5j-sNr" secondAttribute="leading" id="lBT-nf-jkj"/>
-                            <constraint firstItem="dgs-5j-sNr" firstAttribute="trailing" secondItem="OFC-fs-4Fu" secondAttribute="trailing" id="wVc-Wt-auN"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="dgs-5j-sNr"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="FuZ-71-73w"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9GA-0L-P88" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6164" y="3429"/>
         </scene>
         <!--Naruto Page55-->
         <scene sceneID="tbq-Ya-Rzf">
@@ -3428,6 +3241,8 @@
                         <viewLayoutGuide key="safeArea" id="0fY-lw-T5c"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="rNh-J4-9CY" id="0xz-Cm-Emx"/>
+                        <outlet property="scrollView" destination="LHJ-ui-JfZ" id="vdE-Sq-YKc"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="cbJ-50-1rd"/>
                     </connections>
                 </viewController>
@@ -3443,6 +3258,6 @@
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dBN-9I-p0W"/>
+        <segue reference="aJw-EC-BuF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,7 @@ public func pagesContainedInChapter(manga: String, chapter: Int)-> Int {
     if manga == "Naruto" {
         //Chapter 1
         if chapter == 109088 {
-            return 40
+            return 53
         } else
         //Chapter 2
         if chapter == 109089 {

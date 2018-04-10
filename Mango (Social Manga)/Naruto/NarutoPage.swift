@@ -60,8 +60,28 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
             let vc38 = sb.instantiateViewController(withIdentifier: "Page38")
             let vc39 = sb.instantiateViewController(withIdentifier: "Page39")
             let vc40 = sb.instantiateViewController(withIdentifier: "Page40")
+            let vc41 = sb.instantiateViewController(withIdentifier: "Page41")
+            let vc42 = sb.instantiateViewController(withIdentifier: "Page42")
+            let vc43 = sb.instantiateViewController(withIdentifier: "Page43")
+            let vc44 = sb.instantiateViewController(withIdentifier: "Page44")
+            let vc45 = sb.instantiateViewController(withIdentifier: "Page45")
+            let vc46 = sb.instantiateViewController(withIdentifier: "Page46")
+            let vc47 = sb.instantiateViewController(withIdentifier: "Page47")
+            let vc48 = sb.instantiateViewController(withIdentifier: "Page48")
+            let vc49 = sb.instantiateViewController(withIdentifier: "Page49")
+            let vc50 = sb.instantiateViewController(withIdentifier: "Page50")
+            let vc51 = sb.instantiateViewController(withIdentifier: "Page51")
+            let vc52 = sb.instantiateViewController(withIdentifier: "Page52")
+            let vc53 = sb.instantiateViewController(withIdentifier: "Page53")
+            let vc54 = sb.instantiateViewController(withIdentifier: "Page54")
+            let vc55 = sb.instantiateViewController(withIdentifier: "Page55")
+            let vc56 = sb.instantiateViewController(withIdentifier: "Page56")
+            let vc57 = sb.instantiateViewController(withIdentifier: "Page57")
+            let vc58 = sb.instantiateViewController(withIdentifier: "Page58")
+            let vc59 = sb.instantiateViewController(withIdentifier: "Page59")
+            let vc60 = sb.instantiateViewController(withIdentifier: "Page60")
     
-            return [vc1, vc2, vc3, vc4, vc5, vc6, vc7, vc8, vc9, vc10, vc11, vc12, vc13, vc14, vc15, vc16, vc17, vc18, vc19, vc20, vc21, vc22, vc23, vc24, vc25, vc26, vc27, vc28, vc29, vc30, vc31, vc32, vc33, vc34, vc35, vc36, vc37, vc38, vc39, vc40]
+            return [vc1, vc2, vc3, vc4, vc5, vc6, vc7, vc8, vc9, vc10, vc11, vc12, vc13, vc14, vc15, vc16, vc17, vc18, vc19, vc20, vc21, vc22, vc23, vc24, vc25, vc26, vc27, vc28, vc29, vc30, vc31, vc32, vc33, vc34, vc35, vc36, vc37, vc38, vc39, vc40, vc41, vc42, vc43, vc44, vc45, vc46, vc47, vc48, vc49, vc50, vc51, vc52, vc53, vc54, vc55, vc56, vc57, vc58, vc59, vc60]
         }()
 
     //MARK: Lifecycle
@@ -85,7 +105,7 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         
         //Book Number of View Controller Algorithms
         let Chapter = pref.integer(forKey: "Naruto")
-        let totalPages = 40 - pagesContainedInChapter(manga: "Naruto", chapter: Chapter)
+        let totalPages = 60 - pagesContainedInChapter(manga: "Naruto", chapter: Chapter)
         print(totalPages)
         
         guard totalPages == 0 else {
