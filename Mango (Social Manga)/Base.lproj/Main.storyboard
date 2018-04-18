@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="YBi-0s-59L">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="1078"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-ff-J1d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
@@ -3258,6 +3258,6 @@
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aJw-EC-BuF"/>
+        <segue reference="x47-Ym-fHc"/>
     </inferredMetricsTieBreakers>
 </document>
