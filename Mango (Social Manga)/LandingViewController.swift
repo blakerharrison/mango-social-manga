@@ -41,6 +41,9 @@ class LandingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        pref.set(true, forKey: "AutoTransition")
+        pref.synchronize()
+        
         self.navigationController?.isNavigationBarHidden = true
     }
     

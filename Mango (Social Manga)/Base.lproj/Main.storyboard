@@ -78,7 +78,7 @@
                         <outlet property="bleach" destination="Ocw-bK-3ZV" id="B6K-E8-7ay"/>
                         <outlet property="naruto" destination="o8R-iI-eco" id="d2A-Z3-Gsw"/>
                         <outlet property="onePiece" destination="Kq6-2H-bV1" id="qoz-hc-USI"/>
-                        <segue destination="fxJ-28-HsI" kind="show" identifier="naruto" id="UMr-ei-TxJ"/>
+                        <segue destination="So4-wh-HZP" kind="show" identifier="naruto" id="PV5-qw-awm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggW-Eb-OOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,13 +93,31 @@
             </objects>
             <point key="canvasLocation" x="4936" y="-1398"/>
         </scene>
+        <!--Top Of Stack View Controller-->
+        <scene sceneID="LdG-JJ-GRz">
+            <objects>
+                <viewController id="So4-wh-HZP" customClass="TopOfStackViewController" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="diP-5e-qSr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OVO-ue-6BF"/>
+                    </view>
+                    <connections>
+                        <segue destination="fxJ-28-HsI" kind="show" identifier="openBook" id="NyM-bP-H12"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQs-wj-EOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7460.8695652173919" y="-2641.304347826087"/>
+        </scene>
         <!--Naruto Page-->
         <scene sceneID="4id-qP-4YQ">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fxJ-28-HsI" customClass="NarutoPage" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLg-hR-LEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7412" y="-1877"/>
+            <point key="canvasLocation" x="8474" y="-2290"/>
         </scene>
         <!--Naruto Page1-->
         <scene sceneID="77v-45-CXy">
@@ -138,6 +156,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxI-RT-awB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ePA-9n-VlX"/>
                     <connections>
                         <outlet property="imageView" destination="l72-dP-J3R" id="VOY-pB-nBd"/>
                         <outlet property="scrollView" destination="u5u-F7-QjE" id="Vbc-b1-sEA"/>
@@ -145,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBP-v9-7HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="-179"/>
+            <point key="canvasLocation" x="4026.0869565217395" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page2-->
         <scene sceneID="9z6-yl-aao">
@@ -192,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDA-hP-BJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3853" y="-180"/>
+            <point key="canvasLocation" x="4759.420289855073" y="-180.16304347826087"/>
         </scene>
         <!--Naruto Page3-->
         <scene sceneID="FXd-We-gDd">
@@ -239,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUj-Ya-vNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4644" y="-180"/>
+            <point key="canvasLocation" x="5550.7246376811599" y="-180.16304347826087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JXL-Jc-cSu">
@@ -304,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSm-kM-ecm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5432" y="-181"/>
+            <point key="canvasLocation" x="6339.130434782609" y="-181.79347826086959"/>
         </scene>
         <!--Naruto Page5-->
         <scene sceneID="fBh-LB-3L8">
@@ -351,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLL-E8-Jej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6165" y="-179"/>
+            <point key="canvasLocation" x="7071.0144927536239" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page6-->
         <scene sceneID="9ae-3b-D5K">
@@ -398,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-Li-LFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6953.6231884057979" y="-182.60869565217394"/>
+            <point key="canvasLocation" x="7860.8695652173919" y="-182.60869565217394"/>
         </scene>
         <!--Naruto Page7-->
         <scene sceneID="fMj-aJ-oe0">
@@ -445,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJX-W7-Nay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7652" y="-179"/>
+            <point key="canvasLocation" x="8557.971014492754" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page8-->
         <scene sceneID="kCU-yf-oo4">
@@ -492,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYy-fX-ros" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8342" y="-179"/>
+            <point key="canvasLocation" x="9247.826086956522" y="-179.34782608695653"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="btC-iw-Rrw">
@@ -505,7 +524,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXX-66-3ZE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vj4-7I-7xh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vj4-7I-7xh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -534,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Km-so-VDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9058" y="-179"/>
+            <point key="canvasLocation" x="9965.217391304348" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page9-->
         <scene sceneID="TI4-vD-OjY">
@@ -581,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkL-4h-CJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9058" y="-179"/>
+            <point key="canvasLocation" x="9965.217391304348" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page10-->
         <scene sceneID="mRX-kL-LTE">
@@ -628,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gW-fP-rSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9749" y="-182"/>
+            <point key="canvasLocation" x="10655.072463768116" y="-182.60869565217394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5g1-Sk-buT">
@@ -673,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhH-hR-hxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9749" y="-182"/>
+            <point key="canvasLocation" x="10655.072463768116" y="-182.60869565217394"/>
         </scene>
         <!--Naruto Page16-->
         <scene sceneID="brf-Ah-F1m">
@@ -874,7 +893,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-25-FA9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-un-K4q">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-un-K4q">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1344,7 +1363,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKm-D7-5bQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j5r-y2-c5R">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j5r-y2-c5R">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1532,7 +1551,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGM-V3-MJ5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ke-GzI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ke-GzI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1568,51 +1587,6 @@
             </objects>
             <point key="canvasLocation" x="5474" y="1251"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9cF-Ai-fxB">
-            <objects>
-                <viewController id="BLw-g6-YKW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KAZ-9D-Lvi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dge-3J-ebA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acX-gz-Boc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="acX-gz-Boc" firstAttribute="top" secondItem="dge-3J-ebA" secondAttribute="top" id="2Nh-dg-Xau"/>
-                                    <constraint firstAttribute="trailing" secondItem="acX-gz-Boc" secondAttribute="trailing" id="2ll-49-lE4"/>
-                                    <constraint firstItem="acX-gz-Boc" firstAttribute="centerY" secondItem="dge-3J-ebA" secondAttribute="centerY" id="6Ex-Fb-svO"/>
-                                    <constraint firstItem="acX-gz-Boc" firstAttribute="leading" secondItem="dge-3J-ebA" secondAttribute="leading" id="SGA-Jc-fWv"/>
-                                    <constraint firstItem="acX-gz-Boc" firstAttribute="centerX" secondItem="dge-3J-ebA" secondAttribute="centerX" id="UzS-U2-TcE"/>
-                                    <constraint firstAttribute="bottom" secondItem="acX-gz-Boc" secondAttribute="bottom" id="ePV-PI-z9h"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="BLw-g6-YKW" id="BjJ-G5-1XY"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dge-3J-ebA" firstAttribute="top" secondItem="Dfs-7h-vfa" secondAttribute="top" constant="-20" id="Ilk-kT-2Df"/>
-                            <constraint firstItem="dge-3J-ebA" firstAttribute="leading" secondItem="Dfs-7h-vfa" secondAttribute="leading" id="J7s-uy-EpF"/>
-                            <constraint firstItem="Dfs-7h-vfa" firstAttribute="trailing" secondItem="dge-3J-ebA" secondAttribute="trailing" id="YfC-1T-Daz"/>
-                            <constraint firstItem="Dfs-7h-vfa" firstAttribute="bottom" secondItem="dge-3J-ebA" secondAttribute="bottom" id="t3B-d6-tfG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dfs-7h-vfa"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="npj-35-1yi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FM1-eN-3a8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5474" y="1251"/>
-        </scene>
         <!--Naruto Page25-->
         <scene sceneID="Y9v-rQ-xW7">
             <objects>
@@ -1624,7 +1598,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFd-vP-eNd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-wP-1kl">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-wP-1kl">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1657,51 +1631,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJw-Ka-dCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6164" y="1248"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Og0-j7-wGY">
-            <objects>
-                <viewController id="Ujp-X3-6bt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Okl-8z-5xf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-t2-eAT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i6u-QQ-a4w">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="i6u-QQ-a4w" firstAttribute="centerX" secondItem="2iG-t2-eAT" secondAttribute="centerX" id="4ot-uM-NmC"/>
-                                    <constraint firstItem="i6u-QQ-a4w" firstAttribute="centerY" secondItem="2iG-t2-eAT" secondAttribute="centerY" id="4zX-q0-jUU"/>
-                                    <constraint firstItem="i6u-QQ-a4w" firstAttribute="leading" secondItem="2iG-t2-eAT" secondAttribute="leading" id="fPP-o0-Szl"/>
-                                    <constraint firstItem="i6u-QQ-a4w" firstAttribute="top" secondItem="2iG-t2-eAT" secondAttribute="top" id="j6n-8j-30B"/>
-                                    <constraint firstAttribute="trailing" secondItem="i6u-QQ-a4w" secondAttribute="trailing" id="qI8-gn-9FH"/>
-                                    <constraint firstAttribute="bottom" secondItem="i6u-QQ-a4w" secondAttribute="bottom" id="wju-yA-Io3"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="Ujp-X3-6bt" id="8bX-b4-lIb"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="v7M-5M-O2L" firstAttribute="bottom" secondItem="2iG-t2-eAT" secondAttribute="bottom" id="4vU-7D-byO"/>
-                            <constraint firstItem="2iG-t2-eAT" firstAttribute="top" secondItem="v7M-5M-O2L" secondAttribute="top" constant="-20" id="F4f-cC-9dy"/>
-                            <constraint firstItem="v7M-5M-O2L" firstAttribute="trailing" secondItem="2iG-t2-eAT" secondAttribute="trailing" id="VdM-xu-cxZ"/>
-                            <constraint firstItem="2iG-t2-eAT" firstAttribute="leading" secondItem="v7M-5M-O2L" secondAttribute="leading" id="zem-5B-rLO"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="v7M-5M-O2L"/>
-                    </view>
-                    <connections>
-                        <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="nxG-rU-Vsa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L36-yk-eSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6164" y="1248"/>
         </scene>
@@ -1857,7 +1786,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5an-3m-z7b">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-Dz-edx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-Dz-edx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -1904,7 +1833,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bI-wO-lpN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bah-9g-yBo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bah-9g-yBo">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -2327,7 +2256,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofy-ng-2FG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nFI-nm-Jgc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nFI-nm-Jgc">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -2607,7 +2536,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5g-yv-LRC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klh-ki-EhI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klh-ki-EhI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -2654,7 +2583,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-AB-J7O">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-3s-HUZ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mnq-3s-HUZ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -2842,7 +2771,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32O-EJ-5Bs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-gQ-7Ym">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-gQ-7Ym">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -2934,7 +2863,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqe-WM-v7s">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-IG-PfE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-IG-PfE">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                 </subviews>
@@ -3150,6 +3079,7 @@
                         <outlet property="imageView" destination="pWg-ec-488" id="0DT-oV-1ii"/>
                         <outlet property="scrollView" destination="63I-Fl-rqf" id="tKr-SC-nIn"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="eAX-1G-Wfr"/>
+                        <segue destination="fxJ-28-HsI" kind="show" identifier="Next Chapter" id="F63-LF-dld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JR-Ta-MYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3258,6 +3188,7 @@
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aJw-EC-BuF"/>
+        <segue reference="NyM-bP-H12"/>
+        <segue reference="Fvw-k6-sek"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,8 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
     
     let currentPage = pageNumber
     
+    var pref: UserDefaults = UserDefaults.standard
+    
     //MARK: Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -19,8 +21,6 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
         loadImage(theUrl: mangaImages(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto"), page: 1), theImageView: imageView)
         
@@ -32,13 +32,15 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
         
          navigationController?.hidesBarsOnTap = true
         
-        
         print(currentPage)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         endOfChapter(currentPage: currentPage)
+        
+        pref.set(false, forKey: "AutoTransition")
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.orange; // Change back button to orange.
     }
     
     override var prefersStatusBarHidden: Bool {

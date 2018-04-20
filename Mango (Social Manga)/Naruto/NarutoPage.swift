@@ -19,7 +19,7 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
          lazy var viewControllerList: [UIViewController] = {
     
             let sb = UIStoryboard(name: "Main", bundle: nil)
-    
+            
             let vc1 = sb.instantiateViewController(withIdentifier: "Page1")
             let vc2 = sb.instantiateViewController(withIdentifier: "Page2")
             let vc3 = sb.instantiateViewController(withIdentifier: "Page3")

@@ -50,6 +50,24 @@ class NarutoPage53: MangaPageViewController, UIScrollViewDelegate {
             
             let OKAction = UIAlertAction(title: "Yes", style: .default) { action in
                 print("Next Chapter Placeholder")
+                
+                // NEXT CHAPTER
+                let pref: UserDefaults = UserDefaults.standard
+                pref.set(nil, forKey: "Naruto")
+                pref.synchronize()
+                
+                pref.set(109089, forKey: "Naruto")
+                pref.synchronize()
+                
+                pref.set(true, forKey: "AutoTransition")
+                pref.synchronize()
+                
+                let  vc =  self.navigationController?.viewControllers.filter({$0 is TopOfStackViewController}).first
+                
+//                TopOfStackViewController().automaticLoadBook(auto: true)
+                
+                self.navigationController?.popToViewController(vc!, animated: true)
+                
             }
             alertController.addAction(OKAction)
             
