@@ -10,13 +10,23 @@ import UIKit
 
 class TopOfStackViewController: UIViewController {
 
+    let pref: UserDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
-         performSegue(withIdentifier: "openBook", sender: self)
+        
+        guard pref.bool(forKey: "AutoTransition") == true else {
+            let  vc =  self.navigationController?.viewControllers.filter({$0 is LandingViewController}).first
+
+            self.navigationController?.popToViewController(vc!, animated: true)
+            
+            return
+        }
+        performSegue(withIdentifier: "openBook", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,4 +34,11 @@ class TopOfStackViewController: UIViewController {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
+    
+//    public func automaticLoadBook(auto: Bool) {
+//        guard auto == true else {
+//            return print("Not automatic")
+//        }
+//        performSegue(withIdentifier: "openBook", sender: self)
+//    }
 }
