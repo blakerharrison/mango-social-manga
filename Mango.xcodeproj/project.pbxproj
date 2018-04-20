@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0DB909208987C70031EF36 /* TopOfStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfStackViewController.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C69A0092019C2E8001A60AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
 				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
+				2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */,
 				2CF1E56D207AE54A00161D5F /* LandingViewController.swift */,
 				2CF1E576207AF0B100161D5F /* Model */,
 				2CF1E573207AECE500161D5F /* Naruto */,
@@ -385,6 +388,7 @@
 				2C725289207C7A0E00B6E9C0 /* NarutoPage13.swift in Sources */,
 				2CF1E5A5207B277A00161D5F /* NarutoPage4.swift in Sources */,
 				2C72528B207C7A1800B6E9C0 /* NarutoPage14.swift in Sources */,
+				2C0DB909208987C70031EF36 /* TopOfStackViewController.swift in Sources */,
 				2C725293207C7A4F00B6E9C0 /* NarutoPage18.swift in Sources */,
 				2C89AA5C207C1D8C00D3E387 /* NarutoPage6.swift in Sources */,
 				2C725281207C79DF00B6E9C0 /* NarutoPage9.swift in Sources */,

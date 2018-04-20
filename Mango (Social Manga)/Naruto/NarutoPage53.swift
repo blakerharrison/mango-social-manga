@@ -59,10 +59,18 @@ class NarutoPage53: MangaPageViewController, UIScrollViewDelegate {
                 pref.set(109089, forKey: "Naruto")
                 pref.synchronize()
                 
-                self.performSegue(withIdentifier: "Next Chapter", sender: self)
+
+             
+                
+//                    self.navigationController?.popToViewController(NarutoPage1(), animated: true)
+                
+                
+//                self.performSegue(withIdentifier: "Next Chapter", sender: self)
 //                self.navigationController?.popViewController(animated: true)
                 
-
+                let  vc =  self.navigationController?.viewControllers.filter({$0 is TopOfStackViewController}).first
+                
+                self.navigationController?.popToViewController(vc!, animated: true)
                 
             }
             alertController.addAction(OKAction)

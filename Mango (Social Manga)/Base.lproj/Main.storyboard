@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="YBi-0s-59L">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="1078"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-ff-J1d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
@@ -78,7 +78,7 @@
                         <outlet property="bleach" destination="Ocw-bK-3ZV" id="B6K-E8-7ay"/>
                         <outlet property="naruto" destination="o8R-iI-eco" id="d2A-Z3-Gsw"/>
                         <outlet property="onePiece" destination="Kq6-2H-bV1" id="qoz-hc-USI"/>
-                        <segue destination="fxJ-28-HsI" kind="show" identifier="naruto" id="UMr-ei-TxJ"/>
+                        <segue destination="So4-wh-HZP" kind="show" identifier="naruto" id="PV5-qw-awm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggW-Eb-OOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,6 +92,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ck-Kv-Fmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4936" y="-1398"/>
+        </scene>
+        <!--Top Of Stack View Controller-->
+        <scene sceneID="LdG-JJ-GRz">
+            <objects>
+                <viewController id="So4-wh-HZP" customClass="TopOfStackViewController" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="diP-5e-qSr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OVO-ue-6BF"/>
+                    </view>
+                    <connections>
+                        <segue destination="fxJ-28-HsI" kind="show" identifier="openBook" id="NyM-bP-H12"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQs-wj-EOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7460.8695652173919" y="-2641.304347826087"/>
         </scene>
         <!--Naruto Page-->
         <scene sceneID="4id-qP-4YQ">
@@ -3260,7 +3278,7 @@
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UMr-ei-TxJ"/>
-        <segue reference="eAX-1G-Wfr"/>
+        <segue reference="NyM-bP-H12"/>
+        <segue reference="x47-Ym-fHc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,8 +19,6 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.orange;
 
         loadImage(theUrl: mangaImages(manga: "Naruto", chapter: UserDefaults.standard.integer(forKey: "Naruto"), page: 1), theImageView: imageView)
         
@@ -33,11 +31,12 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
          navigationController?.hidesBarsOnTap = true
         
         print(currentPage)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         endOfChapter(currentPage: currentPage)
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.orange;
     }
     
     override var prefersStatusBarHidden: Bool {
