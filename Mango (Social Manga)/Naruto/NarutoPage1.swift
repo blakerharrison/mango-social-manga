@@ -32,7 +32,6 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
         
          navigationController?.hidesBarsOnTap = true
         
-        
         print(currentPage)
         
     }

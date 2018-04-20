@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="YBi-0s-59L">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
+                                <rect key="frame" x="0.0" y="-44" width="320" height="1078"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-ff-J1d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1034"/>
@@ -99,7 +99,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fxJ-28-HsI" customClass="NarutoPage" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLg-hR-LEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7412" y="-1877"/>
+            <point key="canvasLocation" x="8474" y="-2290"/>
         </scene>
         <!--Naruto Page1-->
         <scene sceneID="77v-45-CXy">
@@ -138,6 +138,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxI-RT-awB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ePA-9n-VlX"/>
                     <connections>
                         <outlet property="imageView" destination="l72-dP-J3R" id="VOY-pB-nBd"/>
                         <outlet property="scrollView" destination="u5u-F7-QjE" id="Vbc-b1-sEA"/>
@@ -145,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBP-v9-7HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="-179"/>
+            <point key="canvasLocation" x="4026.0869565217395" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page2-->
         <scene sceneID="9z6-yl-aao">
@@ -192,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDA-hP-BJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3853" y="-180"/>
+            <point key="canvasLocation" x="4759.420289855073" y="-180.16304347826087"/>
         </scene>
         <!--Naruto Page3-->
         <scene sceneID="FXd-We-gDd">
@@ -239,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUj-Ya-vNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4644" y="-180"/>
+            <point key="canvasLocation" x="5550.7246376811599" y="-180.16304347826087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JXL-Jc-cSu">
@@ -304,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSm-kM-ecm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5432" y="-181"/>
+            <point key="canvasLocation" x="6339.130434782609" y="-181.79347826086959"/>
         </scene>
         <!--Naruto Page5-->
         <scene sceneID="fBh-LB-3L8">
@@ -351,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLL-E8-Jej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6165" y="-179"/>
+            <point key="canvasLocation" x="7071.0144927536239" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page6-->
         <scene sceneID="9ae-3b-D5K">
@@ -398,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-Li-LFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6953.6231884057979" y="-182.60869565217394"/>
+            <point key="canvasLocation" x="7860.8695652173919" y="-182.60869565217394"/>
         </scene>
         <!--Naruto Page7-->
         <scene sceneID="fMj-aJ-oe0">
@@ -445,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJX-W7-Nay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7652" y="-179"/>
+            <point key="canvasLocation" x="8557.971014492754" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page8-->
         <scene sceneID="kCU-yf-oo4">
@@ -492,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYy-fX-ros" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8342" y="-179"/>
+            <point key="canvasLocation" x="9247.826086956522" y="-179.34782608695653"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="btC-iw-Rrw">
@@ -534,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Km-so-VDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9058" y="-179"/>
+            <point key="canvasLocation" x="9965.217391304348" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page9-->
         <scene sceneID="TI4-vD-OjY">
@@ -581,7 +582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkL-4h-CJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9058" y="-179"/>
+            <point key="canvasLocation" x="9965.217391304348" y="-179.34782608695653"/>
         </scene>
         <!--Naruto Page10-->
         <scene sceneID="mRX-kL-LTE">
@@ -628,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gW-fP-rSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9749" y="-182"/>
+            <point key="canvasLocation" x="10655.072463768116" y="-182.60869565217394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5g1-Sk-buT">
@@ -673,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhH-hR-hxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9749" y="-182"/>
+            <point key="canvasLocation" x="10655.072463768116" y="-182.60869565217394"/>
         </scene>
         <!--Naruto Page16-->
         <scene sceneID="brf-Ah-F1m">
@@ -3150,6 +3151,7 @@
                         <outlet property="imageView" destination="pWg-ec-488" id="0DT-oV-1ii"/>
                         <outlet property="scrollView" destination="63I-Fl-rqf" id="tKr-SC-nIn"/>
                         <segue destination="4SN-78-mQM" kind="show" identifier="Home" id="eAX-1G-Wfr"/>
+                        <segue destination="fxJ-28-HsI" kind="show" identifier="Next Chapter" id="F63-LF-dld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JR-Ta-MYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3258,6 +3260,7 @@
         <image name="One Piece 1" width="662" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x47-Ym-fHc"/>
+        <segue reference="UMr-ei-TxJ"/>
+        <segue reference="eAX-1G-Wfr"/>
     </inferredMetricsTieBreakers>
 </document>
