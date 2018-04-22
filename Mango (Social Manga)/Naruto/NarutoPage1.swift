@@ -55,6 +55,10 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     //MARK: Functions
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.imageView

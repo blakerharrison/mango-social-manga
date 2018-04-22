@@ -10,7 +10,12 @@ import UIKit
 
 class TopOfStackViewController: UIViewController {
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     let pref: UserDefaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +26,8 @@ class TopOfStackViewController: UIViewController {
         
         guard pref.bool(forKey: "AutoTransition") == true else {
             let  vc =  self.navigationController?.viewControllers.filter({$0 is LandingViewController}).first
-
             self.navigationController?.popToViewController(vc!, animated: true)
-            
+     
             return
         }
         performSegue(withIdentifier: "openBook", sender: self)
@@ -42,3 +46,5 @@ class TopOfStackViewController: UIViewController {
 //        performSegue(withIdentifier: "openBook", sender: self)
 //    }
 }
+
+

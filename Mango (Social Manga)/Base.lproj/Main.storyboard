@@ -100,7 +100,18 @@
                     <view key="view" contentMode="scaleToFill" id="diP-5e-qSr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="9pE-pG-bEC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OVO-ue-6BF" firstAttribute="trailing" secondItem="9pE-pG-bEC" secondAttribute="trailing" id="00b-dq-Nei"/>
+                            <constraint firstItem="9pE-pG-bEC" firstAttribute="leading" secondItem="OVO-ue-6BF" secondAttribute="leading" id="Q2J-Do-QXr"/>
+                            <constraint firstItem="9pE-pG-bEC" firstAttribute="top" secondItem="OVO-ue-6BF" secondAttribute="top" constant="-20" id="UDb-s9-FhQ"/>
+                            <constraint firstItem="OVO-ue-6BF" firstAttribute="bottom" secondItem="9pE-pG-bEC" secondAttribute="bottom" id="eMU-dM-HBB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OVO-ue-6BF"/>
                     </view>
                     <connections>
@@ -3189,6 +3200,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NyM-bP-H12"/>
-        <segue reference="Fvw-k6-sek"/>
+        <segue reference="zOv-Gr-VVb"/>
     </inferredMetricsTieBreakers>
 </document>
