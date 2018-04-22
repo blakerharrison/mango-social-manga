@@ -16,7 +16,6 @@ class TopOfStackViewController: UIViewController {
     
     let pref: UserDefaults = UserDefaults.standard
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,13 +37,7 @@ class TopOfStackViewController: UIViewController {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
-    
-//    public func automaticLoadBook(auto: Bool) {
-//        guard auto == true else {
-//            return print("Not automatic")
-//        }
-//        performSegue(withIdentifier: "openBook", sender: self)
-//    }
+
 }
 
 
