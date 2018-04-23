@@ -101,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransitionScreen" translatesAutoresizingMaskIntoConstraints="NO" id="9pE-pG-bEC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransitionScreenBW2" translatesAutoresizingMaskIntoConstraints="NO" id="9pE-pG-bEC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
@@ -3197,7 +3197,7 @@
         <image name="Manga Background" width="375" height="667"/>
         <image name="Naruto 1" width="1200" height="1800"/>
         <image name="One Piece 1" width="662" height="1000"/>
-        <image name="TransitionScreen" width="375" height="667"/>
+        <image name="TransitionScreenBW2" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NyM-bP-H12"/>
