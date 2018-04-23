@@ -101,6 +101,10 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         //Book Number of View Controller Algorithms
@@ -143,4 +147,6 @@ class NarutoPage: UIPageViewController, UIPageViewControllerDataSource {
         return viewControllerList[nextIndex]
     }
 }
+
+
 

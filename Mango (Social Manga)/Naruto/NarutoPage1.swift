@@ -80,9 +80,6 @@ class NarutoPage1: MangaPageViewController, UIScrollViewDelegate {
             self.present(alertController, animated: true) {
                 // ...
             }
-            
         }
     }
-    
-    
 }
