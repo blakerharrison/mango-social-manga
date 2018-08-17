@@ -167,6 +167,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C559CE1212621A3008381A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
+				2C69A0082019C2E8001A60AE /* Main.storyboard */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		2C559CE2212621B6008381A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CF1E56D207AE54A00161D5F /* LandingViewController.swift */,
+				2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */,
+				2CF1E579207AF3F900161D5F /* ImageArray.swift */,
+				2CF1E573207AECE500161D5F /* Pages */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2C559CE42126220D008381A5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2CF1E577207AF11800161D5F /* MangaPageViewController.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		2C699FF82019C2E8001A60AE = {
 			isa = PBXGroup;
 			children = (
@@ -187,19 +216,17 @@
 			isa = PBXGroup;
 			children = (
 				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
-				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
-				2C69A0082019C2E8001A60AE /* Main.storyboard */,
-				2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */,
-				2CF1E56D207AE54A00161D5F /* LandingViewController.swift */,
+				2C559CE42126220D008381A5 /* Networking */,
+				2C559CE2212621B6008381A5 /* Controller */,
+				2C559CE1212621A3008381A5 /* View */,
 				2CF1E576207AF0B100161D5F /* Model */,
-				2CF1E573207AECE500161D5F /* Naruto */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
 			);
 			path = "Mango (Social Manga)";
 			sourceTree = "<group>";
 		};
-		2CF1E573207AECE500161D5F /* Naruto */ = {
+		2CF1E573207AECE500161D5F /* Pages */ = {
 			isa = PBXGroup;
 			children = (
 				2CF1E5A8207BC2B200161D5F /* OnePiecePage.swift */,
@@ -265,14 +292,12 @@
 				2C7252E4207C7BD100B6E9C0 /* NarutoPage59.swift */,
 				2C7252E6207C7BD900B6E9C0 /* NarutoPage60.swift */,
 			);
-			path = Naruto;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		2CF1E576207AF0B100161D5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CF1E577207AF11800161D5F /* MangaPageViewController.swift */,
-				2CF1E579207AF3F900161D5F /* ImageArray.swift */,
 				2C89AA59207C0C2E00D3E387 /* PageNumber.swift */,
 			);
 			path = Model;

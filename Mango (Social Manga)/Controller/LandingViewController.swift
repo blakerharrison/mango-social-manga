@@ -62,11 +62,6 @@ class LandingViewController: UIViewController {
     {
         _ = tapGestureRecognizer.view as! UIImageView
         
-//        pref.set(109088, forKey: "Naruto")
-//        pref.synchronize()
-//
-//        performSegue(withIdentifier: "naruto", sender: nil)
-        
         //Placeholder ALERT
         let alertController = UIAlertController(title: "Chapter 1 or 2?", message: "", preferredStyle: .alert)
         
