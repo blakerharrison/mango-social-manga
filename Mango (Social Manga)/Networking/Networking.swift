@@ -49,17 +49,37 @@ func fetchJSON() {
             let product = try decoder.decode(MangaList.self, from: data!)
             
             print("Print manga")
-            print(product.manga.filter { $0.t! == "Bleach" })
+            
+            let searchedManga = "darling-in-the-franxx"
+            
+            let filteredManga = product.manga.filter { $0.a! == searchedManga }
             
             
             
+            print(type(of: filteredManga))
+            
+            print(filteredManga.map { $0.im! }) // Used to get the values from the filtered manga using map
+            
+            let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
+            
+            let mangaImagePath = filteredManga.map { $0.im! }
+            
+            let mangaImageEndpoint = mangaImageURL + mangaImagePath[0]
+            
+            print(mangaImageEndpoint)
+        
             
             
+
         } catch let parsingError {
             print("Error", parsingError)
         }
     }
     task.resume()
 }
+
+
+
+
 
 
