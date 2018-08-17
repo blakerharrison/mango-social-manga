@@ -50,7 +50,7 @@ func fetchJSON() {
             
             print("Print manga")
             
-            let searchedManga = "darling-in-the-franxx"
+            let searchedManga = "darling-in-the-franxx" //TODO: Will be replaced with a search bar feature for the user
             
             let filteredManga = product.manga.filter { $0.a! == searchedManga }
             
