@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0DB909208987C70031EF36 /* TopOfStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */; };
+		2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E2F12127CC9900F84AF1 /* Home.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfStackViewController.swift; sourceTree = "<group>"; };
+		2C63E2F12127CC9900F84AF1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C69A0092019C2E8001A60AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		2C559CE2212621B6008381A5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C63E2F12127CC9900F84AF1 /* Home.swift */,
 				2CF1E56D207AE54A00161D5F /* LandingViewController.swift */,
 				2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */,
 				2CF1E579207AF3F900161D5F /* ImageArray.swift */,
@@ -440,6 +443,7 @@
 				2CF1E5A7207B2B5900161D5F /* NarutoPage5.swift in Sources */,
 				2C7252AF207C7AD900B6E9C0 /* NarutoPage32.swift in Sources */,
 				2C7252DF207C7BB600B6E9C0 /* NarutoPage56.swift in Sources */,
+				2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */,
 				2C7252E5207C7BD100B6E9C0 /* NarutoPage59.swift in Sources */,
 				2C7252A3207C7AA200B6E9C0 /* NarutoPage25.swift in Sources */,
 				2C725299207C7A7500B6E9C0 /* NarutoPage21.swift in Sources */,

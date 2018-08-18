@@ -15,7 +15,7 @@ public class MangaPageViewController: UIViewController {
 /// - Parameters:
 ///   - theUrl: A URL.
 ///   - theImageView: Where the image will appear.
-public func loadImage(theUrl: String, theImageView: UIImageView){
+public func loadMangaImage(theUrl: String, theImageView: UIImageView){
 
     guard let url = URL(string: theUrl) else { return }
     URLSession.shared.dataTask(with: url) { (data, response, error) in

@@ -11,6 +11,8 @@
 
 import Foundation
 
+public var imageStringForCover: String = ""
+
 //Manga list - https://www.mangaeden.com/api/list/0/
 
 struct MangaList: Codable {
@@ -32,54 +34,54 @@ struct manga: Codable {
     let t: String?
 }
 
-func fetchJSON() {
-    guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
-    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-        guard let dataResponse = data,
-            error == nil else {
-                print(error?.localizedDescription ?? "Response Error")
-                return }
-        do{
-            //here dataResponse received from a network request
-            let jsonResponse = try JSONSerialization.jsonObject(with:
-                dataResponse, options: []) 
-            print(jsonResponse) //Response result
-            
-            let decoder = JSONDecoder()
-            let product = try decoder.decode(MangaList.self, from: data!)
-            
-            print("Print manga")
-            
-            let searchedManga = "darling-in-the-franxx" //TODO: Will be replaced with a search bar feature for the user
-            
-            let filteredManga = product.manga.filter { $0.a! == searchedManga }
-            
-            
-            
-            print(type(of: filteredManga))
-            
-            print(filteredManga.map { $0.im! }) // Used to get the values from the filtered manga using map
-            
-            let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
-            
-            let mangaImagePath = filteredManga.map { $0.im! }
-            
-            let mangaImageEndpoint = mangaImageURL + mangaImagePath[0]
-            
-            print(mangaImageEndpoint)
+class MangoNetworking {
+    
+    func fetchJSON() {
+        guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
         
+        DispatchQueue.main.async {
             
-            
-
-        } catch let parsingError {
-            print("Error", parsingError)
         }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                print(jsonResponse) //Response result
+                
+                let decoder = JSONDecoder()
+                let product = try decoder.decode(MangaList.self, from: data!)
+                
+                print("Print manga")
+                
+                let searchedManga = "air-gear" //TODO: Will be replaced with a search bar feature for the user
+                
+                let filteredManga = product.manga.filter { $0.a! == searchedManga }
+
+//                print(type(of: filteredManga))
+//
+//                print(filteredManga.map { $0.im! }) // Used to get the values from the filtered manga using map
+                
+                let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
+                
+                let mangaImagePath = filteredManga.map { $0.im! }
+                
+                let mangaImageEndpoint = mangaImageURL + mangaImagePath[0]
+                
+//                print(mangaImageEndpoint)
+
+                imageStringForCover = mangaImageEndpoint
+                
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
     }
-    task.resume()
+
 }
-
-
-
-
-
 
