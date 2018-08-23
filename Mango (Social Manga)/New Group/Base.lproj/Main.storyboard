@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLk-vQ-hfC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g11-OW-JO9">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,15 +24,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="jcz-No-bMD" secondAttribute="top" constant="-20" id="9Nt-Fh-BZy"/>
-                            <constraint firstItem="jcz-No-bMD" firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="PX1-bW-nmw"/>
-                            <constraint firstItem="jcz-No-bMD" firstAttribute="bottom" secondItem="5fI-eJ-5eg" secondAttribute="bottom" id="maW-rP-Icc"/>
-                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="jcz-No-bMD" secondAttribute="leading" id="uqE-QN-nIz"/>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="bottom" secondItem="jcz-No-bMD" secondAttribute="bottom" id="7Iw-ol-xwb"/>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="trailing" secondItem="jcz-No-bMD" secondAttribute="trailing" id="fSo-7e-Dey"/>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="8ah-L0-Vph" secondAttribute="top" id="yVB-kX-T4E"/>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="jcz-No-bMD" secondAttribute="leading" id="zv5-pK-F6G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wXJ-MF-owG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="FBf-2i-y03"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6955.0724637681169" y="-2807.608695652174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zvp-2s-Wcz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g11-OW-JO9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kce-sf-1aZ">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WLk-vQ-hfC" kind="relationship" relationship="rootViewController" id="hwe-yk-IiI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZr-wR-jI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6047.826086956522" y="-2807.608695652174"/>
         </scene>

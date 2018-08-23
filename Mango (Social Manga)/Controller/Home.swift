@@ -12,8 +12,14 @@ class Home: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
 }
 
 ////MARK: - Methods
