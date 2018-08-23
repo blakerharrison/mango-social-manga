@@ -17,42 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="8ah-L0-Vph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60k-7d-z8W">
-                                <rect key="frame" x="56" y="194" width="302" height="522"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xiO-Z2-bTY">
-                                <rect key="frame" x="20" y="20" width="374" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sb-VK-9p1">
-                                <rect key="frame" x="183" y="58" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="search:" destination="WLk-vQ-hfC" eventType="touchUpInside" id="3US-Lo-sUf"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xiO-Z2-bTY" firstAttribute="centerX" secondItem="60k-7d-z8W" secondAttribute="centerX" id="Fgq-4R-kUo"/>
-                            <constraint firstItem="3Sb-VK-9p1" firstAttribute="top" secondItem="xiO-Z2-bTY" secondAttribute="bottom" constant="8" symbolic="YES" id="I0b-sH-gPT"/>
-                            <constraint firstItem="xiO-Z2-bTY" firstAttribute="leading" secondItem="8ah-L0-Vph" secondAttribute="leadingMargin" id="K4u-2D-igH"/>
-                            <constraint firstItem="60k-7d-z8W" firstAttribute="leading" secondItem="jcz-No-bMD" secondAttribute="leading" constant="56" id="bPO-ZY-rai"/>
-                            <constraint firstItem="jcz-No-bMD" firstAttribute="bottom" secondItem="60k-7d-z8W" secondAttribute="bottom" constant="20" id="cw5-Ye-AG1"/>
-                            <constraint firstItem="xiO-Z2-bTY" firstAttribute="top" secondItem="jcz-No-bMD" secondAttribute="top" id="fVS-RM-9Gs"/>
-                            <constraint firstItem="3Sb-VK-9p1" firstAttribute="centerX" secondItem="xiO-Z2-bTY" secondAttribute="centerX" id="hRR-O8-bHP"/>
-                            <constraint firstItem="jcz-No-bMD" firstAttribute="trailing" secondItem="60k-7d-z8W" secondAttribute="trailing" constant="56" id="mbW-Lu-Nil"/>
-                            <constraint firstItem="60k-7d-z8W" firstAttribute="top" secondItem="jcz-No-bMD" secondAttribute="top" constant="174" id="rYk-6y-caN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="60k-7d-z8W" id="fSq-Ra-22E"/>
-                        <outlet property="searchBar" destination="xiO-Z2-bTY" id="S4q-jF-bVJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
