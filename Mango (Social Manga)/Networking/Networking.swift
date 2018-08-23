@@ -50,7 +50,7 @@ class MangoNetworking {
                     return }
             do{
                 //here dataResponse received from a network request
-                let jsonResponse = try JSONSerialization.jsonObject(with:
+                _ = try JSONSerialization.jsonObject(with:
                     dataResponse, options: [])
 //                print(jsonResponse) //Response result
                 
