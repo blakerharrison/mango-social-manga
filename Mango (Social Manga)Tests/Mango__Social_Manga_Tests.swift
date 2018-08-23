@@ -16,9 +16,5 @@ class Mango__Social_Manga_Tests: XCTestCase {
     func testExample() {
         XCTAssertEqual(5, 5)
     }
-    
-    func testPizzaVar() {
-        XCTAssertEqual("Pizza", vc.pizza)
-    }
 
 }
