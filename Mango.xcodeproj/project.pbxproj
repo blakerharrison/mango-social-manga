@@ -7,157 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C0DB909208987C70031EF36 /* TopOfStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */; };
 		2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E2F12127CC9900F84AF1 /* Home.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
-		2C72527F207C79C200B6E9C0 /* NarutoPage8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72527E207C79C200B6E9C0 /* NarutoPage8.swift */; };
-		2C725281207C79DF00B6E9C0 /* NarutoPage9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725280207C79DF00B6E9C0 /* NarutoPage9.swift */; };
-		2C725283207C79ED00B6E9C0 /* NarutoPage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725282207C79ED00B6E9C0 /* NarutoPage10.swift */; };
-		2C725285207C79FE00B6E9C0 /* NarutoPage11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725284207C79FE00B6E9C0 /* NarutoPage11.swift */; };
-		2C725287207C7A0600B6E9C0 /* NarutoPage12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725286207C7A0600B6E9C0 /* NarutoPage12.swift */; };
-		2C725289207C7A0E00B6E9C0 /* NarutoPage13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725288207C7A0E00B6E9C0 /* NarutoPage13.swift */; };
-		2C72528B207C7A1800B6E9C0 /* NarutoPage14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72528A207C7A1800B6E9C0 /* NarutoPage14.swift */; };
-		2C72528D207C7A1F00B6E9C0 /* NarutoPage15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72528C207C7A1F00B6E9C0 /* NarutoPage15.swift */; };
-		2C72528F207C7A2800B6E9C0 /* NarutoPage16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72528E207C7A2800B6E9C0 /* NarutoPage16.swift */; };
-		2C725291207C7A4700B6E9C0 /* NarutoPage17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725290207C7A4700B6E9C0 /* NarutoPage17.swift */; };
-		2C725293207C7A4F00B6E9C0 /* NarutoPage18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725292207C7A4F00B6E9C0 /* NarutoPage18.swift */; };
-		2C725295207C7A5600B6E9C0 /* NarutoPage19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725294207C7A5600B6E9C0 /* NarutoPage19.swift */; };
-		2C725297207C7A6B00B6E9C0 /* NarutoPage20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725296207C7A6B00B6E9C0 /* NarutoPage20.swift */; };
-		2C725299207C7A7500B6E9C0 /* NarutoPage21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C725298207C7A7500B6E9C0 /* NarutoPage21.swift */; };
-		2C72529B207C7A7F00B6E9C0 /* NarutoPage22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72529A207C7A7F00B6E9C0 /* NarutoPage22.swift */; };
-		2C72529D207C7A8800B6E9C0 /* NarutoPage23.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72529C207C7A8800B6E9C0 /* NarutoPage23.swift */; };
-		2C72529F207C7A9100B6E9C0 /* NarutoPage24.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72529E207C7A9100B6E9C0 /* NarutoPage24.swift */; };
-		2C7252A1207C7A9900B6E9C0 /* NarutoPage26.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252A0207C7A9900B6E9C0 /* NarutoPage26.swift */; };
-		2C7252A3207C7AA200B6E9C0 /* NarutoPage25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252A2207C7AA200B6E9C0 /* NarutoPage25.swift */; };
-		2C7252A5207C7AB000B6E9C0 /* NarutoPage27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252A4207C7AB000B6E9C0 /* NarutoPage27.swift */; };
-		2C7252A7207C7AB800B6E9C0 /* NarutoPage28.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252A6207C7AB800B6E9C0 /* NarutoPage28.swift */; };
-		2C7252A9207C7AC100B6E9C0 /* NarutoPage29.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252A8207C7AC100B6E9C0 /* NarutoPage29.swift */; };
-		2C7252AB207C7AC800B6E9C0 /* NarutoPage30.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252AA207C7AC800B6E9C0 /* NarutoPage30.swift */; };
-		2C7252AD207C7AD000B6E9C0 /* NarutoPage31.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252AC207C7ACF00B6E9C0 /* NarutoPage31.swift */; };
-		2C7252AF207C7AD900B6E9C0 /* NarutoPage32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252AE207C7AD900B6E9C0 /* NarutoPage32.swift */; };
-		2C7252B1207C7AE200B6E9C0 /* NarutoPage33.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252B0207C7AE100B6E9C0 /* NarutoPage33.swift */; };
-		2C7252B3207C7AEB00B6E9C0 /* NarutoPage34.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252B2207C7AEB00B6E9C0 /* NarutoPage34.swift */; };
-		2C7252B5207C7AF300B6E9C0 /* NarutoPage35.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252B4207C7AF300B6E9C0 /* NarutoPage35.swift */; };
-		2C7252B7207C7AFA00B6E9C0 /* NarutoPage36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252B6207C7AFA00B6E9C0 /* NarutoPage36.swift */; };
-		2C7252B9207C7B0200B6E9C0 /* NarutoPage37.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252B8207C7B0200B6E9C0 /* NarutoPage37.swift */; };
-		2C7252BB207C7B0A00B6E9C0 /* NarutoPage38.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252BA207C7B0A00B6E9C0 /* NarutoPage38.swift */; };
-		2C7252BD207C7B1200B6E9C0 /* NarutoPage39.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252BC207C7B1200B6E9C0 /* NarutoPage39.swift */; };
-		2C7252BF207C7B1900B6E9C0 /* NarutoPage40.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252BE207C7B1900B6E9C0 /* NarutoPage40.swift */; };
-		2C7252C1207C7B2200B6E9C0 /* NarutoPage41.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252C0207C7B2200B6E9C0 /* NarutoPage41.swift */; };
-		2C7252C3207C7B2B00B6E9C0 /* NarutoPage42.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252C2207C7B2B00B6E9C0 /* NarutoPage42.swift */; };
-		2C7252C5207C7B3500B6E9C0 /* NarutoPage43.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252C4207C7B3400B6E9C0 /* NarutoPage43.swift */; };
-		2C7252C7207C7B3F00B6E9C0 /* NarutoPage44.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252C6207C7B3F00B6E9C0 /* NarutoPage44.swift */; };
-		2C7252C9207C7B4D00B6E9C0 /* NarutoPage45.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252C8207C7B4D00B6E9C0 /* NarutoPage45.swift */; };
-		2C7252CB207C7B5600B6E9C0 /* NarutoPage46.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252CA207C7B5600B6E9C0 /* NarutoPage46.swift */; };
-		2C7252CD207C7B6000B6E9C0 /* NarutoPage47.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252CC207C7B6000B6E9C0 /* NarutoPage47.swift */; };
-		2C7252CF207C7B6D00B6E9C0 /* NarutoPage48.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252CE207C7B6D00B6E9C0 /* NarutoPage48.swift */; };
-		2C7252D1207C7B7800B6E9C0 /* NarutoPage49.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252D0207C7B7800B6E9C0 /* NarutoPage49.swift */; };
-		2C7252D3207C7B8200B6E9C0 /* NarutoPage50.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252D2207C7B8200B6E9C0 /* NarutoPage50.swift */; };
-		2C7252D5207C7B8A00B6E9C0 /* NarutoPage51.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252D4207C7B8A00B6E9C0 /* NarutoPage51.swift */; };
-		2C7252D7207C7B9400B6E9C0 /* NarutoPage52.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252D6207C7B9400B6E9C0 /* NarutoPage52.swift */; };
-		2C7252D9207C7B9E00B6E9C0 /* NarutoPage53.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252D8207C7B9E00B6E9C0 /* NarutoPage53.swift */; };
-		2C7252DB207C7BA600B6E9C0 /* NarutoPage54.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252DA207C7BA600B6E9C0 /* NarutoPage54.swift */; };
-		2C7252DD207C7BAD00B6E9C0 /* NarutoPage55.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252DC207C7BAD00B6E9C0 /* NarutoPage55.swift */; };
-		2C7252DF207C7BB600B6E9C0 /* NarutoPage56.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252DE207C7BB600B6E9C0 /* NarutoPage56.swift */; };
-		2C7252E1207C7BC000B6E9C0 /* NarutoPage57.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252E0207C7BC000B6E9C0 /* NarutoPage57.swift */; };
-		2C7252E3207C7BC800B6E9C0 /* NarutoPage58.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252E2207C7BC800B6E9C0 /* NarutoPage58.swift */; };
-		2C7252E5207C7BD100B6E9C0 /* NarutoPage59.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252E4207C7BD100B6E9C0 /* NarutoPage59.swift */; };
-		2C7252E7207C7BD900B6E9C0 /* NarutoPage60.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7252E6207C7BD900B6E9C0 /* NarutoPage60.swift */; };
-		2C89AA5A207C0C2E00D3E387 /* PageNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C89AA59207C0C2E00D3E387 /* PageNumber.swift */; };
-		2C89AA5C207C1D8C00D3E387 /* NarutoPage6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C89AA5B207C1D8C00D3E387 /* NarutoPage6.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
-		2CF1E56E207AE54A00161D5F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E56D207AE54A00161D5F /* LandingViewController.swift */; };
-		2CF1E572207AE9E700161D5F /* NarutoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E571207AE9E700161D5F /* NarutoPage.swift */; };
-		2CF1E575207AED1C00161D5F /* NarutoPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E574207AED1C00161D5F /* NarutoPage1.swift */; };
-		2CF1E578207AF11800161D5F /* MangaPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E577207AF11800161D5F /* MangaPageViewController.swift */; };
-		2CF1E57A207AF3F900161D5F /* ImageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E579207AF3F900161D5F /* ImageArray.swift */; };
-		2CF1E57E207AF99F00161D5F /* NarutoPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */; };
-		2CF1E580207AF9AD00161D5F /* NarutoPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
-		2CF1E5A5207B277A00161D5F /* NarutoPage4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */; };
-		2CF1E5A7207B2B5900161D5F /* NarutoPage5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */; };
-		2CF1E5A9207BC2B200161D5F /* OnePiecePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A8207BC2B200161D5F /* OnePiecePage.swift */; };
-		2CFD5002207C6D860071CBFC /* NarutoPage7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD5001207C6D860071CBFC /* NarutoPage7.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOfStackViewController.swift; sourceTree = "<group>"; };
 		2C63E2F12127CC9900F84AF1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C69A0092019C2E8001A60AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C69A00B2019C2E8001A60AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C69A0102019C2E9001A60AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C72527E207C79C200B6E9C0 /* NarutoPage8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage8.swift; sourceTree = "<group>"; };
-		2C725280207C79DF00B6E9C0 /* NarutoPage9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage9.swift; sourceTree = "<group>"; };
-		2C725282207C79ED00B6E9C0 /* NarutoPage10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage10.swift; sourceTree = "<group>"; };
-		2C725284207C79FE00B6E9C0 /* NarutoPage11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage11.swift; sourceTree = "<group>"; };
-		2C725286207C7A0600B6E9C0 /* NarutoPage12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage12.swift; sourceTree = "<group>"; };
-		2C725288207C7A0E00B6E9C0 /* NarutoPage13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage13.swift; sourceTree = "<group>"; };
-		2C72528A207C7A1800B6E9C0 /* NarutoPage14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage14.swift; sourceTree = "<group>"; };
-		2C72528C207C7A1F00B6E9C0 /* NarutoPage15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage15.swift; sourceTree = "<group>"; };
-		2C72528E207C7A2800B6E9C0 /* NarutoPage16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage16.swift; sourceTree = "<group>"; };
-		2C725290207C7A4700B6E9C0 /* NarutoPage17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage17.swift; sourceTree = "<group>"; };
-		2C725292207C7A4F00B6E9C0 /* NarutoPage18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage18.swift; sourceTree = "<group>"; };
-		2C725294207C7A5600B6E9C0 /* NarutoPage19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage19.swift; sourceTree = "<group>"; };
-		2C725296207C7A6B00B6E9C0 /* NarutoPage20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage20.swift; sourceTree = "<group>"; };
-		2C725298207C7A7500B6E9C0 /* NarutoPage21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage21.swift; sourceTree = "<group>"; };
-		2C72529A207C7A7F00B6E9C0 /* NarutoPage22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage22.swift; sourceTree = "<group>"; };
-		2C72529C207C7A8800B6E9C0 /* NarutoPage23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage23.swift; sourceTree = "<group>"; };
-		2C72529E207C7A9100B6E9C0 /* NarutoPage24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage24.swift; sourceTree = "<group>"; };
-		2C7252A0207C7A9900B6E9C0 /* NarutoPage26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage26.swift; sourceTree = "<group>"; };
-		2C7252A2207C7AA200B6E9C0 /* NarutoPage25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage25.swift; sourceTree = "<group>"; };
-		2C7252A4207C7AB000B6E9C0 /* NarutoPage27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage27.swift; sourceTree = "<group>"; };
-		2C7252A6207C7AB800B6E9C0 /* NarutoPage28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage28.swift; sourceTree = "<group>"; };
-		2C7252A8207C7AC100B6E9C0 /* NarutoPage29.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage29.swift; sourceTree = "<group>"; };
-		2C7252AA207C7AC800B6E9C0 /* NarutoPage30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage30.swift; sourceTree = "<group>"; };
-		2C7252AC207C7ACF00B6E9C0 /* NarutoPage31.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage31.swift; sourceTree = "<group>"; };
-		2C7252AE207C7AD900B6E9C0 /* NarutoPage32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage32.swift; sourceTree = "<group>"; };
-		2C7252B0207C7AE100B6E9C0 /* NarutoPage33.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage33.swift; sourceTree = "<group>"; };
-		2C7252B2207C7AEB00B6E9C0 /* NarutoPage34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage34.swift; sourceTree = "<group>"; };
-		2C7252B4207C7AF300B6E9C0 /* NarutoPage35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage35.swift; sourceTree = "<group>"; };
-		2C7252B6207C7AFA00B6E9C0 /* NarutoPage36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage36.swift; sourceTree = "<group>"; };
-		2C7252B8207C7B0200B6E9C0 /* NarutoPage37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage37.swift; sourceTree = "<group>"; };
-		2C7252BA207C7B0A00B6E9C0 /* NarutoPage38.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage38.swift; sourceTree = "<group>"; };
-		2C7252BC207C7B1200B6E9C0 /* NarutoPage39.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage39.swift; sourceTree = "<group>"; };
-		2C7252BE207C7B1900B6E9C0 /* NarutoPage40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage40.swift; sourceTree = "<group>"; };
-		2C7252C0207C7B2200B6E9C0 /* NarutoPage41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage41.swift; sourceTree = "<group>"; };
-		2C7252C2207C7B2B00B6E9C0 /* NarutoPage42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage42.swift; sourceTree = "<group>"; };
-		2C7252C4207C7B3400B6E9C0 /* NarutoPage43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage43.swift; sourceTree = "<group>"; };
-		2C7252C6207C7B3F00B6E9C0 /* NarutoPage44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage44.swift; sourceTree = "<group>"; };
-		2C7252C8207C7B4D00B6E9C0 /* NarutoPage45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage45.swift; sourceTree = "<group>"; };
-		2C7252CA207C7B5600B6E9C0 /* NarutoPage46.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage46.swift; sourceTree = "<group>"; };
-		2C7252CC207C7B6000B6E9C0 /* NarutoPage47.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage47.swift; sourceTree = "<group>"; };
-		2C7252CE207C7B6D00B6E9C0 /* NarutoPage48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage48.swift; sourceTree = "<group>"; };
-		2C7252D0207C7B7800B6E9C0 /* NarutoPage49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage49.swift; sourceTree = "<group>"; };
-		2C7252D2207C7B8200B6E9C0 /* NarutoPage50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage50.swift; sourceTree = "<group>"; };
-		2C7252D4207C7B8A00B6E9C0 /* NarutoPage51.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage51.swift; sourceTree = "<group>"; };
-		2C7252D6207C7B9400B6E9C0 /* NarutoPage52.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage52.swift; sourceTree = "<group>"; };
-		2C7252D8207C7B9E00B6E9C0 /* NarutoPage53.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage53.swift; sourceTree = "<group>"; };
-		2C7252DA207C7BA600B6E9C0 /* NarutoPage54.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage54.swift; sourceTree = "<group>"; };
-		2C7252DC207C7BAD00B6E9C0 /* NarutoPage55.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage55.swift; sourceTree = "<group>"; };
-		2C7252DE207C7BB600B6E9C0 /* NarutoPage56.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage56.swift; sourceTree = "<group>"; };
-		2C7252E0207C7BC000B6E9C0 /* NarutoPage57.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage57.swift; sourceTree = "<group>"; };
-		2C7252E2207C7BC800B6E9C0 /* NarutoPage58.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage58.swift; sourceTree = "<group>"; };
-		2C7252E4207C7BD100B6E9C0 /* NarutoPage59.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage59.swift; sourceTree = "<group>"; };
-		2C7252E6207C7BD900B6E9C0 /* NarutoPage60.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage60.swift; sourceTree = "<group>"; };
-		2C89AA59207C0C2E00D3E387 /* PageNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNumber.swift; sourceTree = "<group>"; };
-		2C89AA5B207C1D8C00D3E387 /* NarutoPage6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage6.swift; sourceTree = "<group>"; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		2CF1E56D207AE54A00161D5F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		2CF1E571207AE9E700161D5F /* NarutoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage.swift; sourceTree = "<group>"; };
-		2CF1E574207AED1C00161D5F /* NarutoPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage1.swift; sourceTree = "<group>"; };
-		2CF1E577207AF11800161D5F /* MangaPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaPageViewController.swift; sourceTree = "<group>"; };
-		2CF1E579207AF3F900161D5F /* ImageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageArray.swift; sourceTree = "<group>"; };
-		2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage2.swift; sourceTree = "<group>"; };
-		2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage3.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage4.swift; sourceTree = "<group>"; };
-		2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage5.swift; sourceTree = "<group>"; };
-		2CF1E5A8207BC2B200161D5F /* OnePiecePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePiecePage.swift; sourceTree = "<group>"; };
-		2CFD5001207C6D860071CBFC /* NarutoPage7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarutoPage7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				2C63E2F12127CC9900F84AF1 /* Home.swift */,
-				2CF1E56D207AE54A00161D5F /* LandingViewController.swift */,
-				2C0DB908208987C70031EF36 /* TopOfStackViewController.swift */,
-				2CF1E579207AF3F900161D5F /* ImageArray.swift */,
-				2CF1E573207AECE500161D5F /* Pages */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,7 +58,6 @@
 		2C559CE42126220D008381A5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2CF1E577207AF11800161D5F /* MangaPageViewController.swift */,
 				2CD9A82B2126667700108F5B /* Networking.swift */,
 			);
 			path = Networking;
@@ -223,88 +84,18 @@
 			children = (
 				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
 				2C559CE42126220D008381A5 /* Networking */,
-				2C559CE2212621B6008381A5 /* Controller */,
-				2C559CE1212621A3008381A5 /* View */,
 				2CF1E576207AF0B100161D5F /* Model */,
+				2C559CE1212621A3008381A5 /* View */,
+				2C559CE2212621B6008381A5 /* Controller */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
 			);
 			path = "Mango (Social Manga)";
 			sourceTree = "<group>";
 		};
-		2CF1E573207AECE500161D5F /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				2CF1E5A8207BC2B200161D5F /* OnePiecePage.swift */,
-				2CF1E571207AE9E700161D5F /* NarutoPage.swift */,
-				2CF1E574207AED1C00161D5F /* NarutoPage1.swift */,
-				2CF1E57D207AF99F00161D5F /* NarutoPage2.swift */,
-				2CF1E57F207AF9AD00161D5F /* NarutoPage3.swift */,
-				2CF1E5A4207B277A00161D5F /* NarutoPage4.swift */,
-				2CF1E5A6207B2B5900161D5F /* NarutoPage5.swift */,
-				2C89AA5B207C1D8C00D3E387 /* NarutoPage6.swift */,
-				2CFD5001207C6D860071CBFC /* NarutoPage7.swift */,
-				2C72527E207C79C200B6E9C0 /* NarutoPage8.swift */,
-				2C725280207C79DF00B6E9C0 /* NarutoPage9.swift */,
-				2C725282207C79ED00B6E9C0 /* NarutoPage10.swift */,
-				2C725284207C79FE00B6E9C0 /* NarutoPage11.swift */,
-				2C725286207C7A0600B6E9C0 /* NarutoPage12.swift */,
-				2C725288207C7A0E00B6E9C0 /* NarutoPage13.swift */,
-				2C72528A207C7A1800B6E9C0 /* NarutoPage14.swift */,
-				2C72528C207C7A1F00B6E9C0 /* NarutoPage15.swift */,
-				2C72528E207C7A2800B6E9C0 /* NarutoPage16.swift */,
-				2C725290207C7A4700B6E9C0 /* NarutoPage17.swift */,
-				2C725292207C7A4F00B6E9C0 /* NarutoPage18.swift */,
-				2C725294207C7A5600B6E9C0 /* NarutoPage19.swift */,
-				2C725296207C7A6B00B6E9C0 /* NarutoPage20.swift */,
-				2C725298207C7A7500B6E9C0 /* NarutoPage21.swift */,
-				2C72529A207C7A7F00B6E9C0 /* NarutoPage22.swift */,
-				2C72529C207C7A8800B6E9C0 /* NarutoPage23.swift */,
-				2C72529E207C7A9100B6E9C0 /* NarutoPage24.swift */,
-				2C7252A2207C7AA200B6E9C0 /* NarutoPage25.swift */,
-				2C7252A0207C7A9900B6E9C0 /* NarutoPage26.swift */,
-				2C7252A4207C7AB000B6E9C0 /* NarutoPage27.swift */,
-				2C7252A6207C7AB800B6E9C0 /* NarutoPage28.swift */,
-				2C7252A8207C7AC100B6E9C0 /* NarutoPage29.swift */,
-				2C7252AA207C7AC800B6E9C0 /* NarutoPage30.swift */,
-				2C7252AC207C7ACF00B6E9C0 /* NarutoPage31.swift */,
-				2C7252AE207C7AD900B6E9C0 /* NarutoPage32.swift */,
-				2C7252B0207C7AE100B6E9C0 /* NarutoPage33.swift */,
-				2C7252B2207C7AEB00B6E9C0 /* NarutoPage34.swift */,
-				2C7252B4207C7AF300B6E9C0 /* NarutoPage35.swift */,
-				2C7252B6207C7AFA00B6E9C0 /* NarutoPage36.swift */,
-				2C7252B8207C7B0200B6E9C0 /* NarutoPage37.swift */,
-				2C7252BA207C7B0A00B6E9C0 /* NarutoPage38.swift */,
-				2C7252BC207C7B1200B6E9C0 /* NarutoPage39.swift */,
-				2C7252BE207C7B1900B6E9C0 /* NarutoPage40.swift */,
-				2C7252C0207C7B2200B6E9C0 /* NarutoPage41.swift */,
-				2C7252C2207C7B2B00B6E9C0 /* NarutoPage42.swift */,
-				2C7252C4207C7B3400B6E9C0 /* NarutoPage43.swift */,
-				2C7252C6207C7B3F00B6E9C0 /* NarutoPage44.swift */,
-				2C7252C8207C7B4D00B6E9C0 /* NarutoPage45.swift */,
-				2C7252CA207C7B5600B6E9C0 /* NarutoPage46.swift */,
-				2C7252CC207C7B6000B6E9C0 /* NarutoPage47.swift */,
-				2C7252CE207C7B6D00B6E9C0 /* NarutoPage48.swift */,
-				2C7252D0207C7B7800B6E9C0 /* NarutoPage49.swift */,
-				2C7252D2207C7B8200B6E9C0 /* NarutoPage50.swift */,
-				2C7252D4207C7B8A00B6E9C0 /* NarutoPage51.swift */,
-				2C7252D6207C7B9400B6E9C0 /* NarutoPage52.swift */,
-				2C7252D8207C7B9E00B6E9C0 /* NarutoPage53.swift */,
-				2C7252DA207C7BA600B6E9C0 /* NarutoPage54.swift */,
-				2C7252DC207C7BAD00B6E9C0 /* NarutoPage55.swift */,
-				2C7252DE207C7BB600B6E9C0 /* NarutoPage56.swift */,
-				2C7252E0207C7BC000B6E9C0 /* NarutoPage57.swift */,
-				2C7252E2207C7BC800B6E9C0 /* NarutoPage58.swift */,
-				2C7252E4207C7BD100B6E9C0 /* NarutoPage59.swift */,
-				2C7252E6207C7BD900B6E9C0 /* NarutoPage60.swift */,
-			);
-			path = Pages;
-			sourceTree = "<group>";
-		};
 		2CF1E576207AF0B100161D5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C89AA59207C0C2E00D3E387 /* PageNumber.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,76 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C72529D207C7A8800B6E9C0 /* NarutoPage23.swift in Sources */,
-				2C7252E3207C7BC800B6E9C0 /* NarutoPage58.swift in Sources */,
-				2C7252DD207C7BAD00B6E9C0 /* NarutoPage55.swift in Sources */,
-				2CF1E572207AE9E700161D5F /* NarutoPage.swift in Sources */,
-				2C72529B207C7A7F00B6E9C0 /* NarutoPage22.swift in Sources */,
-				2C72529F207C7A9100B6E9C0 /* NarutoPage24.swift in Sources */,
-				2C725295207C7A5600B6E9C0 /* NarutoPage19.swift in Sources */,
-				2C7252D5207C7B8A00B6E9C0 /* NarutoPage51.swift in Sources */,
-				2C7252DB207C7BA600B6E9C0 /* NarutoPage54.swift in Sources */,
-				2C7252AB207C7AC800B6E9C0 /* NarutoPage30.swift in Sources */,
-				2C7252A7207C7AB800B6E9C0 /* NarutoPage28.swift in Sources */,
-				2C725287207C7A0600B6E9C0 /* NarutoPage12.swift in Sources */,
-				2C7252D1207C7B7800B6E9C0 /* NarutoPage49.swift in Sources */,
-				2C725297207C7A6B00B6E9C0 /* NarutoPage20.swift in Sources */,
-				2C7252D9207C7B9E00B6E9C0 /* NarutoPage53.swift in Sources */,
-				2C7252B1207C7AE200B6E9C0 /* NarutoPage33.swift in Sources */,
-				2C7252E1207C7BC000B6E9C0 /* NarutoPage57.swift in Sources */,
-				2CF1E56E207AE54A00161D5F /* LandingViewController.swift in Sources */,
-				2C7252B7207C7AFA00B6E9C0 /* NarutoPage36.swift in Sources */,
-				2C7252B5207C7AF300B6E9C0 /* NarutoPage35.swift in Sources */,
-				2C72528D207C7A1F00B6E9C0 /* NarutoPage15.swift in Sources */,
-				2CF1E578207AF11800161D5F /* MangaPageViewController.swift in Sources */,
-				2C72528F207C7A2800B6E9C0 /* NarutoPage16.swift in Sources */,
-				2C7252A1207C7A9900B6E9C0 /* NarutoPage26.swift in Sources */,
-				2C7252B9207C7B0200B6E9C0 /* NarutoPage37.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
-				2C72527F207C79C200B6E9C0 /* NarutoPage8.swift in Sources */,
-				2C725285207C79FE00B6E9C0 /* NarutoPage11.swift in Sources */,
-				2C7252CB207C7B5600B6E9C0 /* NarutoPage46.swift in Sources */,
-				2CF1E57E207AF99F00161D5F /* NarutoPage2.swift in Sources */,
 				2CD9A82C2126667700108F5B /* Networking.swift in Sources */,
-				2C7252C7207C7B3F00B6E9C0 /* NarutoPage44.swift in Sources */,
-				2C7252D7207C7B9400B6E9C0 /* NarutoPage52.swift in Sources */,
-				2CFD5002207C6D860071CBFC /* NarutoPage7.swift in Sources */,
-				2CF1E580207AF9AD00161D5F /* NarutoPage3.swift in Sources */,
-				2CF1E575207AED1C00161D5F /* NarutoPage1.swift in Sources */,
-				2C725289207C7A0E00B6E9C0 /* NarutoPage13.swift in Sources */,
-				2CF1E5A5207B277A00161D5F /* NarutoPage4.swift in Sources */,
-				2C72528B207C7A1800B6E9C0 /* NarutoPage14.swift in Sources */,
-				2C0DB909208987C70031EF36 /* TopOfStackViewController.swift in Sources */,
-				2C725293207C7A4F00B6E9C0 /* NarutoPage18.swift in Sources */,
-				2C89AA5C207C1D8C00D3E387 /* NarutoPage6.swift in Sources */,
-				2C725281207C79DF00B6E9C0 /* NarutoPage9.swift in Sources */,
-				2C725283207C79ED00B6E9C0 /* NarutoPage10.swift in Sources */,
-				2C7252A5207C7AB000B6E9C0 /* NarutoPage27.swift in Sources */,
-				2C7252D3207C7B8200B6E9C0 /* NarutoPage50.swift in Sources */,
-				2C7252BF207C7B1900B6E9C0 /* NarutoPage40.swift in Sources */,
-				2C7252AD207C7AD000B6E9C0 /* NarutoPage31.swift in Sources */,
-				2C7252C9207C7B4D00B6E9C0 /* NarutoPage45.swift in Sources */,
-				2C725291207C7A4700B6E9C0 /* NarutoPage17.swift in Sources */,
-				2C7252E7207C7BD900B6E9C0 /* NarutoPage60.swift in Sources */,
-				2C7252B3207C7AEB00B6E9C0 /* NarutoPage34.swift in Sources */,
-				2C89AA5A207C0C2E00D3E387 /* PageNumber.swift in Sources */,
-				2C7252C3207C7B2B00B6E9C0 /* NarutoPage42.swift in Sources */,
-				2C7252CD207C7B6000B6E9C0 /* NarutoPage47.swift in Sources */,
-				2C7252A9207C7AC100B6E9C0 /* NarutoPage29.swift in Sources */,
-				2CF1E57A207AF3F900161D5F /* ImageArray.swift in Sources */,
-				2C7252C1207C7B2200B6E9C0 /* NarutoPage41.swift in Sources */,
-				2C7252BD207C7B1200B6E9C0 /* NarutoPage39.swift in Sources */,
-				2CF1E5A7207B2B5900161D5F /* NarutoPage5.swift in Sources */,
-				2C7252AF207C7AD900B6E9C0 /* NarutoPage32.swift in Sources */,
-				2C7252DF207C7BB600B6E9C0 /* NarutoPage56.swift in Sources */,
 				2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */,
-				2C7252E5207C7BD100B6E9C0 /* NarutoPage59.swift in Sources */,
-				2C7252A3207C7AA200B6E9C0 /* NarutoPage25.swift in Sources */,
-				2C725299207C7A7500B6E9C0 /* NarutoPage21.swift in Sources */,
-				2CF1E5A9207BC2B200161D5F /* OnePiecePage.swift in Sources */,
-				2C7252CF207C7B6D00B6E9C0 /* NarutoPage48.swift in Sources */,
-				2C7252C5207C7B3500B6E9C0 /* NarutoPage43.swift in Sources */,
-				2C7252BB207C7B0A00B6E9C0 /* NarutoPage38.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
