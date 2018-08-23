@@ -10,6 +10,7 @@ import UIKit
 
 class Home: UIViewController {
     
+    var pizza = "Pizza"
     //MARK: - Properties
     let userQueue = DispatchQueue.global(qos: .userInitiated)
     

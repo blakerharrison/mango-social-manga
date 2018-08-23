@@ -7,11 +7,18 @@
 //
 
 import XCTest
+@testable import Mango__Social_Manga_
 
 class Mango__Social_Manga_Tests: XCTestCase {
 
+    let vc = Home()
+    
     func testExample() {
         XCTAssertEqual(5, 5)
+    }
+    
+    func testPizzaVar() {
+        XCTAssertEqual("Pizz", vc.pizza)
     }
 
 }
