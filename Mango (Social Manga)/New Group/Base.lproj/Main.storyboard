@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="8ah-L0-Vph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="5fI-eJ-5eg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="jcz-No-bMD" secondAttribute="top" constant="-20" id="9Nt-Fh-BZy"/>
+                            <constraint firstItem="jcz-No-bMD" firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="PX1-bW-nmw"/>
+                            <constraint firstItem="jcz-No-bMD" firstAttribute="bottom" secondItem="5fI-eJ-5eg" secondAttribute="bottom" id="maW-rP-Icc"/>
+                            <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="jcz-No-bMD" secondAttribute="leading" id="uqE-QN-nIz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="6047.826086956522" y="-2807.608695652174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background2" width="375" height="667"/>
+    </resources>
 </document>
