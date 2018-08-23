@@ -10,16 +10,20 @@ import UIKit
 
 class Home: UIViewController {
     
+    //MARK: - Properties
+    let userQueue = DispatchQueue.global(qos: .userInitiated)
+    
     //MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var searchBar: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sleep(10)
-        
-        
-        print("URL for image: \(imageStringForCover)")
+    }
+    
+    //MARK: - Methods
+    func setImage() {
+//        print("URL for image: \(imageStringForCover)")
         
         guard let url = URL(string: imageStringForCover) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -42,4 +46,14 @@ class Home: UIViewController {
             }
             }.resume()
     }
-}
+    
+    //MARK: - Actions
+    @IBAction func search(_ sender: Any) {
+        
+            MangoNetworking().fetchJSON(search: self.searchBar.text!)
+            self.setImage()
+        }
+        
+    }
+
+

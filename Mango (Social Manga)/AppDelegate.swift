@@ -14,19 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //TODO: Post functions here
         
-        let group = DispatchGroup()
-        group.enter()
-        
-        // avoid deadlocks by not using .main queue here
-        DispatchQueue.global(qos: .default).async {
-            MangoNetworking().fetchJSON()
-            group.leave()
-        }
-        
-        // wait ...
-        group.wait()
+//            MangoNetworking().fetchJSON()
         
         return true
     }
