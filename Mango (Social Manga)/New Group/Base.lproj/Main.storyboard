@@ -21,12 +21,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="5fI-eJ-5eg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-Nj-rIl">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" id="cBG-mC-yb4">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cBG-mC-yb4" id="gnv-TA-XqG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WLk-vQ-hfC" id="iBZ-U4-7tq"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5fI-eJ-5eg" firstAttribute="bottom" secondItem="jcz-No-bMD" secondAttribute="bottom" id="7Iw-ol-xwb"/>
+                            <constraint firstItem="0p5-Nj-rIl" firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="D6J-BB-JTR"/>
                             <constraint firstItem="5fI-eJ-5eg" firstAttribute="trailing" secondItem="jcz-No-bMD" secondAttribute="trailing" id="fSo-7e-Dey"/>
+                            <constraint firstItem="0p5-Nj-rIl" firstAttribute="top" secondItem="jcz-No-bMD" secondAttribute="top" id="kGi-Tl-biV"/>
+                            <constraint firstItem="0p5-Nj-rIl" firstAttribute="bottom" secondItem="5fI-eJ-5eg" secondAttribute="bottom" id="ndd-0S-NDP"/>
                             <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="8ah-L0-Vph" secondAttribute="top" id="yVB-kX-T4E"/>
+                            <constraint firstItem="0p5-Nj-rIl" firstAttribute="leading" secondItem="5fI-eJ-5eg" secondAttribute="leading" id="zP6-oz-jt7"/>
                             <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="jcz-No-bMD" secondAttribute="leading" id="zv5-pK-F6G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>

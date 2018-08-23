@@ -8,8 +8,14 @@
 
 import UIKit
 
+var mangaTitles = ["Naruto", "One Piece", "Bleach"]
+
 class Home: UIViewController {
 
+    //MARK: - Properties
+
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -20,6 +26,27 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
+    
+    
+    
+}
+
+//MARK: - Extensions
+extension UIViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mangaTitles.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
+        
+        let book = mangaTitles[indexPath.row]
+        cell.textLabel?.text = book
+        
+        return cell
+    }
+    
 }
 
 ////MARK: - Methods
