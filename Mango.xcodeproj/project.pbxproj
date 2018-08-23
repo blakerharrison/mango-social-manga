@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C063DBB212E506600C85001 /* Mango__Social_Manga_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */; };
 		2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E2F12127CC9900F84AF1 /* Home.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
@@ -15,7 +16,20 @@
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2C063DBD212E506600C85001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C699FF92019C2E8001A60AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C69A0002019C2E8001A60AE;
+			remoteInfo = "Mango (Social Manga)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mango (Social Manga)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mango__Social_Manga_Tests.swift; sourceTree = "<group>"; };
+		2C063DBC212E506600C85001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C63E2F12127CC9900F84AF1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C063DB5212E506600C85001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C699FFE2019C2E8001A60AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C063DB9212E506600C85001 /* Mango (Social Manga)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */,
+				2C063DBC212E506600C85001 /* Info.plist */,
+			);
+			path = "Mango (Social Manga)Tests";
+			sourceTree = "<group>";
+		};
 		2C559CE1212621A3008381A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				2C69A0032019C2E8001A60AE /* Mango (Social Manga) */,
+				2C063DB9212E506600C85001 /* Mango (Social Manga)Tests */,
 				2C69A0022019C2E8001A60AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */,
+				2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +135,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2C063DB7212E506600C85001 /* Mango (Social Manga)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C063DBF212E506600C85001 /* Build configuration list for PBXNativeTarget "Mango (Social Manga)Tests" */;
+			buildPhases = (
+				2C063DB4212E506600C85001 /* Sources */,
+				2C063DB5212E506600C85001 /* Frameworks */,
+				2C063DB6212E506600C85001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C063DBE212E506600C85001 /* PBXTargetDependency */,
+			);
+			name = "Mango (Social Manga)Tests";
+			productName = "Mango (Social Manga)Tests";
+			productReference = 2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2C69A0002019C2E8001A60AE /* Mango (Social Manga) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C69A0132019C2E9001A60AE /* Build configuration list for PBXNativeTarget "Mango (Social Manga)" */;
@@ -126,10 +176,15 @@
 		2C699FF92019C2E8001A60AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Blake Harrison";
 				TargetAttributes = {
+					2C063DB7212E506600C85001 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2C69A0002019C2E8001A60AE;
+					};
 					2C69A0002019C2E8001A60AE = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -150,11 +205,19 @@
 			projectRoot = "";
 			targets = (
 				2C69A0002019C2E8001A60AE /* Mango (Social Manga) */,
+				2C063DB7212E506600C85001 /* Mango (Social Manga)Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C063DB6212E506600C85001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C699FFF2019C2E8001A60AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +231,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C063DB4212E506600C85001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C063DBB212E506600C85001 /* Mango__Social_Manga_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C699FFD2019C2E8001A60AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +250,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C063DBE212E506600C85001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C69A0002019C2E8001A60AE /* Mango (Social Manga) */;
+			targetProxy = 2C063DBD212E506600C85001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C69A0082019C2E8001A60AE /* Main.storyboard */ = {
@@ -192,6 +271,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2C063DC0212E506600C85001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MA84G22696;
+				INFOPLIST_FILE = "Mango (Social Manga)Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrisonrblake.Mango--Social-Manga-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mango (Social Manga).app/Mango (Social Manga)";
+			};
+			name = Debug;
+		};
+		2C063DC1212E506600C85001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MA84G22696;
+				INFOPLIST_FILE = "Mango (Social Manga)Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harrisonrblake.Mango--Social-Manga-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mango (Social Manga).app/Mango (Social Manga)";
+			};
+			name = Release;
+		};
 		2C69A0112019C2E9001A60AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -336,6 +454,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C063DBF212E506600C85001 /* Build configuration list for PBXNativeTarget "Mango (Social Manga)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C063DC0212E506600C85001 /* Debug */,
+				2C063DC1212E506600C85001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2C699FFC2019C2E8001A60AE /* Build configuration list for PBXProject "Mango" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
