@@ -8,7 +8,7 @@
 
 import UIKit
 
-var mangaCovers: [UIImage] = [UIImage(named: "Bleach.jpg")!, UIImage(named: "Naruto 1.jpg")!, UIImage(named: "One Piece 1.jpg")!] //Covers will be loaded from MangaEden API.
+var mangaCovers: [UIImage] = [UIImage(named: "Bleach.jpg")!, UIImage(named: "Naruto 1.jpg")!, UIImage(named: "One Piece 1.jpg")!, UIImage(named: "f1.jpg")!] //Covers will be loaded from MangaEden API.
 
 class Home: UIViewController {
 
@@ -38,6 +38,8 @@ extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath)
         if let image = cell.viewWithTag(100) as? UIImageView {
             image.image = mangaCovers[indexPath.row]
+            image.addShadow()
+            
         }
         
         return cell
