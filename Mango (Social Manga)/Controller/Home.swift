@@ -9,6 +9,9 @@
 import UIKit
 
 class Home: UIViewController {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var homeView: UIView!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -27,6 +30,12 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
+    
+    //MARK: - Actions
+    @IBAction func menuTapped(_ sender: Any) {
+
+    }
+
 }
 
 //MARK: - Extension
