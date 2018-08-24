@@ -36,7 +36,6 @@ extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource
         if let image = cell.viewWithTag(100) as? UIImageView {
             image.image = mangaCovers[indexPath.row]
             image.addShadow()
-            
         }
         
         return cell
