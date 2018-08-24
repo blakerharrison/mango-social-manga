@@ -10,6 +10,8 @@ import UIKit
 
 //var mangaCovers: [UIImage] = [UIImage(named: "Bleach.jpg")!, UIImage(named: "Naruto 1.jpg")!, UIImage(named: "One Piece 1.jpg")!, UIImage(named: "f1.jpg")!] //Covers will be loaded from MangaEden API.
 
+var testText = ["Piece"]
+
 class Home: UIViewController {
 
     //MARK: - Lifecycle
@@ -38,6 +40,11 @@ extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource
         if let image = cell.viewWithTag(100) as? UIImageView {
             image.image = usersFavoriteMangas[indexPath.row].mangaCover
             image.addShadow()
+        }
+        
+        if let label = cell.viewWithTag(101) as? UILabel  {
+            label.text = usersFavoriteMangas[indexPath.row].mangaTitles
+            label.addLabelShadow()
         }
         
         return cell

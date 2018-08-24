@@ -19,3 +19,14 @@ extension UIView {
         clipsToBounds = false
     }
 }
+
+extension UILabel {
+    
+    func addLabelShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 0.25
+        layer.shadowRadius = 2
+        clipsToBounds = false
+    }
+}

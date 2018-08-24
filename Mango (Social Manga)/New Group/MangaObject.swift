@@ -15,7 +15,6 @@ struct MangaObject {
     var mangaTitles: String?
     
     init(mangaCover: UIImage? = nil, mangaTitles: String? = nil) {
-        
         self.mangaCover = mangaCover
         self.mangaTitles = mangaTitles
     }

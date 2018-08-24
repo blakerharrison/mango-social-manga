@@ -51,7 +51,7 @@
                                                         <constraint firstAttribute="height" constant="275" id="vlN-Z4-LTc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zad-hx-4Vf">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zad-hx-4Vf">
                                                     <rect key="frame" x="15" y="306" width="270" height="35"/>
                                                     <fontDescription key="fontDescription" name="BigNoodleTitling-Oblique" family="BigNoodleTitling" pointSize="35"/>
                                                     <nil key="textColor"/>
