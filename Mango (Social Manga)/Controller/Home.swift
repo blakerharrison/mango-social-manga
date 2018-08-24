@@ -46,8 +46,6 @@ extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource
             label.text = usersFavoriteMangas[indexPath.row].mangaTitles
             label.addLabelShadow()
         }
-        
         return cell
     }
-
 }
