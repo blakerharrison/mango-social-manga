@@ -8,17 +8,17 @@
 
 import UIKit
 
-//var mangaCovers: [UIImage] = [UIImage(named: "Bleach.jpg")!, UIImage(named: "Naruto 1.jpg")!, UIImage(named: "One Piece 1.jpg")!, UIImage(named: "f1.jpg")!] //Covers will be loaded from MangaEden API.
-
-var testText = ["Piece"]
-
 class Home: UIViewController {
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "One Piece 1"), mangaTitles: "One Piece"))
+        //TODO: This will be added the collection view based on the users selected favorite
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f3"), mangaTitles: "One Piece"))
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f4"), mangaTitles: "Tokyo Ghoul"))
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f2"), mangaTitles: "naruto"))
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f5"), mangaTitles: "dragon ball z"))
         
     }
     
