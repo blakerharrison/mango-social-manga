@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C063DBB212E506600C85001 /* Mango__Social_Manga_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */; };
+		2C3E5CA4212F840000BEFA67 /* big_noodle_titling_oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */; };
+		2C3E5CA5212F840000BEFA67 /* big_noodle_titling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */; };
 		2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E2F12127CC9900F84AF1 /* Home.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mango (Social Manga)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mango__Social_Manga_Tests.swift; sourceTree = "<group>"; };
 		2C063DBC212E506600C85001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling_oblique.ttf; sourceTree = "<group>"; };
+		2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling.ttf; sourceTree = "<group>"; };
 		2C63E2F12127CC9900F84AF1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C69A0042019C2E8001A60AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
 				2C6CB34E212F802F00DDC522 /* Shadow.swift */,
+				2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */,
+				2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */,
 			);
 			name = View;
 			path = "New Group";
@@ -227,6 +233,8 @@
 			files = (
 				2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */,
 				2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */,
+				2C3E5CA5212F840000BEFA67 /* big_noodle_titling.ttf in Resources */,
+				2C3E5CA4212F840000BEFA67 /* big_noodle_titling_oblique.ttf in Resources */,
 				2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

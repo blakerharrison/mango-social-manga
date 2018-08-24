@@ -12,9 +12,6 @@ var mangaCovers: [UIImage] = [UIImage(named: "Bleach.jpg")!, UIImage(named: "Nar
 
 class Home: UIViewController {
 
-    //MARK: - Properties
-
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
