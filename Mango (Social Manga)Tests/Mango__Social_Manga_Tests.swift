@@ -10,11 +10,12 @@ import XCTest
 @testable import Mango__Social_Manga_
 
 class Mango__Social_Manga_Tests: XCTestCase {
-
-    let vc = Home()
     
-    func testExample() {
-        XCTAssertEqual(5, 5)
+    //If manga does not append to usersFavoriteManga the test will fail.
+    func testMangaObjectIsAppendedToUsersFavoriteMangas() {
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Bleach"), mangaTitles: "Bleach"))
+
+        XCTAssertFalse(usersFavoriteMangas.isEmpty)
     }
 
 }
