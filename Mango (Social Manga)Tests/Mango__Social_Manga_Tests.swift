@@ -17,5 +17,7 @@ class Mango__Social_Manga_Tests: XCTestCase {
 
         XCTAssertFalse(usersFavoriteMangas.isEmpty)
     }
+    
+    
 
 }
