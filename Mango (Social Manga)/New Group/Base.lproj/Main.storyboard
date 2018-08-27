@@ -97,7 +97,11 @@
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
                     <navigationItem key="navigationItem" id="wXJ-MF-owG">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
+                            <connections>
+                                <segue destination="5qE-DK-al7" kind="show" id="VPW-Xv-WX9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="FBf-2i-y03">
                             <connections>
                                 <action selector="menuTapped:" destination="WLk-vQ-hfC" id="W1Z-P5-AnU"/>
@@ -111,6 +115,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6955.0724637681169" y="-2807.608695652174"/>
+        </scene>
+        <!--Search Manga-->
+        <scene sceneID="0b3-dP-clN">
+            <objects>
+                <tableViewController id="5qE-DK-al7" customClass="SearchManga" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKH-VO-4fJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="fVQ-Aw-ihB">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mangaNames" id="mxu-jn-s83">
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mxu-jn-s83" id="RCc-Nm-m3t">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5qE-DK-al7" id="CKA-f0-VIm"/>
+                            <outlet property="delegate" destination="5qE-DK-al7" id="3kI-va-5bg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWI-iO-7yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7804" y="-3074"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zvp-2s-Wcz">
