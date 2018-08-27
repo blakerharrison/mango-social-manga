@@ -17,7 +17,6 @@ class SearchManga: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         title = "Search"
     }
 
