@@ -18,11 +18,11 @@ class Home: UIViewController {
         super.viewDidLoad()
 
         //TODO: This will be added the collection view based on the users selected favorite
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f3"), mangaTitles: "One Piece"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f4"), mangaTitles: "Tokyo Ghoul"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f2"), mangaTitles: "naruto"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f5"), mangaTitles: "dragon ball z"))
-        
+//        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f3"), mangaTitles: "One Piece"))
+//        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f4"), mangaTitles: "Tokyo Ghoul"))
+//        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f2"), mangaTitles: "naruto"))
+//        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f5"), mangaTitles: "dragon ball z"))
+//        
     }
     
     override func viewWillAppear(_ animated: Bool) {
