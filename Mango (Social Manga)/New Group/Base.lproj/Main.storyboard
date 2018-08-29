@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="big_noodle_titling.ttf">
+            <string>BigNoodleTitling</string>
+        </array>
         <array key="big_noodle_titling_oblique.ttf">
             <string>BigNoodleTitling-Oblique</string>
         </array>
@@ -134,9 +137,27 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuF-de-zH5" id="39N-WJ-izl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
+                                                    <rect key="frame" x="9" y="11" width="397" height="22"/>
+                                                    <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="top" secondItem="39N-WJ-izl" secondAttribute="top" constant="11" id="4gm-op-81f"/>
+                                                <constraint firstAttribute="bottom" secondItem="8nM-mj-VAi" secondAttribute="bottom" constant="10.666666666666664" id="7N1-br-BFU"/>
+                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="leading" secondItem="39N-WJ-izl" secondAttribute="leading" constant="9" id="FC4-Xj-8AX"/>
+                                                <constraint firstAttribute="trailing" secondItem="8nM-mj-VAi" secondAttribute="trailing" constant="8" id="fmU-s4-R4L"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GjS-76-Eop" id="sfE-go-d1E"/>
+                                    <outlet property="delegate" destination="GjS-76-Eop" id="WAQ-Yb-j3N"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XvN-j2-UDL">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>

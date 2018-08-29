@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TitleSearch: UIViewController {
+class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let testArray = ["Bleach", "Naruto", "One Piece", "Green Worldz"]
+    
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -18,5 +20,21 @@ class TitleSearch: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
+        
+        if let label = cell.viewWithTag(1000) as? UILabel {
+            label.text = testArray[indexPath.row]
+        }
+        
+        return cell
+    }
 
 }
+
+
