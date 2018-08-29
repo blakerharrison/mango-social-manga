@@ -131,25 +131,27 @@
                                 <rect key="frame" x="0.0" y="120" width="414" height="616"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" id="NuF-de-zH5">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" rowHeight="50" id="NuF-de-zH5">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NuF-de-zH5" id="39N-WJ-izl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="397" height="22"/>
+                                                    <rect key="frame" x="9" y="11" width="397" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="top" secondItem="39N-WJ-izl" secondAttribute="top" constant="11" id="4gm-op-81f"/>
-                                                <constraint firstAttribute="bottom" secondItem="8nM-mj-VAi" secondAttribute="bottom" constant="10.666666666666664" id="7N1-br-BFU"/>
-                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="leading" secondItem="39N-WJ-izl" secondAttribute="leading" constant="9" id="FC4-Xj-8AX"/>
-                                                <constraint firstAttribute="trailing" secondItem="8nM-mj-VAi" secondAttribute="trailing" constant="8" id="fmU-s4-R4L"/>
+                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="leading" secondItem="39N-WJ-izl" secondAttribute="leading" constant="9" id="2ak-zn-3dE"/>
+                                                <constraint firstItem="8nM-mj-VAi" firstAttribute="centerY" secondItem="39N-WJ-izl" secondAttribute="centerY" id="GiL-aZ-NOH"/>
+                                                <constraint firstAttribute="trailing" secondItem="8nM-mj-VAi" secondAttribute="trailing" constant="8" id="flV-UP-VGl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
