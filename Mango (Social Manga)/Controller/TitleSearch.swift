@@ -11,30 +11,80 @@ import UIKit
 class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let testArray = ["Bleach", "Naruto", "One Piece", "Green Worldz"]
+    var filteredArray: [String] = []
+    var isSearching: Bool = false
     
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var table: UITableView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpSearchBar() 
+    }
+    
+    //MARK: - Methods
+    
+    private func setUpSearchBar() {
+        searchBar.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching {
+            return filteredArray.count
+        }
+        
         return testArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
         
-        if let label = cell.viewWithTag(1000) as? UILabel {
-            label.text = testArray[indexPath.row]
+        if isSearching {
+            if let label = cell.viewWithTag(1000) as? UILabel {
+                label.text = filteredArray[indexPath.row]
+            }
+        } else {
+            if let label = cell.viewWithTag(1000) as? UILabel {
+                label.text = testArray[indexPath.row]
+            }
         }
+        
+        
         
         return cell
     }
 
 }
 
+extension TitleSearch: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearching = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredArray.removeAll(keepingCapacity: false)
+        let predicateString = searchBar.text!
+        filteredArray = testArray.filter( {$0.range(of: predicateString) != nil} )
+        filteredArray.sort {$0 < $1}
+        isSearching = (filteredArray.count == 0) ? false: true
+        table?.reloadData()
+        
+    }
+    
+}
 

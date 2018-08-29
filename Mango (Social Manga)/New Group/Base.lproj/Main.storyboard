@@ -181,6 +181,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="XvN-j2-UDL" id="q6v-Yz-S2V"/>
+                        <outlet property="table" destination="Xhf-EH-j08" id="JW9-sR-i4N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E35-FF-oGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
