@@ -17,6 +17,7 @@
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
 		2C6CB34F212F802F00DDC522 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB34E212F802F00DDC522 /* Shadow.swift */; };
 		2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A2982134B7C7006844E3 /* TitleSearch.swift */; };
+		2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		2C69A0102019C2E9001A60AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C6CB34E212F802F00DDC522 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		2CA0A2982134B7C7006844E3 /* TitleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearch.swift; sourceTree = "<group>"; };
+		2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleS + UISearch.swift"; sourceTree = "<group>"; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,10 +135,19 @@
 				2CF1E576207AF0B100161D5F /* Model */,
 				2C559CE1212621A3008381A5 /* View */,
 				2C559CE2212621B6008381A5 /* Controller */,
+				2CA0A29A21375E32006844E3 /* Extensions */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
 			);
 			path = "Mango (Social Manga)";
+			sourceTree = "<group>";
+		};
+		2CA0A29A21375E32006844E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2CF1E576207AF0B100161D5F /* Model */ = {
@@ -263,6 +274,7 @@
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
+				2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */,
 				2C6CB34F212F802F00DDC522 /* Shadow.swift in Sources */,
 				2CD9A82C2126667700108F5B /* Networking.swift in Sources */,
 				2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */,
