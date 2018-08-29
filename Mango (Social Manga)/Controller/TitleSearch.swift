@@ -21,11 +21,10 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSearchBar() 
+        setUpSearchBar()
     }
     
     //MARK: - Methods
-    
     private func setUpSearchBar() {
         searchBar.delegate = self
     }
@@ -45,19 +44,13 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if let label = cell.viewWithTag(1000) as? UILabel {
                 label.text = filteredArray[indexPath.row]
             }
-        } else {
-            if let label = cell.viewWithTag(1000) as? UILabel {
-                label.text = testArray[indexPath.row]
-            }
         }
-        
-        
-        
+
         return cell
     }
-
 }
 
+//MARK: - Extensions
 extension TitleSearch: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -73,17 +66,20 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
+        self.searchBar.resignFirstResponder()
+        searchFilter(searchBar)
+        table?.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    }
+    
+    fileprivate func searchFilter(_ searchBar: UISearchBar) {
         filteredArray.removeAll(keepingCapacity: false)
         let predicateString = searchBar.text!
         filteredArray = testArray.filter( {$0.range(of: predicateString) != nil} )
         filteredArray.sort {$0 < $1}
         isSearching = (filteredArray.count == 0) ? false: true
-        table?.reloadData()
-        
     }
     
 }
