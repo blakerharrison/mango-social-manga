@@ -19,6 +19,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
     
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

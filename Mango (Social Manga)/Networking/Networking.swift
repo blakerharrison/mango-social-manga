@@ -88,6 +88,7 @@ class MangoNetworking {
                 let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
                 
                 print(filteredManga[0].t!)
+                resultsArray.removeAll()
                 resultsArray.append(filteredManga[0].t!)
                 print("")
 

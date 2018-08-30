@@ -23,6 +23,7 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         self.searchBar.resignFirstResponder()
         MangoNetworking().fetchMangaTitles()
         sleep(5)
