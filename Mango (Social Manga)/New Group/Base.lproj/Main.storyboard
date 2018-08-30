@@ -161,23 +161,6 @@
                                     <outlet property="delegate" destination="GjS-76-Eop" id="WAQ-Yb-j3N"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eET-Hc-few">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9rM-XM-1jU">
-                                        <rect key="frame" x="197" y="326" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="Q25-2m-TEe"/>
-                                            <constraint firstAttribute="height" constant="20" id="fQx-FW-wuo"/>
-                                        </constraints>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="9rM-XM-1jU" firstAttribute="centerY" secondItem="eET-Hc-few" secondAttribute="centerY" id="S7U-oz-zZ4"/>
-                                    <constraint firstItem="9rM-XM-1jU" firstAttribute="centerX" secondItem="eET-Hc-few" secondAttribute="centerX" id="TUw-gY-XZu"/>
-                                </constraints>
-                            </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XvN-j2-UDL">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -185,18 +168,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eET-Hc-few" firstAttribute="top" secondItem="f6j-qU-kvZ" secondAttribute="top" id="2pt-rb-J80"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="top" secondItem="XvN-j2-UDL" secondAttribute="bottom" id="5dQ-uU-9sD"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="top" secondItem="XvN-j2-UDL" secondAttribute="bottom" id="8Ro-Sj-gp5"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="bottom" secondItem="f6j-qU-kvZ" secondAttribute="bottom" id="Hh9-OI-eok"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="UL4-K6-vHG"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="YVU-je-tsL"/>
                             <constraint firstItem="XvN-j2-UDL" firstAttribute="trailing" secondItem="f6j-qU-kvZ" secondAttribute="trailing" id="c0h-Bg-M2A"/>
-                            <constraint firstItem="f6j-qU-kvZ" firstAttribute="trailing" secondItem="eET-Hc-few" secondAttribute="trailing" id="dnF-Sz-GdA"/>
                             <constraint firstItem="XvN-j2-UDL" firstAttribute="top" secondItem="f6j-qU-kvZ" secondAttribute="top" id="fb0-LH-N9S"/>
-                            <constraint firstItem="eET-Hc-few" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="nqr-8W-yBs"/>
                             <constraint firstItem="XvN-j2-UDL" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="seo-sh-jhX"/>
-                            <constraint firstItem="f6j-qU-kvZ" firstAttribute="bottom" secondItem="eET-Hc-few" secondAttribute="bottom" id="wMh-Ah-CKV"/>
                             <constraint firstItem="f6j-qU-kvZ" firstAttribute="trailing" secondItem="Xhf-EH-j08" secondAttribute="trailing" id="wah-Iv-M6q"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="trailing" secondItem="f6j-qU-kvZ" secondAttribute="trailing" id="zcV-Nu-Ev1"/>
                         </constraints>

@@ -26,7 +26,7 @@ extension TitleSearch: UISearchBarDelegate {
         
         self.searchBar.resignFirstResponder()
         MangoNetworking().fetchMangaTitles()
-        sleep(5)
+        sleep(5) //TODO: Change with Dispatch Queue
         searchFilter(searchBar)
         table?.reloadData()
     }
