@@ -10,9 +10,10 @@ import UIKit
 
 class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let testArray = ["Bleach", "Naruto", "One Piece", "Green Worldz"]
-    var filteredArray: [String] = []
+    //MARK: - Properties
     var isSearching: Bool = false
+    let testArray = ["Bleach", "Naruto", "One Piece", "Green Worldz"] //TODO: Will be populated by DB.
+    var filteredArray: [String] = []
     
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -30,9 +31,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            return filteredArray.count
-        }
+        if isSearching { return filteredArray.count }
         
         return testArray.count
     }
