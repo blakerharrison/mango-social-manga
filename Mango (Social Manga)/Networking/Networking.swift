@@ -84,12 +84,11 @@ class MangoNetworking {
                 let decoder = JSONDecoder()
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
                 
-                var values = ["bleach"]
-                
                 print("")
                 let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
                 
                 print(filteredManga[0].t!)
+                resultsArray.append(filteredManga[0].t!)
                 print("")
 
 //                print(listOfMangas.manga[0].t!)

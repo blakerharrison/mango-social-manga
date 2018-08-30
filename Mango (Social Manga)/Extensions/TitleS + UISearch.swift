@@ -24,7 +24,7 @@ extension TitleSearch: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
-        searchFilter(searchBar)
+        searchFilter2(searchBar)
         table?.reloadData()
     }
     
@@ -35,6 +35,14 @@ extension TitleSearch: UISearchBarDelegate {
         filteredArray.removeAll(keepingCapacity: false)
         let predicateString = searchBar.text!
         filteredArray = testArray.filter( {$0.range(of: predicateString) != nil} )
+        filteredArray.sort {$0 < $1}
+        isSearching = (filteredArray.count == 0) ? false: true
+    }
+    
+    func searchFilter2(_ searchBar: UISearchBar) {
+        filteredArray.removeAll(keepingCapacity: false)
+        let predicateString = searchBar.text!
+        filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
         filteredArray.sort {$0 < $1}
         isSearching = (filteredArray.count == 0) ? false: true
     }
