@@ -26,9 +26,22 @@ extension TitleSearch: UISearchBarDelegate {
         
         self.searchBar.resignFirstResponder()
         MangoNetworking().fetchMangaTitles()
-        sleep(5) //TODO: Change with Dispatch Queue
+        
+        activity.isHidden = false
+        activityView.isHidden = false
+
+        activity.startAnimating()
+        
+//        sleep(5) //TODO: Change with Dispatch Queue
+        
+//        activity.isHidden = true
+//        activityView.isHidden = true
+//        
+//        activity.stopAnimating()
+        
         searchFilter(searchBar)
         table?.reloadData()
+        activity.startAnimating()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -165,11 +165,30 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-w6-2w5" userLabel="activityView">
+                                <rect key="frame" x="0.0" y="120" width="414" height="616"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qrD-Qg-Hzt">
+                                        <rect key="frame" x="197" y="298" width="20" height="20"/>
+                                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qrD-Qg-Hzt" firstAttribute="centerX" secondItem="AkD-w6-2w5" secondAttribute="centerX" id="arT-cw-UBY"/>
+                                    <constraint firstItem="qrD-Qg-Hzt" firstAttribute="centerY" secondItem="AkD-w6-2w5" secondAttribute="centerY" id="feH-Vt-I68"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="NuK-p4-MUo"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="f6j-qU-kvZ" firstAttribute="trailing" secondItem="AkD-w6-2w5" secondAttribute="trailing" id="0dj-ak-dXg"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="top" secondItem="XvN-j2-UDL" secondAttribute="bottom" id="5dQ-uU-9sD"/>
+                            <constraint firstItem="AkD-w6-2w5" firstAttribute="top" secondItem="XvN-j2-UDL" secondAttribute="bottom" id="7P9-nh-LTO"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="top" secondItem="XvN-j2-UDL" secondAttribute="bottom" id="8Ro-Sj-gp5"/>
+                            <constraint firstItem="AkD-w6-2w5" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="AiN-fG-dWT"/>
+                            <constraint firstItem="f6j-qU-kvZ" firstAttribute="bottom" secondItem="AkD-w6-2w5" secondAttribute="bottom" id="DBq-o9-PVC"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="bottom" secondItem="f6j-qU-kvZ" secondAttribute="bottom" id="Hh9-OI-eok"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="UL4-K6-vHG"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="YVU-je-tsL"/>
@@ -182,6 +201,8 @@
                         <viewLayoutGuide key="safeArea" id="f6j-qU-kvZ"/>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="qrD-Qg-Hzt" id="uSj-0M-Kz2"/>
+                        <outlet property="activityView" destination="AkD-w6-2w5" id="03J-ZQ-HPO"/>
                         <outlet property="searchBar" destination="XvN-j2-UDL" id="q6v-Yz-S2V"/>
                         <outlet property="table" destination="Xhf-EH-j08" id="JW9-sR-i4N"/>
                     </connections>

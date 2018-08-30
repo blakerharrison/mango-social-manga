@@ -18,11 +18,15 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var activityView: UIView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchBar()
+        activity.isHidden = true
+        activityView.isHidden = true
     }
     
     //MARK: - Methods
