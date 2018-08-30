@@ -80,7 +80,6 @@ class MangoNetworking {
                 //here dataResponse received from a network request
                 _ = try JSONSerialization.jsonObject(with:
                     dataResponse, options: [])
-                //                print(jsonResponse) //Response result
                 
                 let decoder = JSONDecoder()
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
@@ -89,7 +88,8 @@ class MangoNetworking {
                 
                 print("")
                 let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
-                print(filteredManga)
+                
+                print(filteredManga[0].t!)
                 print("")
 
 //                print(listOfMangas.manga[0].t!)

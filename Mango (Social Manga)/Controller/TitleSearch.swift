@@ -33,7 +33,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching { return filteredArray.count }
         
-        return testArray.count
+        return filteredArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
