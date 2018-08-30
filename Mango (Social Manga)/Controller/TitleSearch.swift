@@ -48,6 +48,3 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 }
-
-
-

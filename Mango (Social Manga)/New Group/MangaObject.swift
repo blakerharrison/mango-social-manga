@@ -19,3 +19,22 @@ struct MangaObject {
         self.mangaTitles = mangaTitles
     }
 }
+
+struct MangaList: Codable {
+    let end: Int
+    let manga: [manga]
+    let page: Int
+    let start: Int
+    let total: Int
+}
+
+struct manga: Codable {
+    let a: String?
+    let c: [String]?
+    let h: Int?
+    let i: String?
+    let im: String?
+    let ld: Int?
+    let s: Int?
+    let t: String?
+}

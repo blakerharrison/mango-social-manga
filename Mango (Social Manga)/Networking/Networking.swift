@@ -15,25 +15,6 @@ public var imageStringForCover: String = ""
 
 //Manga list - https://www.mangaeden.com/api/list/0/
 
-struct MangaList: Codable {
-    let end: Int
-    let manga: [manga]
-    let page: Int
-    let start: Int
-    let total: Int
-}
-
-struct manga: Codable {
-    let a: String?
-    let c: [String]?
-    let h: Int?
-    let i: String?
-    let im: String?
-    let ld: Int?
-    let s: Int?
-    let t: String?
-}
-
 class MangoNetworking {
     
     //MARK: - Properties
@@ -79,6 +60,40 @@ class MangoNetworking {
                 print("1")
                 
                 
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    //TODO: - Fetch all
+    func fetchMangaTitles() {
+        guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                _ = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                //                print(jsonResponse) //Response result
+                
+                let decoder = JSONDecoder()
+                let listOfMangas = try decoder.decode(MangaList.self, from: data!)
+                
+                var values = ["bleach"]
+                
+                print("")
+                let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
+                print(filteredManga)
+                print("")
+
+//                print(listOfMangas.manga[0].t!)
+
             } catch let parsingError {
                 print("Error", parsingError)
             }
