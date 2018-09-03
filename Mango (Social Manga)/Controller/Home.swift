@@ -32,9 +32,7 @@ class Home: UIViewController {
     
     //MARK: - Actions
     @IBAction func menuTapped(_ sender: Any) {
-
     }
-
 }
 
 //MARK: - Extension

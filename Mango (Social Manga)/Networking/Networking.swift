@@ -68,7 +68,7 @@ class MangoNetworking {
     }
     
     //TODO: - Fetch all
-    func fetchMangaTitles() {
+    func fetchMangaTitles(searchedManga: String) {
         guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -83,12 +83,7 @@ class MangoNetworking {
                 
                 let decoder = JSONDecoder()
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
-                
-                print("")
-                print(TitleSearch().self.searchBar.text!)
-                print("")
-                
-                let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
+                let filteredManga = listOfMangas.manga.filter { $0.t == searchedManga }
                 
                 print(filteredManga[0].t!)
                 resultsArray.removeAll()

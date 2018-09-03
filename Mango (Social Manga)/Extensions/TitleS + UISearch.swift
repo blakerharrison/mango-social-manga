@@ -28,7 +28,8 @@ extension TitleSearch: UISearchBarDelegate {
         print("")
         
         self.searchBar.resignFirstResponder()
-        MangoNetworking().fetchMangaTitles()
+//        MangoNetworking().fetchJSON(search: self.searchBar.text!)
+        MangoNetworking().fetchMangaTitles(searchedManga: self.searchBar.text!)
 
 //        activity.isHidden = false
 //        activityView.isHidden = false
