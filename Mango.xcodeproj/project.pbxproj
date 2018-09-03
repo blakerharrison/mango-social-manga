@@ -100,8 +100,8 @@
 		2C559CE2212621B6008381A5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0A2982134B7C7006844E3 /* TitleSearch.swift */,
 				2C63E2F12127CC9900F84AF1 /* Home.swift */,
+				2CA0A2982134B7C7006844E3 /* TitleSearch.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

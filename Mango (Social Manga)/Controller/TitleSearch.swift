@@ -25,6 +25,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchBar()
+        self.searchBar.enablesReturnKeyAutomatically = true
+        
         activity.isHidden = true
         activityView.isHidden = true
     }
