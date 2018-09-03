@@ -23,10 +23,13 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("")
+        print(self.searchBar.text!)
+        print("")
         
         self.searchBar.resignFirstResponder()
         MangoNetworking().fetchMangaTitles()
-        
+
 //        activity.isHidden = false
 //        activityView.isHidden = false
 //

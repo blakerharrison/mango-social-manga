@@ -85,6 +85,9 @@ class MangoNetworking {
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
                 
                 print("")
+                print(TitleSearch().self.searchBar.text!)
+                print("")
+                
                 let filteredManga = listOfMangas.manga.filter { $0.t == "Air Gear" }
                 
                 print(filteredManga[0].t!)
