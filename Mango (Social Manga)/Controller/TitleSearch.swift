@@ -12,7 +12,6 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     //MARK: - Properties
     var isSearching: Bool = false
-    let testArray = ["Bleach", "Naruto", "One Piece", "Green Worldz"] //TODO: Will be populated by DB.
     var filteredArray: [String] = []
     
     //MARK: - Outlets
