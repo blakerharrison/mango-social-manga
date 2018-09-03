@@ -27,12 +27,12 @@ extension TitleSearch: UISearchBarDelegate {
         self.searchBar.resignFirstResponder()
         MangoNetworking().fetchMangaTitles()
         
-        activity.isHidden = false
-        activityView.isHidden = false
-
-        activity.startAnimating()
+//        activity.isHidden = false
+//        activityView.isHidden = false
+//
+//        activity.startAnimating()
         
-//        sleep(5) //TODO: Change with Dispatch Queue
+        sleep(5) //TODO: Change with Dispatch Queue
         
 //        activity.isHidden = true
 //        activityView.isHidden = true
