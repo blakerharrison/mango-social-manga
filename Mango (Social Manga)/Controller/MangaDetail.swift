@@ -35,6 +35,11 @@ class MangaDetail: UIViewController {
     //MARK: - Methods
     func setImage() {
         
+        guard searchedMangaList[selectedIndex].im != nil else {
+            print("No Image")
+            return
+        }
+        
         guard let url = URL(string: "https://cdn.mangaeden.com/mangasimg/" + searchedMangaList[selectedIndex].im!) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
