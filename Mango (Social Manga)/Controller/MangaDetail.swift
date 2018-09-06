@@ -20,6 +20,7 @@ class MangaDetail: UIViewController {
         super.viewDidLoad()
 
         setImage()
+        mangaImage.addShadow()
     
         navigationItem.title = searchedMangaList[selectedIndex].t!
         
