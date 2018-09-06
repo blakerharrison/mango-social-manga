@@ -220,31 +220,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-63-8Z8">
-                                <rect key="frame" x="0.0" y="174" width="414" height="562"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manga Background" translatesAutoresizingMaskIntoConstraints="NO" id="el6-34-z0u">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-m7-noq">
-                                <rect key="frame" x="186" y="97" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransitionScreenBW3" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-63-8Z8">
+                                <rect key="frame" x="20" y="64" width="192" height="261"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LZW-63-8Z8" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="EHl-cd-4Fm"/>
-                            <constraint firstItem="hC0-m7-noq" firstAttribute="top" secondItem="g8l-f4-fJl" secondAttribute="top" constant="33" id="Hwn-0g-B0M"/>
-                            <constraint firstItem="LZW-63-8Z8" firstAttribute="leading" secondItem="EuW-bO-8Os" secondAttribute="leading" id="Vav-xY-V4z"/>
-                            <constraint firstItem="LZW-63-8Z8" firstAttribute="top" secondItem="hC0-m7-noq" secondAttribute="bottom" constant="56" id="ZpT-N1-7Se"/>
-                            <constraint firstItem="hC0-m7-noq" firstAttribute="centerX" secondItem="LZW-63-8Z8" secondAttribute="centerX" id="rh4-FL-PgE"/>
-                            <constraint firstAttribute="trailing" secondItem="LZW-63-8Z8" secondAttribute="trailing" id="y3D-p9-yRr"/>
+                            <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="LZW-63-8Z8" secondAttribute="leading" constant="-20" id="6fj-y7-0fB"/>
+                            <constraint firstItem="g8l-f4-fJl" firstAttribute="trailing" secondItem="LZW-63-8Z8" secondAttribute="trailing" constant="202" id="Q4P-MG-o4I"/>
+                            <constraint firstItem="LZW-63-8Z8" firstAttribute="top" secondItem="g8l-f4-fJl" secondAttribute="top" id="Ryu-4D-dVs"/>
+                            <constraint firstItem="el6-34-z0u" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="Wn9-p9-7gI"/>
+                            <constraint firstAttribute="trailing" secondItem="el6-34-z0u" secondAttribute="trailing" id="a3X-nN-lmp"/>
+                            <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="EuW-bO-8Os" secondAttribute="leading" id="bZq-xz-66X"/>
+                            <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="EuW-bO-8Os" secondAttribute="top" id="hKG-GO-wZr"/>
+                            <constraint firstItem="g8l-f4-fJl" firstAttribute="bottom" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="411" id="jte-lv-4cd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g8l-f4-fJl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="807-97-djC"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="807-97-djC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3aY-8G-2Pc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mangaImage" destination="LZW-63-8Z8" id="PX2-Sc-Sw6"/>
-                        <outlet property="mangaTitle" destination="hC0-m7-noq" id="Gv1-rb-VIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,5 +272,7 @@
     </scenes>
     <resources>
         <image name="Background2" width="375" height="667"/>
+        <image name="Manga Background" width="375" height="667"/>
+        <image name="TransitionScreenBW3" width="375" height="667"/>
     </resources>
 </document>

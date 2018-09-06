@@ -28,6 +28,11 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = true
         activityView.isHidden = true
+        
+        navigationItem.title = "search"
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
     }
     
     //MARK: - Methods

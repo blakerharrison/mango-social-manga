@@ -14,18 +14,18 @@ class MangaDetail: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
-    @IBOutlet weak var mangaTitle: UILabel!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(searchedMangaList[selectedIndex].t!)
-        
-        mangaTitle.text = searchedMangaList[selectedIndex].t!
         setImage()
+    
+        navigationItem.title = searchedMangaList[selectedIndex].t!
         
-//        mangaTitle.text = filtere
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
