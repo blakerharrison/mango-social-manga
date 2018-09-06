@@ -53,12 +53,15 @@ class MangoNetworking {
                 let mangaImagePath = filteredManga.map { $0.im! }
                 let mangaImageEndpoint = self.mangaImageURL + mangaImagePath[0]
                 
+                print("~~~~~Image end point~~~~~")
+                
                 print(mangaImageEndpoint)
 
+                print("~~~~~Image end point~~~~~")
+                
                 imageStringForCover = mangaImageEndpoint
                 
                 print("1")
-                
                 
             } catch let parsingError {
                 print("Error", parsingError)
@@ -67,7 +70,6 @@ class MangoNetworking {
         task.resume()
     }
     
-    //TODO: - Fetch all
     func fetchMangaTitles(searchedManga: String) {
         guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
         
@@ -82,15 +84,23 @@ class MangoNetworking {
                     dataResponse, options: [])
                 
                 let decoder = JSONDecoder()
+                
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
+                
                 let filteredManga = listOfMangas.manga.filter { $0.t == searchedManga }
                 
-                print(filteredManga[0].t!)
-                resultsArray.removeAll()
-                resultsArray.append(filteredManga[0].t!)
-                print("")
+                if filteredManga.count != 0 {
+                    
+                    print(filteredManga[0])
+                    print(filteredManga[0].t!)
+                    print(filteredManga[0].im!)
+                    resultsArray.removeAll()
+                    resultsArray.append(filteredManga[0].t!)
+                    print("")
 
-//                print(listOfMangas.manga[0].t!)
+                } else {
+                    print("Manga Not Found")
+                }
 
             } catch let parsingError {
                 print("Error", parsingError)
