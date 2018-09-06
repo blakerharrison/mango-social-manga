@@ -85,17 +85,20 @@ class MangoNetworking {
                 let decoder = JSONDecoder()
                 
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
-                
-                let filteredManga = listOfMangas.manga.filter { $0.t == searchedManga }
+
+                let filteredManga = listOfMangas.manga.filter { ($0.t?.contains(searchedManga))! }
                 
                 if filteredManga.count != 0 {
                     
                     print(filteredManga[0])
                     print(filteredManga[0].t!)
                     print(filteredManga[0].im!)
+                    
                     resultsArray.removeAll()
-                    resultsArray.append(filteredManga[0].t!)
-                    print("")
+                    
+                    for n in 0...filteredManga.count - 1 {
+                        resultsArray.append(filteredManga[n].t!)
+                    }
 
                 } else {
                     print("Manga Not Found")
