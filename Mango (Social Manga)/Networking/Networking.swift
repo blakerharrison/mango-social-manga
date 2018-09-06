@@ -90,9 +90,9 @@ class MangoNetworking {
                 
                 if filteredManga.count != 0 {
                     
-                    print(filteredManga[0])
-                    print(filteredManga[0].t!)
-                    print(filteredManga[0].im!)
+//                    print(filteredManga[0])
+//                    print(filteredManga[0].t!)
+//                    print(filteredManga[0].im!)
                     
                     resultsArray.removeAll()
                     
