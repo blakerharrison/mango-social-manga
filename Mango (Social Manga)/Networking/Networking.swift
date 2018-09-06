@@ -9,7 +9,7 @@
 // https://www.mangaeden.com/api/list/0/ List of all manga in JSON
 // let mangaEdenURL = "https://www.mangaeden.com/api"
 
-import Foundation
+import UIKit
 
 public var imageStringForCover: String = ""
 
@@ -128,6 +128,7 @@ class MangoNetworking {
 //
 //        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
 //            print("Not a proper HTTPURLResponse or statusCode")
+//
 //
 //            let alert = UIAlertController(title: "Connection Error", message: "404", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
