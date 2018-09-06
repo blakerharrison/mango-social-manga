@@ -18,11 +18,10 @@ class Home: UIViewController {
         super.viewDidLoad()
 
         //TODO: This will be added the collection view based on the users selected favorite
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f3"), mangaTitles: "One Piece"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f4"), mangaTitles: "Tokyo Ghoul"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f2"), mangaTitles: "naruto"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "f5"), mangaTitles: "dragon ball z"))
-        
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "One Piece 1"), mangaTitles: "One Piece"))
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Naruto 1"), mangaTitles: "Naruto"))
+        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Bleach"), mangaTitles: "Bleach"))
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,9 +32,7 @@ class Home: UIViewController {
     
     //MARK: - Actions
     @IBAction func menuTapped(_ sender: Any) {
-
     }
-
 }
 
 //MARK: - Extension
