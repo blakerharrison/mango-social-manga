@@ -52,4 +52,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         return cell
     }
+    
+    // method to run when table view cell is tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Segue to the second view controller
+        self.performSegue(withIdentifier: "DetailSegue", sender: self)
+    }
+    
 }
