@@ -212,21 +212,44 @@
             </objects>
             <point key="canvasLocation" x="7708.6956521739139" y="-2808.4239130434785"/>
         </scene>
-        <!--View Controller-->
+        <!--Manga Detail-->
         <scene sceneID="4mr-M2-92U">
             <objects>
-                <viewController id="1V7-gQ-nIo" sceneMemberID="viewController">
+                <viewController id="1V7-gQ-nIo" customClass="MangaDetail" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuW-bO-8Os">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-63-8Z8">
+                                <rect key="frame" x="0.0" y="174" width="414" height="562"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-m7-noq">
+                                <rect key="frame" x="186" y="97" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LZW-63-8Z8" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="EHl-cd-4Fm"/>
+                            <constraint firstItem="hC0-m7-noq" firstAttribute="top" secondItem="g8l-f4-fJl" secondAttribute="top" constant="33" id="Hwn-0g-B0M"/>
+                            <constraint firstItem="LZW-63-8Z8" firstAttribute="leading" secondItem="EuW-bO-8Os" secondAttribute="leading" id="Vav-xY-V4z"/>
+                            <constraint firstItem="LZW-63-8Z8" firstAttribute="top" secondItem="hC0-m7-noq" secondAttribute="bottom" constant="56" id="ZpT-N1-7Se"/>
+                            <constraint firstItem="hC0-m7-noq" firstAttribute="centerX" secondItem="LZW-63-8Z8" secondAttribute="centerX" id="rh4-FL-PgE"/>
+                            <constraint firstAttribute="trailing" secondItem="LZW-63-8Z8" secondAttribute="trailing" id="y3D-p9-yRr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g8l-f4-fJl"/>
                     </view>
                     <navigationItem key="navigationItem" id="807-97-djC"/>
+                    <connections>
+                        <outlet property="mangaImage" destination="LZW-63-8Z8" id="PX2-Sc-Sw6"/>
+                        <outlet property="mangaTitle" destination="hC0-m7-noq" id="Gv1-rb-VIF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7709" y="-2077"/>
+            <point key="canvasLocation" x="8505.7971014492759" y="-2808.4239130434785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zvp-2s-Wcz">

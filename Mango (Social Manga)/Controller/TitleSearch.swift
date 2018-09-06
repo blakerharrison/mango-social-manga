@@ -46,7 +46,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if isSearching {
             if let label = cell.viewWithTag(1000) as? UILabel {
-                label.text = filteredArray[indexPath.row]
+                label.text = searchedMangaList[indexPath.row].t!
             }
         }
 
@@ -55,6 +55,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("Current index path is \(indexPath.row)")
+        
+        print("Current manga for the \(indexPath.row) is \(searchedMangaList[indexPath.row])")
+        
+        selectedIndex = indexPath.row
         
         // Segue to the second view controller
         self.performSegue(withIdentifier: "DetailSegue", sender: self)

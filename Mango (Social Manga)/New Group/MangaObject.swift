@@ -10,6 +10,8 @@ import UIKit
 
 var usersFavoriteMangas = [MangaObject]()
 
+var searchedMangaList = [manga]()
+
 struct MangaObject {
     var mangaCover: UIImage?
     var mangaTitles: String?

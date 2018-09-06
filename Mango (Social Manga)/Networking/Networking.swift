@@ -88,6 +88,8 @@ class MangoNetworking {
 
                 let filteredManga = listOfMangas.manga.filter { ($0.t?.contains(searchedManga))! }
                 
+                searchedMangaList = filteredManga
+                
                 if filteredManga.count != 0 {
                     
 //                    print(filteredManga[0])

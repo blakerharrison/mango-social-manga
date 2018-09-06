@@ -20,6 +20,7 @@
 		2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A2982134B7C7006844E3 /* TitleSearch.swift */; };
 		2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */; };
 		2CA0A29E21375FCB006844E3 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A29D21375FCB006844E3 /* SearchTests.swift */; };
+		2CBB7B5A214180D900411BA6 /* MangaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB7B59214180D900411BA6 /* MangaDetail.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		2CA0A2982134B7C7006844E3 /* TitleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearch.swift; sourceTree = "<group>"; };
 		2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleS + UISearch.swift"; sourceTree = "<group>"; };
 		2CA0A29D21375FCB006844E3 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		2CBB7B59214180D900411BA6 /* MangaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDetail.swift; sourceTree = "<group>"; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			children = (
 				2C63E2F12127CC9900F84AF1 /* Home.swift */,
 				2CA0A2982134B7C7006844E3 /* TitleSearch.swift */,
+				2CBB7B59214180D900411BA6 /* MangaDetail.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
+				2CBB7B5A214180D900411BA6 /* MangaDetail.swift in Sources */,
 				2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */,
 				2C6CB34F212F802F00DDC522 /* Shadow.swift in Sources */,
 				2CD9A82C2126667700108F5B /* Networking.swift in Sources */,
