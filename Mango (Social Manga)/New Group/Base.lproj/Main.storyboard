@@ -287,26 +287,35 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efm-zu-8Xk">
+                                <rect key="frame" x="146" y="118" width="248" height="19"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NoF-a7-pNj" firstAttribute="trailing" secondItem="84i-wo-m2G" secondAttribute="trailing" id="360-ua-6f7"/>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="trailing" secondItem="84i-wo-m2G" secondAttribute="trailing" id="04H-pb-pTf"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="trailing" secondItem="efm-zu-8Xk" secondAttribute="trailing" id="51B-Cx-LTe"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="bottom" secondItem="LZW-63-8Z8" secondAttribute="bottom" id="6dN-Ay-xfs"/>
-                            <constraint firstItem="NoF-a7-pNj" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="top" id="CIz-jp-PoU"/>
-                            <constraint firstItem="84i-wo-m2G" firstAttribute="leading" secondItem="OcB-cu-ex8" secondAttribute="leading" id="EU4-6x-qTa"/>
+                            <constraint firstItem="efm-zu-8Xk" firstAttribute="leading" secondItem="OcB-cu-ex8" secondAttribute="leading" id="EjY-An-xmo"/>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="top" id="GDr-UU-7uK"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="leading" secondItem="g8l-f4-fJl" secondAttribute="leading" id="LAW-Ku-K0E"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="LY9-Qt-d4z"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="-242" id="O87-72-ekX"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="leading" secondItem="LZW-63-8Z8" secondAttribute="trailing" constant="8" symbolic="YES" id="Rp0-d4-zNq"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="Wn9-p9-7gI"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="leading" secondItem="efm-zu-8Xk" secondAttribute="leading" id="Wu7-wR-ekB"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="trailing" secondItem="EuW-bO-8Os" secondAttribute="trailingMargin" id="WxM-bs-CPc"/>
-                            <constraint firstItem="84i-wo-m2G" firstAttribute="top" secondItem="NoF-a7-pNj" secondAttribute="bottom" constant="4" id="ZG6-9X-pJM"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="top" secondItem="NoF-a7-pNj" secondAttribute="bottom" constant="4" id="X08-LW-624"/>
                             <constraint firstAttribute="trailing" secondItem="el6-34-z0u" secondAttribute="trailing" id="a3X-nN-lmp"/>
+                            <constraint firstItem="efm-zu-8Xk" firstAttribute="top" secondItem="84i-wo-m2G" secondAttribute="bottom" constant="4" id="aLE-EJ-iiT"/>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="leading" secondItem="84i-wo-m2G" secondAttribute="leading" id="anY-49-Y2t"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="EuW-bO-8Os" secondAttribute="leading" id="bZq-xz-66X"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="trailing" secondItem="g8l-f4-fJl" secondAttribute="trailing" id="cla-MH-8qm"/>
-                            <constraint firstItem="84i-wo-m2G" firstAttribute="trailing" secondItem="OcB-cu-ex8" secondAttribute="trailing" id="eTh-Bo-JEg"/>
+                            <constraint firstItem="efm-zu-8Xk" firstAttribute="trailing" secondItem="OcB-cu-ex8" secondAttribute="trailing" id="dQp-nz-24g"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="top" secondItem="g8l-f4-fJl" secondAttribute="top" constant="100" id="eqQ-8o-dd8"/>
-                            <constraint firstItem="NoF-a7-pNj" firstAttribute="leading" secondItem="84i-wo-m2G" secondAttribute="leading" id="h8K-nw-kWX"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="EuW-bO-8Os" secondAttribute="top" id="hKG-GO-wZr"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="LZW-63-8Z8" secondAttribute="trailing" constant="-138" id="qwl-8u-VEf"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="54" id="ruU-np-F9c"/>
@@ -318,6 +327,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="NoF-a7-pNj" id="QlV-cU-rEQ"/>
+                        <outlet property="categoriesLabel" destination="efm-zu-8Xk" id="mgR-1c-SlH"/>
                         <outlet property="mangaDescription" destination="OcB-cu-ex8" id="at4-Ua-OgB"/>
                         <outlet property="mangaImage" destination="LZW-63-8Z8" id="PX2-Sc-Sw6"/>
                         <outlet property="statusLabel" destination="84i-wo-m2G" id="iaZ-9r-fr7"/>

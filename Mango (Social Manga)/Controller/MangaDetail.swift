@@ -22,13 +22,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var mangaDescription: UITextView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        setImage()
         mangaImage.addShadow()
         
         fetchMangaInfo(mangaID: selectedID) //TODO: TEST
@@ -98,14 +98,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                     self.setImage()
                     
-                self.mangaDescription.text = json["description"].string!
-                self.authorLabel.text = json["author"].string!
+                    self.mangaDescription.text = json["description"].string!
+                    self.authorLabel.text = json["author"].string!
+                    self.categoriesLabel.text = "categories: " + json["categories"][0].stringValue
                     
-                if json["status"].int! == 1 {
-                    self.statusLabel.text = "Status: ongoing"
-                } else if json["status"].int! == 2 {
-                    self.statusLabel.text = "Status: completed"
-                }
+                    if json["status"].int! == 1 {
+                        self.statusLabel.text = "Status: ongoing"
+                    } else if json["status"].int! == 2 {
+                        self.statusLabel.text = "Status: completed"
+                    }
                     
                     self.mangaChapters = mangaInfo.chapters
                     
@@ -120,18 +121,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                 }
                 
-                
-                
-                
                 print(self.mangaChaptersString)
-                
-//                DispatchQueue.main.async {
-//
-//                }
-                
-                
-                
-                
+ 
             } catch let parsingError {
                 print("Error", parsingError)
             }
