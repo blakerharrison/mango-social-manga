@@ -113,38 +113,36 @@ class MangoNetworking {
         task.resume()
     }
     
-    func fetchMangaInfo(mangaID: String) {
-        
-        guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let dataResponse = data,
-                error == nil else {
-                    print(error?.localizedDescription ?? "Response Error")
-                    return }
-            do{
-                //here dataResponse received from a network request
-                _ = try JSONSerialization.jsonObject(with:
-                    dataResponse, options: [])
-                
-                let decoder = JSONDecoder()
-                
-                let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
-                
-                print("")
-                print(mangaInfo)
-                print("")
-                
-                print("")
-                print(mangaInfo.description)
-                print("")
-                
-            } catch let parsingError {
-                print("Error", parsingError)
-            }
-        }
-        task.resume()
-    }
+//    func fetchMangaInfo(mangaID: String) {
+//
+//        guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
+//
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let dataResponse = data,
+//                error == nil else {
+//                    print(error?.localizedDescription ?? "Response Error")
+//                    return }
+//            do{
+//                //here dataResponse received from a network request
+//                _ = try JSONSerialization.jsonObject(with:
+//                    dataResponse, options: [])
+//
+//                let decoder = JSONDecoder()
+//
+//                let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
+//
+//                print("")
+//                print(mangaInfo.description!)
+//                print("")
+//
+//                 MangaDetail().mangaDescription.text = mangaInfo.description!
+//
+//            } catch let parsingError {
+//                print("Error", parsingError)
+//            }
+//        }
+//        task.resume()
+//    }
 
 }
 

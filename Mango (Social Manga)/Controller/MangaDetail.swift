@@ -9,11 +9,16 @@
 import UIKit
 
 var selectedIndex = 0
+var selectedID = ""
 
-class MangaDetail: UIViewController {
+class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    var mangaChapters: [[MetadataType?]] = [[]]
+    var mangaChaptersString: [MetadataType?] = []
     
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
+    @IBOutlet weak var mangaDescription: UITextView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -21,7 +26,9 @@ class MangaDetail: UIViewController {
 
         setImage()
         mangaImage.addShadow()
-    
+        
+        fetchMangaInfo(mangaID: selectedID) //TODO: TEST
+
         navigationItem.title = searchedMangaList[selectedIndex].t!
         
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -63,4 +70,68 @@ class MangaDetail: UIViewController {
             }.resume()
     }
     
+    func fetchMangaInfo(mangaID: String) {
+        
+        guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Response Error")
+                    return }
+            do{
+                //here dataResponse received from a network request
+                _ = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                
+                let decoder = JSONDecoder()
+                
+                let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
+                
+//                print("")
+//                print(mangaInfo.description!)
+//                print("")
+                
+                DispatchQueue.main.async {
+                self.mangaDescription.text = mangaInfo.description!
+                }
+                
+                self.mangaChapters = mangaInfo.chapters
+                
+//                print(self.mangaChapters)
+                print("")
+                print(mangaInfo.chapters[0])
+                print("")
+                
+                self.mangaChaptersString.removeAll()
+                
+                for n in 0...mangaInfo.chapters.count - 1 {
+                    self.mangaChaptersString.append(mangaInfo.chapters[n][0]!)
+                }
+                
+                print(self.mangaChaptersString)
+                
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    //MARK: - Table View
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mangaChapters.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
+        
+        if let label = cell.viewWithTag(1000) as? UILabel {
+//            label.text = mangaChapters[indexPath.row][0] as? String
+        }
+        
+        return cell
+    }
+    
 }
+

@@ -11,31 +11,30 @@ import Foundation
 struct MangaInfoAndChapterList: Decodable {
     let aka: [String]
 //    let aka-alias: [String]
-    let alias: String
-    let artist: String
-    let artist_kw: [String]
-    let author: String
-    let author_kw: [String]
-    let baka: Bool
-    let categories: [String]
+    let alias: String?
+    let artist: String?
+    let artist_kw: [String?]
+    let author: String?
+    let author_kw: [String?]
+    let baka: Bool?
+    let categories: [String?]
     let chapters: [[MetadataType?]]
-    let chapters_len: Int
-    let created: Int
-    let description: String
-    let hits: Int
-    let image: String
-    let imageURL: String
-    let language: Int
-    let last_chapter_date: Int
+    let chapters_len: Int?
+    let created: Int?
+    let description: String?
+    let hits: Int?
+    let image: String?
+    let imageURL: String?
+    let language: Int?
+    let last_chapter_date: Int?
 //    let random: []
-    let released: Int
-    let startsWith: String
-    let status: Int
-    let title: String
-    let title_kw: [String]
-    let type: Int
-    let updatedKeywords: Bool
-    
+    let released: Int?
+    let startsWith: String?
+    let status: Int?
+    let title: String?
+    let title_kw: [String?]
+    let type: Int?
+    let updatedKeywords: Bool?
 }
 
 //TODO: - Not sure if this will work

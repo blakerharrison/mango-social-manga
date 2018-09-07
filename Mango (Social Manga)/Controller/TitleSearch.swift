@@ -67,6 +67,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         selectedIndex = indexPath.row
         
+        selectedID = searchedMangaList[indexPath.row].i!
+        
         // Segue to the second view controller
         self.performSegue(withIdentifier: "DetailSegue", sender: self)
     }
