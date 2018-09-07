@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var selectedIndex = 0
 var selectedID = ""
@@ -14,11 +15,12 @@ var selectedID = ""
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var mangaChapters: [[MetadataType?]] = [[]]
-    var mangaChaptersString: [MetadataType?] = []
+    var mangaChaptersString: [String] = []
     
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
     @IBOutlet weak var mangaDescription: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -88,28 +90,25 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 
                 let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
                 
-//                print("")
-//                print(mangaInfo.description!)
-//                print("")
-                
-                DispatchQueue.main.async {
-                self.mangaDescription.text = mangaInfo.description!
-                }
-                
+                let json = try JSON(data: data!)
+
                 self.mangaChapters = mangaInfo.chapters
-                
-//                print(self.mangaChapters)
-                print("")
-                print(mangaInfo.chapters[0])
-                print("")
                 
                 self.mangaChaptersString.removeAll()
                 
-                for n in 0...mangaInfo.chapters.count - 1 {
-                    self.mangaChaptersString.append(mangaInfo.chapters[n][0]!)
+                for n in 0...mangaInfo.chapters.count - 1{
+                    let chapters = json["chapters"][n].array
+                    self.mangaChaptersString.append(chapters![0].stringValue)
                 }
                 
                 print(self.mangaChaptersString)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+                
+                
                 
             } catch let parsingError {
                 print("Error", parsingError)
@@ -126,8 +125,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
-        if let label = cell.viewWithTag(1000) as? UILabel {
-//            label.text = mangaChapters[indexPath.row][0] as? String
+        if let label = cell.viewWithTag(1000) as? UILabel
+        {
+            if mangaChaptersString.isEmpty {
+                
+            } else {
+                label.text = "Chapter: " + mangaChaptersString[indexPath.row]
+            }
+            
         }
         
         return cell

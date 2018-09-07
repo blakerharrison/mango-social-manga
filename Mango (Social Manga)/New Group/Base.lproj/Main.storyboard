@@ -142,7 +142,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="303" height="28"/>
+                                                    <rect key="frame" x="9" y="11" width="397" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
                                                     </constraints>
@@ -298,6 +298,7 @@
                     <connections>
                         <outlet property="mangaDescription" destination="OcB-cu-ex8" id="at4-Ua-OgB"/>
                         <outlet property="mangaImage" destination="LZW-63-8Z8" id="PX2-Sc-Sw6"/>
+                        <outlet property="tableView" destination="jSb-Pg-0Bt" id="c01-VB-Fit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
