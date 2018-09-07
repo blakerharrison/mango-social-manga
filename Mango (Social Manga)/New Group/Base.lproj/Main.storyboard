@@ -254,7 +254,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I70-te-NgM">
-                                                    <rect key="frame" x="18" y="11.333333333333334" width="10" height="21.666666666666664"/>
+                                                    <rect key="frame" x="18" y="11" width="10" height="22"/>
                                                     <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -263,6 +263,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="I70-te-NgM" secondAttribute="bottom" constant="10.666666666666664" id="ARD-2F-a7Q"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I70-te-NgM" secondAttribute="trailing" constant="20" symbolic="YES" id="msO-Ge-Bh2"/>
                                                 <constraint firstItem="I70-te-NgM" firstAttribute="leading" secondItem="XIm-oO-ed3" secondAttribute="leading" constant="18" id="onu-S4-bfy"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -274,20 +275,38 @@
                                     <outlet property="delegate" destination="1V7-gQ-nIo" id="i8A-Bv-lqL"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-a7-pNj">
+                                <rect key="frame" x="146" y="73" width="248" height="18"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84i-wo-m2G">
+                                <rect key="frame" x="146" y="95" width="248" height="19"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="trailing" secondItem="84i-wo-m2G" secondAttribute="trailing" id="360-ua-6f7"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="bottom" secondItem="LZW-63-8Z8" secondAttribute="bottom" id="6dN-Ay-xfs"/>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="top" id="CIz-jp-PoU"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="leading" secondItem="OcB-cu-ex8" secondAttribute="leading" id="EU4-6x-qTa"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="leading" secondItem="g8l-f4-fJl" secondAttribute="leading" id="LAW-Ku-K0E"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="LY9-Qt-d4z"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="-242" id="O87-72-ekX"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="leading" secondItem="LZW-63-8Z8" secondAttribute="trailing" constant="8" symbolic="YES" id="Rp0-d4-zNq"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="Wn9-p9-7gI"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="trailing" secondItem="EuW-bO-8Os" secondAttribute="trailingMargin" id="WxM-bs-CPc"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="top" secondItem="NoF-a7-pNj" secondAttribute="bottom" constant="4" id="ZG6-9X-pJM"/>
                             <constraint firstAttribute="trailing" secondItem="el6-34-z0u" secondAttribute="trailing" id="a3X-nN-lmp"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="EuW-bO-8Os" secondAttribute="leading" id="bZq-xz-66X"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="trailing" secondItem="g8l-f4-fJl" secondAttribute="trailing" id="cla-MH-8qm"/>
+                            <constraint firstItem="84i-wo-m2G" firstAttribute="trailing" secondItem="OcB-cu-ex8" secondAttribute="trailing" id="eTh-Bo-JEg"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="top" secondItem="g8l-f4-fJl" secondAttribute="top" constant="100" id="eqQ-8o-dd8"/>
+                            <constraint firstItem="NoF-a7-pNj" firstAttribute="leading" secondItem="84i-wo-m2G" secondAttribute="leading" id="h8K-nw-kWX"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="EuW-bO-8Os" secondAttribute="top" id="hKG-GO-wZr"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="leading" secondItem="LZW-63-8Z8" secondAttribute="trailing" constant="-138" id="qwl-8u-VEf"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="54" id="ruU-np-F9c"/>
@@ -298,8 +317,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3aY-8G-2Pc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="authorLabel" destination="NoF-a7-pNj" id="QlV-cU-rEQ"/>
                         <outlet property="mangaDescription" destination="OcB-cu-ex8" id="at4-Ua-OgB"/>
                         <outlet property="mangaImage" destination="LZW-63-8Z8" id="PX2-Sc-Sw6"/>
+                        <outlet property="statusLabel" destination="84i-wo-m2G" id="iaZ-9r-fr7"/>
                         <outlet property="tableView" destination="jSb-Pg-0Bt" id="c01-VB-Fit"/>
                     </connections>
                 </viewController>

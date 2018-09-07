@@ -19,14 +19,16 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var mangaDescription: UITextView!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setImage()
+//        setImage()
         mangaImage.addShadow()
         
         fetchMangaInfo(mangaID: selectedID) //TODO: TEST
@@ -91,21 +93,41 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
                 
                 let json = try JSON(data: data!)
-
-                self.mangaChapters = mangaInfo.chapters
                 
-                self.mangaChaptersString.removeAll()
-                
-                for n in 0...mangaInfo.chapters.count - 1{
-                    let chapters = json["chapters"][n].array
-                    self.mangaChaptersString.append(chapters![0].stringValue)
+                DispatchQueue.main.async {
+                    
+                    self.setImage()
+                    
+                self.mangaDescription.text = json["description"].string!
+                self.authorLabel.text = json["author"].string!
+                    
+                if json["status"].int! == 1 {
+                    self.statusLabel.text = "Status: ongoing"
+                } else if json["status"].int! == 2 {
+                    self.statusLabel.text = "Status: completed"
                 }
+                    
+                    self.mangaChapters = mangaInfo.chapters
+                    
+                    self.mangaChaptersString.removeAll()
+                    
+                    for n in 0...mangaInfo.chapters.count - 1{
+                        let chapters = json["chapters"][n].array
+                        self.mangaChaptersString.append(chapters![0].stringValue)
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                }
+                
+                
+                
                 
                 print(self.mangaChaptersString)
                 
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+//                DispatchQueue.main.async {
+//
+//                }
                 
                 
                 
