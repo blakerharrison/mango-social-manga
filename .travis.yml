@@ -1,4 +1,4 @@
 language: swift
-xcode_project: Mango.xcodeproj # path to your xcodeproj folder
+xcode_project: Mango.xcworkspace # path to your xcodeproj folder
 xcode_scheme: "CI"
 xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone 8 Plus
