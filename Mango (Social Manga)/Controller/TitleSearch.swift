@@ -60,13 +60,10 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("Current index path is \(indexPath.row)")
-        
-        print("Current manga for the \(indexPath.row) is \(searchedMangaList[indexPath.row])")
+
+        tableView.deselectRow(at: indexPath, animated: true)
         
         selectedIndex = indexPath.row
-        
         selectedID = searchedMangaList[indexPath.row].i!
         
         // Segue to the second view controller
