@@ -24,6 +24,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var releasedLabel: UILabel!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -96,11 +97,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 
                 DispatchQueue.main.async {
                     
-                    self.setImage()
+                    let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"")
                     
-                    self.mangaDescription.text = json["description"].string!
+                    self.setImage()
+                    self.mangaDescription.text = updatedStringDiscription
                     self.authorLabel.text = json["author"].string!
-                    self.categoriesLabel.text = "categories: " + json["categories"][0].stringValue
+                    self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
+                    self.releasedLabel.text = "released: " + json["released"].stringValue
                     
                     if json["status"].int! == 1 {
                         self.statusLabel.text = "Status: ongoing"
