@@ -147,23 +147,17 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
-        if let label = cell.viewWithTag(1000) as? UILabel
-        {
+        if let label = cell.viewWithTag(1000) as? UILabel {
             if mangaChaptersString.isEmpty {
-                
             } else {
                 label.text = "Chapter: " + mangaChaptersString[indexPath.row]
             }
-            
         }
-        
         return cell
-    }
+}
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.tableView.deselectRow(at: indexPath, animated: true)
-
     }
     
 }
