@@ -25,12 +25,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var releasedLabel: UILabel!
+    @IBOutlet weak var readButton: UIButton!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         mangaImage.addShadow()
+
+        readButton.layer.cornerRadius = 5
         
         fetchMangaInfo(mangaID: selectedID) //TODO: TEST
 
@@ -132,6 +135,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         task.resume()
     }
+    
+    //MARK: - Actions
+    
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
