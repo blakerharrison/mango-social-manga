@@ -51,6 +51,8 @@ class MangoNetworking {
                 }
                 
                 print(self.fetchedPagesURLs)
+               
+                NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
                 
             } catch let parsingError {
                 print("Error", parsingError)
