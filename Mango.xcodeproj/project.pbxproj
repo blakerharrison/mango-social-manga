@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A9EA2A79744F76E35ACF3E /* Pods_Mango__Social_Manga_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */; };
 		2C063DBB212E506600C85001 /* Mango__Social_Manga_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */; };
 		2C3D53AC213845060061EFA9 /* ResultsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D53AB213845060061EFA9 /* ResultsArray.swift */; };
 		2C3E5CA4212F840000BEFA67 /* big_noodle_titling_oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */; };
@@ -17,11 +18,15 @@
 		2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A0082019C2E8001A60AE /* Main.storyboard */; };
 		2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C69A00B2019C2E8001A60AE /* Assets.xcassets */; };
 		2C6CB34F212F802F00DDC522 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB34E212F802F00DDC522 /* Shadow.swift */; };
+		2C8B1526214489BF00D2561B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8B1525214489BF00D2561B /* SwiftyJSON.framework */; };
 		2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A2982134B7C7006844E3 /* TitleSearch.swift */; };
 		2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */; };
 		2CA0A29E21375FCB006844E3 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A29D21375FCB006844E3 /* SearchTests.swift */; };
+		2CBB7B5A214180D900411BA6 /* MangaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB7B59214180D900411BA6 /* MangaDetail.swift */; };
+		2CBB7B5C2141B33200411BA6 /* MangaInfoAndChapterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
+		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mango__Social_Manga_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mango (Social Manga)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mango__Social_Manga_Tests.swift; sourceTree = "<group>"; };
 		2C063DBC212E506600C85001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,11 +55,19 @@
 		2C69A00B2019C2E8001A60AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C69A0102019C2E9001A60AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C6CB34E212F802F00DDC522 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		2C8B1525214489BF00D2561B /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA0A2982134B7C7006844E3 /* TitleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearch.swift; sourceTree = "<group>"; };
 		2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleS + UISearch.swift"; sourceTree = "<group>"; };
 		2CA0A29D21375FCB006844E3 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		2CBB7B59214180D900411BA6 /* MangaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDetail.swift; sourceTree = "<group>"; };
+		2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaInfoAndChapterList.swift; path = "Mango (Social Manga)/Controller/MangaInfoAndChapterList.swift"; sourceTree = SOURCE_ROOT; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).debug.xcconfig"; sourceTree = "<group>"; };
+		64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).release.xcconfig"; sourceTree = "<group>"; };
+		7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mango__Social_Manga_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2BBC4B5371A32453F040D35 /* Pods-Mango (Social Manga)Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A9EA2A79744F76E35ACF3E /* Pods_Mango__Social_Manga_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8B1526214489BF00D2561B /* SwiftyJSON.framework in Frameworks */,
+				B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +119,7 @@
 			children = (
 				2C63E2F12127CC9900F84AF1 /* Home.swift */,
 				2CA0A2982134B7C7006844E3 /* TitleSearch.swift */,
+				2CBB7B59214180D900411BA6 /* MangaDetail.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -120,6 +138,8 @@
 				2C69A0032019C2E8001A60AE /* Mango (Social Manga) */,
 				2C063DB9212E506600C85001 /* Mango (Social Manga)Tests */,
 				2C69A0022019C2E8001A60AE /* Products */,
+				B552F8F0BAB0F7FCE84CC41A /* Pods */,
+				AD1B538597F1A97C55009BFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,9 +179,31 @@
 			isa = PBXGroup;
 			children = (
 				2C3E5CA6212F8A1800BEFA67 /* MangaObject.swift */,
+				2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */,
 				2C3D53AB213845060061EFA9 /* ResultsArray.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AD1B538597F1A97C55009BFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C8B1525214489BF00D2561B /* SwiftyJSON.framework */,
+				041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */,
+				7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B552F8F0BAB0F7FCE84CC41A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */,
+				64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */,
+				357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */,
+				C2BBC4B5371A32453F040D35 /* Pods-Mango (Social Manga)Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C063DBF212E506600C85001 /* Build configuration list for PBXNativeTarget "Mango (Social Manga)Tests" */;
 			buildPhases = (
+				CD81E88741A1A9577364E25D /* [CP] Check Pods Manifest.lock */,
 				2C063DB4212E506600C85001 /* Sources */,
 				2C063DB5212E506600C85001 /* Frameworks */,
 				2C063DB6212E506600C85001 /* Resources */,
@@ -189,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C69A0132019C2E9001A60AE /* Build configuration list for PBXNativeTarget "Mango (Social Manga)" */;
 			buildPhases = (
+				0E05417D7D85077050C1CE3D /* [CP] Check Pods Manifest.lock */,
 				2C699FFD2019C2E8001A60AE /* Sources */,
 				2C699FFE2019C2E8001A60AE /* Frameworks */,
 				2C699FFF2019C2E8001A60AE /* Resources */,
+				0D65F6156212896179497507 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +309,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D65F6156212896179497507 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga)-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E05417D7D85077050C1CE3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mango (Social Manga)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD81E88741A1A9577364E25D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mango (Social Manga)Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C063DB4212E506600C85001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,8 +383,10 @@
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
+				2CBB7B5A214180D900411BA6 /* MangaDetail.swift in Sources */,
 				2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */,
 				2C6CB34F212F802F00DDC522 /* Shadow.swift in Sources */,
+				2CBB7B5C2141B33200411BA6 /* MangaInfoAndChapterList.swift in Sources */,
 				2CD9A82C2126667700108F5B /* Networking.swift in Sources */,
 				2C3D53AC213845060061EFA9 /* ResultsArray.swift in Sources */,
 				2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */,
@@ -313,6 +417,7 @@
 /* Begin XCBuildConfiguration section */
 		2C063DC0212E506600C85001 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -333,6 +438,7 @@
 		};
 		2C063DC1212E506600C85001 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2BBC4B5371A32453F040D35 /* Pods-Mango (Social Manga)Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -463,6 +569,7 @@
 		};
 		2C69A0142019C2E9001A60AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +585,7 @@
 		};
 		2C69A0152019C2E9001A60AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

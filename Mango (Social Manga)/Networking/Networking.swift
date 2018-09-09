@@ -9,7 +9,7 @@
 // https://www.mangaeden.com/api/list/0/ List of all manga in JSON
 // let mangaEdenURL = "https://www.mangaeden.com/api"
 
-import Foundation
+import UIKit
 
 public var imageStringForCover: String = ""
 
@@ -88,6 +88,8 @@ class MangoNetworking {
 
                 let filteredManga = listOfMangas.manga.filter { ($0.t?.contains(searchedManga))! }
                 
+                searchedMangaList = filteredManga
+                
                 if filteredManga.count != 0 {
                     
 //                    print(filteredManga[0])
@@ -110,6 +112,37 @@ class MangoNetworking {
         }
         task.resume()
     }
+    
+//    func fetchMangaInfo(mangaID: String) {
+//
+//        guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
+//
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let dataResponse = data,
+//                error == nil else {
+//                    print(error?.localizedDescription ?? "Response Error")
+//                    return }
+//            do{
+//                //here dataResponse received from a network request
+//                _ = try JSONSerialization.jsonObject(with:
+//                    dataResponse, options: [])
+//
+//                let decoder = JSONDecoder()
+//
+//                let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
+//
+//                print("")
+//                print(mangaInfo.description!)
+//                print("")
+//
+//                 MangaDetail().mangaDescription.text = mangaInfo.description!
+//
+//            } catch let parsingError {
+//                print("Error", parsingError)
+//            }
+//        }
+//        task.resume()
+//    }
 
 }
 
@@ -126,6 +159,7 @@ class MangoNetworking {
 //
 //        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
 //            print("Not a proper HTTPURLResponse or statusCode")
+//
 //
 //            let alert = UIAlertController(title: "Connection Error", message: "404", preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

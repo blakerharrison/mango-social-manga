@@ -28,6 +28,11 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = true
         activityView.isHidden = true
+        
+        navigationItem.title = "search"
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
     }
     
     //MARK: - Methods
@@ -46,10 +51,23 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if isSearching {
             if let label = cell.viewWithTag(1000) as? UILabel {
-                label.text = filteredArray[indexPath.row]
+                label.text = searchedMangaList[indexPath.row].t!
             }
         }
 
         return cell
     }
+    
+    // method to run when table view cell is tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        selectedIndex = indexPath.row
+        selectedID = searchedMangaList[indexPath.row].i!
+        
+        // Segue to the second view controller
+        self.performSegue(withIdentifier: "DetailSegue", sender: self)
+    }
+    
 }
