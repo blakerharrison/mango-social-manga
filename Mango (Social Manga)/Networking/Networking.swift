@@ -19,6 +19,7 @@ class MangoNetworking {
     
     //MARK: - Properties
     let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
+    let mangeListURL = "https://www.mangaeden.com/api/manga/" //TODO: Move to a better place
     
     //MARK: - Methods
     func fetchMangaTitles(searchedManga: String) {

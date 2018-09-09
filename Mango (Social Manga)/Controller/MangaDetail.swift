@@ -12,11 +12,10 @@ import SwiftyJSON
 var selectedIndex = 0
 var selectedID = ""
 
-let mangeListURL = "https://www.mangaeden.com/api/manga/" //TODO: Move to a better place
-let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/" //TODO: Move to a better place
-
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    //MARK: - Properties
+    let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
     var mangaChaptersString: [String] = []
     
@@ -34,17 +33,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        mangaImage.addShadow()
-
-        readButton.layer.cornerRadius = 5
-        
-        fetchMangaInfo(mangaID: selectedID) //TODO: TEST
-
-        navigationItem.title = searchedMangaList[selectedIndex].t!
-        
+        fetchMangaInfo(mangaID: selectedID)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
-        
+        navigationItem.title = searchedMangaList[selectedIndex].t!
+        mangaImage.addShadow()
+        readButton.layer.cornerRadius = 5
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,9 +72,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let chapters = json["chapters"][n].array
                 self.mangaChaptersString.append(chapters![0].stringValue)
             }
-            
             self.tableView.reloadData()
-            
         }
     }
     
@@ -97,7 +90,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
         
-        guard let url = URL(string: mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
+        guard let url = URL(string: Networking.mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print("Failed fetching image:", error!)
@@ -120,7 +113,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
         
-        guard let url = URL(string: mangeListURL + mangaID) else {return}
+        guard let url = URL(string: Networking.mangeListURL + mangaID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -148,7 +141,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     //MARK: - Actions
-    //TODO: - Add an aciton button for Read.
+    
+    //TODO: - Add an aciton button for Read. !@#$%^&*()
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
