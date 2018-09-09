@@ -19,6 +19,7 @@ class MangoNetworking {
     
     //MARK: - Properties
     let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
+    let mangeListURL = "https://www.mangaeden.com/api/manga/" //TODO: Move to a better place
     
     //MARK: - Methods
     func fetchMangaTitles(searchedManga: String) {
@@ -43,11 +44,7 @@ class MangoNetworking {
                 searchedMangaList = filteredManga
                 
                 if filteredManga.count != 0 {
-                    
-//                    print(filteredManga[0])
-//                    print(filteredManga[0].t!)
-//                    print(filteredManga[0].im!)
-                    
+
                     resultsArray.removeAll()
                     
                     for n in 0...filteredManga.count - 1 {

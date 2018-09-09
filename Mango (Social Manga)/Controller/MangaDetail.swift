@@ -13,7 +13,9 @@ var selectedIndex = 0
 var selectedID = ""
 
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    //MARK: - Properties
+    let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
     var mangaChaptersString: [String] = []
     
@@ -31,17 +33,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        mangaImage.addShadow()
-
-        readButton.layer.cornerRadius = 5
-        
-        fetchMangaInfo(mangaID: selectedID) //TODO: TEST
-
-        navigationItem.title = searchedMangaList[selectedIndex].t!
-        
+        fetchMangaInfo(mangaID: selectedID)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
-        
+        navigationItem.title = searchedMangaList[selectedIndex].t!
+        mangaImage.addShadow()
+        readButton.layer.cornerRadius = 5
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,14 +47,50 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     //MARK: - Methods
-    func setImage() {
+    fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
+        DispatchQueue.main.async {
+            
+            let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"")
+            
+            self.fetchImage()
+            self.mangaDescription.text = updatedStringDiscription
+            self.authorLabel.text = json["author"].string!
+            self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
+            self.releasedLabel.text = "released: " + json["released"].stringValue
+            
+            if json["status"].int! == 1 {
+                self.statusLabel.text = "Status: ongoing"
+            } else if json["status"].int! == 2 {
+                self.statusLabel.text = "Status: completed"
+            }
+            
+            self.mangaChapters = mangaInfo.chapters
+            
+            self.mangaChaptersString.removeAll()
+            
+            for n in 0...mangaInfo.chapters.count - 1{
+                let chapters = json["chapters"][n].array
+                self.mangaChaptersString.append(chapters![0].stringValue)
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    fileprivate func setUIImage(_ data: Data?) {
+        DispatchQueue.main.async {
+            self.mangaImage.image = UIImage(data: data!)
+        }
+    }
+    
+    //MARK: - Networking
+    func fetchImage() { //TODO: Move to MangoNetworking
         
         guard searchedMangaList[selectedIndex].im != nil else {
             print("No Image")
             return
         }
         
-        guard let url = URL(string: "https://cdn.mangaeden.com/mangasimg/" + searchedMangaList[selectedIndex].im!) else { return }
+        guard let url = URL(string: Networking.mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print("Failed fetching image:", error!)
@@ -72,15 +106,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 return
             }
             
-            DispatchQueue.main.async {
-                self.mangaImage.image = UIImage(data: data!)
-            }
+            self.setUIImage(data)
+            
             }.resume()
     }
     
-    func fetchMangaInfo(mangaID: String) {
+    func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
         
-        guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
+        guard let url = URL(string: Networking.mangeListURL + mangaID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -98,34 +131,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 
                 let json = try JSON(data: data!)
                 
-                DispatchQueue.main.async {
-                    
-                    let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"")
-                    
-                    self.setImage()
-                    self.mangaDescription.text = updatedStringDiscription
-                    self.authorLabel.text = json["author"].string!
-                    self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
-                    self.releasedLabel.text = "released: " + json["released"].stringValue
-                    
-                    if json["status"].int! == 1 {
-                        self.statusLabel.text = "Status: ongoing"
-                    } else if json["status"].int! == 2 {
-                        self.statusLabel.text = "Status: completed"
-                    }
-                    
-                    self.mangaChapters = mangaInfo.chapters
-                    
-                    self.mangaChaptersString.removeAll()
-                    
-                    for n in 0...mangaInfo.chapters.count - 1{
-                        let chapters = json["chapters"][n].array
-                        self.mangaChaptersString.append(chapters![0].stringValue)
-                    }
-                    
-                    self.tableView.reloadData()
-                    
-                }
+                self.setUIDetails(json, mangaInfo)
                 
             } catch let parsingError {
                 print("Error", parsingError)
@@ -136,6 +142,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - Actions
     
+    //TODO: - Add an aciton button for Read. !@#$%^&*()
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
