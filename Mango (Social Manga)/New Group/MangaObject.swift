@@ -40,3 +40,4 @@ struct manga: Codable {
     let s: Int?
     let t: String?
 }
+

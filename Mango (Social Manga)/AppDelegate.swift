@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        MangoNetworking().fetchMangaInfo(mangaID: "4e70ea03c092255ef70046f0")
+        let testEndPoint = "4e71db4bc09225616d11d05a"
+        
+        MangoNetworking().fetchMangaChapterInfo(chapterID: testEndPoint)
         
         return true
     }

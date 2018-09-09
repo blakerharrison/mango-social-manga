@@ -10,6 +10,7 @@
 // let mangaEdenURL = "https://www.mangaeden.com/api"
 
 import UIKit
+import SwiftyJSON
 
 public var imageStringForCover: String = ""
 
@@ -22,7 +23,42 @@ class MangoNetworking {
     let mangeListURL = "https://www.mangaeden.com/api/manga/"
     let mangaChapterURL = "https://www.mangaeden.com/api/chapter/"
     
+    var fetchedPagesURLs: Array<String> = []
+    
     //MARK: - Methods
+    func fetchMangaChapterInfo(chapterID: String) {
+        guard let url = URL(string: mangaChapterURL + chapterID) else {return}
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? "Reponse Error")
+            return }
+            do{
+                //here dataResponse received from a network request
+                _ = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+
+                let json = try JSON(data: data!)
+                
+                let imageArray = json["images"].array!
+
+                if imageArray.count != 0 {
+                    resultsArray.removeAll()
+                    for n in 0...imageArray.count - 1 {
+                        self.fetchedPagesURLs.append(self.mangaImageURL + imageArray[n][1].string!)
+                    }
+                }
+                
+                print(self.fetchedPagesURLs)
+                
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
     func fetchMangaTitles(searchedManga: String) {
         guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
         
@@ -39,27 +75,28 @@ class MangoNetworking {
                 let decoder = JSONDecoder()
                 
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
-
+                
                 let filteredManga = listOfMangas.manga.filter { ($0.t?.contains(searchedManga))! }
                 
                 searchedMangaList = filteredManga
                 
                 if filteredManga.count != 0 {
-
+                    
                     resultsArray.removeAll()
                     
                     for n in 0...filteredManga.count - 1 {
                         resultsArray.append(filteredManga[n].t!)
                     }
-
+                    
                 } else {
                     print("Manga Not Found")
                 }
-
+                
             } catch let parsingError {
                 print("Error", parsingError)
             }
         }
         task.resume()
     }
+    
 }
