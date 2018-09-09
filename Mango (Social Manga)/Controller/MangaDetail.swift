@@ -49,7 +49,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     //MARK: - Methods
-    func setImage() {
+    func setImage() { //TODO: Move to MangoNetworking
         
         guard searchedMangaList[selectedIndex].im != nil else {
             print("No Image")
@@ -78,7 +78,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }.resume()
     }
     
-    func fetchMangaInfo(mangaID: String) {
+    func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
         
         guard let url = URL(string: "https://www.mangaeden.com/api/manga/" + mangaID) else {return}
         
@@ -135,7 +135,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     //MARK: - Actions
-    
+    //TODO: - Add an aciton button for Read.
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
