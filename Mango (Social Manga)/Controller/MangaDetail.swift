@@ -127,8 +127,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                 }
                 
-                print(self.mangaChaptersString)
- 
             } catch let parsingError {
                 print("Error", parsingError)
             }
@@ -158,6 +156,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        print(indexPath)
     }
     
 }
