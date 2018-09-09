@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g11-OW-JO9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qe-Pf-OVp">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -244,22 +244,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
+                                                    <rect key="frame" x="20" y="23" width="374" height="668"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="sqL-bA-0OZ" secondAttribute="leading" id="2qA-6P-I2b"/>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="sqL-bA-0OZ" secondAttribute="top" id="TQJ-Jr-H7g"/>
-                                            <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" id="WBU-qe-vJh"/>
-                                            <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" id="sdR-NH-Kdk"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="sqL-bA-0OZ" secondAttribute="leading" constant="20" id="2qA-6P-I2b"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="sqL-bA-0OZ" secondAttribute="top" constant="23" id="TQJ-Jr-H7g"/>
+                                            <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" constant="24" id="WBU-qe-vJh"/>
+                                            <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" constant="20" id="sdR-NH-Kdk"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="2Qe-Pf-OVp" id="yw4-Ym-gjg"/>
-                                    <outlet property="delegate" destination="2Qe-Pf-OVp" id="fcC-V6-orR"/>
+                                    <outlet property="dataSource" destination="2Qe-Pf-OVp" id="V8p-qb-D5W"/>
+                                    <outlet property="delegate" destination="2Qe-Pf-OVp" id="2t3-TS-pxm"/>
                                 </connections>
                             </collectionView>
                         </subviews>
