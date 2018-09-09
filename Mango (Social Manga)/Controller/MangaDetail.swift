@@ -52,41 +52,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     //MARK: - Methods
-    func setImage() { //TODO: Move to MangoNetworking
-        
-        guard searchedMangaList[selectedIndex].im != nil else {
-            print("No Image")
-            return
-        }
-        
-        guard let url = URL(string: mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print("Failed fetching image:", error!)
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Not a proper HTTPURLResponse or statusCode")
-                
-                let alert = UIAlertController(title: "Connection Error", message: "404", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.mangaImage.image = UIImage(data: data!)
-            }
-            }.resume()
-    }
-    
     fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
         DispatchQueue.main.async {
             
             let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"")
             
-            self.setImage()
+            self.fetchImage()
             self.mangaDescription.text = updatedStringDiscription
             self.authorLabel.text = json["author"].string!
             self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
@@ -110,6 +81,41 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.tableView.reloadData()
             
         }
+    }
+    
+    fileprivate func setUIImage(_ data: Data?) {
+        DispatchQueue.main.async {
+            self.mangaImage.image = UIImage(data: data!)
+        }
+    }
+    
+    //MARK: - Networking
+    func fetchImage() { //TODO: Move to MangoNetworking
+        
+        guard searchedMangaList[selectedIndex].im != nil else {
+            print("No Image")
+            return
+        }
+        
+        guard let url = URL(string: mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print("Failed fetching image:", error!)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Not a proper HTTPURLResponse or statusCode")
+                
+                let alert = UIAlertController(title: "Connection Error", message: "404", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                return
+            }
+            
+            self.setUIImage(data)
+            
+            }.resume()
     }
     
     func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
