@@ -42,7 +42,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         if let image = cell.viewWithTag(100) as? UIImageView {
             DispatchQueue.global(qos: .background).async {
                 do{
-                    let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs[indexPath.row])!)
+                    let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
                     DispatchQueue.main.async {
 
                         let pageImage: UIImage = UIImage(data: data)!
