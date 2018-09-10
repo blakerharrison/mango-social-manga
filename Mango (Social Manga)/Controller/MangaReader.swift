@@ -22,8 +22,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         sleep(5)
-     
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,8 +35,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @objc func loadList(notification: NSNotification) {
         self.collectionView.reloadData()
     }
-
-
+    
     //MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Networking.fetchedPagesURLs.count
@@ -89,5 +86,14 @@ extension MangaReader: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        if self.navigationController?.isNavigationBarHidden == false {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        } else if self.navigationController?.isNavigationBarHidden == true {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
 }
