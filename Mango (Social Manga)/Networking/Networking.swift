@@ -24,6 +24,7 @@ class MangoNetworking {
     let mangaChapterURL = "https://www.mangaeden.com/api/chapter/"
     
     var fetchedPagesURLs: Array<String> = []
+    var fetchedPagesNumbers: Array<String> = []
     
     //MARK: - Methods
     func fetchMangaChapterInfo(chapterID: String) {
@@ -47,10 +48,12 @@ class MangoNetworking {
                     resultsArray.removeAll()
                     for n in 0...imageArray.count - 1 {
                         self.fetchedPagesURLs.append(self.mangaImageURL + imageArray[n][1].string!)
+                        
+                        self.fetchedPagesNumbers.append("\(imageArray[n][0].int! + 1)")
                     }
                 }
                 
-                print(self.fetchedPagesURLs)
+                print(self.fetchedPagesNumbers)
                
                 NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
                 
