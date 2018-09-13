@@ -33,7 +33,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Methods
     @objc func loadList(notification: NSNotification) {
+        DispatchQueue.main.async {
         self.collectionView.reloadData()
+        }
     }
     
     //MARK: - CollectionView
@@ -67,7 +69,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         return cell
     }
-
 }
 
 extension MangaReader: UICollectionViewDelegateFlowLayout {
