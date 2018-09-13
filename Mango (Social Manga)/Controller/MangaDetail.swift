@@ -41,7 +41,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         navigationItem.title = searchedMangaList[selectedIndex].t!
         mangaImage.addShadow()
         readButton.layer.cornerRadius = 5
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {

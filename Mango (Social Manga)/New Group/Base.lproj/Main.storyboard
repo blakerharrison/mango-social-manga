@@ -100,6 +100,7 @@
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
                     <navigationItem key="navigationItem" id="wXJ-MF-owG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="FVq-WM-2d7"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
                             <connections>
                                 <segue destination="GjS-76-Eop" kind="show" id="tKx-K2-w3I"/>
@@ -253,7 +254,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
-                                                    <rect key="frame" x="46" y="74" width="319" height="524"/>
+                                                    <rect key="frame" x="45.666666666666657" y="74" width="319" height="524"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="524" id="MZJ-0B-qF5"/>
                                                         <constraint firstAttribute="width" constant="319" id="qNm-uk-lPu"/>
@@ -426,6 +427,7 @@
                         <viewLayoutGuide key="safeArea" id="g8l-f4-fJl"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="807-97-djC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0Ye-Pr-T8E"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3aY-8G-2Pc"/>
                     </navigationItem>
                     <connections>
