@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Home: UIViewController {
+class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     //MARK: - Outlets
     @IBOutlet weak var homeView: UIView!
@@ -33,15 +33,13 @@ class Home: UIViewController {
     //MARK: - Actions
     @IBAction func menuTapped(_ sender: Any) {
     }
-}
-
-//MARK: - Extension
-extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    //MARK: - CollectionView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return usersFavoriteMangas.count
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath)
         if let image = cell.viewWithTag(100) as? UIImageView {
             image.image = usersFavoriteMangas[indexPath.row].mangaCover
@@ -54,4 +52,6 @@ extension UIViewController: UICollectionViewDelegate, UICollectionViewDataSource
         }
         return cell
     }
+    
 }
+

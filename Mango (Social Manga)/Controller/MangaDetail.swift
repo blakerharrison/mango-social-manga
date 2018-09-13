@@ -11,6 +11,7 @@ import SwiftyJSON
 
 var selectedIndex = 0
 var selectedID = ""
+var selectedChapterID = ""
 
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
     var mangaChaptersString: [String] = []
+    var mangaChapterIDs: [String] = []
     
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -39,7 +41,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         navigationItem.title = searchedMangaList[selectedIndex].t!
         mangaImage.addShadow()
         readButton.layer.cornerRadius = 5
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,6 +59,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
             self.releasedLabel.text = "released: " + json["released"].stringValue
             
+            print(json["chapters"][0][3])
+            
             if json["status"].int! == 1 {
                 self.statusLabel.text = "Status: ongoing"
             } else if json["status"].int! == 2 {
@@ -67,10 +70,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.mangaChapters = mangaInfo.chapters
             
             self.mangaChaptersString.removeAll()
+            self.mangaChapterIDs.removeAll()
             
             for n in 0...mangaInfo.chapters.count - 1{
                 let chapters = json["chapters"][n].array
                 self.mangaChaptersString.append(chapters![0].stringValue)
+                self.mangaChapterIDs.append(chapters![3].stringValue)
             }
             self.tableView.reloadData()
         }
@@ -162,9 +167,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedChapterID = mangaChapterIDs[indexPath.row]
         self.tableView.deselectRow(at: indexPath, animated: true)
-        
-        print(indexPath)
+        performSegue(withIdentifier: "readerSegue", sender: self)
     }
     
 }
