@@ -23,6 +23,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTable(notification:)), name: NSNotification.Name(rawValue: "finishedGettingTitles"), object: nil)
+        
         setUpSearchBar()
         self.searchBar.enablesReturnKeyAutomatically = true
         
@@ -56,6 +58,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
 
         return cell
+    }
+    
+    @objc func refreshTable(notification: NSNotification) {
+        DispatchQueue.main.async {
+            self.table.reloadData()
+        }
     }
     
     // method to run when table view cell is tapped

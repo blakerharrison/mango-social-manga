@@ -8,6 +8,8 @@
 
 import UIKit
 
+let myFetchTitlesGroup = DispatchGroup()
+
 extension TitleSearch: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -23,12 +25,16 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+
+        myFetchTitlesGroup.enter()
+        
         print("")
         print(self.searchBar.text!)
         print("")
         
         self.searchBar.resignFirstResponder()
-//        MangoNetworking().fetchJSON(search: self.searchBar.text!)
+
         MangoNetworking().fetchMangaTitles(searchedManga: self.searchBar.text!)
 
 //        activity.isHidden = false
@@ -36,26 +42,25 @@ extension TitleSearch: UISearchBarDelegate {
 //
 //        activity.startAnimating()
         
-        sleep(5) //TODO: Change with Dispatch Queue
+//        sleep(5) //TODO: Change with Dispatch Queue
         
 //        activity.isHidden = true
 //        activityView.isHidden = true
 //        
 //        activity.stopAnimating()
-        
-        searchFilter(searchBar)
-        table?.reloadData()
+myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
+        self.searchFilter(searchBar)
+        }
+//        table?.reloadData()
         activity.startAnimating()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
-    
+
     func searchFilter(_ searchBar: UISearchBar) {
         filteredArray.removeAll(keepingCapacity: false)
         let predicateString = searchBar.text!
         filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
         filteredArray.sort {$0 < $1}
         isSearching = (filteredArray.count == 0) ? false: true
+                            NotificationCenter.default.post(name: NSNotification.Name("finishedGettingTitles"), object: nil)
     }
 }

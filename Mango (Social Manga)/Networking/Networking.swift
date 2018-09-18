@@ -93,6 +93,8 @@ class MangoNetworking {
                         resultsArray.append(filteredManga[n].t!)
                     }
                     
+                    myFetchTitlesGroup.leave()
+                    
                 } else {
                     print("Manga Not Found")
                 }
