@@ -30,6 +30,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var releasedLabel: UILabel!
     @IBOutlet weak var readButton: UIButton!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -118,6 +119,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
         
+        activity.isHidden = false
+        activity.startAnimating()
+        
         guard let url = URL(string: Networking.mangeListURL + mangaID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -138,8 +142,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 
                 self.setUIDetails(json, mangaInfo)
                 
+                DispatchQueue.main.async {
+                    self.activity.isHidden = true
+                    self.activity.stopAnimating()
+                }
+                
             } catch let parsingError {
                 print("Error", parsingError)
+                self.activity.isHidden = true
+                self.activity.stopAnimating()
             }
         }
         task.resume()
