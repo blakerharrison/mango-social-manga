@@ -97,6 +97,7 @@ class MangoNetworking {
                     
                 } else {
                     print("Manga Not Found")
+                    myFetchTitlesGroup.leave()
                 }
                 
             } catch let parsingError {

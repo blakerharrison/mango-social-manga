@@ -25,34 +25,24 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
 
         myFetchTitlesGroup.enter()
-        
-        print("")
-        print(self.searchBar.text!)
-        print("")
-        
+
         self.searchBar.resignFirstResponder()
 
         MangoNetworking().fetchMangaTitles(searchedManga: self.searchBar.text!)
 
-//        activity.isHidden = false
-//        activityView.isHidden = false
-//
-//        activity.startAnimating()
-        
-//        sleep(5) //TODO: Change with Dispatch Queue
-        
-//        activity.isHidden = true
-//        activityView.isHidden = true
-//        
-//        activity.stopAnimating()
-myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
-        self.searchFilter(searchBar)
-        }
-//        table?.reloadData()
+        activity.isHidden = false
+        activityView.isHidden = false
         activity.startAnimating()
+        
+        myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
+            self.searchFilter(searchBar)
+            
+            self.activity.isHidden = true
+            self.activityView.isHidden = true
+            self.activity.stopAnimating()
+        }
     }
 
     func searchFilter(_ searchBar: UISearchBar) {
