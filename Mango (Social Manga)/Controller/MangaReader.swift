@@ -12,6 +12,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityMain: UIActivityIndicatorView!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -21,7 +22,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
-        sleep(5)
+        
+        activityMain.isHidden = false
+        activityMain.startAnimating()
+        collectionView.isScrollEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,10 +50,18 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath)
 
+        if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
+            activityMain.isHidden = true
+            activityMain.stopAnimating()
+            activity.isHidden = false
+            activity.startAnimating()
+            
+        }
+        
         DispatchQueue.main.async {
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
-        }
+            }
         }
         
         if let image = cell.viewWithTag(100) as? UIImageView {
@@ -60,6 +72,13 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
                         let pageImage: UIImage = UIImage(data: data)!
                         image.image = pageImage
+                        
+                        if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
+                            activity.isHidden = true
+                            activity.stopAnimating()
+                            collectionView.isScrollEnabled = true
+                        }
+
                     }
                 }
                 catch {
@@ -71,6 +90,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+//MARK: Extensions
 extension MangaReader: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -95,6 +115,8 @@ extension MangaReader: UICollectionViewDelegateFlowLayout {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
         } else if self.navigationController?.isNavigationBarHidden == true {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+            
+            print(indexPath)
         }
     }
 }

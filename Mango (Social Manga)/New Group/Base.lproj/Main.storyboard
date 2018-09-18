@@ -252,10 +252,15 @@
                                                         <constraint firstAttribute="width" constant="319" id="qNm-uk-lPu"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-jV-4tH">
+                                                    <rect key="frame" x="195" y="326" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="MVR-dm-Qwy"/>
+                                            <constraint firstItem="YSy-jV-4tH" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="PoQ-q8-VTx"/>
+                                            <constraint firstItem="YSy-jV-4tH" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="Sjc-wc-4U6"/>
                                             <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="x9j-Fs-30t"/>
                                         </constraints>
                                     </collectionViewCell>
@@ -265,17 +270,23 @@
                                     <outlet property="delegate" destination="2Qe-Pf-OVp" id="2t3-TS-pxm"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZGu-PJ-GUn">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerY" secondItem="JZn-GB-4JY" secondAttribute="centerY" id="0RJ-az-DMW"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="1BS-Dt-W1J"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="HPg-Ck-Ex1"/>
+                            <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="e9l-KR-26x"/>
                             <constraint firstAttribute="trailing" secondItem="aYf-Yg-3qr" secondAttribute="trailing" id="xsl-Sq-tta"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" id="zZ1-ie-ZON"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lZC-VV-8KX"/>
                     </view>
                     <connections>
+                        <outlet property="activityMain" destination="ZGu-PJ-GUn" id="IPf-oJ-XUm"/>
                         <outlet property="collectionView" destination="aYf-Yg-3qr" id="Eyf-Fb-OUu"/>
                     </connections>
                 </viewController>

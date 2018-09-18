@@ -28,6 +28,7 @@ class MangoNetworking {
     
     //MARK: - Methods
     func fetchMangaChapterInfo(chapterID: String) {
+
         guard let url = URL(string: mangaChapterURL + chapterID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
