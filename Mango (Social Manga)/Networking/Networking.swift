@@ -28,6 +28,7 @@ class MangoNetworking {
     
     //MARK: - Methods
     func fetchMangaChapterInfo(chapterID: String) {
+
         guard let url = URL(string: mangaChapterURL + chapterID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -68,6 +69,13 @@ class MangoNetworking {
         guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+           
+            guard ReachabilityTest.isConnectedToNetwork() else {
+                print("No internet connection available")
+                myFetchTitlesGroup.leave()
+                return
+            }
+                        
             guard let dataResponse = data,
                 error == nil else {
                     print(error?.localizedDescription ?? "Response Error")
@@ -93,8 +101,11 @@ class MangoNetworking {
                         resultsArray.append(filteredManga[n].t!)
                     }
                     
+                    myFetchTitlesGroup.leave()
+                    
                 } else {
                     print("Manga Not Found")
+                    myFetchTitlesGroup.leave()
                 }
                 
             } catch let parsingError {
