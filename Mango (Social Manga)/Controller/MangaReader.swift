@@ -6,10 +6,10 @@
 //  Copyright © 2018 Blake Harrison. All rights reserved.
 //
 
-import UIKit
-//import AsyncDisplayKit
+//import UIKit
+import AsyncDisplayKit
 
-class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MangaReader: ASViewController<ASDisplayNode>, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
