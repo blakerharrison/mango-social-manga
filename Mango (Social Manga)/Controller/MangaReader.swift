@@ -65,6 +65,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         
         if let image = cell.viewWithTag(100) as? UIImageView {
+            
+            image.image = nil
+        
             DispatchQueue.global(qos: .background).async {
                 do{
                     let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
@@ -88,6 +91,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+
 }
 
 //MARK: Extensions
