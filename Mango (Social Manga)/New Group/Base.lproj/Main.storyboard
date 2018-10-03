@@ -246,11 +246,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
-                                                    <rect key="frame" x="45.666666666666657" y="74" width="319" height="524"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="524" id="MZJ-0B-qF5"/>
-                                                        <constraint firstAttribute="width" constant="319" id="qNm-uk-lPu"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="672"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-jV-4tH">
                                                     <rect key="frame" x="195" y="326" width="20" height="20"/>
@@ -258,10 +254,14 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="MVR-dm-Qwy"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="sqL-bA-0OZ" secondAttribute="top" id="3oc-W9-aX0"/>
+                                            <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" id="FZH-w3-afj"/>
                                             <constraint firstItem="YSy-jV-4tH" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="PoQ-q8-VTx"/>
                                             <constraint firstItem="YSy-jV-4tH" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="Sjc-wc-4U6"/>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="x9j-Fs-30t"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="sqL-bA-0OZ" secondAttribute="leading" id="VCs-8w-2Kv"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="ig6-q8-iQF"/>
+                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="jbk-kE-7P3"/>
+                                            <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" id="wJM-WB-VlH"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>

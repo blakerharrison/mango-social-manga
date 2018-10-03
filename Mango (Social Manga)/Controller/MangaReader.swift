@@ -8,6 +8,8 @@
 
 import UIKit
 
+let imageCache = NSCache<NSString, UIImage>()
+
 class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Outlets
@@ -67,14 +69,20 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         if let image = cell.viewWithTag(100) as? UIImageView {
             
             image.image = nil
-        
+
             DispatchQueue.global(qos: .background).async {
                 do{
                     let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
                     DispatchQueue.main.async {
-
-                        let pageImage: UIImage = UIImage(data: data)!
-                        image.image = pageImage
+  
+                        let imageToCache = UIImage(data: data)!
+                        
+                        imageCache.setObject(imageToCache, forKey: self.Networking.fetchedPagesURLs.reversed()[indexPath.row] as NSString )
+                        
+                        image.image = imageToCache
+                        
+//                        let pageImage: UIImage =
+//                        image.image = pageImage
                         
                         if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
                             activity.isHidden = true
@@ -94,6 +102,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         print(indexPath)
+        
+        
     }
 
 }

@@ -73,6 +73,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.mangaChaptersString.removeAll()
             self.mangaChapterIDs.removeAll()
             
+            guard mangaInfo.chapters.count != 0 else {
+                return print("No Chapters")
+            }
+            
             for n in 0...mangaInfo.chapters.count - 1{
                 let chapters = json["chapters"][n].array
                 self.mangaChaptersString.append(chapters![0].stringValue)
@@ -178,6 +182,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if mangaChapterIDs.count == 0 {
+            return
+        }
         selectedChapterID = mangaChapterIDs[indexPath.row]
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
