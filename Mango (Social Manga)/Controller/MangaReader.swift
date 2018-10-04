@@ -83,13 +83,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                         
 //                        let pageImage: UIImage =
 //                        image.image = pageImage
-                        
-                        if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
-                            activity.isHidden = true
-                            activity.stopAnimating()
-                            collectionView.isScrollEnabled = true
-                        }
-
                     }
                 }
                 catch {
