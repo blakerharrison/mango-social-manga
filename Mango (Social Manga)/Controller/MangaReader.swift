@@ -45,6 +45,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     //MARK: - CollectionView
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Networking.fetchedPagesURLs.count
     }
@@ -68,11 +71,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         if let image = cell.viewWithTag(100) as? UIImageView {
             
-            image.image = nil
+            image.image = UIImage(named: "Rectangle")
 
             DispatchQueue.global(qos: .background).async {
                 do{
                     let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
+
                     DispatchQueue.main.async {
   
                         let imageToCache = UIImage(data: data)!
@@ -81,6 +85,13 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                         
                         image.image = imageToCache
                         
+                            if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
+                                activity.isHidden = true
+                                activity.stopAnimating()
+                                collectionView.isScrollEnabled = true
+                            }
+                        
+                    
 //                        let pageImage: UIImage =
 //                        image.image = pageImage
                     }
@@ -94,9 +105,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print(indexPath)
-        
-        
+
     }
 
 }
@@ -131,3 +140,5 @@ extension MangaReader: UICollectionViewDelegateFlowLayout {
         }
     }
 }
+
+
