@@ -46,9 +46,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     //MARK: - CollectionView
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Networking.fetchedPagesURLs.count
     }
@@ -65,12 +62,17 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
             }
 
-        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(named: "Rectangle"))
-
-        
-//        cell.activityIndicator.isHidden = true
-//        cell.activityIndicator.stopAnimating()
-//        collectionView.isScrollEnabled = true
+        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(named: "DefaultPage"),
+                                   completed: { image, error, cacheType, imageURL in
+                                    
+                                    DispatchQueue.main.async {
+                                        
+                                        cell.activityIndicator.isHidden = true
+                                        cell.activityIndicator.stopAnimating()
+                                        collectionView.isScrollEnabled = true
+                                        
+                                    }
+        })
 
         return cell
     }
