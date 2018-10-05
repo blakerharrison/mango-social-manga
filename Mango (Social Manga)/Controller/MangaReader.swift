@@ -54,52 +54,24 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as! MangaReaderCell
 
-        if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
-            activityMain.isHidden = true
-            activityMain.stopAnimating()
-            activity.isHidden = false
-            activity.startAnimating()
-            
-        }
-    
+        activityMain.isHidden = true
+        activityMain.stopAnimating()
+        cell.activityIndicator.isHidden = false
+        cell.activityIndicator.startAnimating()
+
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
             }
-        
-        
-        if let image = cell.viewWithTag(100) as? UIImageView {
-            
-            image.image = UIImage(named: "Rectangle")
 
-            DispatchQueue.global(qos: .background).async {
-                
-                do
-                {
-                    let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
+        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(named: "Rectangle"))
 
-                    DispatchQueue.main.async {
-  
-                        let imageToCache = UIImage(data: data)!
-                        
-                        imageCache.setObject(imageToCache, forKey: self.Networking.fetchedPagesURLs.reversed()[indexPath.row] as NSString )
-                        
-                        image.image = imageToCache
-                        
-                            if let activity = cell.viewWithTag(103) as? UIActivityIndicatorView {
-                                activity.isHidden = true
-                                activity.stopAnimating()
-                                collectionView.isScrollEnabled = true
-                            }
-                    }
-                }
-                catch
-                {
-                    // error
-                }
-            }
-        }
+        
+//        cell.activityIndicator.isHidden = true
+//        cell.activityIndicator.stopAnimating()
+//        collectionView.isScrollEnabled = true
+
         return cell
     }
     
@@ -114,6 +86,7 @@ class MangaReaderCell: UICollectionViewCell {
     
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
 }
 
 //MARK: - Extensions
