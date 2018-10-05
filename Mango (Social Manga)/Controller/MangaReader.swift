@@ -88,6 +88,12 @@ class MangaReaderCell: UICollectionViewCell {
     
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.pageImage.image = UIImage()
+    }
 
 }
 
