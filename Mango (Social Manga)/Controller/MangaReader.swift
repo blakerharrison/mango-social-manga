@@ -74,7 +74,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             image.image = UIImage(named: "Rectangle")
 
             DispatchQueue.global(qos: .background).async {
-                do{
+                
+                do
+                {
                     let data = try Data.init(contentsOf: URL.init(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!)
 
                     DispatchQueue.main.async {
@@ -90,13 +92,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                 activity.stopAnimating()
                                 collectionView.isScrollEnabled = true
                             }
-                        
-                    
-//                        let pageImage: UIImage =
-//                        image.image = pageImage
                     }
                 }
-                catch {
+                catch
+                {
                     // error
                 }
             }

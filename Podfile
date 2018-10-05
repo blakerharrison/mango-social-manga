@@ -14,6 +14,6 @@ target 'Mango (Social Manga)' do
 
 pod 'SwiftyJSON', '~> 4.0'
 pod "Texture", '>= 2.7'
-pod 'Kingfisher', '~> 4.0'
+pod 'SDWebImage', '~> 4.0'
 
 end
