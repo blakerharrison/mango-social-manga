@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 let imageCache = NSCache<NSString, UIImage>()
 
@@ -62,12 +63,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             activity.startAnimating()
             
         }
-        
-        DispatchQueue.main.async {
+    
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
             }
-        }
+        
         
         if let image = cell.viewWithTag(100) as? UIImageView {
             
@@ -109,7 +109,14 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
 }
 
-//MARK: Extensions
+//MARK: - Custom Cell
+class MangaReaderCell: UICollectionViewCell {
+    
+    @IBOutlet weak var pageImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+}
+
+//MARK: - Extensions
 extension MangaReader: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -238,7 +238,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PageCell" id="sqL-bA-0OZ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PageCell" id="sqL-bA-0OZ" customClass="MangaReaderCell" customModule="Mango__Social_Manga_" customModuleProvider="target">
                                         <rect key="frame" x="2" y="0.0" width="410" height="672"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -263,6 +263,10 @@
                                             <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="jbk-kE-7P3"/>
                                             <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" id="wJM-WB-VlH"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="YSy-jV-4tH" id="E7u-IR-hz7"/>
+                                            <outlet property="pageImage" destination="L53-r4-fMm" id="sa0-Hw-uAO"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
