@@ -84,15 +84,26 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 }
 
 //MARK: - Custom Cell
-class MangaReaderCell: UICollectionViewCell {
+class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
     
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
 
         self.pageImage.image = UIImage()
+    }
+    
+    override func awakeFromNib() {
+        self.scrollView.minimumZoomScale = 1
+        self.scrollView.maximumZoomScale = 10.0
+        self.scrollView.delegate = self
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.pageImage
     }
 
 }
