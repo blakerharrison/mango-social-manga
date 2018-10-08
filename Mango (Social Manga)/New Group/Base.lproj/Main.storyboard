@@ -245,27 +245,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="410" height="672"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2Q-Lt-r4c">
                                                     <rect key="frame" x="0.0" y="0.0" width="410" height="672"/>
-                                                </imageView>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
+                                                            <rect key="frame" x="0.0" y="1" width="410" height="670"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="W2Q-Lt-r4c" secondAttribute="top" constant="1" id="0AK-5k-qoh"/>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="W2Q-Lt-r4c" secondAttribute="centerX" id="TVk-g1-aWR"/>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="W2Q-Lt-r4c" secondAttribute="leading" id="gen-SY-gYz"/>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="W2Q-Lt-r4c" secondAttribute="centerY" id="kUZ-mm-ACd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" id="tTo-jw-TEb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" constant="-1" id="y1h-wE-KJM"/>
+                                                    </constraints>
+                                                </scrollView>
                                                 <activityIndicatorView opaque="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-jV-4tH">
                                                     <rect key="frame" x="195" y="326" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="sqL-bA-0OZ" secondAttribute="top" id="3oc-W9-aX0"/>
-                                            <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" id="FZH-w3-afj"/>
+                                            <constraint firstItem="W2Q-Lt-r4c" firstAttribute="top" secondItem="sqL-bA-0OZ" secondAttribute="top" id="DQE-La-2zm"/>
+                                            <constraint firstAttribute="bottom" secondItem="W2Q-Lt-r4c" secondAttribute="bottom" id="ORM-te-VfA"/>
+                                            <constraint firstItem="W2Q-Lt-r4c" firstAttribute="leading" secondItem="sqL-bA-0OZ" secondAttribute="leading" id="OWE-Yj-H0z"/>
                                             <constraint firstItem="YSy-jV-4tH" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="PoQ-q8-VTx"/>
                                             <constraint firstItem="YSy-jV-4tH" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="Sjc-wc-4U6"/>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="sqL-bA-0OZ" secondAttribute="leading" id="VCs-8w-2Kv"/>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="sqL-bA-0OZ" secondAttribute="centerX" id="ig6-q8-iQF"/>
-                                            <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="sqL-bA-0OZ" secondAttribute="centerY" id="jbk-kE-7P3"/>
-                                            <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" id="wJM-WB-VlH"/>
+                                            <constraint firstAttribute="trailing" secondItem="W2Q-Lt-r4c" secondAttribute="trailing" id="kR1-U0-vJf"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="activityIndicator" destination="YSy-jV-4tH" id="E7u-IR-hz7"/>
                                             <outlet property="pageImage" destination="L53-r4-fMm" id="sa0-Hw-uAO"/>
+                                            <outlet property="scrollView" destination="W2Q-Lt-r4c" id="nUZ-Jr-AnZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

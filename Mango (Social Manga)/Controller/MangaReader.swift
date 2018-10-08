@@ -84,10 +84,49 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 }
 
 //MARK: - Custom Cell
-class MangaReaderCell: UICollectionViewCell {
+class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
     
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.pageImage.image = UIImage()
+    }
+    
+    override func awakeFromNib() {
+        self.scrollView.minimumZoomScale = 1
+        self.scrollView.maximumZoomScale = 2.3
+        self.scrollView.delegate = self
+        scrollView.isUserInteractionEnabled = true
+        
+        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.sampleTapGestureTapped(recognizer:)))
+        doubleTap.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTap)
+    }
+    
+    @objc func sampleTapGestureTapped(recognizer: UITapGestureRecognizer) {
+        if (scrollView.zoomScale > scrollView.minimumZoomScale) {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        } else {
+            let touchPoint = recognizer.location(in: scrollView)
+            let scrollViewSize = scrollView.bounds.size
+            
+            let width = scrollViewSize.width / scrollView.maximumZoomScale
+            let height = scrollViewSize.height / scrollView.maximumZoomScale
+            let x = touchPoint.x - (width/2.0)
+            let y = touchPoint.y - (height/2.0)
+            
+            let rect = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: width, height: height))
+            scrollView.zoom(to: rect, animated: true)
+        }
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.pageImage
+    }
 
 }
 
