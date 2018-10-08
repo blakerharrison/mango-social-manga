@@ -16,6 +16,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
+    @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -29,6 +31,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         activityMain.isHidden = false
         activityMain.startAnimating()
         collectionView.isScrollEnabled = false
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+        backButton.image = UIImage(named: "BackButton")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,6 +42,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.isNavigationBarHidden = false
+        
     }
     
     //MARK: - Methods
@@ -105,6 +113,10 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
+        
+        let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureSingleTapped(recognizer:)))
+        singleTap.numberOfTapsRequired = 1
+        scrollView.addGestureRecognizer(singleTap)
     }
     
     @objc func TapGestureTapped(recognizer: UITapGestureRecognizer) {
@@ -122,6 +134,11 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
             let rect = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: width, height: height))
             scrollView.zoom(to: rect, animated: true)
         }
+    }
+    
+    @objc func TapGestureSingleTapped(recognizer: UITapGestureRecognizer) {
+        print("Tapped")
+
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
