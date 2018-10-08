@@ -102,12 +102,12 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         self.scrollView.delegate = self
         scrollView.isUserInteractionEnabled = true
         
-        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.sampleTapGestureTapped(recognizer:)))
+        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
     }
     
-    @objc func sampleTapGestureTapped(recognizer: UITapGestureRecognizer) {
+    @objc func TapGestureTapped(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         } else {
