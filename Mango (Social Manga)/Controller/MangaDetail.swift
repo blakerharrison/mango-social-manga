@@ -12,6 +12,7 @@ import SwiftyJSON
 var selectedIndex = 0
 var selectedID = ""
 var selectedChapterID = ""
+var currentChapter = ""
 
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -176,6 +177,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if mangaChaptersString.isEmpty {
             } else {
                 label.text = "Chapter: " + mangaChaptersString[indexPath.row]
+               
             }
         }
         return cell
@@ -186,10 +188,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if mangaChapterIDs.count == 0 {
             return
         }
+        
         selectedChapterID = mangaChapterIDs[indexPath.row]
+        currentChapter = mangaChaptersString[indexPath.row]
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
-    
 }
 

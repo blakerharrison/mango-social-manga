@@ -289,13 +289,53 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZGu-PJ-GUn">
                                 <rect key="frame" x="197" y="358" width="20" height="20"/>
                             </activityIndicatorView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4p-d1-le1">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="k6L-4E-WsX">
+                                        <barButtonItem key="leftBarButtonItem" id="U46-TU-YBf">
+                                            <connections>
+                                                <action selector="backButtonAction:" destination="2Qe-Pf-OVp" id="7DB-li-KY5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="AmazonIcon" id="cNh-KY-XXP"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-PG-Gez">
+                                <rect key="frame" x="207" y="725" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAx-0n-poT">
+                                <rect key="frame" x="207" y="32" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerY" secondItem="JZn-GB-4JY" secondAttribute="centerY" id="0RJ-az-DMW"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="1BS-Dt-W1J"/>
+                            <constraint firstItem="bAx-0n-poT" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" constant="32" id="EsZ-sS-Sz9"/>
+                            <constraint firstItem="yOg-Gr-NgC" firstAttribute="leading" secondItem="lZC-VV-8KX" secondAttribute="leading" id="FWq-ye-sGZ"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="HPg-Ck-Ex1"/>
+                            <constraint firstItem="x4p-d1-le1" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" constant="20" id="IZp-rG-9QA"/>
+                            <constraint firstAttribute="trailing" secondItem="x4p-d1-le1" secondAttribute="trailing" id="NQc-SJ-zD6"/>
+                            <constraint firstItem="lZC-VV-8KX" firstAttribute="trailing" secondItem="yOg-Gr-NgC" secondAttribute="trailing" id="OnH-jx-PCU"/>
+                            <constraint firstItem="yOg-Gr-NgC" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="S0D-Yn-7bw"/>
+                            <constraint firstItem="8XA-PG-Gez" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="YXD-ra-lj8"/>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="e9l-KR-26x"/>
+                            <constraint firstItem="x4p-d1-le1" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="ncd-8K-1Ja"/>
+                            <constraint firstItem="bAx-0n-poT" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="r5L-mw-le0"/>
+                            <constraint firstItem="lZC-VV-8KX" firstAttribute="bottom" secondItem="8XA-PG-Gez" secondAttribute="bottom" constant="11" id="uZV-Cn-LXm"/>
                             <constraint firstAttribute="trailing" secondItem="aYf-Yg-3qr" secondAttribute="trailing" id="xsl-Sq-tta"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" id="zZ1-ie-ZON"/>
                         </constraints>
@@ -303,7 +343,13 @@
                     </view>
                     <connections>
                         <outlet property="activityMain" destination="ZGu-PJ-GUn" id="IPf-oJ-XUm"/>
+                        <outlet property="backButton" destination="U46-TU-YBf" id="XIG-oo-QvY"/>
                         <outlet property="collectionView" destination="aYf-Yg-3qr" id="Eyf-Fb-OUu"/>
+                        <outlet property="navBar" destination="x4p-d1-le1" id="mrf-Yr-zbk"/>
+                        <outlet property="navItem" destination="k6L-4E-WsX" id="7tK-R7-bmX"/>
+                        <outlet property="pageChapterLabel" destination="bAx-0n-poT" id="NJN-DV-TR9"/>
+                        <outlet property="pageNumberLabel" destination="8XA-PG-Gez" id="NOC-g3-fgK"/>
+                        <outlet property="toolBar" destination="yOg-Gr-NgC" id="jJD-mp-p95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dP-tkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +386,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I70-te-NgM">
-                                                    <rect key="frame" x="18" y="11.333333333333334" width="10" height="21.666666666666664"/>
+                                                    <rect key="frame" x="18" y="9.6666666666666661" width="17" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -362,36 +408,36 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-a7-pNj">
-                                <rect key="frame" x="146" y="73" width="248" height="18.333333333333329"/>
+                                <rect key="frame" x="146" y="73" width="248" height="20"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84i-wo-m2G">
-                                <rect key="frame" x="146" y="95.333333333333329" width="248" height="18.333333333333329"/>
+                                <rect key="frame" x="146" y="97" width="248" height="20"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efm-zu-8Xk">
-                                <rect key="frame" x="146" y="117.66666666666667" width="248" height="18.333333333333329"/>
+                                <rect key="frame" x="146" y="121" width="248" height="20"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="released" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-3H-8tt">
-                                <rect key="frame" x="146" y="139" width="248" height="18.333333333333343"/>
+                                <rect key="frame" x="146" y="144" width="248" height="20"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-cu-ex8">
-                                <rect key="frame" x="146" y="180.66666666666666" width="248" height="80.333333333333343"/>
+                                <rect key="frame" x="146" y="189" width="248" height="72"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-Bv-pxg">
-                                <rect key="frame" x="146" y="159.33333333333334" width="248" height="18.333333333333343"/>
+                                <rect key="frame" x="146" y="166" width="248" height="20"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -491,6 +537,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AmazonIcon" width="48" height="48"/>
         <image name="Background2" width="375" height="667"/>
         <image name="Manga Background" width="375" height="667"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>

@@ -16,6 +16,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var pageNumberLabel: UILabel!
+    @IBOutlet weak var pageChapterLabel: UILabel!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -29,6 +35,16 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         activityMain.isHidden = false
         activityMain.startAnimating()
         collectionView.isScrollEnabled = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
+        
+        backButton.image = UIImage(named: "BackButton")
+
+        pageChapterLabel.text =
+           "CHAPTER " + currentChapter
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,6 +52,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.isNavigationBarHidden = false
+
     }
     
     //MARK: - Methods
@@ -43,6 +61,28 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         DispatchQueue.main.async {
         self.collectionView.reloadData()
         }
+    }
+    
+    @objc func toggleNavBar(notification: NSNotification) {
+        if self.navBar.isHidden == false {
+            print("Hiding Nav Bar")
+            self.navBar?.isHidden = true
+            self.toolBar?.isHidden = true
+            self.pageNumberLabel?.isHidden = true
+            self.pageChapterLabel?.isHidden = true
+            return
+        } else {
+            print("Showing Nav Bar")
+            self.navBar?.isHidden = false
+            self.toolBar?.isHidden = false
+            self.pageNumberLabel?.isHidden = false
+            self.pageChapterLabel?.isHidden = false
+        }
+    }
+
+    //MARK: - Actions
+    @IBAction func backButtonAction(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - CollectionView
@@ -78,9 +118,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
+//                 navItem.title = String(indexPath.row)
+        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
     }
-
 }
 
 //MARK: - Custom Cell
@@ -102,12 +142,18 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         self.scrollView.delegate = self
         scrollView.isUserInteractionEnabled = true
         
-        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.sampleTapGestureTapped(recognizer:)))
+        let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureSingleTapped(recognizer:)))
+        singleTap.numberOfTapsRequired = 1
+        scrollView.addGestureRecognizer(singleTap)
+        
+        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
+
+        singleTap.require(toFail: doubleTap)
     }
     
-    @objc func sampleTapGestureTapped(recognizer: UITapGestureRecognizer) {
+    @objc func TapGestureTapped(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         } else {
@@ -124,10 +170,13 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         }
     }
     
+    @objc func TapGestureSingleTapped(recognizer: UITapGestureRecognizer) {
+        NotificationCenter.default.post(name: .toggle, object: nil)
+    }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.pageImage
     }
-
 }
 
 //MARK: - Extensions
@@ -161,4 +210,7 @@ extension MangaReader: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension Notification.Name {
+    static let toggle = Notification.Name("true")
+}
 
