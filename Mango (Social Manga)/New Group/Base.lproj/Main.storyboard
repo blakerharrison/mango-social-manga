@@ -299,13 +299,13 @@
                                                 <action selector="backButtonAction:" destination="2Qe-Pf-OVp" id="7DB-li-KY5"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="AmazonIcon" id="cNh-KY-XXP"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-PG-Gez">
                                 <rect key="frame" x="207" y="725" width="0.0" height="0.0"/>
@@ -528,6 +528,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AmazonIcon" width="48" height="48"/>
         <image name="Background2" width="375" height="667"/>
         <image name="Manga Background" width="375" height="667"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>
