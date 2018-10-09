@@ -56,8 +56,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     //MARK: - Methods
-
-    
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
         self.collectionView.reloadData()
@@ -119,7 +117,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//                 navItem.title = String(indexPath.row)
         pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
     }
 }
