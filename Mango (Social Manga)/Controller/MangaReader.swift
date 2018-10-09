@@ -53,10 +53,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
-
     }
     
     //MARK: - Methods
+
+    
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
         self.collectionView.reloadData()
