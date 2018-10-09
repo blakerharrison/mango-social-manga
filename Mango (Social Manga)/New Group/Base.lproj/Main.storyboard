@@ -301,14 +301,22 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items/>
+                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerY" secondItem="JZn-GB-4JY" secondAttribute="centerY" id="0RJ-az-DMW"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="1BS-Dt-W1J"/>
+                            <constraint firstItem="yOg-Gr-NgC" firstAttribute="leading" secondItem="lZC-VV-8KX" secondAttribute="leading" id="FWq-ye-sGZ"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="HPg-Ck-Ex1"/>
                             <constraint firstItem="x4p-d1-le1" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" constant="20" id="IZp-rG-9QA"/>
                             <constraint firstAttribute="trailing" secondItem="x4p-d1-le1" secondAttribute="trailing" id="NQc-SJ-zD6"/>
+                            <constraint firstItem="lZC-VV-8KX" firstAttribute="trailing" secondItem="yOg-Gr-NgC" secondAttribute="trailing" id="OnH-jx-PCU"/>
+                            <constraint firstItem="yOg-Gr-NgC" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="S0D-Yn-7bw"/>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="e9l-KR-26x"/>
                             <constraint firstItem="x4p-d1-le1" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="ncd-8K-1Ja"/>
                             <constraint firstAttribute="trailing" secondItem="aYf-Yg-3qr" secondAttribute="trailing" id="xsl-Sq-tta"/>
@@ -322,6 +330,7 @@
                         <outlet property="collectionView" destination="aYf-Yg-3qr" id="Eyf-Fb-OUu"/>
                         <outlet property="navBar" destination="x4p-d1-le1" id="mrf-Yr-zbk"/>
                         <outlet property="navItem" destination="k6L-4E-WsX" id="7tK-R7-bmX"/>
+                        <outlet property="toolBar" destination="yOg-Gr-NgC" id="jJD-mp-p95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dP-tkv" userLabel="First Responder" sceneMemberID="firstResponder"/>

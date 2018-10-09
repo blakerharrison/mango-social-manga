@@ -19,6 +19,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -60,10 +61,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         if self.navBar.isHidden == false {
             print("Hiding Nav Bar")
             self.navBar?.isHidden = true
+            self.toolBar?.isHidden = true
             return
         } else {
             print("Showing Nav Bar")
             self.navBar?.isHidden = false
+            self.toolBar?.isHidden = false
         }
     }
 
