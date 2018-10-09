@@ -18,6 +18,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -35,7 +36,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
         
         backButton.image = UIImage(named: "BackButton")
-
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -105,7 +105,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
+//                 navItem.title = String(indexPath.row)
+        navItem.title = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
     }
 }
 
@@ -128,14 +129,14 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         self.scrollView.delegate = self
         scrollView.isUserInteractionEnabled = true
         
-        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
-        doubleTap.numberOfTapsRequired = 2
-        scrollView.addGestureRecognizer(doubleTap)
-        
         let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureSingleTapped(recognizer:)))
         singleTap.numberOfTapsRequired = 1
         scrollView.addGestureRecognizer(singleTap)
         
+        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
+        doubleTap.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTap)
+
         singleTap.require(toFail: doubleTap)
     }
     

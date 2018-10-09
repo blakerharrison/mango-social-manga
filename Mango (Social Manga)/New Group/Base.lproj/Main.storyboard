@@ -292,7 +292,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4p-d1-le1">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Mango" id="k6L-4E-WsX">
+                                    <navigationItem id="k6L-4E-WsX">
                                         <barButtonItem key="leftBarButtonItem" id="U46-TU-YBf">
                                             <connections>
                                                 <action selector="backButtonAction:" destination="2Qe-Pf-OVp" id="7DB-li-KY5"/>
@@ -321,6 +321,7 @@
                         <outlet property="backButton" destination="U46-TU-YBf" id="XIG-oo-QvY"/>
                         <outlet property="collectionView" destination="aYf-Yg-3qr" id="Eyf-Fb-OUu"/>
                         <outlet property="navBar" destination="x4p-d1-le1" id="mrf-Yr-zbk"/>
+                        <outlet property="navItem" destination="k6L-4E-WsX" id="7tK-R7-bmX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dP-tkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
