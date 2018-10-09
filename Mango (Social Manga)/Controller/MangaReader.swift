@@ -40,7 +40,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         backButton.image = UIImage(named: "BackButton")
 
-        pageChapterLabel.text = currentChapter
+        pageChapterLabel.text =
+           "CHAPTER " + currentChapter
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
