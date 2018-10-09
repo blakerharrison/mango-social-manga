@@ -20,6 +20,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var pageNumberLabel: UILabel!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -62,11 +63,13 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             print("Hiding Nav Bar")
             self.navBar?.isHidden = true
             self.toolBar?.isHidden = true
+            self.pageNumberLabel?.isHidden = true
             return
         } else {
             print("Showing Nav Bar")
             self.navBar?.isHidden = false
             self.toolBar?.isHidden = false
+            self.pageNumberLabel?.isHidden = false
         }
     }
 
@@ -109,7 +112,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //                 navItem.title = String(indexPath.row)
-        navItem.title = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
     }
 }
 
