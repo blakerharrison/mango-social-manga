@@ -16,8 +16,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
-    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -32,9 +32,13 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         activityMain.startAnimating()
         collectionView.isScrollEnabled = false
         
-        self.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
         
         backButton.image = UIImage(named: "BackButton")
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,7 +47,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
-        
     }
     
     //MARK: - Methods
@@ -51,6 +54,22 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         DispatchQueue.main.async {
         self.collectionView.reloadData()
         }
+    }
+    
+    @objc func toggleNavBar(notification: NSNotification) {
+        if self.navBar.isHidden == false {
+            print("Hiding Nav Bar")
+            self.navBar?.isHidden = true
+            return
+        } else {
+            print("Showing Nav Bar")
+            self.navBar?.isHidden = false
+        }
+    }
+
+    //MARK: - Actions
+    @IBAction func backButtonAction(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - CollectionView
@@ -88,7 +107,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
     }
-
 }
 
 //MARK: - Custom Cell
@@ -117,6 +135,8 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureSingleTapped(recognizer:)))
         singleTap.numberOfTapsRequired = 1
         scrollView.addGestureRecognizer(singleTap)
+        
+        singleTap.require(toFail: doubleTap)
     }
     
     @objc func TapGestureTapped(recognizer: UITapGestureRecognizer) {
@@ -137,14 +157,12 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     @objc func TapGestureSingleTapped(recognizer: UITapGestureRecognizer) {
-        print("Tapped")
-
+        NotificationCenter.default.post(name: .toggle, object: nil)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.pageImage
     }
-
 }
 
 //MARK: - Extensions
@@ -178,4 +196,7 @@ extension MangaReader: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension Notification.Name {
+    static let toggle = Notification.Name("true")
+}
 
