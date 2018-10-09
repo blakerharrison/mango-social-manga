@@ -21,6 +21,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pageNumberLabel: UILabel!
+    @IBOutlet weak var pageChapterLabel: UILabel!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -38,6 +39,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
         
         backButton.image = UIImage(named: "BackButton")
+
+        pageChapterLabel.text = currentChapter
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -49,6 +52,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
+
     }
     
     //MARK: - Methods
@@ -64,12 +68,14 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.navBar?.isHidden = true
             self.toolBar?.isHidden = true
             self.pageNumberLabel?.isHidden = true
+            self.pageChapterLabel?.isHidden = true
             return
         } else {
             print("Showing Nav Bar")
             self.navBar?.isHidden = false
             self.toolBar?.isHidden = false
             self.pageNumberLabel?.isHidden = false
+            self.pageChapterLabel?.isHidden = false
         }
     }
 

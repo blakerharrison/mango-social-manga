@@ -313,11 +313,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAx-0n-poT">
+                                <rect key="frame" x="207" y="32" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerY" secondItem="JZn-GB-4JY" secondAttribute="centerY" id="0RJ-az-DMW"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="1BS-Dt-W1J"/>
+                            <constraint firstItem="bAx-0n-poT" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" constant="32" id="EsZ-sS-Sz9"/>
                             <constraint firstItem="yOg-Gr-NgC" firstAttribute="leading" secondItem="lZC-VV-8KX" secondAttribute="leading" id="FWq-ye-sGZ"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="bottom" secondItem="lZC-VV-8KX" secondAttribute="bottom" id="HPg-Ck-Ex1"/>
                             <constraint firstItem="x4p-d1-le1" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" constant="20" id="IZp-rG-9QA"/>
@@ -327,6 +334,7 @@
                             <constraint firstItem="8XA-PG-Gez" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="YXD-ra-lj8"/>
                             <constraint firstItem="ZGu-PJ-GUn" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="e9l-KR-26x"/>
                             <constraint firstItem="x4p-d1-le1" firstAttribute="leading" secondItem="JZn-GB-4JY" secondAttribute="leading" id="ncd-8K-1Ja"/>
+                            <constraint firstItem="bAx-0n-poT" firstAttribute="centerX" secondItem="JZn-GB-4JY" secondAttribute="centerX" id="r5L-mw-le0"/>
                             <constraint firstItem="lZC-VV-8KX" firstAttribute="bottom" secondItem="8XA-PG-Gez" secondAttribute="bottom" constant="11" id="uZV-Cn-LXm"/>
                             <constraint firstAttribute="trailing" secondItem="aYf-Yg-3qr" secondAttribute="trailing" id="xsl-Sq-tta"/>
                             <constraint firstItem="aYf-Yg-3qr" firstAttribute="top" secondItem="JZn-GB-4JY" secondAttribute="top" id="zZ1-ie-ZON"/>
@@ -339,6 +347,7 @@
                         <outlet property="collectionView" destination="aYf-Yg-3qr" id="Eyf-Fb-OUu"/>
                         <outlet property="navBar" destination="x4p-d1-le1" id="mrf-Yr-zbk"/>
                         <outlet property="navItem" destination="k6L-4E-WsX" id="7tK-R7-bmX"/>
+                        <outlet property="pageChapterLabel" destination="bAx-0n-poT" id="NJN-DV-TR9"/>
                         <outlet property="pageNumberLabel" destination="8XA-PG-Gez" id="NOC-g3-fgK"/>
                         <outlet property="toolBar" destination="yOg-Gr-NgC" id="jJD-mp-p95"/>
                     </connections>
