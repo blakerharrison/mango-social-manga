@@ -35,6 +35,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+        
+        searchBar.becomeFirstResponder()
     }
     
     //MARK: - Methods
