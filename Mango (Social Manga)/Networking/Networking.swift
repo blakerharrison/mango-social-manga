@@ -66,7 +66,12 @@ class MangoNetworking {
     }
     
     func fetchMangaTitles(searchedManga: String) {
+        
+        resultsArray.removeAll()
         guard let url = URL(string: "https://www.mangaeden.com/api/list/0/") else {return}
+        
+        let searchedMangaLowercased = searchedManga.lowercased().replacingOccurrences(of: " ", with: "-", options: .literal, range: nil)
+        print(searchedMangaLowercased)
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
            
@@ -89,7 +94,9 @@ class MangoNetworking {
                 
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
                 
-                let filteredManga = listOfMangas.manga.filter { ($0.t?.contains(searchedManga))! }
+                let filteredManga = listOfMangas.manga.filter { ($0.a!.contains(searchedMangaLowercased)) }
+                
+                print(filteredManga)
                 
                 searchedMangaList = filteredManga
                 
@@ -98,7 +105,9 @@ class MangoNetworking {
                     resultsArray.removeAll()
                     
                     for n in 0...filteredManga.count - 1 {
+                        
                         resultsArray.append(filteredManga[n].t!)
+                        print(resultsArray)
                     }
                     
                     myFetchTitlesGroup.leave()
