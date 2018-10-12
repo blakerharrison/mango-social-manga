@@ -27,14 +27,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         setUpSearchBar()
         self.searchBar.enablesReturnKeyAutomatically = true
-        
-        activity.isHidden = true
-        activityView.isHidden = true
-        
+
         navigationItem.title = "search"
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+        
+        activity.isHidden = true
+        activityView.isHidden = true
         
         searchBar.becomeFirstResponder()
     }
@@ -63,6 +63,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @objc func refreshTable(notification: NSNotification) {
         DispatchQueue.main.async {
             self.table.reloadData()
+            self.table.layoutIfNeeded()
+            self.table.contentOffset = CGPoint(x: 0, y: -self.table.contentInset.top)
+            
+            self.activity.isHidden = true
+            self.activityView.isHidden = true
+            self.activity.stopAnimating()
         }
     }
     

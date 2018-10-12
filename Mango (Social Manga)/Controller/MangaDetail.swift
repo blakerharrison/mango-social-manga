@@ -195,4 +195,3 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
 }
-
