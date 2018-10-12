@@ -93,10 +93,12 @@ class MangoNetworking {
                 let decoder = JSONDecoder()
                 
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
-                
-                let filteredManga = listOfMangas.manga.filter { ($0.a!.contains(searchedMangaLowercased)) }
-                
-                print(filteredManga)
+
+                var filteredManga = listOfMangas.manga.filter { ($0.a!.contains(searchedMangaLowercased)) }
+
+                filteredManga.sort {
+                    return $0.h! > $1.h!
+                }
                 
                 searchedMangaList = filteredManga
                 
@@ -105,11 +107,10 @@ class MangoNetworking {
                     resultsArray.removeAll()
                     
                     for n in 0...filteredManga.count - 1 {
-                        
+                
                         resultsArray.append(filteredManga[n].t!)
-                        print(resultsArray)
                     }
-                    
+
                     myFetchTitlesGroup.leave()
                     
                 } else {
