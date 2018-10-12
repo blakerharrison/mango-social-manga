@@ -474,6 +474,10 @@
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-mL-ayB">
                                 <rect key="frame" x="329" y="263" width="30" height="30"/>
+                                <state key="normal" title="Rev"/>
+                                <connections>
+                                    <action selector="reverseChapterOrder:" destination="1V7-gQ-nIo" eventType="touchUpInside" id="eTq-lz-SWB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
