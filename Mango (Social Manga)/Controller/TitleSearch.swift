@@ -35,6 +35,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+        
+        searchBar.becomeFirstResponder()
     }
     
     //MARK: - Methods
@@ -43,20 +45,18 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching { return filteredArray.count }
+        if isSearching { return resultsArray.count }
         
-        return filteredArray.count
+        return resultsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
-        
         if isSearching {
             if let label = cell.viewWithTag(1000) as? UILabel {
-                label.text = searchedMangaList[indexPath.row].t!
+                label.text = resultsArray[indexPath.row]
             }
         }
-
         return cell
     }
     
