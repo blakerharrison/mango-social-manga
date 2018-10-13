@@ -27,14 +27,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         setUpSearchBar()
         self.searchBar.enablesReturnKeyAutomatically = true
-        
-        activity.isHidden = true
-        activityView.isHidden = true
-        
+
         navigationItem.title = "search"
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+        
+        activity.isHidden = true
+        activityView.isHidden = true
         
         searchBar.becomeFirstResponder()
     }
@@ -45,26 +45,30 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching { return filteredArray.count }
+        if isSearching { return resultsArray.count }
         
-        return filteredArray.count
+        return resultsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
-        
         if isSearching {
-            if let label = cell.viewWithTag(1000) as? UILabel {
-                label.text = searchedMangaList[indexPath.row].t!
-            }
+                if let label = cell.viewWithTag(1000) as? UILabel {
+                    label.text = resultsArray[indexPath.row]
+                }
         }
-
         return cell
     }
     
     @objc func refreshTable(notification: NSNotification) {
         DispatchQueue.main.async {
             self.table.reloadData()
+            self.table.layoutIfNeeded()
+            self.table.contentOffset = CGPoint(x: 0, y: -self.table.contentInset.top)
+            
+            self.activity.isHidden = true
+            self.activityView.isHidden = true
+            self.activity.stopAnimating()
         }
     }
     
@@ -79,5 +83,4 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // Segue to the second view controller
         self.performSegue(withIdentifier: "DetailSegue", sender: self)
     }
-    
 }

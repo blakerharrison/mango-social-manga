@@ -162,6 +162,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     //MARK: - Actions
+    @IBAction func reverseChapterOrder(_ sender: Any) {
+        mangaChaptersString.reverse()
+        mangaChapterIDs.reverse()
+        tableView.reloadData()
+    }
     
     //TODO: - Add an aciton button for Read. !@#$%^&*()
     
@@ -195,4 +200,3 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
 }
-

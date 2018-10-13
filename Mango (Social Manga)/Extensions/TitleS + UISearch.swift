@@ -38,19 +38,16 @@ extension TitleSearch: UISearchBarDelegate {
         
         myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
             self.searchFilter(searchBar)
-            
-            self.activity.isHidden = true
-            self.activityView.isHidden = true
-            self.activity.stopAnimating()
         }
     }
 
     func searchFilter(_ searchBar: UISearchBar) {
-        filteredArray.removeAll(keepingCapacity: false)
-        let predicateString = searchBar.text!
-        filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
-        filteredArray.sort {$0 < $1}
-        isSearching = (filteredArray.count == 0) ? false: true
+//        resultsArray.removeAll()
+//        filteredArray.removeAll(keepingCapacity: false)
+//        let predicateString = searchBar.text!
+//        filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
+//        resultsArray.sort {$0 < $1}
+        isSearching = (resultsArray.count == 0) ? false: true
                             NotificationCenter.default.post(name: NSNotification.Name("finishedGettingTitles"), object: nil)
     }
 }
