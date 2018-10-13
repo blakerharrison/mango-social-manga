@@ -38,10 +38,6 @@ extension TitleSearch: UISearchBarDelegate {
         
         myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
             self.searchFilter(searchBar)
-            
-            self.activity.isHidden = true
-            self.activityView.isHidden = true
-            self.activity.stopAnimating()
         }
     }
 

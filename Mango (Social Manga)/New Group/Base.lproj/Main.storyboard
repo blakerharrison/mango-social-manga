@@ -150,7 +150,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="303" height="28"/>
+                                                    <rect key="frame" x="9" y="11" width="358" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
                                                     </constraints>
@@ -424,36 +424,36 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-a7-pNj">
-                                <rect key="frame" x="146" y="73" width="213" height="18.5"/>
+                                <rect key="frame" x="146" y="73" width="213" height="19"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84i-wo-m2G">
-                                <rect key="frame" x="146" y="95.5" width="213" height="18.5"/>
+                                <rect key="frame" x="146" y="96" width="213" height="19"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efm-zu-8Xk">
-                                <rect key="frame" x="146" y="118" width="213" height="18.5"/>
+                                <rect key="frame" x="146" y="119" width="213" height="19"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="released" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-3H-8tt">
-                                <rect key="frame" x="146" y="139.5" width="213" height="18.5"/>
+                                <rect key="frame" x="146" y="141" width="213" height="19"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-cu-ex8">
-                                <rect key="frame" x="146" y="181.5" width="213" height="79.5"/>
+                                <rect key="frame" x="146" y="184" width="213" height="77"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-Bv-pxg">
-                                <rect key="frame" x="146" y="160" width="213" height="18.5"/>
+                                <rect key="frame" x="146" y="162" width="213" height="19"/>
                                 <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -472,6 +472,17 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f62-9X-2Tb">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-mL-ayB">
+                                <rect key="frame" x="328" y="275" width="31" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4GM-kg-8AU"/>
+                                    <constraint firstAttribute="width" constant="31" id="FnA-Uj-Tpv"/>
+                                </constraints>
+                                <state key="normal" image="SwapButton"/>
+                                <connections>
+                                    <action selector="reverseChapterOrder:" destination="1V7-gQ-nIo" eventType="touchUpInside" id="eTq-lz-SWB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -480,11 +491,13 @@
                             <constraint firstItem="Qwp-Bv-pxg" firstAttribute="leading" secondItem="OcB-cu-ex8" secondAttribute="leading" id="Chy-02-hfZ"/>
                             <constraint firstItem="efm-zu-8Xk" firstAttribute="leading" secondItem="PmR-3H-8tt" secondAttribute="leading" id="Cu7-GI-RBi"/>
                             <constraint firstItem="efm-zu-8Xk" firstAttribute="trailing" secondItem="PmR-3H-8tt" secondAttribute="trailing" id="HB0-uV-doX"/>
+                            <constraint firstItem="s5X-mL-ayB" firstAttribute="top" secondItem="OcB-cu-ex8" secondAttribute="bottom" constant="14" id="JPY-ul-zEO"/>
                             <constraint firstItem="eNw-EQ-Qm5" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="13" id="K5Z-xa-sT7"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="leading" secondItem="g8l-f4-fJl" secondAttribute="leading" id="LAW-Ku-K0E"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="LY9-Qt-d4z"/>
                             <constraint firstItem="PmR-3H-8tt" firstAttribute="trailing" secondItem="Qwp-Bv-pxg" secondAttribute="trailing" id="MnB-h0-azD"/>
                             <constraint firstItem="el6-34-z0u" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="-242" id="O87-72-ekX"/>
+                            <constraint firstItem="s5X-mL-ayB" firstAttribute="trailing" secondItem="OcB-cu-ex8" secondAttribute="trailing" id="OGS-hB-G2r"/>
                             <constraint firstItem="PmR-3H-8tt" firstAttribute="top" secondItem="efm-zu-8Xk" secondAttribute="bottom" constant="3" id="QIO-2w-ffd"/>
                             <constraint firstItem="eNw-EQ-Qm5" firstAttribute="leading" secondItem="g8l-f4-fJl" secondAttribute="leading" constant="35" id="TRs-Ij-en9"/>
                             <constraint firstItem="f62-9X-2Tb" firstAttribute="centerX" secondItem="EuW-bO-8Os" secondAttribute="centerX" id="UCf-kV-TDm"/>
@@ -509,6 +522,7 @@
                             <constraint firstItem="84i-wo-m2G" firstAttribute="leading" secondItem="efm-zu-8Xk" secondAttribute="leading" id="tVD-P2-qbZ"/>
                             <constraint firstItem="Qwp-Bv-pxg" firstAttribute="top" secondItem="PmR-3H-8tt" secondAttribute="bottom" constant="2" id="vKJ-oJ-cdO"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="top" secondItem="Qwp-Bv-pxg" secondAttribute="bottom" constant="3" id="vf7-oD-Rqw"/>
+                            <constraint firstItem="jSb-Pg-0Bt" firstAttribute="top" secondItem="s5X-mL-ayB" secondAttribute="bottom" id="wmb-Et-Bix"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g8l-f4-fJl"/>
                     </view>
@@ -531,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7709" y="-2076"/>
+            <point key="canvasLocation" x="7708" y="-2076.6116941529235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zvp-2s-Wcz">
@@ -556,6 +570,7 @@
         <image name="AmazonIcon" width="48" height="48"/>
         <image name="Background2" width="375" height="667"/>
         <image name="Manga Background" width="375" height="667"/>
+        <image name="SwapButton" width="44" height="44"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>
     </resources>
 </document>
