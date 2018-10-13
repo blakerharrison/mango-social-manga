@@ -25,6 +25,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Properties
     let Networking = MangoNetworking()
+    var refresher: UIRefreshControl!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -42,7 +43,26 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
         pageChapterLabel.text =
            "CHAPTER " + currentChapter
+        
+        //MARK: - ~NEW CODE~
+        self.refresher = UIRefreshControl()
+        self.collectionView!.alwaysBounceVertical = true
+        self.refresher.tintColor = UIColor.darkGray
+        self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.collectionView!.addSubview(refresher)
+        
     }
+    
+    @objc func loadData() {
+        //code to execute during refresher
+        print("Loaded")
+        stopRefresher()         //Call this to stop refresher
+    }
+    
+    func stopRefresher() {
+        self.refresher.endRefreshing()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
