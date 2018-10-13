@@ -150,7 +150,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="303" height="28"/>
+                                                    <rect key="frame" x="9" y="11" width="358" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
                                                     </constraints>
@@ -473,7 +473,7 @@
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-mL-ayB">
-                                <rect key="frame" x="328" y="269" width="31" height="21"/>
+                                <rect key="frame" x="328" y="275" width="31" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4GM-kg-8AU"/>
                                     <constraint firstAttribute="width" constant="31" id="FnA-Uj-Tpv"/>
@@ -491,7 +491,7 @@
                             <constraint firstItem="Qwp-Bv-pxg" firstAttribute="leading" secondItem="OcB-cu-ex8" secondAttribute="leading" id="Chy-02-hfZ"/>
                             <constraint firstItem="efm-zu-8Xk" firstAttribute="leading" secondItem="PmR-3H-8tt" secondAttribute="leading" id="Cu7-GI-RBi"/>
                             <constraint firstItem="efm-zu-8Xk" firstAttribute="trailing" secondItem="PmR-3H-8tt" secondAttribute="trailing" id="HB0-uV-doX"/>
-                            <constraint firstItem="s5X-mL-ayB" firstAttribute="top" secondItem="OcB-cu-ex8" secondAttribute="bottom" constant="8" id="JPY-ul-zEO"/>
+                            <constraint firstItem="s5X-mL-ayB" firstAttribute="top" secondItem="OcB-cu-ex8" secondAttribute="bottom" constant="14" id="JPY-ul-zEO"/>
                             <constraint firstItem="eNw-EQ-Qm5" firstAttribute="top" secondItem="LZW-63-8Z8" secondAttribute="bottom" constant="13" id="K5Z-xa-sT7"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="leading" secondItem="g8l-f4-fJl" secondAttribute="leading" id="LAW-Ku-K0E"/>
                             <constraint firstItem="jSb-Pg-0Bt" firstAttribute="bottom" secondItem="g8l-f4-fJl" secondAttribute="bottom" id="LY9-Qt-d4z"/>
@@ -522,7 +522,7 @@
                             <constraint firstItem="84i-wo-m2G" firstAttribute="leading" secondItem="efm-zu-8Xk" secondAttribute="leading" id="tVD-P2-qbZ"/>
                             <constraint firstItem="Qwp-Bv-pxg" firstAttribute="top" secondItem="PmR-3H-8tt" secondAttribute="bottom" constant="2" id="vKJ-oJ-cdO"/>
                             <constraint firstItem="OcB-cu-ex8" firstAttribute="top" secondItem="Qwp-Bv-pxg" secondAttribute="bottom" constant="3" id="vf7-oD-Rqw"/>
-                            <constraint firstItem="jSb-Pg-0Bt" firstAttribute="top" secondItem="s5X-mL-ayB" secondAttribute="bottom" constant="6" id="wmb-Et-Bix"/>
+                            <constraint firstItem="jSb-Pg-0Bt" firstAttribute="top" secondItem="s5X-mL-ayB" secondAttribute="bottom" id="wmb-Et-Bix"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g8l-f4-fJl"/>
                     </view>
