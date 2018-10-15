@@ -9,8 +9,6 @@
 import UIKit
 import SDWebImage
 
-let imageCache = NSCache<NSString, UIImage>()
-
 class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Outlets
