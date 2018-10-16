@@ -52,7 +52,6 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
-
         if isSearching {
                 if let label = cell.viewWithTag(1000) as? UILabel {
                     label.text = resultsArray[indexPath.row]
