@@ -19,6 +19,10 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         super.prepareForReuse()
         
         self.pageImage.image = UIImage()
+        
+        print("YeaAAaaaAA")
+        
+        self.scrollView.zoomScale = 1
     }
     
     override func awakeFromNib() {
