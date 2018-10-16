@@ -52,6 +52,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
+
         if isSearching {
                 if let label = cell.viewWithTag(1000) as? UILabel {
                     label.text = resultsArray[indexPath.row]
@@ -62,8 +63,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     @objc func refreshTable(notification: NSNotification) {
         DispatchQueue.main.async {
-            self.table.reloadData()
             self.table.layoutIfNeeded()
+            self.table.reloadData()
             self.table.contentOffset = CGPoint(x: 0, y: -self.table.contentInset.top)
             
             self.activity.isHidden = true
