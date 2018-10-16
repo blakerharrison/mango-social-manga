@@ -43,7 +43,7 @@ extension TitleSearch: UISearchBarDelegate {
 
     func searchFilter(_ searchBar: UISearchBar) {
 //        resultsArray.removeAll()
-//        filteredArray.removeAll(keepingCapacity: false)
+        filteredArray.removeAll(keepingCapacity: false)
 //        let predicateString = searchBar.text!
 //        filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
 //        resultsArray.sort {$0 < $1}
