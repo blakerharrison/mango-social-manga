@@ -45,8 +45,7 @@ class MangoNetworking {
                 
                 let imageArray = json["images"].array!
 
-                if imageArray.count != 0 {
-                    resultsArray.removeAll()
+                if imageArray.count != 0 {  
                     for n in 0...imageArray.count - 1 {
                         self.fetchedPagesURLs.append(self.mangaImageURL + imageArray[n][1].string!)
                         
@@ -103,9 +102,7 @@ class MangoNetworking {
                 searchedMangaList = filteredManga
                 
                 if filteredManga.count != 0 {
-                    
-                    resultsArray.removeAll()
-                    
+      
                     for n in 0...filteredManga.count - 1 {
                 
                         resultsArray.append(filteredManga[n].t!)

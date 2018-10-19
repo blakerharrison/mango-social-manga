@@ -9,8 +9,6 @@
 import UIKit
 import SDWebImage
 
-let imageCache = NSCache<NSString, UIImage>()
-
 class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Outlets
@@ -138,93 +136,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
-    }
-}
-
-//MARK: - Custom Cell
-class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
-    
-    @IBOutlet weak var pageImage: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-
-        self.pageImage.image = UIImage()
-    }
-    
-    override func awakeFromNib() {
-        self.scrollView.minimumZoomScale = 1
-        self.scrollView.maximumZoomScale = 2.3
-        self.scrollView.delegate = self
-        scrollView.isUserInteractionEnabled = true
-        
-        let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureSingleTapped(recognizer:)))
-        singleTap.numberOfTapsRequired = 1
-        scrollView.addGestureRecognizer(singleTap)
-        
-        let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
-        doubleTap.numberOfTapsRequired = 2
-        scrollView.addGestureRecognizer(doubleTap)
-
-        singleTap.require(toFail: doubleTap)
-    }
-    
-    @objc func TapGestureTapped(recognizer: UITapGestureRecognizer) {
-        if (scrollView.zoomScale > scrollView.minimumZoomScale) {
-            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
-        } else {
-            let touchPoint = recognizer.location(in: scrollView)
-            let scrollViewSize = scrollView.bounds.size
-            
-            let width = scrollViewSize.width / scrollView.maximumZoomScale
-            let height = scrollViewSize.height / scrollView.maximumZoomScale
-            let x = touchPoint.x - (width/2.0)
-            let y = touchPoint.y - (height/2.0)
-            
-            let rect = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: width, height: height))
-            scrollView.zoom(to: rect, animated: true)
-        }
-    }
-    
-    @objc func TapGestureSingleTapped(recognizer: UITapGestureRecognizer) {
-        NotificationCenter.default.post(name: .toggle, object: nil)
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.pageImage
-    }
-}
-
-//MARK: - Extensions
-extension MangaReader: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let frameSize = collectionView.frame.size
-        return CGSize(width: frameSize.width - 0, height: frameSize.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        if self.navigationController?.isNavigationBarHidden == false {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        } else if self.navigationController?.isNavigationBarHidden == true {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-            
-            print(indexPath)
-        }
     }
 }
 

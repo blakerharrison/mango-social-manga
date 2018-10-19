@@ -62,8 +62,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     @objc func refreshTable(notification: NSNotification) {
         DispatchQueue.main.async {
-            self.table.reloadData()
             self.table.layoutIfNeeded()
+            self.table.reloadData()
             self.table.contentOffset = CGPoint(x: 0, y: -self.table.contentInset.top)
             
             self.activity.isHidden = true
