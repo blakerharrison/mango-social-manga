@@ -49,6 +49,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.collectionView!.addSubview(refresher)
         
+        collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
+        
     }
     
     @objc func loadData() {
@@ -108,6 +110,16 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // first row
+        if indexPath.row == Networking.fetchedPagesURLs.count + 1 {
+            let cameraCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tranCell", for: indexPath)
+            
+            // setup the cell...
+            
+            return cameraCell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as! MangaReaderCell
 
         activityMain.isHidden = true
@@ -135,7 +147,16 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
         pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+        } else {
+            pageNumberLabel.text = "Next Chapter"
+            activityMain.isHidden = false
+            activityMain.startAnimating()
+//            collectionView.isScrollEnabled = false
+        }
+        
     }
 }
 
