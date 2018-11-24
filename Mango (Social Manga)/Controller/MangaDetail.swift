@@ -13,6 +13,7 @@ var selectedIndex = 0
 var selectedID = ""
 var selectedChapterID = ""
 var currentChapter = ""
+var mangaDataStructure = MangaDataStructure()
 
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,8 +21,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
     var mangaChaptersString: [String] = []
-    var mangaChapterIDs: [String] = []
-    
+
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
@@ -61,7 +61,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
             self.releasedLabel.text = "released: " + json["released"].stringValue
             
-            print(json["chapters"][0][3])
+            print("LIST OF CHAPTERS!!! +++ \(json["chapters"])")
+//            print("LIST OF CHAPTERS!!! +++ \(json["chapters"][0][3])")
             
             if json["status"].int! == 1 {
                 self.statusLabel.text = "Status: ongoing"
@@ -71,8 +72,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             self.mangaChapters = mangaInfo.chapters
             
-            self.mangaChaptersString.removeAll()
-            self.mangaChapterIDs.removeAll()
+            mangaDataStructure.removeIDs()
+//            self.mangaChapterIDs.removeAll()
+            
             
             guard mangaInfo.chapters.count != 0 else {
                 return print("No Chapters")
@@ -81,7 +83,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             for n in 0...mangaInfo.chapters.count - 1{
                 let chapters = json["chapters"][n].array
                 self.mangaChaptersString.append(chapters![0].stringValue)
-                self.mangaChapterIDs.append(chapters![3].stringValue)
+//                self.mangaChapterIDs.append(chapters![3].stringValue)
+                mangaDataStructure.addID(chapters![3].stringValue)
             }
             self.tableView.reloadData()
         }
@@ -164,7 +167,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
         mangaChaptersString.reverse()
-        mangaChapterIDs.reverse()
+        mangaDataStructure.reverseIDs()
         tableView.reloadData()
     }
     
@@ -190,12 +193,20 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if mangaChapterIDs.count == 0 {
+        if mangaDataStructure.mangaChapterIDs.count == 0 {
             return
         }
         
-        selectedChapterID = mangaChapterIDs[indexPath.row]
+        print(mangaDataStructure.mangaChapterIDs[indexPath.row])
+        
+//        mangaDataStructure.selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
+//        mangaDataStructure.currentChapterIndex = indexPath.row
         currentChapter = mangaChaptersString[indexPath.row]
+        selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
+        
+        
+        print(selectedChapterID)
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }

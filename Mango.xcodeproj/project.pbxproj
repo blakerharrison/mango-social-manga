@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10A9EA2A79744F76E35ACF3E /* Pods_Mango__Social_Manga_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */; };
 		2C063DBB212E506600C85001 /* Mango__Social_Manga_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */; };
+		2C1D8EF921A728D8001C69FD /* MangaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D8EF821A728D8001C69FD /* MangaClass.swift */; };
 		2C1F7710217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F770F217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift */; };
 		2C1F771221755A27000F4A20 /* MangaReaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F771121755A27000F4A20 /* MangaReaderCell.swift */; };
 		2C31A588217AC2BF00A3C0D9 /* transitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C31A587217AC2BF00A3C0D9 /* transitionCell.xib */; };
@@ -49,6 +50,7 @@
 		2C063DB8212E506600C85001 /* Mango (Social Manga)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mango (Social Manga)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C063DBA212E506600C85001 /* Mango__Social_Manga_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mango__Social_Manga_Tests.swift; sourceTree = "<group>"; };
 		2C063DBC212E506600C85001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1D8EF821A728D8001C69FD /* MangaClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaClass.swift; sourceTree = "<group>"; };
 		2C1F770F217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MangaReader UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		2C1F771121755A27000F4A20 /* MangaReaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReaderCell.swift; sourceTree = "<group>"; };
 		2C31A587217AC2BF00A3C0D9 /* transitionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = transitionCell.xib; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				2CA0A29A21375E32006844E3 /* Extensions */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
+				2C1D8EF821A728D8001C69FD /* MangaClass.swift */,
 			);
 			path = "Mango (Social Manga)";
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2CBD5A332153037D0035689B /* Reachability.swift in Sources */,
+				2C1D8EF921A728D8001C69FD /* MangaClass.swift in Sources */,
 				2C1F771221755A27000F4A20 /* MangaReaderCell.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
 				2C1F7710217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift in Sources */,

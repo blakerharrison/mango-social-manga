@@ -29,6 +29,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
+
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         
         activityMain.isHidden = false
@@ -50,7 +51,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.collectionView!.addSubview(refresher)
         
         collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
-        
+
     }
     
     @objc func loadData() {
@@ -142,7 +143,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         
                                     }
         })
-
         return cell
     }
     
@@ -155,9 +155,19 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             activityMain.isHidden = false
             activityMain.startAnimating()
 //            collectionView.isScrollEnabled = false
+            
+            //TODO: Reset Cells with new chapter
+            
+            print("Load next chapter.")
+            print("Current chapter \(selectedChapterID)")
+            mangaDataStructure.nextID()
+            print("Next chapter \(selectedChapterID)")
+            
+
         }
         
     }
+
 }
 
 extension Notification.Name {
