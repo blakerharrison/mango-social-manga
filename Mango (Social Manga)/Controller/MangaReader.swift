@@ -161,9 +161,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
             mangaDataStructure.nextID()
+            print("")
+            print("~Manga Chapter ID's \(mangaDataStructure.mangaChapterIDs)~")
+            print("")
             print("Next chapter \(selectedChapterID)")
-            
-
         }
         
     }

@@ -196,17 +196,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if mangaDataStructure.mangaChapterIDs.count == 0 {
             return
         }
-        
-        print(mangaDataStructure.mangaChapterIDs[indexPath.row])
-        
-//        mangaDataStructure.selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
-//        mangaDataStructure.currentChapterIndex = indexPath.row
+
         currentChapter = mangaChaptersString[indexPath.row]
+        mangaDataStructure.currentChapterIndex = indexPath.row
         selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
-        
-        
-        print(selectedChapterID)
-        
+
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
