@@ -46,6 +46,14 @@ class MangoNetworking {
                 
                 let imageArray = json["images"].array!
                 
+                if self.fetchedPagesNumbers.isEmpty != true {
+                    self.fetchedPagesNumbers.removeAll()
+                }
+                
+                if self.fetchedPagesURLs.isEmpty != true {
+                    self.fetchedPagesURLs.removeAll()
+                }
+                
                 if imageArray.count != 0 {
                     
                     self.fetchedPagesURLs.append("http://www.formica.com/~/media/emea/images/decors/eu/f0949.jpg")
