@@ -44,6 +44,11 @@ class MangaDataStructure {
     }
     
     func previousID() {
+        guard currentChapterIndex > 0 else {
+            print("No previous chapters")
+            return
+        }
+        
         guard mangaChapterIDs.isEmpty != true else {
             return
         }
