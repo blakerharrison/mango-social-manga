@@ -89,8 +89,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
             print("LOADED")
             self.collectionView.reloadData()
-            self.pageNumberLabel.text = "\(1) /\(self.Networking.fetchedPagesNumbers.count)"
             self.collectionView.contentOffset = .zero
+            self.pageNumberLabel.text = "1 /\(self.Networking.fetchedPagesNumbers.count)"
         }
     }
     
