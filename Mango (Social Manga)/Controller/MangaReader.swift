@@ -80,13 +80,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
             self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
-                
-//                "CHAPTER " + currentChapter
+            self.pageNumberLabel.text = "\(1) /\(self.Networking.fetchedPagesNumbers.count)"
             print("LOADED")
-        self.collectionView.reloadData()
-        self.collectionView.contentOffset = .zero
-        print("Selected Index : \(mangaDataStructure.currentChapterIndex)")
-//        self.
+            self.collectionView.reloadData()
+            self.collectionView.contentOffset = .zero
         }
     }
     
@@ -156,9 +153,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
-//        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
             
-            pageNumberLabel.text = "Pizza"
+        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+            
         } else {
             
             pageNumberLabel.text = "Next Chapter"
