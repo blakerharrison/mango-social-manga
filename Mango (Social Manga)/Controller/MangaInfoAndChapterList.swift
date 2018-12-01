@@ -37,11 +37,6 @@ struct MangaInfoAndChapterList: Decodable {
     let updatedKeywords: Bool?
 }
 
-//TODO: - Not sure if this will work
-struct chaptersArray: Decodable {
-//    let magicValue: QuantumValue
-}
-
 enum MetadataType: Decodable {
     case float(Float)
     case string(String)

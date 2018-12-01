@@ -11,6 +11,7 @@
 
 import UIKit
 import SwiftyJSON
+import SDWebImage
 
 public var imageStringForCover: String = ""
 
@@ -44,13 +45,25 @@ class MangoNetworking {
                 let json = try JSON(data: data!)
                 
                 let imageArray = json["images"].array!
-
-                if imageArray.count != 0 {  
+                
+                if self.fetchedPagesNumbers.isEmpty != true {
+                    self.fetchedPagesNumbers.removeAll()
+                }
+                
+                if self.fetchedPagesURLs.isEmpty != true {
+                    self.fetchedPagesURLs.removeAll()
+                }
+                
+                if imageArray.count != 0 {
+                    
+                    self.fetchedPagesURLs.append("http://www.formica.com/~/media/emea/images/decors/eu/f0949.jpg")
+                    
                     for n in 0...imageArray.count - 1 {
                         self.fetchedPagesURLs.append(self.mangaImageURL + imageArray[n][1].string!)
                         
                         self.fetchedPagesNumbers.append("\(imageArray[n][0].int! + 1)")
                     }
+                    
                 }
                 
                 print(self.fetchedPagesNumbers)

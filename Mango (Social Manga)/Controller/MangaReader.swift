@@ -23,11 +23,14 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - Properties
     let Networking = MangoNetworking()
+    var refresher: UIRefreshControl!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
+
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         
         activityMain.isHidden = false
@@ -40,7 +43,34 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
         pageChapterLabel.text =
            "CHAPTER " + currentChapter
+        
+        //MARK: - ~NEW CODE~
+        self.refresher = UIRefreshControl()
+        self.collectionView!.alwaysBounceVertical = true
+        self.refresher.tintColor = UIColor.darkGray
+        self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.collectionView!.addSubview(refresher)
+        
+        collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
+
     }
+    
+    @objc func loadData() {
+        pageNumberLabel.text = "Loading Previous Chapter"
+        activityMain.isHidden = false
+        activityMain.startAnimating()
+
+        mangaDataStructure.previousID()
+
+        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+        
+        stopRefresher()         //Call this to stop refresher
+    }
+    
+    func stopRefresher() {
+        self.refresher.endRefreshing()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -56,7 +86,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Methods
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
-        self.collectionView.reloadData()
+            self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
+            print("LOADED")
+            self.collectionView.reloadData()
+            self.collectionView.contentOffset = .zero
+            self.pageNumberLabel.text = "1 /\(self.Networking.fetchedPagesNumbers.count)"
         }
     }
     
@@ -88,6 +122,16 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // first row
+        if indexPath.row == Networking.fetchedPagesURLs.count + 1 {
+            let cameraCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tranCell", for: indexPath)
+            
+            // setup the cell...
+            
+            return cameraCell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as! MangaReaderCell
 
         activityMain.isHidden = true
@@ -110,12 +154,33 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         
                                     }
         })
-
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
+            
         pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+            
+        } else {
+            
+            pageNumberLabel.text = "Loading Next Chapter"
+            activityMain.isHidden = false
+            activityMain.startAnimating()
+
+            print("Load next chapter.")
+            print("Current chapter \(selectedChapterID)")
+
+//            mangaDataStructure.currentChapterID = selectedChapterID
+            
+            mangaDataStructure.nextID()
+            print("")
+
+            print("Next chapter \(selectedChapterID)")
+
+            self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+        }
     }
 }
 

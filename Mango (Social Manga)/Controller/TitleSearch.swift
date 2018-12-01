@@ -39,6 +39,10 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         searchBar.becomeFirstResponder()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        mangaDataStructure.removeChapterStrings()
+    }
+    
     //MARK: - Methods
     private func setUpSearchBar() {
         searchBar.delegate = self
