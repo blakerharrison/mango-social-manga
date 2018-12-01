@@ -57,7 +57,16 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     @objc func loadData() {
         //code to execute during refresher
-        print("Loaded")
+        print("TODO: Add feature of previous chapter")
+
+        pageNumberLabel.text = "Loading Previous Chapter"
+        activityMain.isHidden = false
+        activityMain.startAnimating()
+
+        mangaDataStructure.previousID()
+
+        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+        
         stopRefresher()         //Call this to stop refresher
     }
     
@@ -175,9 +184,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
             self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         }
-        
     }
-
 }
 
 extension Notification.Name {
