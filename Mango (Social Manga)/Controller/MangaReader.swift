@@ -80,9 +80,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
             self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
-            self.pageNumberLabel.text = "\(1) /\(self.Networking.fetchedPagesNumbers.count)"
             print("LOADED")
             self.collectionView.reloadData()
+            self.pageNumberLabel.text = "\(1) /\(self.Networking.fetchedPagesNumbers.count)"
             self.collectionView.contentOffset = .zero
         }
     }
@@ -158,7 +158,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             
         } else {
             
-            pageNumberLabel.text = "Next Chapter"
+            pageNumberLabel.text = "Loading Next Chapter"
             activityMain.isHidden = false
             activityMain.startAnimating()
 //            collectionView.isScrollEnabled = false
