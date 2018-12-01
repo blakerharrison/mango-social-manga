@@ -20,7 +20,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
-    var mangaChaptersString: [String] = []
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -82,7 +81,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             for n in 0...mangaInfo.chapters.count - 1{
                 let chapters = json["chapters"][n].array
-                self.mangaChaptersString.append(chapters![0].stringValue)
+                mangaDataStructure.mangaChaptersString.append(chapters![0].stringValue)
 //                self.mangaChapterIDs.append(chapters![3].stringValue)
                 mangaDataStructure.addID(chapters![3].stringValue)
             }
@@ -166,7 +165,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
-        mangaChaptersString.reverse()
+        mangaDataStructure.mangaChaptersString.reverse()
         mangaDataStructure.reverseIDs()
         tableView.reloadData()
     }
@@ -182,9 +181,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
         if let label = cell.viewWithTag(1000) as? UILabel {
-            if mangaChaptersString.isEmpty {
+            if mangaDataStructure.mangaChaptersString.isEmpty {
             } else {
-                label.text = "Chapter: " + mangaChaptersString[indexPath.row]
+                label.text = "Chapter: " + mangaDataStructure.mangaChaptersString[indexPath.row]
                
             }
         }
@@ -197,7 +196,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
 
-        currentChapter = mangaChaptersString[indexPath.row]
+        currentChapter = mangaDataStructure.mangaChaptersString[indexPath.row]
         mangaDataStructure.currentChapterIndex = indexPath.row
         selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
 

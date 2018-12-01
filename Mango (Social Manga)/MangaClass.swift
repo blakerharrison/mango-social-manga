@@ -13,6 +13,7 @@ class MangaDataStructure {
     
     //MARK: Properties
     var mangaChapterIDs: [String] = []
+    var mangaChaptersString: [String] = []
     var currentChapterIndex = 0
     var currentChapterID = ""
     
@@ -49,5 +50,12 @@ class MangaDataStructure {
             return
         }
         mangaChapterIDs.reverse()
+    }
+    
+    func removeChapterStrings() {
+        guard mangaChaptersString.isEmpty != true else {
+            return
+        }
+        mangaChaptersString.removeAll()
     }
 }
