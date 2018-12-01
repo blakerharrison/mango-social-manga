@@ -28,8 +28,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Chapters String: \(MangaDetail())")
-        
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
 
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
@@ -81,11 +79,14 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Methods
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
-            self.pageChapterLabel.text =
-                "CHAPTER " + currentChapter
+            self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
+                
+//                "CHAPTER " + currentChapter
             print("LOADED")
         self.collectionView.reloadData()
         self.collectionView.contentOffset = .zero
+        print("Selected Index : \(mangaDataStructure.currentChapterIndex)")
+//        self.
         }
     }
     
