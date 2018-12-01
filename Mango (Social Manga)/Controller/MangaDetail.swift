@@ -61,8 +61,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.releasedLabel.text = "released: " + json["released"].stringValue
             
             print("LIST OF CHAPTERS!!! +++ \(json["chapters"])")
-//            print("LIST OF CHAPTERS!!! +++ \(json["chapters"][0][3])")
-            
+
             if json["status"].int! == 1 {
                 self.statusLabel.text = "Status: ongoing"
             } else if json["status"].int! == 2 {
@@ -72,8 +71,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.mangaChapters = mangaInfo.chapters
             
             mangaDataStructure.removeIDs()
-//            self.mangaChapterIDs.removeAll()
-            
             
             guard mangaInfo.chapters.count != 0 else {
                 return print("No Chapters")
@@ -82,7 +79,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             for n in 0...mangaInfo.chapters.count - 1{
                 let chapters = json["chapters"][n].array
                 mangaDataStructure.mangaChaptersString.append(chapters![0].stringValue)
-//                self.mangaChapterIDs.append(chapters![3].stringValue)
+
                 mangaDataStructure.addID(chapters![3].stringValue)
             }
             self.tableView.reloadData()
@@ -165,9 +162,23 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
+        
+        guard mangaDataStructure.isMangaChaptersReversed == false else {
+            
+            mangaDataStructure.mangaChaptersString.reverse()
+            mangaDataStructure.reverseIDs()
+            tableView.reloadData()
+            mangaDataStructure.isMangaChaptersReversed = false
+            return
+        }
+        
         mangaDataStructure.mangaChaptersString.reverse()
         mangaDataStructure.reverseIDs()
         tableView.reloadData()
+        
+        mangaDataStructure.isMangaChaptersReversed = true
+        
+        print("Structure of the Manga is \(mangaDataStructure.isMangaChaptersReversed)")
     }
     
     //TODO: - Add an aciton button for Read. !@#$%^&*()
@@ -184,7 +195,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if mangaDataStructure.mangaChaptersString.isEmpty {
             } else {
                 label.text = "Chapter: " + mangaDataStructure.mangaChaptersString[indexPath.row]
-               
             }
         }
         return cell

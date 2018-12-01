@@ -28,6 +28,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
 
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)

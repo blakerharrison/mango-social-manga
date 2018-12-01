@@ -17,22 +17,30 @@ class MangaDataStructure {
     var currentChapterID = ""
     var mangaChaptersString: [String] = []
     var currentChapterString = ""
+    var isMangaChaptersReversed = true
     
     //MARK: Methods
     func nextID() {
         guard mangaChapterIDs.isEmpty != true else {
             return
         }
-        currentChapterIndex = currentChapterIndex + 1
-        selectedIndex = selectedIndex + 1
         
-        currentChapterID = mangaChapterIDs[currentChapterIndex]
-        selectedChapterID = currentChapterID
-        
+        if isMangaChaptersReversed == false {
+            currentChapterIndex = currentChapterIndex + 1
+            selectedIndex = selectedIndex + 1
+            
+            currentChapterID = mangaChapterIDs[currentChapterIndex]
+            selectedChapterID = currentChapterID
+        } else if isMangaChaptersReversed == true {
+            currentChapterIndex = currentChapterIndex - 1
+            selectedIndex = selectedIndex - 1
+            
+            currentChapterID = mangaChapterIDs[currentChapterIndex]
+            selectedChapterID = currentChapterID
+        }
+
         print(currentChapterID)
         print(selectedChapterID)
-        
-
     }
     
     func addID(_ ID: String) {
