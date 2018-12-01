@@ -29,11 +29,26 @@ class MangaDataStructure {
             currentChapterIndex = currentChapterIndex + 1
             selectedIndex = selectedIndex + 1
             
+            if currentChapterIndex == mangaChapterIDs.count {
+                print("Finished Manga")
+                currentChapterIndex = currentChapterIndex - 1
+                selectedIndex = selectedIndex - 1
+                return
+            }
+            
             currentChapterID = mangaChapterIDs[currentChapterIndex]
             selectedChapterID = currentChapterID
+            
         } else if isMangaChaptersReversed == true {
             currentChapterIndex = currentChapterIndex - 1
             selectedIndex = selectedIndex - 1
+            
+            if currentChapterIndex == -1 {
+                print("Finished Manga")
+                currentChapterIndex = currentChapterIndex + 1
+                selectedIndex = selectedIndex + 1
+                return
+            }
             
             currentChapterID = mangaChapterIDs[currentChapterIndex]
             selectedChapterID = currentChapterID
@@ -44,10 +59,6 @@ class MangaDataStructure {
     }
     
     func previousID() {
-        guard currentChapterIndex > 0 else {
-            print("No previous chapters")
-            return
-        }
         
         guard mangaChapterIDs.isEmpty != true else {
             return
@@ -57,9 +68,23 @@ class MangaDataStructure {
             currentChapterIndex = currentChapterIndex + 1
             selectedIndex = selectedIndex + 1
             
+            if currentChapterIndex == mangaChapterIDs.count {
+                print("Finished Manga")
+                currentChapterIndex = currentChapterIndex - 1
+                selectedIndex = selectedIndex - 1
+                return
+            }
+            
             currentChapterID = mangaChapterIDs[currentChapterIndex]
             selectedChapterID = currentChapterID
+            
         } else if isMangaChaptersReversed == false {
+            
+            guard currentChapterIndex > 0 else {
+                print("No previous chapters")
+                return
+            }
+            
             currentChapterIndex = currentChapterIndex - 1
             selectedIndex = selectedIndex - 1
             

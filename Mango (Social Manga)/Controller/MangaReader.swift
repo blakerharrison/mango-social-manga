@@ -56,9 +56,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     @objc func loadData() {
-        //code to execute during refresher
-        print("TODO: Add feature of previous chapter")
-
         pageNumberLabel.text = "Loading Previous Chapter"
         activityMain.isHidden = false
         activityMain.startAnimating()
@@ -171,12 +168,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageNumberLabel.text = "Loading Next Chapter"
             activityMain.isHidden = false
             activityMain.startAnimating()
-//            collectionView.isScrollEnabled = false
-            
-            //TODO: Reset Cells with new chapter
-            
+
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
+
+//            mangaDataStructure.currentChapterID = selectedChapterID
+            
             mangaDataStructure.nextID()
             print("")
 

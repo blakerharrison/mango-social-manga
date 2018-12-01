@@ -179,7 +179,6 @@
 				2CA0A29A21375E32006844E3 /* Extensions */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
-				2C1D8EF821A728D8001C69FD /* MangaClass.swift */,
 			);
 			path = "Mango (Social Manga)";
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		2CF1E576207AF0B100161D5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C1D8EF821A728D8001C69FD /* MangaClass.swift */,
 				2C3E5CA6212F8A1800BEFA67 /* MangaObject.swift */,
 				2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */,
 				2C3D53AB213845060061EFA9 /* ResultsArray.swift */,
