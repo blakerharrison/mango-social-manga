@@ -41,6 +41,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewDidAppear(_ animated: Bool) {
         mangaDataStructure.removeChapterStrings()
+        mangaDataStructure.resetToDefault()
     }
     
     //MARK: - Methods
