@@ -124,4 +124,13 @@ class MangaDataStructure {
     func changeChapterString(_ chapter: String) {
         currentChapterString = chapter
     }
+    
+    func resetToDefault() {
+        mangaChapterIDs.removeAll()
+        currentChapterIndex = 0
+        currentChapterID = ""
+        mangaChaptersString.removeAll()
+        currentChapterString = ""
+        isMangaChaptersReversed = true
+    }
 }
