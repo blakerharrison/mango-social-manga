@@ -41,10 +41,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         backButton.image = UIImage(named: "BackButton")
 
-        pageChapterLabel.text =
-           "CHAPTER " + currentChapter
+        pageChapterLabel.text = "CHAPTER " + currentChapter
         
-        //MARK: - ~NEW CODE~
         self.refresher = UIRefreshControl()
         self.collectionView!.alwaysBounceVertical = true
         self.refresher.tintColor = UIColor.darkGray
@@ -52,23 +50,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.collectionView!.addSubview(refresher)
         
         collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
-
-    }
-    
-    @objc func loadData() {
-        pageNumberLabel.text = "Loading Previous Chapter"
-        activityMain.isHidden = false
-        activityMain.startAnimating()
-
-        mangaDataStructure.previousID()
-
-        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
-        
-        stopRefresher()         //Call this to stop refresher
-    }
-    
-    func stopRefresher() {
-        self.refresher.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +65,22 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     //MARK: - Methods
+    @objc func loadData() {
+        pageNumberLabel.text = "Loading Previous Chapter"
+        activityMain.isHidden = false
+        activityMain.startAnimating()
+        
+        mangaDataStructure.previousID()
+        
+        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+        
+        stopRefresher()         //Call this to stop refresher
+    }
+    
+    func stopRefresher() {
+        self.refresher.endRefreshing()
+    }
+    
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
             self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
@@ -115,6 +112,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBAction func backButtonAction(_ sender: Any) {
         let _ = self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func shopButton(_ sender: Any) {
+        print("Shop button clicked")
+    }
+    
     
     //MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
