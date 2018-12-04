@@ -33,6 +33,7 @@ class MangaDataStructure {
                 print("Finished Manga")
                 currentChapterIndex = currentChapterIndex - 1
                 selectedIndex = selectedIndex - 1
+                NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
             
@@ -47,6 +48,7 @@ class MangaDataStructure {
                 print("Finished Manga")
                 currentChapterIndex = currentChapterIndex + 1
                 selectedIndex = selectedIndex + 1
+                NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
             
@@ -72,6 +74,7 @@ class MangaDataStructure {
                 print("Finished Manga")
                 currentChapterIndex = currentChapterIndex - 1
                 selectedIndex = selectedIndex - 1
+                NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
             
@@ -82,6 +85,7 @@ class MangaDataStructure {
             
             guard currentChapterIndex > 0 else {
                 print("No previous chapters")
+                NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
             
