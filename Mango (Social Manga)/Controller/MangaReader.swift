@@ -30,6 +30,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
         self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         
@@ -91,6 +93,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
     }
     
+    @objc func exitMangaReader(notification: NSNotification) {
+        print("Exit Manga Reader Activated")
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @objc func toggleNavBar(notification: NSNotification) {
         if self.navBar.isHidden == false {
             print("Hiding Nav Bar")
@@ -116,7 +124,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBAction func shopButton(_ sender: Any) {
         print("Shop button clicked")
     }
-    
     
     //MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -188,5 +195,5 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
 extension Notification.Name {
     static let toggle = Notification.Name("true")
+    static let chaptersAreFinished = Notification.Name("chaptersCompleted")
 }
-
