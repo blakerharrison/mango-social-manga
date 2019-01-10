@@ -16,11 +16,20 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //TODO: This will be added the collection view based on the users selected favorite
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "One Piece 1"), mangaTitles: "One Piece"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Naruto 1"), mangaTitles: "Naruto"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Bleach"), mangaTitles: "Bleach"))
+        
+        let searchTextField =  UITextField(frame: CGRect(x: 20, y: 100, width: 200, height: 100))
+        searchTextField.placeholder = "search..."
+        searchTextField.font = UIFont.init(name: "BigNoodleTitling", size: 50.0)
+        searchTextField.backgroundColor = UIColor.clear
+        searchTextField.borderStyle = UITextField.BorderStyle.none
+        searchTextField.autocorrectionType = UITextAutocorrectionType.no
+        searchTextField.keyboardType = UIKeyboardType.default
+        searchTextField.returnKeyType = UIReturnKeyType.done
+        searchTextField.clearButtonMode = UITextField.ViewMode.whileEditing
+        searchTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+//        sampleTextField.delegate = self
+        searchTextField.becomeFirstResponder()
+        self.view.addSubview(searchTextField)
 
     }
     
