@@ -44,6 +44,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         mangaDataStructure.resetToDefault()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
     //MARK: - Methods
     private func setUpSearchBar() {
         searchBar.delegate = self
