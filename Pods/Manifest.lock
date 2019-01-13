@@ -14,10 +14,10 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - SwiftyJSON (4.1.0)
+  - SDWebImage (4.4.3):
+    - SDWebImage/Core (= 4.4.3)
+  - SDWebImage/Core (4.4.3)
+  - SwiftyJSON (4.2.0)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -44,8 +44,8 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
 PODFILE CHECKSUM: 7caa8ebb97a732753f0813d69a517626e607cd2b

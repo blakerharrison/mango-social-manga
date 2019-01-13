@@ -12,16 +12,12 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: - Outlets
     @IBOutlet weak var homeView: UIView!
-
+    @IBOutlet weak var searchTextField: UITextField!
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //TODO: This will be added the collection view based on the users selected favorite
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "One Piece 1"), mangaTitles: "One Piece"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Naruto 1"), mangaTitles: "Naruto"))
-        usersFavoriteMangas.append(MangaObject(mangaCover: UIImage(named: "Bleach"), mangaTitles: "Bleach"))
-
+        searchTextField.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
