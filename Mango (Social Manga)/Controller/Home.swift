@@ -12,25 +12,12 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: - Outlets
     @IBOutlet weak var homeView: UIView!
-
+    @IBOutlet weak var searchTextField: UITextField!
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let searchTextField =  UITextField(frame: CGRect(x: 20, y: 100, width: 200, height: 100))
-        searchTextField.placeholder = "search..."
-        searchTextField.font = UIFont.init(name: "BigNoodleTitling", size: 50.0)
-        searchTextField.backgroundColor = UIColor.clear
-        searchTextField.borderStyle = UITextField.BorderStyle.none
-        searchTextField.autocorrectionType = UITextAutocorrectionType.no
-        searchTextField.keyboardType = UIKeyboardType.default
-        searchTextField.returnKeyType = UIReturnKeyType.done
-        searchTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-        searchTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-//        sampleTextField.delegate = self
         searchTextField.becomeFirstResponder()
-        self.view.addSubview(searchTextField)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
