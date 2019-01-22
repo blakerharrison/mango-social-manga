@@ -83,6 +83,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activity.isHidden = true
             self.activityView.isHidden = true
             self.activity.stopAnimating()
+            
+            if resultsArray.count == 0 && self.isSearching == false {
+                self.noTitleFoundImage.isHidden = false
+                self.table.isHidden = true
+            }
+            
         }
     }
     
