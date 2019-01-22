@@ -25,7 +25,6 @@ extension TitleSearch: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
         myFetchTitlesGroup.enter()
 
         self.searchBar.resignFirstResponder()
@@ -36,18 +35,17 @@ extension TitleSearch: UISearchBarDelegate {
         activityView.isHidden = false
         activity.startAnimating()
         
+        noTitleFoundImage.isHidden = true
+        table.isHidden = true
+        
         myFetchTitlesGroup.notify(queue: DispatchQueue.main) {
             self.searchFilter(searchBar)
         }
     }
 
     func searchFilter(_ searchBar: UISearchBar) {
-//        resultsArray.removeAll()
         filteredArray.removeAll(keepingCapacity: false)
-//        let predicateString = searchBar.text!
-//        filteredArray = resultsArray.filter( {$0.range(of: predicateString) != nil} )
-//        resultsArray.sort {$0 < $1}
         isSearching = (resultsArray.count == 0) ? false: true
-                            NotificationCenter.default.post(name: NSNotification.Name("finishedGettingTitles"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("finishedGettingTitles"), object: nil)
     }
 }

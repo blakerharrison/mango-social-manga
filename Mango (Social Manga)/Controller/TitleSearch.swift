@@ -67,7 +67,6 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             return resultsArray.count
         }
-        
         return resultsArray.count
     }
     
