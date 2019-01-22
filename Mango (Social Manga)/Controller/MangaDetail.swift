@@ -38,7 +38,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
  
         fetchMangaInfo(mangaID: selectedID)
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
+            [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
         mangaImage.addShadow()
         readButton.layer.cornerRadius = 5
