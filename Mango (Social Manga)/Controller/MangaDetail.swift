@@ -82,6 +82,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
                 mangaDataStructure.addID(chapters![3].stringValue)
             }
+            
+            mangaDataStructure.mangaChaptersString.reverse()
+            mangaDataStructure.reverseIDs()
+            
+            mangaDataStructure.isMangaChaptersReversed = false
+            
             self.tableView.reloadData()
         }
     }
