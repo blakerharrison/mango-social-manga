@@ -19,6 +19,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var noTitleFoundImage: UIImageView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +36,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = true
         activityView.isHidden = true
+        
+        noTitleFoundImage.isHidden = true
         
         searchBar.becomeFirstResponder()
     }
@@ -56,8 +59,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching { return resultsArray.count }
-        
+        if isSearching {
+            print("Currently Searching...")
+            
+            noTitleFoundImage.isHidden = true
+            table.isHidden = false
+            
+            return resultsArray.count
+        }
         return resultsArray.count
     }
     
@@ -80,6 +89,12 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activity.isHidden = true
             self.activityView.isHidden = true
             self.activity.stopAnimating()
+            
+            if resultsArray.count == 0 && self.isSearching == false {
+                self.noTitleFoundImage.isHidden = false
+                self.table.isHidden = true
+            }
+            
         }
     }
     
