@@ -59,7 +59,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching { return resultsArray.count }
+        if isSearching {
+            print("Currently Searching...")
+            
+            noTitleFoundImage.isHidden = true
+            table.isHidden = false
+            
+            return resultsArray.count
+        }
         
         return resultsArray.count
     }
