@@ -141,6 +141,10 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="NuK-p4-MUo"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoTitleFoundImage" translatesAutoresizingMaskIntoConstraints="NO" id="gLf-BX-nCu">
+                                <rect key="frame" x="0.0" y="195" width="375" height="422"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -169,6 +173,7 @@
                     <connections>
                         <outlet property="activity" destination="qrD-Qg-Hzt" id="uSj-0M-Kz2"/>
                         <outlet property="activityView" destination="AkD-w6-2w5" id="03J-ZQ-HPO"/>
+                        <outlet property="noTitleFoundImage" destination="gLf-BX-nCu" id="QhZ-AU-ypl"/>
                         <outlet property="searchBar" destination="XvN-j2-UDL" id="q6v-Yz-S2V"/>
                         <outlet property="table" destination="Xhf-EH-j08" id="JW9-sR-i4N"/>
                         <segue destination="1V7-gQ-nIo" kind="show" identifier="DetailSegue" id="4RW-v7-X0a"/>
@@ -540,6 +545,7 @@
     <resources>
         <image name="Background2" width="375" height="667"/>
         <image name="Manga Background" width="375" height="667"/>
+        <image name="NoTitleFoundImage" width="195.2489013671875" height="422.56768798828125"/>
         <image name="SwapButton" width="44" height="44"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>
     </resources>

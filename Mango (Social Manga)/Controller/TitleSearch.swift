@@ -19,6 +19,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var noTitleFoundImage: UIImageView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +36,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = true
         activityView.isHidden = true
+        
+        noTitleFoundImage.isHidden = true
         
         searchBar.becomeFirstResponder()
     }
