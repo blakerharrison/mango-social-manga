@@ -43,7 +43,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         backButton.image = UIImage(named: "BackButton")
 
-        pageChapterLabel.text = "CHAPTER " + currentChapter
+        pageChapterLabel.text = "Chapter " + currentChapter
         
         self.refresher = UIRefreshControl()
         self.collectionView!.alwaysBounceVertical = true
@@ -85,7 +85,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
-            self.pageChapterLabel.text = "CHAPTER " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
+            self.pageChapterLabel.text = "Chapter " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
             print("LOADED")
             self.collectionView.reloadData()
             self.collectionView.contentOffset = .zero
