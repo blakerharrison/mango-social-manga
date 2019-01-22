@@ -74,7 +74,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
         if isSearching {
                 if let label = cell.viewWithTag(1000) as? UILabel {
-                    label.text = resultsArray[indexPath.row]
+                    label.text = resultsArray[indexPath.row].replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil)
                 }
         }
         return cell
