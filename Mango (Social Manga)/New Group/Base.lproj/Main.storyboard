@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-AC-WZv">
-                                        <rect key="frame" x="8" y="213" width="359" height="59"/>
+                                        <rect key="frame" x="8" y="213" width="359" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="50"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
@@ -207,21 +207,21 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="410" height="672"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L53-r4-fMm">
-                                                            <rect key="frame" x="0.0" y="1" width="410" height="670"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="670"/>
                                                         </imageView>
                                                         <activityIndicatorView opaque="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-jV-4tH">
                                                             <rect key="frame" x="195" y="326" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="W2Q-Lt-r4c" secondAttribute="top" constant="1" id="0AK-5k-qoh"/>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="top" secondItem="W2Q-Lt-r4c" secondAttribute="top" id="0AK-5k-qoh"/>
                                                         <constraint firstItem="YSy-jV-4tH" firstAttribute="centerX" secondItem="W2Q-Lt-r4c" secondAttribute="centerX" id="8cZ-jV-zHh"/>
                                                         <constraint firstItem="L53-r4-fMm" firstAttribute="centerX" secondItem="W2Q-Lt-r4c" secondAttribute="centerX" id="TVk-g1-aWR"/>
                                                         <constraint firstItem="L53-r4-fMm" firstAttribute="leading" secondItem="W2Q-Lt-r4c" secondAttribute="leading" id="gen-SY-gYz"/>
-                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="W2Q-Lt-r4c" secondAttribute="centerY" id="kUZ-mm-ACd"/>
+                                                        <constraint firstItem="L53-r4-fMm" firstAttribute="centerY" secondItem="W2Q-Lt-r4c" secondAttribute="centerY" constant="-1" id="kUZ-mm-ACd"/>
                                                         <constraint firstAttribute="trailing" secondItem="L53-r4-fMm" secondAttribute="trailing" id="tTo-jw-TEb"/>
                                                         <constraint firstItem="YSy-jV-4tH" firstAttribute="centerY" secondItem="W2Q-Lt-r4c" secondAttribute="centerY" id="xq9-Yq-8Ac"/>
-                                                        <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" constant="-1" id="y1h-wE-KJM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="L53-r4-fMm" secondAttribute="bottom" constant="2" id="y1h-wE-KJM"/>
                                                     </constraints>
                                                 </scrollView>
                                             </subviews>
@@ -357,7 +357,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I70-te-NgM">
-                                                    <rect key="frame" x="18" y="9.6666666666666661" width="17" height="23.333333333333336"/>
+                                                    <rect key="frame" x="18" y="11.333333333333334" width="10.666666666666664" height="21.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -379,36 +379,36 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-a7-pNj">
-                                <rect key="frame" x="146" y="107" width="213" height="20"/>
+                                <rect key="frame" x="146" y="107" width="213" height="18.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84i-wo-m2G">
-                                <rect key="frame" x="146" y="131" width="213" height="20"/>
+                                <rect key="frame" x="146" y="129.33333333333334" width="213" height="18.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efm-zu-8Xk">
-                                <rect key="frame" x="146" y="155" width="213" height="20"/>
+                                <rect key="frame" x="146" y="151.66666666666666" width="213" height="18.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-3H-8tt">
-                                <rect key="frame" x="146" y="178" width="213" height="20"/>
+                                <rect key="frame" x="146" y="173" width="213" height="18.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-cu-ex8">
-                                <rect key="frame" x="146" y="223" width="213" height="72"/>
+                                <rect key="frame" x="146" y="214.66666666666666" width="213" height="80.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-Bv-pxg">
-                                <rect key="frame" x="146" y="200" width="213" height="20"/>
+                                <rect key="frame" x="146" y="193.33333333333334" width="213" height="18.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
