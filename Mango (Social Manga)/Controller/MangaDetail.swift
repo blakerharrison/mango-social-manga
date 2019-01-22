@@ -38,7 +38,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
  
         fetchMangaInfo(mangaID: selectedID)
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+            [NSAttributedStringKey.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
         mangaImage.addShadow()
         readButton.layer.cornerRadius = 5
@@ -56,16 +56,16 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             self.fetchImage()
             self.mangaDescription.text = updatedStringDiscription
-            self.authorLabel.text = json["author"].string!
-            self.categoriesLabel.text = "category: " + json["categories"][0].stringValue
-            self.releasedLabel.text = "released: " + json["released"].stringValue
+            self.authorLabel.text = "Author : " + json["author"].string!
+            self.categoriesLabel.text = "Category : " + json["categories"][0].stringValue
+            self.releasedLabel.text = "Released : " + json["released"].stringValue
             
             print("LIST OF CHAPTERS!!! +++ \(json["chapters"])")
 
             if json["status"].int! == 1 {
-                self.statusLabel.text = "Status: ongoing"
+                self.statusLabel.text = "Status : Ongoing"
             } else if json["status"].int! == 2 {
-                self.statusLabel.text = "Status: completed"
+                self.statusLabel.text = "Status : Completed"
             }
             
             self.mangaChapters = mangaInfo.chapters
@@ -194,7 +194,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if let label = cell.viewWithTag(1000) as? UILabel {
             if mangaDataStructure.mangaChaptersString.isEmpty {
             } else {
-                label.text = "Chapter: " + mangaDataStructure.mangaChaptersString[indexPath.row]
+                label.text = "Chapter : " + mangaDataStructure.mangaChaptersString[indexPath.row]
             }
         }
         return cell

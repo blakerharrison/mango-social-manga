@@ -17,6 +17,7 @@
 		2C3E5CA4212F840000BEFA67 /* big_noodle_titling_oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */; };
 		2C3E5CA5212F840000BEFA67 /* big_noodle_titling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */; };
 		2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E5CA6212F8A1800BEFA67 /* MangaObject.swift */; };
+		2C51591C21EC23E000C7F211 /* Knockout HTF49Liteweight Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C51591B21EC143800C7F211 /* Knockout HTF49Liteweight Regular.otf */; };
 		2C6348982145AF29007671CF /* MangaReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6348972145AF29007671CF /* MangaReader.swift */; };
 		2C63E2F22127CC9900F84AF1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63E2F12127CC9900F84AF1 /* Home.swift */; };
 		2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69A0042019C2E8001A60AE /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		2CBB7B5C2141B33200411BA6 /* MangaInfoAndChapterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */; };
 		2CBD5A332153037D0035689B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD5A322153037D0035689B /* Reachability.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
+		2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3055321F76E4B0046CF20 /* Fonts.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,7 @@
 		2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling_oblique.ttf; sourceTree = "<group>"; };
 		2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_noodle_titling.ttf; sourceTree = "<group>"; };
 		2C3E5CA6212F8A1800BEFA67 /* MangaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaObject.swift; path = "Mango (Social Manga)/New Group/MangaObject.swift"; sourceTree = SOURCE_ROOT; };
+		2C51591B21EC143800C7F211 /* Knockout HTF49Liteweight Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Knockout HTF49Liteweight Regular.otf"; sourceTree = "<group>"; };
 		2C6348972145AF29007671CF /* MangaReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaReader.swift; sourceTree = "<group>"; };
 		2C63E2F12127CC9900F84AF1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2C69A0012019C2E8001A60AE /* Mango (Social Manga).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mango (Social Manga).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +77,7 @@
 		2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaInfoAndChapterList.swift; path = "Mango (Social Manga)/Controller/MangaInfoAndChapterList.swift"; sourceTree = SOURCE_ROOT; };
 		2CBD5A322153037D0035689B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2CE3055321F76E4B0046CF20 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,8 +123,10 @@
 				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
 				2C6CB34E212F802F00DDC522 /* Shadow.swift */,
+				2CE3055321F76E4B0046CF20 /* Fonts.swift */,
 				2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */,
 				2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */,
+				2C51591B21EC143800C7F211 /* Knockout HTF49Liteweight Regular.otf */,
 				2C31A587217AC2BF00A3C0D9 /* transitionCell.xib */,
 			);
 			name = View;
@@ -320,6 +326,7 @@
 				2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */,
 				2C69A00C2019C2E8001A60AE /* Assets.xcassets in Resources */,
 				2C3E5CA5212F840000BEFA67 /* big_noodle_titling.ttf in Resources */,
+				2C51591C21EC23E000C7F211 /* Knockout HTF49Liteweight Regular.otf in Resources */,
 				2C3E5CA4212F840000BEFA67 /* big_noodle_titling_oblique.ttf in Resources */,
 				2C31A588217AC2BF00A3C0D9 /* transitionCell.xib in Resources */,
 				2C69A00A2019C2E8001A60AE /* Main.storyboard in Resources */,
@@ -401,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */,
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2CBD5A332153037D0035689B /* Reachability.swift in Sources */,

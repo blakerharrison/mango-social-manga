@@ -28,10 +28,10 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         setUpSearchBar()
         self.searchBar.enablesReturnKeyAutomatically = true
 
-        navigationItem.title = "search"
+        navigationItem.title = "Search"
         
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "BigNoodleTitling", size: 21)!]
+            [NSAttributedStringKey.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         
         activity.isHidden = true
         activityView.isHidden = true
