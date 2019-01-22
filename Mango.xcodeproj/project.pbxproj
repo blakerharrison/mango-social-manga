@@ -32,6 +32,7 @@
 		2CBB7B5C2141B33200411BA6 /* MangaInfoAndChapterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */; };
 		2CBD5A332153037D0035689B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD5A322153037D0035689B /* Reachability.swift */; };
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
+		2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3055321F76E4B0046CF20 /* Fonts.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MangaInfoAndChapterList.swift; path = "Mango (Social Manga)/Controller/MangaInfoAndChapterList.swift"; sourceTree = SOURCE_ROOT; };
 		2CBD5A322153037D0035689B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2CE3055321F76E4B0046CF20 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */,
 				2C69A0082019C2E8001A60AE /* Main.storyboard */,
 				2C6CB34E212F802F00DDC522 /* Shadow.swift */,
+				2CE3055321F76E4B0046CF20 /* Fonts.swift */,
 				2C3E5CA2212F840000BEFA67 /* big_noodle_titling_oblique.ttf */,
 				2C3E5CA3212F840000BEFA67 /* big_noodle_titling.ttf */,
 				2C51591B21EC143800C7F211 /* Knockout HTF49Liteweight Regular.otf */,
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */,
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2CBD5A332153037D0035689B /* Reachability.swift in Sources */,

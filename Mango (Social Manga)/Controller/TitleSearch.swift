@@ -31,7 +31,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         navigationItem.title = "Search"
         
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "Knockout", size: 21)!]
+            [NSAttributedStringKey.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         
         activity.isHidden = true
         activityView.isHidden = true
