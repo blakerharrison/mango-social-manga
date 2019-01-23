@@ -40,6 +40,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         noTitleFoundImage.isHidden = true
         
         searchBar.becomeFirstResponder()
+        
+        searchBar.backgroundImage = UIImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {

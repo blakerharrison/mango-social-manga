@@ -52,6 +52,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.collectionView!.addSubview(refresher)
         
         collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
+        
+//        navBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
