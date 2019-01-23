@@ -53,7 +53,17 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
         
-//        navBar
+        //Transparent Navigation Bar
+        self.navBar.setBackgroundImage(UIImage(), for: .default)
+        self.navBar.shadowImage = UIImage()
+        self.navBar.isTranslucent = true
+
+        // Transparent Tool Bar
+        self.toolBar.setBackgroundImage(UIImage(),
+                                        forToolbarPosition: .any,
+                                        barMetrics: .default)
+        self.toolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,7 +164,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
             }
 
-        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(named: "DefaultPage"),
+        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(),
                                    completed: { image, error, cacheType, imageURL in
                                     
                                     DispatchQueue.main.async {
@@ -167,7 +177,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         })
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
