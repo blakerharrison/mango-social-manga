@@ -37,8 +37,6 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         activity.isHidden = true
         activityView.isHidden = true
         
-        noTitleFoundImage.isHidden = true
-        
         searchBar.becomeFirstResponder()
         
         searchBar.backgroundImage = UIImage()
