@@ -20,6 +20,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageChapterLabel: UILabel!
+    @IBOutlet weak var statusBarBackgroundImage: UIImageView!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -28,7 +29,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
@@ -106,6 +107,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = true
             self.pageNumberLabel?.isHidden = true
             self.pageChapterLabel?.isHidden = true
+            self.statusBarBackgroundImage?.isHidden = true
             return
         } else {
             print("Showing Nav Bar")
@@ -113,6 +115,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = false
             self.pageNumberLabel?.isHidden = false
             self.pageChapterLabel?.isHidden = false
+            self.statusBarBackgroundImage?.isHidden = false
         }
     }
 
@@ -152,7 +155,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
             }
 
-        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(named: "DefaultPage"),
+        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(),
                                    completed: { image, error, cacheType, imageURL in
                                     
                                     DispatchQueue.main.async {
@@ -165,12 +168,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         })
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
             
-        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+        pageNumberLabel.text = "Page \(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
             
         } else {
             
