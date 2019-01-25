@@ -20,6 +20,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageChapterLabel: UILabel!
+    @IBOutlet weak var statusBarBackgroundImage: UIImageView!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -28,7 +29,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
@@ -52,18 +53,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.collectionView!.addSubview(refresher)
         
         collectionView.register(UINib(nibName: "transitionCell", bundle: nil), forCellWithReuseIdentifier: "tranCell")
-        
-        //Transparent Navigation Bar
-        self.navBar.setBackgroundImage(UIImage(), for: .default)
-        self.navBar.shadowImage = UIImage()
-        self.navBar.isTranslucent = true
-
-        // Transparent Tool Bar
-        self.toolBar.setBackgroundImage(UIImage(),
-                                        forToolbarPosition: .any,
-                                        barMetrics: .default)
-        self.toolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +107,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = true
             self.pageNumberLabel?.isHidden = true
             self.pageChapterLabel?.isHidden = true
+            self.statusBarBackgroundImage?.isHidden = true
             return
         } else {
             print("Showing Nav Bar")
@@ -125,6 +115,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = false
             self.pageNumberLabel?.isHidden = false
             self.pageChapterLabel?.isHidden = false
+            self.statusBarBackgroundImage?.isHidden = false
         }
     }
 
@@ -182,7 +173,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
             
-        pageNumberLabel.text = "\(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+        pageNumberLabel.text = "Page \(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
             
         } else {
             
