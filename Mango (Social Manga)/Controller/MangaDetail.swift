@@ -20,6 +20,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
+    
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!

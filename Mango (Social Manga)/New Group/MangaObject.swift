@@ -10,6 +10,7 @@ import UIKit
 
 var usersFavoriteMangas = [MangaObject]()
 
+//Appended when user searches a Manga.
 var searchedMangaList = [manga]()
 
 struct MangaObject {

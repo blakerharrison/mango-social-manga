@@ -107,7 +107,7 @@ class MangoNetworking {
                 let listOfMangas = try decoder.decode(MangaList.self, from: data!)
 
                 var filteredManga = listOfMangas.manga.filter { ($0.a!.contains(searchedMangaLowercased)) }
-
+                
                 filteredManga.sort {
                     return $0.h! > $1.h!
                 }
