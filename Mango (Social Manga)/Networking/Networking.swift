@@ -113,7 +113,7 @@ class MangoNetworking {
                 }
                 
                 searchedMangaList = filteredManga
-                
+
                 if filteredManga.count != 0 {
       
                     for n in 0...filteredManga.count - 1 {

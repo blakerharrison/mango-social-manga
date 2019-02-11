@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct MangaInfoAndChapterList: Decodable {
     let aka: [String]
@@ -48,6 +49,7 @@ enum MetadataType: Decodable {
         } catch DecodingError.typeMismatch {
             do {
                 self = try .string(container.decode(String.self))
+                
             } catch DecodingError.typeMismatch {
                 throw DecodingError.typeMismatch(MetadataType.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Encoded payload not of an expected type"))
             }

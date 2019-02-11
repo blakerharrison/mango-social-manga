@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 var selectedIndex = 0
 var selectedID = ""
@@ -15,12 +16,16 @@ var selectedChapterID = ""
 var currentChapter = ""
 var mangaDataStructure = MangaDataStructure()
 
+var currentMangaObject = RealmMangaObject()
+var currentChaptersObject = RealmChapterObject()
+var wasChapterViewed = RealmChapterViewed()
+
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     let Networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
-    
+    var realm = try! Realm()
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -38,11 +43,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
  
         fetchMangaInfo(mangaID: selectedID)
+        
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
+        
         mangaImage.addShadow()
+        
         readButton.layer.cornerRadius = 5
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,11 +82,31 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             mangaDataStructure.removeIDs()
             
+            //Adding values tp ReamMangaObject located in wasChapterViewedRealmModel.swift
+            currentMangaObject.mangaID = selectedID
+            currentMangaObject.name = json["title"].string!
+            
+            
+            let chapterID = mangaInfo.chapters[1][3]!
+            print(chapterID)
+            
+
+//            currentChaptersObject.mangaID = selectedID
+//            currentChaptersObject.chapterID =
+            
+//            print(currentMangaObject)
+            
+//            currentMangaObject.chapters.append(<#T##newElement: RealmChapterObject##RealmChapterObject#>)
+            
             guard mangaInfo.chapters.count != 0 else {
                 return print("No Chapters")
             }
             
-            for n in 0...mangaInfo.chapters.count - 1{
+            print("")
+            print(mangaInfo.chapters[3][2]!) //DELETE
+            print("")
+            
+            for n in 0..<mangaInfo.chapters.count {
                 let chapters = json["chapters"][n].array
                 mangaDataStructure.mangaChaptersString.append(chapters![0].stringValue)
 
@@ -152,7 +181,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let json = try JSON(data: data!)
                 
                 self.setUIDetails(json, mangaInfo)
-                
+
                 DispatchQueue.main.async {
                     self.activity.isHidden = true
                     self.activity.stopAnimating()
