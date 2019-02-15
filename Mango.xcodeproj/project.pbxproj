@@ -35,6 +35,7 @@
 		2CD9A82C2126667700108F5B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A82B2126667700108F5B /* Networking.swift */; };
 		2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3055321F76E4B0046CF20 /* Fonts.swift */; };
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
+		2CFC0AED221661D10089531B /* MangaChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0AEC221661D00089531B /* MangaChapter.swift */; };
 		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		2CD9A82B2126667700108F5B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2CE3055321F76E4B0046CF20 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CFC0AEC221661D00089531B /* MangaChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangaChapter.swift; sourceTree = "<group>"; };
 		357739AFE0CBA5281089CCF0 /* Pods-Mango (Social Manga)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).debug.xcconfig"; sourceTree = "<group>"; };
 		64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		2CF1E576207AF0B100161D5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CFC0AEC221661D00089531B /* MangaChapter.swift */,
 				2C1D8EF821A728D8001C69FD /* MangaClass.swift */,
 				2C3E5CA6212F8A1800BEFA67 /* MangaObject.swift */,
 				2CBB7B5B2141B33100411BA6 /* MangaInfoAndChapterList.swift */,
@@ -418,6 +421,7 @@
 			files = (
 				2CE3055421F76E4B0046CF20 /* Fonts.swift in Sources */,
 				2CA4BE15220D4E290061A4EB /* wasChapterViewedRealmModel.swift in Sources */,
+				2CFC0AED221661D10089531B /* MangaChapter.swift in Sources */,
 				2CA0A2992134B7C7006844E3 /* TitleSearch.swift in Sources */,
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2CBD5A332153037D0035689B /* Reachability.swift in Sources */,
