@@ -14,6 +14,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     var isSearching: Bool = false
     var filteredArray: [String] = []
     
+    let networking = MangoNetworking()
+    
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
@@ -45,6 +47,9 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidAppear(_ animated: Bool) {
         mangaDataStructure.removeChapterStrings()
         mangaDataStructure.resetToDefault()
+        
+        NotificationCenter.default.post(name: .MangaDetailWasExited, object: nil)
+        chaptersArray.removeAll()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +110,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         selectedIndex = indexPath.row
         selectedID = searchedMangaList[indexPath.row].i!
+        
+//        networking.fetchChapters(mangaID: selectedID)
         
         // Segue to the second view controller
         self.performSegue(withIdentifier: "DetailSegue", sender: self)

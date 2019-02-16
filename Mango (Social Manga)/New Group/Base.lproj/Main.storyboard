@@ -101,7 +101,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="358" height="28"/>
+                                                    <rect key="frame" x="9" y="11" width="397" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
                                                     </constraints>
@@ -397,7 +397,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I70-te-NgM">
-                                                    <rect key="frame" x="18" y="9.6666666666666661" width="17" height="23.333333333333336"/>
+                                                    <rect key="frame" x="18" y="11" width="11" height="22"/>
                                                     <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -419,36 +419,36 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoF-a7-pNj">
-                                <rect key="frame" x="146" y="107" width="213" height="20"/>
+                                <rect key="frame" x="146" y="107" width="213" height="18.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84i-wo-m2G">
-                                <rect key="frame" x="146" y="131" width="213" height="20"/>
+                                <rect key="frame" x="146" y="129.66666666666666" width="213" height="18"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efm-zu-8Xk">
-                                <rect key="frame" x="146" y="155" width="213" height="20"/>
+                                <rect key="frame" x="146" y="151.66666666666666" width="213" height="18.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmR-3H-8tt">
-                                <rect key="frame" x="146" y="178" width="213" height="20"/>
+                                <rect key="frame" x="146" y="173" width="213" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-cu-ex8">
-                                <rect key="frame" x="146" y="223" width="213" height="72"/>
+                                <rect key="frame" x="146" y="214.66666666666666" width="213" height="80.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-Bv-pxg">
-                                <rect key="frame" x="146" y="200" width="213" height="20"/>
+                                <rect key="frame" x="146" y="193.66666666666666" width="213" height="18"/>
                                 <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -522,6 +522,11 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="807-97-djC">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ye-Pr-T8E"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="OD6-P8-wws">
+                            <connections>
+                                <action selector="reloadTableView:" destination="1V7-gQ-nIo" id="QO1-AZ-UXS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="f62-9X-2Tb" id="MM1-4b-hfm"/>

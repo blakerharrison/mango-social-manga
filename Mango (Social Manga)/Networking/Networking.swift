@@ -19,6 +19,8 @@ public var imageStringForCover: String = ""
 
 class MangoNetworking {
     
+    var isMangaDetailBeingViewed = false
+    
     //MARK: - Properties
     let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
     let mangeListURL = "https://www.mangaeden.com/api/manga/"
@@ -133,6 +135,58 @@ class MangoNetworking {
             }
         }
         task.resume()
+    }
+    
+    //Fetches the chapters properties.
+    func fetchChapters(mangaID: String) {
+        
+        isMangaDetailBeingViewed = true
+        
+        let url = URL(string: mangeListURL + mangaID)
+        
+        URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                if let json = try? JSON(data: data) {
+                    print(json["chapters"].count)
+                    
+                    for i in 0..<json["chapters"].count {
+                        
+                        guard self.isMangaDetailBeingViewed == true else {
+                            chaptersArray.removeAll()
+                            return
+                        }
+                        
+                        self.printChapterValues(i: i, json: json)
+                        
+                        chaptersArray.append(
+                            MangaChapter(
+                                number: json["chapters"][i][0].intValue,
+                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
+                                title: json["chapters"][i][2].stringValue,
+                                id: json["chapters"][i][3].stringValue
+                        ))
+                        NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
+                    }
+                    
+                    guard chaptersArray.isEmpty != true else {
+                        return print("No chapters")
+                    }
+                    print("")
+                    print(chaptersArray[0])
+
+                }
+            }
+        }).resume()
+    }
+    
+    func printChapterValues(i: Int, json: JSON) {
+        print("")
+        print("Number -> \(json["chapters"][i][0].intValue)")
+        print("Date -> \(NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue))")
+        print("Title -> \(json["chapters"][i][2].stringValue)")
+        print("ID -> \(json["chapters"][i][3].stringValue)")
     }
     
 }

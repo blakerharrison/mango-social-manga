@@ -20,10 +20,12 @@ var currentMangaObject = RealmMangaObject()
 var currentChaptersObject = RealmChapterObject()
 var wasChapterViewed = RealmChapterViewed()
 
+var chaptersArray = [MangaChapter]()
+
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
-    let Networking = MangoNetworking()
+    let networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
     var realm = try! Realm()
 
@@ -41,9 +43,34 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
+        mangaDataStructure.reverseIDs()
+        
+        mangaChapters.removeAll()
+        toggleIsMangaBeingViewed()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ReloadTableView(_:)),
+                                               name: .ChapterWasAppended,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(toggleIsMangaBeingViewed(_:)),
+                                               name: .MangaDetailWasExited,
+                                               object: nil)
+
+
+        activity.isHidden = true
+        activity.startAnimating()
+        
         fetchMangaInfo(mangaID: selectedID)
         
+        DispatchQueue.global(qos: .background).async {
+        self.networking.fetchChapters(mangaID: selectedID)
+        }
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
@@ -56,28 +83,56 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
+
     }
 
     //MARK: - Methods
-    fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
+    @objc func ReloadTableView(_ notification: Notification) {
         DispatchQueue.main.async {
-            
+        self.tableView.reloadData()
+        }
+    }
+    
+    @objc func toggleIsMangaBeingViewed(_ notification: Notification) {
+        networking.isMangaDetailBeingViewed = false
+    }
+    
+    func toggleIsMangaBeingViewed() {
+        networking.isMangaDetailBeingViewed = false
+    }
+    
+    fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
+//        DispatchQueue.main.async {
+        
             let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#39;", with: "'", options: .literal, range: nil)
             
             self.fetchImage()
+        
+        DispatchQueue.main.async {
             self.mangaDescription.text = updatedStringDiscription
+        }
+        
+         DispatchQueue.main.async {
             self.authorLabel.text = "Author : " + json["author"].string!
+        }
+        
+         DispatchQueue.main.async {
             self.categoriesLabel.text = "Category : " + json["categories"][0].stringValue
+        }
+         DispatchQueue.main.async {
             self.releasedLabel.text = "Released : " + json["released"].stringValue
+        }
             
             print("LIST OF CHAPTERS!!! +++ \(json["chapters"])")
 
+         DispatchQueue.main.async {
             if json["status"].int! == 1 {
                 self.statusLabel.text = "Status : Ongoing"
             } else if json["status"].int! == 2 {
                 self.statusLabel.text = "Status : Completed"
             }
-            
+        }
+        
             self.mangaChapters = mangaInfo.chapters
             
             mangaDataStructure.removeIDs()
@@ -87,25 +142,17 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             currentMangaObject.name = json["title"].string!
             
             
-            let chapterID = mangaInfo.chapters[1][3]!
-            print(chapterID)
-            
-
-//            currentChaptersObject.mangaID = selectedID
-//            currentChaptersObject.chapterID =
-            
-//            print(currentMangaObject)
-            
-//            currentMangaObject.chapters.append(<#T##newElement: RealmChapterObject##RealmChapterObject#>)
+            if mangaInfo.chapters.isEmpty {
+                return
+            } else {
+                let chapterID = mangaInfo.chapters[1][3]!
+                print(chapterID)
+            }
             
             guard mangaInfo.chapters.count != 0 else {
                 return print("No Chapters")
             }
-            
-            print("")
-            print(mangaInfo.chapters[3][2]!) //DELETE
-            print("")
-            
+
             for n in 0..<mangaInfo.chapters.count {
                 let chapters = json["chapters"][n].array
                 mangaDataStructure.mangaChaptersString.append(chapters![0].stringValue)
@@ -118,6 +165,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             mangaDataStructure.isMangaChaptersReversed = false
             
+            DispatchQueue.main.async {
+                self.activity.isHidden = true
+                self.activity.stopAnimating()
+            }
+        
+         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
@@ -136,7 +189,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
         
-        guard let url = URL(string: Networking.mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
+        guard let url = URL(string: networking.mangaImageURL + searchedMangaList[selectedIndex].im!) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print("Failed fetching image:", error!)
@@ -158,11 +211,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
-        
-        activity.isHidden = false
-        activity.startAnimating()
-        
-        guard let url = URL(string: Networking.mangeListURL + mangaID) else {return}
+
+        guard let url = URL(string: networking.mangeListURL + mangaID) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let dataResponse = data,
@@ -181,12 +231,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let json = try JSON(data: data!)
                 
                 self.setUIDetails(json, mangaInfo)
-
-                DispatchQueue.main.async {
-                    self.activity.isHidden = true
-                    self.activity.stopAnimating()
-                }
-                
+   
             } catch let parsingError {
                 print("Error", parsingError)
                 self.activity.isHidden = true
@@ -195,6 +240,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         task.resume()
     }
+ 
     
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
@@ -218,23 +264,30 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     //TODO: - Add an aciton button for Read. !@#$%^&*()
+    @IBAction func reloadTableView(_ sender: Any) {
+        activity.isHidden = true
+        self.tableView.reloadData()
+    }
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mangaChapters.count
+        return chaptersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
         if let label = cell.viewWithTag(1000) as? UILabel {
-            if mangaDataStructure.mangaChaptersString.isEmpty {
-            } else {
-                label.text = "Chapter : " + mangaDataStructure.mangaChaptersString[indexPath.row]
+            
+            if chaptersArray[indexPath.row].title.isEmpty && chaptersArray.count != 0 {
+                label.text = "\(chaptersArray[indexPath.row].number): Chapter \(chaptersArray[indexPath.row].number)"
+            } else if chaptersArray.count != 0 {
+                label.text = "\(chaptersArray[indexPath.row].number): "  + chaptersArray[indexPath.row].title
             }
+            
         }
         return cell
-}
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -242,11 +295,21 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
 
-        currentChapter = mangaDataStructure.mangaChaptersString[indexPath.row]
+        currentChapter = mangaDataStructure.mangaChaptersString.reversed()[indexPath.row]
         mangaDataStructure.currentChapterIndex = indexPath.row
-        selectedChapterID = mangaDataStructure.mangaChapterIDs[indexPath.row]
+        selectedChapterID = mangaDataStructure.mangaChapterIDs.reversed()[indexPath.row]
 
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
+        
     }
+}
+
+// URLContainer
+extension Notification.Name {
+    static let ChapterWasAppended
+        = NSNotification.Name("ChapterWasAppended")
+    
+    static let MangaDetailWasExited
+        = NSNotification.Name("MangaDetailWasExited")
 }
