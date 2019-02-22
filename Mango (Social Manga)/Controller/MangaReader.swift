@@ -160,7 +160,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageLabel.text = String(pages[indexPath.row].pageNumber)
             }
 
-        cell.pageImage.sd_setImage(with: URL(string: Networking.mangaImageURL + pages[indexPath.row].imageURL)!, placeholderImage: UIImage(),
+        cell.pageImage.sd_setImage(with: URL(string: Networking.mangaImageURL + pages.reversed()[indexPath.row].imageURL)!, placeholderImage: UIImage(),
                                    completed: { image, error, cacheType, imageURL in
                                     
                                     DispatchQueue.main.async {

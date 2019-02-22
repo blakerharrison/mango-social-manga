@@ -160,15 +160,15 @@ class MangoNetworking {
                             return
                         }
                         
-//                        self.printChapterValues(i: i, json: json)
-//
-//                        chaptersArray.append(
-//                            MangaChapter(
-//                                number: json["chapters"][i][0].intValue,
-//                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
-//                                title: json["chapters"][i][2].stringValue,
-//                                id: json["chapters"][i][3].stringValue
-//                        ))
+                        self.printChapterValues(i: i, json: json)
+
+                        chaptersArray.append(
+                            MangaChapter(
+                                number: json["chapters"][i][0].intValue,
+                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
+                                title: json["chapters"][i][2].stringValue,
+                                id: json["chapters"][i][3].stringValue
+                        ))
                         NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
                     }
                     
