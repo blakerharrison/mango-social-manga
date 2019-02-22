@@ -22,6 +22,8 @@ var wasChapterViewed = RealmChapterViewed()
 
 var chaptersArray = [MangaChapter]()
 
+var chaptersArray2 = [[Any]]()
+
 class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
@@ -62,7 +64,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                                name: .MangaDetailWasExited,
                                                object: nil)
 
-
         activity.isHidden = true
         activity.startAnimating()
         
@@ -78,6 +79,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         mangaImage.addShadow()
         
         readButton.layer.cornerRadius = 5
+        
+        
 
     }
     
@@ -91,6 +94,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         DispatchQueue.main.async {
         self.tableView.reloadData()
         }
+        print("THIS IS IT \(chaptersArray2.customMirror)")
+//        print("THIS IS IT \(chaptersArray2[0][0])")
     }
     
     @objc func toggleIsMangaBeingViewed(_ notification: Notification) {
@@ -102,8 +107,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
-//        DispatchQueue.main.async {
-        
+
             let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#39;", with: "'", options: .literal, range: nil)
             
             self.fetchImage()
@@ -123,7 +127,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.releasedLabel.text = "Released : " + json["released"].stringValue
         }
             
-            print("LIST OF CHAPTERS!!! +++ \(json["chapters"])")
+            print("LIST OF CHAPTERS!!! +++ \(json["chapters"][0][0])")
 
          DispatchQueue.main.async {
             if json["status"].int! == 1 {
@@ -295,9 +299,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
 
+        networking.fetchPages(chapterID: chaptersArray[indexPath.row].id)
+        
         currentChapter = mangaDataStructure.mangaChaptersString.reversed()[indexPath.row]
         mangaDataStructure.currentChapterIndex = indexPath.row
         selectedChapterID = mangaDataStructure.mangaChapterIDs.reversed()[indexPath.row]
+        
+        currentChapter = String(chaptersArray[indexPath.row].number)
 
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)

@@ -9,6 +9,8 @@
 import UIKit
 import SDWebImage
 
+var pages = [PageOfChapter]()
+
 class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Outlets
@@ -34,7 +36,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
-        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+//        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+        self.Networking.fetchChapters(mangaID: selectedChapterID)
         
         activityMain.isHidden = false
         activityMain.startAnimating()
@@ -65,6 +68,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
+        
+        pages.removeAll()
     }
     
     //MARK: - Methods
@@ -72,10 +77,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         pageNumberLabel.text = "Loading Previous Chapter"
         activityMain.isHidden = false
         activityMain.startAnimating()
-        
-        mangaDataStructure.previousID()
-        
-        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+
+        pages.removeAll()
+
+        self.Networking.fetchPages(chapterID: selectedChapterID)
         
         stopRefresher()         //Call this to stop refresher
     }
@@ -86,7 +91,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
-            self.pageChapterLabel.text = "Chapter " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
+//            self.pageChapterLabel.text = "Chapter " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
             print("LOADED")
             self.collectionView.reloadData()
             self.collectionView.contentOffset = .zero
@@ -130,18 +135,18 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     //MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Networking.fetchedPagesURLs.count
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // first row
-        if indexPath.row == Networking.fetchedPagesURLs.count + 1 {
-            let cameraCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tranCell", for: indexPath)
+        if indexPath.row == pages.count + 1 {
+            let tranCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tranCell", for: indexPath)
             
             // setup the cell...
             
-            return cameraCell
+            return tranCell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as! MangaReaderCell
@@ -152,10 +157,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         cell.activityIndicator.startAnimating()
 
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
-            pageLabel.text = self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]
+            pageLabel.text = String(pages[indexPath.row].pageNumber)
             }
 
-        cell.pageImage.sd_setImage(with: URL(string:self.Networking.fetchedPagesURLs.reversed()[indexPath.row])!, placeholderImage: UIImage(),
+        cell.pageImage.sd_setImage(with: URL(string: Networking.mangaImageURL + pages[indexPath.row].imageURL)!, placeholderImage: UIImage(),
                                    completed: { image, error, cacheType, imageURL in
                                     
                                     DispatchQueue.main.async {
@@ -173,7 +178,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
             
-        pageNumberLabel.text = "Page \(self.Networking.fetchedPagesNumbers.reversed()[indexPath.row]) /\(self.Networking.fetchedPagesNumbers.count)"
+        pageNumberLabel.text = "Page \(pages.reversed()[indexPath.row].pageNumber + 1) /\(pages.count)"
             
         } else {
             
@@ -184,14 +189,19 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
 
-//            mangaDataStructure.currentChapterID = selectedChapterID
-            
             mangaDataStructure.nextID()
+
+            selectedIndex = selectedIndex - 1
+            
+            pages.removeAll()
+            
+            Networking.fetchChapters(mangaID: selectedChapterID)
+            
             print("")
 
             print("Next chapter \(selectedChapterID)")
 
-            self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
+//            self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         }
     }
 }

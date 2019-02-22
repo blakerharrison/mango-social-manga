@@ -149,7 +149,9 @@ class MangoNetworking {
             
             do {
                 if let json = try? JSON(data: data) {
-                    print(json["chapters"].count)
+                    print("ARRAY OF CHAPTERS - \(json["chapters"].arrayValue)")
+                    
+//                    chaptersArray2.append(json[0]["chapters"].arrayObject!)
                     
                     for i in 0..<json["chapters"].count {
                         
@@ -158,15 +160,15 @@ class MangoNetworking {
                             return
                         }
                         
-                        self.printChapterValues(i: i, json: json)
-                        
-                        chaptersArray.append(
-                            MangaChapter(
-                                number: json["chapters"][i][0].intValue,
-                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
-                                title: json["chapters"][i][2].stringValue,
-                                id: json["chapters"][i][3].stringValue
-                        ))
+//                        self.printChapterValues(i: i, json: json)
+//
+//                        chaptersArray.append(
+//                            MangaChapter(
+//                                number: json["chapters"][i][0].intValue,
+//                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
+//                                title: json["chapters"][i][2].stringValue,
+//                                id: json["chapters"][i][3].stringValue
+//                        ))
                         NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
                     }
                     
@@ -176,9 +178,51 @@ class MangoNetworking {
                     print("")
                     print(chaptersArray[0])
 
+                    NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
+                    
                 }
             }
         }).resume()
+    }
+    
+    //Fetch page numbers and image urls
+    func fetchPages(chapterID: String) {
+        
+        print("FETCHING PAGES")
+        print(chapterID)
+        
+        let url = URL(string: mangaChapterURL + chapterID)
+        
+        print("URL \(url)")
+        
+        URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+            
+            print("WE OOUT HERE")
+            
+            guard let data = data, error == nil else { print("No data")
+                return }
+            
+            do {
+                if let json = try? JSON(data: data) {
+                    
+                    print("")
+                    print("IMAGES FROM SELECTED CHAPTER! ====== \(json["images"][0][0].int!)")
+                    print("")
+                    
+                    for i in 0..<json["images"].count {
+                    self.printPageValues(i: i, json: json)
+                     
+                    pages.append(PageOfChapter(pageNumber: json["images"][i][0].int!, imageURL: json["images"][i][1].stringValue))
+                    }
+                    
+                    print(pages)
+                    NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
+                    
+                }
+            }
+            
+        }).resume()
+        
     }
     
     func printChapterValues(i: Int, json: JSON) {
@@ -188,5 +232,12 @@ class MangoNetworking {
         print("Title -> \(json["chapters"][i][2].stringValue)")
         print("ID -> \(json["chapters"][i][3].stringValue)")
     }
+    
+    func printPageValues(i: Int, json: JSON) {
+        print("")
+        print("Page number -> \(json["images"][i][0].intValue)")
+        print("URL end point -> \(json["images"][i][1].stringValue)")
+    }
+    
     
 }
