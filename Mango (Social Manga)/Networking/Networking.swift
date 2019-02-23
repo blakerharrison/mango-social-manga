@@ -23,7 +23,7 @@ class MangoNetworking {
     
     //MARK: - Properties
     let mangaImageURL = "https://cdn.mangaeden.com/mangasimg/"
-    let mangeListURL = "https://www.mangaeden.com/api/manga/"
+    let mangaURL = "https://www.mangaeden.com/api/manga/"
     let mangaChapterURL = "https://www.mangaeden.com/api/chapter/"
     
     var fetchedPagesURLs: Array<String> = []
@@ -137,12 +137,37 @@ class MangoNetworking {
         task.resume()
     }
     
+    //Fetches the chapters details.
+    func fetchChapterDetails(chapterID: String) {
+        let url = URL(string: mangaURL + chapterID)
+        
+        URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                if let json = try? JSON(data: data) {
+                    
+                    let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#39;", with: "'", options: .literal, range: nil)
+                    
+                    currentManga = MangaDetails(name: json["title"].stringValue,
+                                                author: json["author"].stringValue,
+                                                category: json["categories"].stringValue,
+                                                released: json["released"].stringValue,
+                                                description: updatedStringDiscription,
+                                                imageURL: json["imageURL"].stringValue)
+                }
+                
+                NotificationCenter.default.post(name: NSNotification.Name.ChapterDetailsWereFetched, object: nil)
+            }
+            
+        }).resume()
+    }
+    
     //Fetches the chapters properties.
     func fetchChapters(mangaID: String) {
-        
         isMangaDetailBeingViewed = true
         
-        let url = URL(string: mangeListURL + mangaID)
+        let url = URL(string: mangaURL + mangaID)
         
         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
@@ -153,10 +178,6 @@ class MangoNetworking {
                     for i in json["chapters"].arrayValue {
                         chapterArray.append(MangaChapter(number: i[0].stringValue, title: i[2].stringValue, id: i[1].stringValue))
                     }
-                    
-//                    guard chaptersArray.isEmpty != true else {
-//                        return print("No chapters")
-//                    }
 
                     NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
                     
