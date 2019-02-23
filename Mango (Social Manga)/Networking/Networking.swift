@@ -149,36 +149,16 @@ class MangoNetworking {
             
             do {
                 if let json = try? JSON(data: data) {
-                    print("ARRAY OF CHAPTERS - \(json["chapters"].arrayValue)")
-                    
-//                    chaptersArray2.append(json[0]["chapters"].arrayObject!)
-                    
-                    for i in 0..<json["chapters"].count {
-                        
-                        guard self.isMangaDetailBeingViewed == true else {
-                            chaptersArray.removeAll()
-                            return
-                        }
-                        
-                        self.printChapterValues(i: i, json: json)
-
-                        chaptersArray.append(
-                            MangaChapter(
-                                number: json["chapters"][i][0].intValue,
-                                date: NSDate(timeIntervalSince1970: json["chapters"][i][1].doubleValue),
-                                title: json["chapters"][i][2].stringValue,
-                                id: json["chapters"][i][3].stringValue
-                        ))
-                        NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
+                   
+                    for i in json["chapters"].arrayValue {
+                        chapterArray.append(MangaChapter(number: i[0].stringValue, title: i[2].stringValue, id: i[1].stringValue))
                     }
                     
-                    guard chaptersArray.isEmpty != true else {
-                        return print("No chapters")
-                    }
-                    print("")
-                    print(chaptersArray[0])
+//                    guard chaptersArray.isEmpty != true else {
+//                        return print("No chapters")
+//                    }
 
-                    NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
                     
                 }
             }

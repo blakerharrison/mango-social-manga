@@ -9,16 +9,18 @@
 import Foundation
 import SwiftyJSON
 
+var chapterArray = [MangaChapter]()
+
 struct MangaChapter {
-    var number: Int
-    var date: NSDate
+    var number: String
     var title: String
     var id: String
     
-    init(number: Int, date: NSDate, title: String, id: String) {
+    init(number: String, title: String, id: String) {
         self.number = number
-        self.date = date
         self.title = title
         self.id = id
     }
 }
+
+

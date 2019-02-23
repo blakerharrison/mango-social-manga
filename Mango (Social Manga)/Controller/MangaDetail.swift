@@ -46,13 +46,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mangaDataStructure.reverseIDs()
-        
-        mangaChapters.removeAll()
+        activity.isHidden = false
+        activity.startAnimating()
+
         toggleIsMangaBeingViewed()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(ReloadTableView(_:)),
@@ -64,14 +61,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                                name: .MangaDetailWasExited,
                                                object: nil)
 
-        activity.isHidden = true
-        activity.startAnimating()
+
+//        fetchMangaInfo(mangaID: selectedID)
         
-        fetchMangaInfo(mangaID: selectedID)
-        
-        DispatchQueue.global(qos: .background).async {
-        self.networking.fetchChapters(mangaID: selectedID)
-        }
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
@@ -79,9 +71,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         mangaImage.addShadow()
         
         readButton.layer.cornerRadius = 5
-        
-        
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        chapterArray.removeAll()
+        networking.fetchChapters(mangaID: selectedID)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,10 +86,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Methods
     @objc func ReloadTableView(_ notification: Notification) {
         DispatchQueue.main.async {
-        self.tableView.reloadData()
+            chapterArray.reverse()
+            self.tableView.reloadData()
+            self.activity.isHidden = true
+            self.activity.stopAnimating()
         }
-        print("THIS IS IT \(chaptersArray2.customMirror)")
-//        print("THIS IS IT \(chaptersArray2[0][0])")
     }
     
     @objc func toggleIsMangaBeingViewed(_ notification: Notification) {
@@ -275,7 +270,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chaptersArray.count
+        return chapterArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -283,11 +278,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if let label = cell.viewWithTag(1000) as? UILabel {
             
-            if chaptersArray[indexPath.row].title.isEmpty && chaptersArray.count != 0 {
-                label.text = "\(chaptersArray[indexPath.row].number): Chapter \(chaptersArray[indexPath.row].number)"
-            } else if chaptersArray.count != 0 {
-                label.text = "\(chaptersArray[indexPath.row].number): "  + chaptersArray[indexPath.row].title
-            }
+            label.text = "\(chapterArray[indexPath.row].number) - \(chapterArray[indexPath.row].title)"
             
         }
         return cell
