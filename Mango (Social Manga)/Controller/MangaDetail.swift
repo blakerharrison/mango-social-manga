@@ -41,6 +41,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var releasedLabel: UILabel!
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var descriptionTitle: UILabel!
+    @IBOutlet weak var activityDetails: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -48,6 +50,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = false
         activity.startAnimating()
+        
+        activityDetails.isHidden = false
+        activityDetails.startAnimating()
 
         toggleIsMangaBeingViewed()
         
@@ -103,10 +108,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.fetchImage()
         
         DispatchQueue.main.async {
-        self.mangaDescription.text = currentManga.description
-        self.authorLabel.text = "Author : " + currentManga.author
-        self.categoriesLabel.text = "Category : " + currentManga.category
-        self.releasedLabel.text = "Released : " + currentManga.released
+            self.mangaDescription.text = currentManga.description
+            self.authorLabel.text = "Author : " + currentManga.author
+            self.categoriesLabel.text = "Category : " + currentManga.category
+            self.releasedLabel.text = "Released : " + currentManga.released
+            self.statusLabel.text = "Status :"
+            self.descriptionTitle.text = "Description : "
+            
+            self.activityDetails.isHidden = true
+            self.activityDetails.stopAnimating()
         }
     }
     
