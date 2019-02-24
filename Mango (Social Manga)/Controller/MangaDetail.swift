@@ -43,16 +43,22 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var activityDetails: UIActivityIndicatorView!
+    @IBOutlet weak var activityImage: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mangaImage.image = UIImage(named: "TransitionScreenBW3")
         
         activity.isHidden = false
         activity.startAnimating()
         
         activityDetails.isHidden = false
         activityDetails.startAnimating()
+        
+        activityImage.isHidden = false
+        activityImage.startAnimating()
 
         toggleIsMangaBeingViewed()
         
@@ -71,9 +77,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                                name: .MangaDetailWasExited,
                                                object: nil)
 
-
-//        fetchMangaInfo(mangaID: selectedID)
-        
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
@@ -91,6 +94,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
+        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "")
     }
 
     //MARK: - Methods
@@ -172,6 +176,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     fileprivate func setUIImage(_ data: Data?) {
         DispatchQueue.main.async {
             self.mangaImage.image = UIImage(data: data!)
+            self.activityImage.isHidden = true
+            self.activityImage.stopAnimating()
         }
     }
     
