@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-EH-j08">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -101,7 +101,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-mj-VAi">
-                                                    <rect key="frame" x="9" y="11" width="397" height="28"/>
+                                                    <rect key="frame" x="9" y="11" width="358" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ckQ-tU-f9K"/>
                                                     </constraints>
@@ -164,7 +164,7 @@
                             <constraint firstItem="AkD-w6-2w5" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="AiN-fG-dWT"/>
                             <constraint firstItem="f6j-qU-kvZ" firstAttribute="bottom" secondItem="AkD-w6-2w5" secondAttribute="bottom" id="DBq-o9-PVC"/>
                             <constraint firstItem="XvN-j2-UDL" firstAttribute="trailing" secondItem="f6j-qU-kvZ" secondAttribute="trailing" id="FNy-3d-ONy"/>
-                            <constraint firstItem="Xhf-EH-j08" firstAttribute="bottom" secondItem="f6j-qU-kvZ" secondAttribute="bottom" constant="34" id="Hh9-OI-eok"/>
+                            <constraint firstItem="Xhf-EH-j08" firstAttribute="bottom" secondItem="f6j-qU-kvZ" secondAttribute="bottom" id="Hh9-OI-eok"/>
                             <constraint firstItem="82i-ff-Wv3" firstAttribute="bottom" secondItem="f6j-qU-kvZ" secondAttribute="bottom" constant="34" id="Nzx-ai-Hxb"/>
                             <constraint firstItem="gLf-BX-nCu" firstAttribute="centerY" secondItem="E5g-kK-PQP" secondAttribute="centerY" id="QhK-jn-G8i"/>
                             <constraint firstItem="Xhf-EH-j08" firstAttribute="leading" secondItem="f6j-qU-kvZ" secondAttribute="leading" id="UL4-K6-vHG"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E35-FF-oGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8618.3999999999996" y="-2808.6206896551726"/>
+            <point key="canvasLocation" x="8617.391304347826" y="-2809.1517857142858"/>
         </scene>
         <!--Manga Reader-->
         <scene sceneID="aEc-rI-hkX">
@@ -287,7 +287,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-PG-Gez">
@@ -377,7 +377,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MintGBackground" translatesAutoresizingMaskIntoConstraints="NO" id="el6-34-z0u">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransitionScreenBW3" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-63-8Z8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransitionScreenBW3" translatesAutoresizingMaskIntoConstraints="NO" id="LZW-63-8Z8">
                                 <rect key="frame" x="13" y="107" width="125" height="169"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="4Fd-i7-ZOK"/>

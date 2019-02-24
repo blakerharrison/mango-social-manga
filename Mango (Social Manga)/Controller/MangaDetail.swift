@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import RealmSwift
+import SkeletonView
 
 var selectedIndex = 0
 var selectedID = ""
@@ -49,8 +50,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        mangaImage.image = UIImage(named: "TransitionScreenBW3")
+        mangaImage.alpha = 0.5
+        mangaImage.isSkeletonable = true
+        mangaImage.showAnimatedGradientSkeleton()
+
+//        mangaImage.image = UIImage(named: "TransitionScreenBW3")
         
         activity.isHidden = false
         activity.startAnimating()
@@ -58,8 +62,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         activityDetails.isHidden = false
         activityDetails.startAnimating()
         
-        activityImage.isHidden = false
-        activityImage.startAnimating()
+        activityImage.isHidden = true
+//        activityImage.startAnimating()
 
         toggleIsMangaBeingViewed()
         
@@ -176,7 +180,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     fileprivate func setUIImage(_ data: Data?) {
         DispatchQueue.main.async {
+            
+            self.mangaImage.alpha = 1.0
             self.mangaImage.image = UIImage(data: data!)
+            self.mangaImage.stopSkeletonAnimation()
+            self.mangaImage.hideSkeleton()
             self.activityImage.isHidden = true
             self.activityImage.stopAnimating()
         }

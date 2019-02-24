@@ -15,5 +15,6 @@ target 'Mango (Social Manga)' do
 pod 'SwiftyJSON', '~> 4.0'
 pod 'SDWebImage', '~> 4.0'
 pod 'RealmSwift'
+pod "SkeletonView"
 
 end
