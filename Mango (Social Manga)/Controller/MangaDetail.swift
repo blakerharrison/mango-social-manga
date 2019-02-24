@@ -63,7 +63,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         activityDetails.startAnimating()
         
         activityImage.isHidden = true
-//        activityImage.startAnimating()
 
         toggleIsMangaBeingViewed()
         
@@ -99,7 +98,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
-        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "")
+        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "")
     }
 
     //MARK: - Methods
@@ -121,7 +120,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.authorLabel.text = "Author : " + currentManga.author
             self.categoriesLabel.text = "Category : " + currentManga.category
             self.releasedLabel.text = "Released : " + currentManga.released
-            self.statusLabel.text = "Status :"
+            self.statusLabel.text = "Status : " + currentManga.status
             self.descriptionTitle.text = "Description : "
             
             self.activityDetails.isHidden = true

@@ -8,7 +8,7 @@
 
 import Foundation
 
-var currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "")
+var currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "")
 
 struct MangaDetails {
     var name: String
@@ -17,13 +17,15 @@ struct MangaDetails {
     var released: String
     var description: String
     var imageURL: String
+    var status: String
     
-    init(name: String, author: String, category: String, released: String, description: String, imageURL: String) {
+    init(name: String, author: String, category: String, released: String, description: String, imageURL: String, status: String) {
         self.name = name
         self.author = author
         self.category = category
         self.released = released
         self.description = description
         self.imageURL = imageURL
+        self.status = status
     }
 }

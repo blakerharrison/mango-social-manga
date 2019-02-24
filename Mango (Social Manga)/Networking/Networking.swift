@@ -149,12 +149,32 @@ class MangoNetworking {
                     
                     let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#39;", with: "'", options: .literal, range: nil)
                     
-                    currentManga = MangaDetails(name: json["title"].stringValue,
-                                                author: json["author"].stringValue,
-                                                category: json["categories"].stringValue,
-                                                released: json["released"].stringValue,
-                                                description: updatedStringDiscription,
-                                                imageURL: json["imageURL"].stringValue)
+                    var status = ""
+                    
+                    if json["status"].int! == 1 {
+                        status = "Ongoing"
+                        
+                        currentManga = MangaDetails(name: json["title"].stringValue,
+                                                    author: json["author"].stringValue,
+                                                    category: json["categories"][0].stringValue,
+                                                    released: json["released"].stringValue,
+                                                    description: updatedStringDiscription,
+                                                    imageURL: json["imageURL"].stringValue,
+                                                    status: status)
+                        
+                    } else if json["status"].int! == 2 {
+                        status = "Completed"
+                        
+                        currentManga = MangaDetails(name: json["title"].stringValue,
+                                                    author: json["author"].stringValue,
+                                                    category: json["categories"][0].stringValue,
+                                                    released: json["released"].stringValue,
+                                                    description: updatedStringDiscription,
+                                                    imageURL: json["imageURL"].stringValue,
+                                                    status: status)
+                    }
+                    
+                    
                 }
                 
                 NotificationCenter.default.post(name: NSNotification.Name.ChapterDetailsWereFetched, object: nil)
