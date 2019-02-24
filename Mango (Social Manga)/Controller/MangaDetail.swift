@@ -49,7 +49,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mangaImage.image = UIImage(named: "TransitionScreenBW3")
+        
+        mangaImage.image = UIImage(named: "TransitionScreenBW3")
         
         activity.isHidden = false
         activity.startAnimating()
