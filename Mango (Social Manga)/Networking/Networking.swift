@@ -159,7 +159,7 @@ class MangoNetworking {
                                                     category: json["categories"][0].stringValue,
                                                     released: json["released"].stringValue,
                                                     description: updatedStringDiscription,
-                                                    imageURL: json["imageURL"].stringValue,
+                                                    imageURL: self.mangaImageURL + json["image"].stringValue,
                                                     status: status)
                         
                     } else if json["status"].int! == 2 {
@@ -170,7 +170,17 @@ class MangoNetworking {
                                                     category: json["categories"][0].stringValue,
                                                     released: json["released"].stringValue,
                                                     description: updatedStringDiscription,
-                                                    imageURL: json["imageURL"].stringValue,
+                                                    imageURL: self.mangaImageURL + json["image"].stringValue,
+                                                    status: status)
+                    } else {
+                        status = "Unknown"
+                        
+                        currentManga = MangaDetails(name: json["title"].stringValue,
+                                                    author: json["author"].stringValue,
+                                                    category: json["categories"][0].stringValue,
+                                                    released: json["released"].stringValue,
+                                                    description: updatedStringDiscription,
+                                                    imageURL: self.mangaImageURL + json["image"].stringValue,
                                                     status: status)
                     }
                     

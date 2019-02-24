@@ -151,7 +151,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
          DispatchQueue.main.async {
-            self.categoriesLabel.text = "Category : " + json["categories"][0].stringValue
+            self.categoriesLabel.text = "Category : " + json["categories"].stringValue
         }
          DispatchQueue.main.async {
             self.releasedLabel.text = "Released : " + json["released"].stringValue
@@ -192,7 +192,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Networking
     func fetchImage() { //TODO: Move to MangoNetworking
         
-        guard searchedMangaList[selectedIndex].im != nil else {
+        print("FETCHING IMAGE")
+        
+        guard currentManga.imageURL != networking.mangaImageURL else {
             print("No Image")
             return
         }
