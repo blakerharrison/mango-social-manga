@@ -135,48 +135,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func toggleIsMangaBeingViewed() {
         networking.isMangaDetailBeingViewed = false
     }
-    
-    fileprivate func setUIDetails(_ json: JSON, _ mangaInfo: MangaInfoAndChapterList) {
-
-            let updatedStringDiscription = json["description"].string!.replacingOccurrences(of: "&rsquo;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#039;", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&ndash;", with: "-", options: .literal, range: nil).replacingOccurrences(of: "&ldquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&rdquo;", with: "\"", options: .literal, range: nil).replacingOccurrences(of: "&#333;", with: "o", options: .literal, range: nil).replacingOccurrences(of: "&quot;", with: "\"").replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil).replacingOccurrences(of: "&#39;", with: "'", options: .literal, range: nil)
-            
-            self.fetchImage()
         
-        DispatchQueue.main.async {
-            self.mangaDescription.text = updatedStringDiscription
-        }
-        
-         DispatchQueue.main.async {
-            self.authorLabel.text = "Author : " + json["author"].string!
-        }
-        
-         DispatchQueue.main.async {
-            self.categoriesLabel.text = "Category : " + json["categories"].stringValue
-        }
-         DispatchQueue.main.async {
-            self.releasedLabel.text = "Released : " + json["released"].stringValue
-        }
-
-         DispatchQueue.main.async {
-            if json["status"].int! == 1 {
-                self.statusLabel.text = "Status : Ongoing"
-            } else if json["status"].int! == 2 {
-                self.statusLabel.text = "Status : Completed"
-            }
-        }
-        
-            self.mangaChapters = mangaInfo.chapters
-            
-            mangaDataStructure.removeIDs()
-        
-            if mangaInfo.chapters.isEmpty {
-                return
-            } else {
-                let chapterID = mangaInfo.chapters[1][3]!
-                print(chapterID)
-            }
-    }
-    
     fileprivate func setUIImage(_ data: Data?) {
         DispatchQueue.main.async {
             
