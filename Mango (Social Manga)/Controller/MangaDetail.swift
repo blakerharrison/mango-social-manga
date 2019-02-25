@@ -54,8 +54,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         mangaImage.isSkeletonable = true
         mangaImage.showAnimatedGradientSkeleton()
 
-//        mangaImage.image = UIImage(named: "TransitionScreenBW3")
-        
         activity.isHidden = false
         activity.startAnimating()
         
@@ -74,11 +72,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(UpdateUI(_:)),
                                                name: .ChapterDetailsWereFetched,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(toggleIsMangaBeingViewed(_:)),
-                                               name: .MangaDetailWasExited,
                                                object: nil)
 
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -127,15 +120,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activityDetails.stopAnimating()
         }
     }
-    
-    @objc func toggleIsMangaBeingViewed(_ notification: Notification) {
-        networking.isMangaDetailBeingViewed = false
-    }
-    
+
     func toggleIsMangaBeingViewed() {
         networking.isMangaDetailBeingViewed = false
     }
-        
+    
     fileprivate func setUIImage(_ data: Data?) {
         DispatchQueue.main.async {
             
