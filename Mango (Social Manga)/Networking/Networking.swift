@@ -88,7 +88,7 @@ class MangoNetworking {
         task.resume()
     }
     
-    //Fetches the chapters details.
+    //Fetches the chapters details based on ID.
     func fetchChapterDetails(chapterID: String) {
         let url = URL(string: mangaURL + chapterID)
         

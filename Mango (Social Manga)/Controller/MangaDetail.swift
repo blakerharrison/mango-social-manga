@@ -207,9 +207,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             print("No Image")
             return
         }
-        
-//        networking.mangaImageURL + searchedMangaList[selectedIndex].im!
-        
+
         guard let url = URL(string: currentManga.imageURL) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
@@ -230,39 +228,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             }.resume()
     }
-    
-    func fetchMangaInfo(mangaID: String) { //TODO: Move to MangoNetworking
 
-        guard let url = URL(string: networking.mangaURL + mangaID) else {return}
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let dataResponse = data,
-                error == nil else {
-                    print(error?.localizedDescription ?? "Response Error")
-                    return }
-            do{
-                //here dataResponse received from a network request
-                _ = try JSONSerialization.jsonObject(with:
-                    dataResponse, options: [])
-                
-                let decoder = JSONDecoder()
-                
-                let mangaInfo = try decoder.decode(MangaInfoAndChapterList.self, from: data!)
-                
-                let json = try JSON(data: data!)
-                
-                self.setUIDetails(json, mangaInfo)
-   
-            } catch let parsingError {
-                print("Error", parsingError)
-                self.activity.isHidden = true
-                self.activity.stopAnimating()
-            }
-        }
-        task.resume()
-    }
- 
-    
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
         
