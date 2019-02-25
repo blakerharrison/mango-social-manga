@@ -195,6 +195,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         print("FETCHING IMAGE")
         
         guard currentManga.imageURL != networking.mangaImageURL else {
+            
+            DispatchQueue.main.async {
+                self.mangaImage.alpha = 1.0
+                self.mangaImage.stopSkeletonAnimation()
+                self.mangaImage.hideSkeleton()
+                self.activityImage.isHidden = true
+                self.activityImage.stopAnimating()
+            }
+
             print("No Image")
             return
         }
