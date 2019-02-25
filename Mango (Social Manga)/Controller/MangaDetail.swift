@@ -50,6 +50,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mangaImage.addShadow()
         mangaImage.alpha = 0.5
         mangaImage.isSkeletonable = true
         mangaImage.showAnimatedGradientSkeleton()
@@ -64,22 +65,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         toggleIsMangaBeingViewed()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(ReloadTableView(_:)),
-                                               name: .ChapterWasAppended,
-                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ReloadTableView(_:)), name: .ChapterWasAppended, object: nil)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(UpdateUI(_:)),
-                                               name: .ChapterDetailsWereFetched,
-                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UpdateUI(_:)), name: .ChapterDetailsWereFetched, object: nil)
 
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
+        [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         navigationItem.title = searchedMangaList[selectedIndex].t!
-        
-        mangaImage.addShadow()
-        
+
         readButton.layer.cornerRadius = 5
     }
     
@@ -105,7 +98,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @objc func UpdateUI(_ notification: Notification) {
-        
         self.fetchImage()
         
         DispatchQueue.main.async {
@@ -120,10 +112,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activityDetails.stopAnimating()
         }
     }
-
-    func toggleIsMangaBeingViewed() {
-        networking.isMangaDetailBeingViewed = false
-    }
     
     fileprivate func setUIImage(_ data: Data?) {
         DispatchQueue.main.async {
@@ -137,11 +125,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
+    
+    func toggleIsMangaBeingViewed() {
+        networking.isMangaDetailBeingViewed = false
+    }
+    
     //MARK: - Networking
     func fetchImage() { //TODO: Move to MangoNetworking
-        
-        print("FETCHING IMAGE")
-        
         guard currentManga.imageURL != networking.mangaImageURL else {
             
             DispatchQueue.main.async {
@@ -179,7 +169,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     //MARK: - Actions
     @IBAction func reverseChapterOrder(_ sender: Any) {
-        
         guard mangaDataStructure.isMangaChaptersReversed == false else {
             
             mangaDataStructure.mangaChaptersString.reverse()
@@ -216,21 +205,22 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print(chapterArray[indexPath.row])
+        
         if mangaDataStructure.mangaChapterIDs.count == 0 {
             return
         }
 
         networking.fetchPages(chapterID: chaptersArray[indexPath.row].id)
         
-        currentChapter = mangaDataStructure.mangaChaptersString.reversed()[indexPath.row]
-        mangaDataStructure.currentChapterIndex = indexPath.row
-        selectedChapterID = mangaDataStructure.mangaChapterIDs.reversed()[indexPath.row]
+//        currentChapter = mangaDataStructure.mangaChaptersString.reversed()[indexPath.row]
+//        mangaDataStructure.currentChapterIndex = indexPath.row
+//        selectedChapterID = mangaDataStructure.mangaChapterIDs.reversed()[indexPath.row]
         
         currentChapter = String(chaptersArray[indexPath.row].number)
 
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
-        
     }
 }
 
