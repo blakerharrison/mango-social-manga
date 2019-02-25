@@ -249,13 +249,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         print("Structure of the Manga is \(mangaDataStructure.isMangaChaptersReversed)")
     }
-    
-    //TODO: - Add an aciton button for Read. !@#$%^&*()
-    @IBAction func reloadTableView(_ sender: Any) {
-        activity.isHidden = true
-        self.tableView.reloadData()
-    }
-    
+
     //MARK: - Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chapterArray.count
