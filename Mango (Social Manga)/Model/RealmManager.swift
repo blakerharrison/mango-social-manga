@@ -25,10 +25,20 @@ class RealmManager {
             return
         }
         
-        chapterPersistance.chapterID = ID
-        chapterPersistance.wasChapterViewed = chapterViewed
+        let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", ID)
         
+        if let chapter = chapters.first
+        {
+            try! realm.write {
+                chapter.chapterID = ID
+                chapter.wasChapterViewed = chapterViewed
+            }
+//            print(realm.objects(MangaChapterPersistance.self).first!) //Prints the object
+        }
+
         try! self.realm.write {
+            chapterPersistance.chapterID = ID
+            chapterPersistance.wasChapterViewed = chapterViewed
             self.realm.add(chapterPersistance)
         }
     }

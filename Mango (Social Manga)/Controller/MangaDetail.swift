@@ -49,7 +49,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         realmManager.printFilePath()
         
         mangaImage.addShadow()
@@ -207,7 +207,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: true)
+        realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: true)
         
         print(chapterArray[indexPath.row])
 
