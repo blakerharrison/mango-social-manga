@@ -30,7 +30,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     let networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
-    var realm = try! Realm()
+    let realmManager = RealmManager()
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -49,6 +49,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        realmManager.printFilePath()
         
         mangaImage.addShadow()
         mangaImage.alpha = 0.5
@@ -204,6 +206,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: true)
         
         print(chapterArray[indexPath.row])
 

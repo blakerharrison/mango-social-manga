@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 var chapterArray = [MangaChapter]()
 
@@ -24,4 +25,8 @@ struct MangaChapter {
     }
 }
 
-
+//Realm
+final class MangaChapterPersistance: Object {
+    @objc dynamic var chapterID: String = ""
+    @objc dynamic var wasChapterViewed: Bool = true
+}

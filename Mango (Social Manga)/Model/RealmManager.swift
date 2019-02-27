@@ -11,11 +11,25 @@ import RealmSwift
 
 class RealmManager {
     
-    
+    //MARK: Properties
+    let realm = try! Realm()
+    let chapterPersistance = MangaChapterPersistance()
     
     //MARK: Methods
     func printFilePath() {
         print(Realm.Configuration.defaultConfiguration.fileURL ?? "No path found.")
     }
     
+    func addViewedChapter(ID: String, chapterViewed: Bool) {
+        guard chapterArray.isEmpty != true else {
+            return
+        }
+        
+        chapterPersistance.chapterID = ID
+        chapterPersistance.wasChapterViewed = chapterViewed
+        
+        try! self.realm.write {
+            self.realm.add(chapterPersistance)
+        }
+    }
 }
