@@ -238,6 +238,32 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
+    
+     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
+        
+        let markUnread = UITableViewRowAction(style: .normal, title: "Mark Unread") { action, index in
+            if self.realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
+                print("There's data!")
+                
+                let chapters = self.realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
+                
+                if let chapter = chapters.first
+                {
+                    if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
+                        self.realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: false)
+                        cell.accessoryType = .none
+                        tableView.reloadData()
+                    }
+                }
+            } else {
+                print("No realm data yet.")
+            }
+        }
+        markUnread.backgroundColor = .lightGray
+
+        return [markUnread]
+    }
 }
 
 // URLContainer
