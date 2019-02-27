@@ -14,11 +14,13 @@ struct MangaChapter {
     var number: String
     var title: String
     var id: String
+    var chapterPath: String
     
-    init(number: String, title: String, id: String) {
+    init(number: String, title: String, id: String, chapterPath: String) {
         self.number = number
         self.title = title
         self.id = id
+        self.chapterPath = chapterPath
     }
 }
 

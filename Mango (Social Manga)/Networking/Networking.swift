@@ -157,11 +157,10 @@ class MangoNetworking {
                 if let json = try? JSON(data: data) {
                    
                     for i in json["chapters"].arrayValue {
-                        chapterArray.append(MangaChapter(number: i[0].stringValue, title: i[2].stringValue, id: i[1].stringValue))
+                        chapterArray.append(MangaChapter(number: i[0].stringValue, title: i[2].stringValue, id: i[1].stringValue, chapterPath: i[3].stringValue))
                     }
 
                     NotificationCenter.default.post(name: NSNotification.Name.ChapterWasAppended, object: nil)
-                    
                 }
             }
         }).resume()

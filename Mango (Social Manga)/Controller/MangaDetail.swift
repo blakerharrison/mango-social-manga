@@ -206,18 +206,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(chapterArray[indexPath.row])
-        
-        if mangaDataStructure.mangaChapterIDs.count == 0 {
-            return
-        }
 
-        networking.fetchPages(chapterID: chaptersArray[indexPath.row].id)
-        
-//        currentChapter = mangaDataStructure.mangaChaptersString.reversed()[indexPath.row]
-//        mangaDataStructure.currentChapterIndex = indexPath.row
-//        selectedChapterID = mangaDataStructure.mangaChapterIDs.reversed()[indexPath.row]
-        
-        currentChapter = String(chaptersArray[indexPath.row].number)
+        networking.fetchPages(chapterID: chapterArray[indexPath.row].chapterPath)
+
+        currentChapter = String(chapterArray[indexPath.row].number)
 
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
