@@ -49,7 +49,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        realmManager.deleteEverything()
+        
         realmManager.printFilePath()
         
         mangaImage.addShadow()
@@ -88,7 +90,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         selectedIndex = 0
         currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "")
     }
-
+    
+    
     //MARK: - Methods
     @objc func ReloadTableView(_ notification: Notification) {
         DispatchQueue.main.async {
@@ -196,12 +199,29 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
+        cell.accessoryType = .none
         
         if let label = cell.viewWithTag(1000) as? UILabel {
             
             label.text = "\(chapterArray[indexPath.row].number) - \(chapterArray[indexPath.row].title)"
             
         }
+        
+        if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
+            print("There's data!")
+
+            let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
+            
+            if let chapter = chapters.first
+            {
+                if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
+                    cell.accessoryType = .checkmark
+                }
+            }
+        } else {
+            print("No realm data yet.")
+        }
+
         return cell
     }
     

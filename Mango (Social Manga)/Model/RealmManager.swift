@@ -42,4 +42,10 @@ class RealmManager {
             self.realm.add(chapterPersistance)
         }
     }
+    
+    func deleteEverything() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
 }
