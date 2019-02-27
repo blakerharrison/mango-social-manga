@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        
         //The code below is used to migrate the scheme in Realm to an update verson.
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
