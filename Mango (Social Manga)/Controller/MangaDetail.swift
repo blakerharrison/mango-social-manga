@@ -51,7 +51,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         
 //        realmManager.deleteEverything()
-        
+
         realmManager.printFilePath()
         
         mangaImage.addShadow()
@@ -91,6 +91,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "")
     }
     
+    deinit {
+        print("Memory to be released soon")
+    }
     
     //MARK: - Methods
     @objc func ReloadTableView(_ notification: Notification) {
@@ -208,12 +211,15 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
         if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
-            print("There's data!")
+//            print("There's data!")
 
             let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
             
             if let chapter = chapters.first
             {
+                
+//                print("Does \(chapter.wasChapterViewed) == true? and does \(chapterArray[indexPath.row].id) == \(chapter.chapterID)")
+                
                 if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
                     cell.accessoryType = .checkmark
                 }
