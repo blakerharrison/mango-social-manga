@@ -30,7 +30,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     let networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
-    let realmManager = RealmManager()
+    
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -51,6 +51,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         
 //        realmManager.deleteEverything()
+        let realmManager = RealmManager()
 
         realmManager.printFilePath()
         
@@ -202,6 +203,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
+        let realmManager = RealmManager()
+        
         cell.accessoryType = .none
         
         if let label = cell.viewWithTag(1000) as? UILabel {
@@ -233,6 +236,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let realmManager = RealmManager()
+        
         realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: true)
         
         print(chapterArray[indexPath.row])
@@ -248,16 +253,18 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
+        let realmManager = RealmManager()
+        
         let markUnread = UITableViewRowAction(style: .normal, title: "Mark Unread") { action, index in
-            if self.realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
+            if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
                 print("There's data!")
                 
-                let chapters = self.realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
+                let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
                 
                 if let chapter = chapters.first
                 {
                     if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
-                        self.realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: false)
+                        realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: false)
                         cell.accessoryType = .none
                         tableView.reloadData()
                     }
