@@ -13,7 +13,7 @@ class Home: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
     
-    let YEET = [MangaObject(mangaCover: UIImage(named: "RalGrad"), mangaTitles: "Ral Grad")]
+    let YEET = [MangaObject(mangaCover: UIImage(named: "FavoriteMangaMessage"), mangaTitles: "Ral Grad")]
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -27,9 +27,9 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
-    
 }
 
+//MARK: TableView
 extension Home: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,9 +40,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         var mangaCoverImage = UIImageView()
-        
         mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
- 
         mangaCoverImage.image = YEET[indexPath.row].mangaCover
         
         return cell
