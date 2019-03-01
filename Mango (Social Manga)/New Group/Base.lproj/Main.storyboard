@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pCr-3R-UFn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g11-OW-JO9">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,28 +29,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctc-gY-gFp" userLabel="HomeView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="5fI-eJ-5eg" userLabel="Background">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MintGBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5fI-eJ-5eg" userLabel="Background">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-AC-WZv">
-                                        <rect key="frame" x="8" y="213" width="398" height="54"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="50"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="ctc-gY-gFp" secondAttribute="top" id="0IZ-BS-R0b"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="52X-Qu-lXi"/>
-                                    <constraint firstItem="RXB-AC-WZv" firstAttribute="top" secondItem="ctc-gY-gFp" secondAttribute="top" constant="213" id="5No-Ng-oT9"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="7VK-Nm-kDa"/>
                                     <constraint firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="AVa-nU-B1c"/>
                                     <constraint firstAttribute="bottom" secondItem="5fI-eJ-5eg" secondAttribute="bottom" constant="-36" id="DZW-BE-a71"/>
                                     <constraint firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="HW7-Dd-rXT"/>
                                     <constraint firstAttribute="bottom" secondItem="5fI-eJ-5eg" secondAttribute="bottom" constant="-36" id="Mos-Mp-tiy"/>
-                                    <constraint firstItem="RXB-AC-WZv" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leadingMargin" id="d9n-a6-V4w"/>
-                                    <constraint firstItem="RXB-AC-WZv" firstAttribute="centerX" secondItem="5fI-eJ-5eg" secondAttribute="centerX" id="gMV-t7-Q0y"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="ctc-gY-gFp" secondAttribute="top" id="wgJ-VH-RPR"/>
                                 </constraints>
                             </view>
@@ -66,16 +57,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="wXJ-MF-owG">
                         <barButtonItem key="backBarButtonItem" title=" " id="FVq-WM-2d7"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
+                            <connections>
+                                <segue destination="GjS-76-Eop" kind="show" id="2AJ-zR-vuv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="homeView" destination="ctc-gY-gFp" id="XdM-hb-TCg"/>
-                        <outlet property="searchTextField" destination="RXB-AC-WZv" id="xst-Jj-EP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5888" y="-2823"/>
+            <point key="canvasLocation" x="7706" y="-2809"/>
         </scene>
         <!--Title Search-->
         <scene sceneID="If8-Kt-JEi">
@@ -193,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E35-FF-oGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8617.391304347826" y="-2809.1517857142858"/>
+            <point key="canvasLocation" x="8512" y="-2809"/>
         </scene>
         <!--Manga Reader-->
         <scene sceneID="aEc-rI-hkX">
@@ -287,7 +281,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-PG-Gez">
@@ -568,29 +562,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZr-wR-jI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5197" y="-2822"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AwJ-WI-cYI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pCr-3R-UFn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bEa-Fo-a0k">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="GjS-76-Eop" kind="relationship" relationship="rootViewController" id="hlr-ar-Yl2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JXh-Jc-GSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7708.6956521739139" y="-2808.4821428571427"/>
+            <point key="canvasLocation" x="6907" y="-2809"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background2" width="375" height="667"/>
         <image name="MintGBackground" width="1242" height="2688"/>
         <image name="NoTitleFoundImageClear" width="195.2489013671875" height="422.56768798828125"/>
         <image name="StatusBarBackground" width="371" height="19"/>

@@ -17,7 +17,7 @@ class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSour
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.becomeFirstResponder()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
