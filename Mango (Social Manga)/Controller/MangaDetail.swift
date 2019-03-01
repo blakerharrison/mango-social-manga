@@ -49,8 +49,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
+        networking.fetchChapterDetails(chapterID: selectedID)
+        networking.fetchChapters(mangaID: selectedID)
+        
         let realmManager = RealmManager()
 
         realmManager.printFilePath()
@@ -82,8 +84,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        networking.fetchChapterDetails(chapterID: selectedID)
-        networking.fetchChapters(mangaID: selectedID)
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
