@@ -39,23 +39,6 @@ class RealmManager {
                 
                 return
             }
-            
-//            //Check to see if ID already exists in Realm
-//            guard chapter.chapterID != ID else {
-//                print("ID already exists")
-//                try! realm.write {
-//                    chapter.chapterID = ID
-//                    chapter.wasChapterViewed = true
-//                    self.realm.add(chapterPersistance)
-//                }
-//                return
-//            }
-//
-//            try! realm.write {
-//                chapter.chapterID = ID
-//                chapter.wasChapterViewed = chapterViewed
-//                self.realm.add(chapterPersistance)
-//            }
 
         } else {
             print("New item added to realm")
