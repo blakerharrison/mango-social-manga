@@ -27,20 +27,70 @@ class RealmManager {
         
         let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", ID)
         
-        if let chapter = chapters.first
-        {
-            try! realm.write {
-                chapter.chapterID = ID
-                chapter.wasChapterViewed = chapterViewed
+        if let chapter = chapters.first {
+            
+            guard chapter.wasChapterViewed == true else {
+                print("CHAPTER WAS VIEWED I FALSE")
+                
+                try! realm.write {
+                    chapter.chapterID = ID
+                    chapter.wasChapterViewed = true
+                }
+                
+                return
             }
-//            print(realm.objects(MangaChapterPersistance.self).first!) //Prints the object
+            
+//            //Check to see if ID already exists in Realm
+//            guard chapter.chapterID != ID else {
+//                print("ID already exists")
+//                try! realm.write {
+//                    chapter.chapterID = ID
+//                    chapter.wasChapterViewed = true
+//                    self.realm.add(chapterPersistance)
+//                }
+//                return
+//            }
+//
+//            try! realm.write {
+//                chapter.chapterID = ID
+//                chapter.wasChapterViewed = chapterViewed
+//                self.realm.add(chapterPersistance)
+//            }
+
+        } else {
+            print("New item added to realm")
+            try! self.realm.write {
+                chapterPersistance.chapterID = ID
+                chapterPersistance.wasChapterViewed = chapterViewed
+                self.realm.add(chapterPersistance)
+            }
+
         }
 
-        try! self.realm.write {
-            chapterPersistance.chapterID = ID
-            chapterPersistance.wasChapterViewed = chapterViewed
-            self.realm.add(chapterPersistance)
+    }
+    
+    func removeViewedChapter(ID: String) {
+        guard chapterArray.isEmpty != true else {
+            return
         }
+        
+        let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", ID)
+        
+        if let chapter = chapters.first
+        {
+            //Check to see if ID already exists in Realm
+            guard chapter.chapterID == ID else {
+                print("ID does not exist")
+                return
+            }
+            
+            try! realm.write {
+                chapter.chapterID = ID
+                chapter.wasChapterViewed = false
+            }
+            
+        }
+
     }
     
     func deleteEverything() {

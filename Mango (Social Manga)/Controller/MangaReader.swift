@@ -72,6 +72,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         pages.removeAll()
     }
     
+    deinit {
+        pages.removeAll()
+    }
+    
     //MARK: - Methods
     @objc func loadData() {
         pageNumberLabel.text = "Loading Previous Chapter"
