@@ -8,46 +8,46 @@
 
 import UIKit
 
-class Home: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    //MARK: - Outlets
+class Home: UIViewController {
+
+    //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
-    @IBOutlet weak var searchTextField: UITextField!
     
-    //MARK: - Lifecycle
+    let YEET = [MangaObject(mangaCover: UIImage(named: "RalGrad"), mangaTitles: "Ral Grad")]
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
-    //MARK: - Actions
-    @IBAction func menuTapped(_ sender: Any) {
+}
+
+extension Home: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return YEET.count
     }
     
-    //MARK: - CollectionView
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return usersFavoriteMangas.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath)
-        if let image = cell.viewWithTag(100) as? UIImageView {
-            image.image = usersFavoriteMangas[indexPath.row].mangaCover
-            image.addShadow()
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        if let label = cell.viewWithTag(101) as? UILabel  {
-            label.text = usersFavoriteMangas[indexPath.row].mangaTitles
-            label.addLabelShadow()
-        }
+        var mangaCoverImage = UIImageView()
+        
+        mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
+ 
+        mangaCoverImage.image = YEET[indexPath.row].mangaCover
+        
         return cell
     }
+    
     
 }
 
