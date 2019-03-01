@@ -69,7 +69,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
         
-        pages.removeAll()
+//        pages.removeAll()
     }
     
     deinit {
@@ -95,7 +95,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     @objc func loadList(notification: NSNotification) {
         DispatchQueue.main.async {
-//            self.pageChapterLabel.text = "Chapter " + mangaDataStructure.mangaChaptersString[mangaDataStructure.currentChapterIndex]
             print("LOADED")
             self.collectionView.reloadData()
             self.collectionView.contentOffset = .zero
