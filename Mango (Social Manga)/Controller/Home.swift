@@ -36,6 +36,11 @@ class Home: UIViewController {
 extension Home: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard favoritedManga.count > 0 else {
+            return 1
+        }
+        
         return favoritedManga.count
     }
     
@@ -46,11 +51,32 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
             var mangaTitle = UILabel()
             mangaTitle = cell.viewWithTag(1001) as! UILabel
             mangaTitle.text = favoritedManga[indexPath.row].name
+            
+            var mangaImageView = UIImageView()
+            mangaImageView = cell.viewWithTag(1000) as! UIImageView
+            mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
+            
+//            var mangaImage = UIImageView()
+//            mangaImage = cell.viewWithTag(1000) as! UIImageView
+//            cell.mangaImage.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL)!, placeholderImage: UIImage(),
+//                                       completed: { image, error, cacheType, imageURL in
+//
+//                                        DispatchQueue.main.async {
+//
+//                                            cell.activityIndicator.isHidden = true
+//                                            cell.activityIndicator.stopAnimating()
+//                                            collectionView.isScrollEnabled = true
+//
+//                                        }
+//            })
+            
+        } else if favoritedManga.count == 0 {
+            var mangaCoverImage = UIImageView()
+            mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
+            mangaCoverImage.image = UIImage(named: "FavoriteMangaMessage")
         }
         
-//        var mangaCoverImage = UIImageView()
-//        mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
-//        mangaCoverImage.image = YEET[indexPath.row].mangaCover
+
         
         return cell
     }

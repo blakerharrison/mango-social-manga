@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="500" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-eg-bYN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="400" id="dKB-O4-VRU">
@@ -43,15 +43,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchAMangaImage" translatesAutoresizingMaskIntoConstraints="NO" id="WDv-ZL-vpp">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchAMangaImage" translatesAutoresizingMaskIntoConstraints="NO" id="WDv-ZL-vpp">
                                                             <rect key="frame" x="102" y="11" width="210" height="303"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="210" id="RsS-hu-uPw"/>
                                                                 <constraint firstAttribute="height" constant="303" id="sQl-nw-tiT"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vam-eN-xrq">
-                                                            <rect key="frame" x="186" y="343" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vam-eN-xrq">
+                                                            <rect key="frame" x="207" y="344" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                                         <constraint firstItem="vam-eN-xrq" firstAttribute="centerX" secondItem="Pie-cr-AA3" secondAttribute="centerX" id="1MU-Zg-TR4"/>
                                                         <constraint firstItem="WDv-ZL-vpp" firstAttribute="centerX" secondItem="Pie-cr-AA3" secondAttribute="centerX" id="Hf8-xD-QAZ"/>
                                                         <constraint firstItem="WDv-ZL-vpp" firstAttribute="centerY" secondItem="Pie-cr-AA3" secondAttribute="centerY" constant="-37.5" id="Jy8-gX-1Ve"/>
-                                                        <constraint firstAttribute="bottom" secondItem="vam-eN-xrq" secondAttribute="bottom" constant="36" id="Xpy-Ns-h16"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vam-eN-xrq" secondAttribute="bottom" constant="56" id="Xpy-Ns-h16"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,7 +77,7 @@
                                 <constraints>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="ctc-gY-gFp" secondAttribute="top" id="0IZ-BS-R0b"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="52X-Qu-lXi"/>
-                                    <constraint firstAttribute="bottom" secondItem="RXm-eg-bYN" secondAttribute="bottom" id="5s4-hO-C6R"/>
+                                    <constraint firstAttribute="bottom" secondItem="RXm-eg-bYN" secondAttribute="bottom" constant="-36" id="5s4-hO-C6R"/>
                                     <constraint firstAttribute="trailing" secondItem="RXm-eg-bYN" secondAttribute="trailing" id="6ea-vz-LmB"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="7VK-Nm-kDa"/>
                                     <constraint firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="AVa-nU-B1c"/>
