@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
+
+let YEET = [MangaObject(mangaCover: UIImage(named: "RalGrad"), mangaTitles: "Ral Grad")]
+var favoritedManga = [MangaDetails]()
 
 class Home: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
-    
-    let YEET = [MangaObject(mangaCover: UIImage(named: "FavoriteMangaMessage"), mangaTitles: "Ral Grad")]
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -22,10 +25,10 @@ class Home: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        tableView.reloadData()
     }
 }
 
@@ -33,15 +36,21 @@ class Home: UIViewController {
 extension Home: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return YEET.count
+        return favoritedManga.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        var mangaCoverImage = UIImageView()
-        mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
-        mangaCoverImage.image = YEET[indexPath.row].mangaCover
+        if favoritedManga.count > 0 {
+            var mangaTitle = UILabel()
+            mangaTitle = cell.viewWithTag(1001) as! UILabel
+            mangaTitle.text = favoritedManga[indexPath.row].name
+        }
+        
+//        var mangaCoverImage = UIImageView()
+//        mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
+//        mangaCoverImage.image = YEET[indexPath.row].mangaCover
         
         return cell
     }

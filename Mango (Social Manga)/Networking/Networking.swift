@@ -111,7 +111,7 @@ class MangoNetworking {
                                                     released: json["released"].stringValue,
                                                     description: updatedStringDiscription,
                                                     imageURL: self.mangaImageURL + json["image"].stringValue,
-                                                    status: status)
+                                                    status: status, id: chapterID)
                         
                     } else if json["status"].int! == 2 {
                         status = "Completed"
@@ -122,7 +122,7 @@ class MangoNetworking {
                                                     released: json["released"].stringValue,
                                                     description: updatedStringDiscription,
                                                     imageURL: self.mangaImageURL + json["image"].stringValue,
-                                                    status: status)
+                                                    status: status, id: chapterID)
                     } else {
                         status = "Unknown"
                         
@@ -132,7 +132,7 @@ class MangoNetworking {
                                                     released: json["released"].stringValue,
                                                     description: updatedStringDiscription,
                                                     imageURL: self.mangaImageURL + json["image"].stringValue,
-                                                    status: status)
+                                                    status: status, id: chapterID)
                     }
                     
                     

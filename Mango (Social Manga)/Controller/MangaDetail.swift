@@ -89,7 +89,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
-        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "")
+        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
     }
     
     deinit {
@@ -178,6 +178,19 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     //MARK: - Actions
+    @IBAction func favoriteButton(_ sender: Any) {
+        
+        guard currentManga.id != "" else {
+            return
+        }
+        
+        favoritedManga.append(currentManga)
+        
+        print(currentManga.name)
+        print(currentManga.imageURL)
+        print(currentManga.id)
+    }
+    
     @IBAction func reverseChapterOrder(_ sender: Any) {
         guard mangaDataStructure.isMangaChaptersReversed == false else {
             
