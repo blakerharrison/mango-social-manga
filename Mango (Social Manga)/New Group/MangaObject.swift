@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 var usersFavoriteMangas = [MangaObject]()
 
@@ -42,3 +43,9 @@ struct manga: Codable {
     let t: String?
 }
 
+//Realm Object
+final class MangaPersistance: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var image: String = ""
+    @objc dynamic var id: String = ""
+}
