@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home-->
+        <!--MANGO-->
         <scene sceneID="dEu-0E-eIg">
             <objects>
                 <viewController id="WLk-vQ-hfC" customClass="Home" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jcz-No-bMD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wXJ-MF-owG">
+                    <navigationItem key="navigationItem" title="MANGO" id="wXJ-MF-owG">
                         <barButtonItem key="backBarButtonItem" title=" " id="FVq-WM-2d7"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
                             <connections>

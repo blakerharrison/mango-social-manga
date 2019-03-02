@@ -21,18 +21,20 @@ class Home: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
+//        tableView.reloadData()
+        
     }
 }
 
@@ -72,8 +74,14 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(favoritedManga[indexPath.row].id)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard favoritedManga.isEmpty != true else {
+            return
+        }
+
         selectedID = favoritedManga[indexPath.row].id
+        
         performSegue(withIdentifier: "userSelected", sender: self)
     }
 }

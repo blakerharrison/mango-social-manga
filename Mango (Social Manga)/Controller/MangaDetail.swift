@@ -49,7 +49,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("Selected id \(selectedID)")
+        
         networking.fetchChapterDetails(chapterID: selectedID)
         networking.fetchChapters(mangaID: selectedID)
         
@@ -88,7 +90,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
-        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
+//        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
     }
     
     deinit {
@@ -96,6 +98,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         chapterArray.removeAll()
         selectedID = ""
         navigationItem.title = ""
+        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
     }
     
     //MARK: - Methods
@@ -230,8 +233,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
         if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
-            print("There's data!")
-
+  
             let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
             
             if let chapter = chapters.first
