@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="500" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-eg-bYN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="400" id="dKB-O4-VRU">
@@ -77,7 +77,7 @@
                                 <constraints>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="top" secondItem="ctc-gY-gFp" secondAttribute="top" id="0IZ-BS-R0b"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="52X-Qu-lXi"/>
-                                    <constraint firstAttribute="bottom" secondItem="RXm-eg-bYN" secondAttribute="bottom" constant="-36" id="5s4-hO-C6R"/>
+                                    <constraint firstAttribute="bottom" secondItem="RXm-eg-bYN" secondAttribute="bottom" id="5s4-hO-C6R"/>
                                     <constraint firstAttribute="trailing" secondItem="RXm-eg-bYN" secondAttribute="trailing" id="6ea-vz-LmB"/>
                                     <constraint firstItem="5fI-eJ-5eg" firstAttribute="leading" secondItem="ctc-gY-gFp" secondAttribute="leading" id="7VK-Nm-kDa"/>
                                     <constraint firstAttribute="trailing" secondItem="5fI-eJ-5eg" secondAttribute="trailing" id="AVa-nU-B1c"/>
@@ -110,6 +110,7 @@
                     <connections>
                         <outlet property="homeView" destination="ctc-gY-gFp" id="XdM-hb-TCg"/>
                         <outlet property="tableView" destination="RXm-eg-bYN" id="pey-HF-umX"/>
+                        <segue destination="1V7-gQ-nIo" kind="show" identifier="userSelected" id="WAU-Cq-aJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,4 +624,7 @@
         <image name="SwapButton" width="44" height="44"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="WAU-Cq-aJJ"/>
+    </inferredMetricsTieBreakers>
 </document>

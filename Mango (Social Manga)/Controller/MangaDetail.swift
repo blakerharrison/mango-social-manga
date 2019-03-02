@@ -95,6 +95,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     deinit {
         print("Memory to be released soon")
         chapterArray.removeAll()
+        selectedID = ""
     }
     
     //MARK: - Methods

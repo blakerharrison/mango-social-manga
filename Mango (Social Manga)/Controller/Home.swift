@@ -67,6 +67,8 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(favoritedManga[indexPath.row].id)
+        selectedID = favoritedManga[indexPath.row].id
+        performSegue(withIdentifier: "userSelected", sender: self)
     }
 }
 
