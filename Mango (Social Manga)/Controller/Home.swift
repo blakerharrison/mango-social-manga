@@ -55,32 +55,18 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
             var mangaImageView = UIImageView()
             mangaImageView = cell.viewWithTag(1000) as! UIImageView
             mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
-            
-//            var mangaImage = UIImageView()
-//            mangaImage = cell.viewWithTag(1000) as! UIImageView
-//            cell.mangaImage.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL)!, placeholderImage: UIImage(),
-//                                       completed: { image, error, cacheType, imageURL in
-//
-//                                        DispatchQueue.main.async {
-//
-//                                            cell.activityIndicator.isHidden = true
-//                                            cell.activityIndicator.stopAnimating()
-//                                            collectionView.isScrollEnabled = true
-//
-//                                        }
-//            })
-            
+
         } else if favoritedManga.count == 0 {
             var mangaCoverImage = UIImageView()
             mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
             mangaCoverImage.image = UIImage(named: "FavoriteMangaMessage")
         }
-        
 
-        
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(favoritedManga[indexPath.row].id)
+    }
 }
 

@@ -51,8 +51,8 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vam-eN-xrq">
-                                                            <rect key="frame" x="207" y="344" width="0.0" height="0.0"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="207" y="325" width="0.0" height="0.0"/>
+                                                            <fontDescription key="fontDescription" name="Knockout-HTF49-Liteweight" family="Knockout" pointSize="30"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -61,7 +61,7 @@
                                                         <constraint firstItem="vam-eN-xrq" firstAttribute="centerX" secondItem="Pie-cr-AA3" secondAttribute="centerX" id="1MU-Zg-TR4"/>
                                                         <constraint firstItem="WDv-ZL-vpp" firstAttribute="centerX" secondItem="Pie-cr-AA3" secondAttribute="centerX" id="Hf8-xD-QAZ"/>
                                                         <constraint firstItem="WDv-ZL-vpp" firstAttribute="centerY" secondItem="Pie-cr-AA3" secondAttribute="centerY" constant="-37.5" id="Jy8-gX-1Ve"/>
-                                                        <constraint firstAttribute="bottom" secondItem="vam-eN-xrq" secondAttribute="bottom" constant="56" id="Xpy-Ns-h16"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vam-eN-xrq" secondAttribute="bottom" constant="75" id="Xpy-Ns-h16"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

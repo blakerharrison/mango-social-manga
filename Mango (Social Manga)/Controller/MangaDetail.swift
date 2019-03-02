@@ -179,7 +179,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     //MARK: - Actions
     @IBAction func favoriteButton(_ sender: Any) {
-        
+
         guard currentManga.id != "" else {
             return
         }
