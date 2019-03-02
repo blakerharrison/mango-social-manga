@@ -30,6 +30,10 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         tableView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 }
 
 //MARK: TableView
@@ -51,10 +55,12 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
             var mangaTitle = UILabel()
             mangaTitle = cell.viewWithTag(1001) as! UILabel
             mangaTitle.text = favoritedManga[indexPath.row].name
+            mangaTitle.addLabelShadow()
             
             var mangaImageView = UIImageView()
             mangaImageView = cell.viewWithTag(1000) as! UIImageView
             mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
+            mangaImageView.addShadow()
 
         } else if favoritedManga.count == 0 {
             var mangaCoverImage = UIImageView()

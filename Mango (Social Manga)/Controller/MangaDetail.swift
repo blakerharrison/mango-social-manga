@@ -78,7 +78,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         self.navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
-        navigationItem.title = searchedMangaList[selectedIndex].t!
 
         readButton.layer.cornerRadius = 5
     }
@@ -96,6 +95,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         print("Memory to be released soon")
         chapterArray.removeAll()
         selectedID = ""
+        navigationItem.title = ""
     }
     
     //MARK: - Methods
@@ -118,6 +118,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.releasedLabel.text = "Released : " + currentManga.released
             self.statusLabel.text = "Status : " + currentManga.status
             self.descriptionTitle.text = "Description : "
+            self.navigationItem.title = currentManga.name
             
             self.activityDetails.isHidden = true
             self.activityDetails.stopAnimating()
