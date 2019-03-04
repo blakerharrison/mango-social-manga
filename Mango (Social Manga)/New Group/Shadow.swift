@@ -18,6 +18,7 @@ extension UIView {
         layer.shadowRadius = 5
         clipsToBounds = false
     }
+    
 }
 
 extension UILabel {

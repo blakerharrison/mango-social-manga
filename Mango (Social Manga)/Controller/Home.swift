@@ -44,7 +44,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard favoritedManga.count > 0 else {
-            return 1
+            return 0
         }
         
         return favoritedManga.count
@@ -67,7 +67,10 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
         } else if favoritedManga.count == 0 {
             var mangaCoverImage = UIImageView()
             mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
-            mangaCoverImage.image = UIImage(named: "FavoriteMangaMessage")
+            mangaCoverImage.image = nil
+            var mangaTitle = UILabel()
+            mangaTitle = cell.viewWithTag(1001) as! UILabel
+            mangaTitle.text = nil
         }
 
         return cell
@@ -83,6 +86,20 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
         selectedID = favoritedManga[indexPath.row].id
         
         performSegue(withIdentifier: "userSelected", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let markUnread = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
+            print("Working")
+            print(indexPath.row)
+            favoritedManga.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        markUnread.backgroundColor = .red
+        
+        return [markUnread]
     }
 }
 
