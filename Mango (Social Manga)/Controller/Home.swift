@@ -9,7 +9,6 @@
 import UIKit
 import SDWebImage
 
-let YEET = [MangaObject(mangaCover: UIImage(named: "RalGrad"), mangaTitles: "Ral Grad")]
 var favoritedManga = [MangaDetails]()
 
 class Home: UIViewController {
