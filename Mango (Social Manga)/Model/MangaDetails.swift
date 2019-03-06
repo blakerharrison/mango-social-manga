@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 var currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
 
@@ -30,4 +31,16 @@ struct MangaDetails {
         self.status = status
         self.id = id
     }
+}
+
+//Realm Object
+class MangaDetailsRealm: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var author: String = ""
+    @objc dynamic var category: String = ""
+    @objc dynamic var released: String = ""
+    @objc dynamic var about: String = ""
+    @objc dynamic var imageURL: String = ""
+    @objc dynamic var status: String = ""
+    @objc dynamic var id: String = ""
 }

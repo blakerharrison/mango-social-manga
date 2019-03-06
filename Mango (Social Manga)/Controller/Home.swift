@@ -11,6 +11,7 @@ import SDWebImage
 
 var favoritedManga = [MangaDetails]()
 
+//MARK: Object
 class Home: UIViewController {
 
     //MARK: Outlets
@@ -32,8 +33,7 @@ class Home: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        tableView.reloadData()
-        
+        //tableView.reloadData()
     }
 }
 
