@@ -581,6 +581,7 @@
                         <outlet property="activity" destination="f62-9X-2Tb" id="MM1-4b-hfm"/>
                         <outlet property="activityDetails" destination="i2a-4F-Gui" id="o7P-5U-qhA"/>
                         <outlet property="activityImage" destination="GCm-89-rVA" id="ynr-4r-dN5"/>
+                        <outlet property="addMangaToFavorites" destination="npy-zk-uKk" id="J7b-NM-nFd"/>
                         <outlet property="authorLabel" destination="NoF-a7-pNj" id="QlV-cU-rEQ"/>
                         <outlet property="categoriesLabel" destination="efm-zu-8Xk" id="mgR-1c-SlH"/>
                         <outlet property="descriptionTitle" destination="Qwp-Bv-pxg" id="NDC-Bz-hM5"/>

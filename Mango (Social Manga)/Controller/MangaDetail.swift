@@ -45,6 +45,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var activityDetails: UIActivityIndicatorView!
     @IBOutlet weak var activityImage: UIActivityIndicatorView!
+    @IBOutlet weak var addMangaToFavorites: UIBarButtonItem!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,6 +70,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activityImage.isHidden = true
 
+        addMangaToFavorites.isEnabled = false
+        
         toggleIsMangaBeingViewed()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ReloadTableView(_:)), name: .ChapterWasAppended, object: nil)
@@ -123,6 +126,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             self.activityDetails.isHidden = true
             self.activityDetails.stopAnimating()
+            
+            self.addMangaToFavorites.isEnabled = true
         }
     }
     
@@ -187,6 +192,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return
         }
 
+        let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", currentManga.id)
+        
+        if let manga = mangas.first {
+            
+           print("Manga already exists. \(manga)")
+            return
+        }
+        
         let realmManager = RealmManager()
         
         realmManager.saveMangaToFavorites(name: currentManga.name,
@@ -197,7 +210,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                           imageURL: currentManga.imageURL,
                                           status: currentManga.status,
                                           id: currentManga.id)
-
+        
+        RealmManager().readFavoritedMangas()
     }
     
     @IBAction func reverseChapterOrder(_ sender: Any) {

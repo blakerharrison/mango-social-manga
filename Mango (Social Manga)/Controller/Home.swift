@@ -14,8 +14,6 @@ var favoritedManga = [MangaDetailsRealm]()
 //MARK: Object
 class Home: UIViewController {
 
-//    let realmManager = RealmManager()
-    
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +24,6 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         RealmManager().readFavoritedMangas()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +34,7 @@ class Home: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //tableView.reloadData()
+//        tableView.reloadData()
     }
 }
 
@@ -95,8 +92,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let markUnread = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
-            print("Working")
-            print(indexPath.row)
+            RealmManager().deleteFavoritedManga(id: favoritedManga[indexPath.row].id)
             favoritedManga.remove(at: indexPath.row)
             tableView.reloadData()
         }

@@ -22,6 +22,7 @@ class RealmManager {
     
     //MARK: - Manga Details Method
     func saveMangaToFavorites(name: String, author: String, category: String, released: String, about: String, imageURL: String, status: String, id: String) {
+
         let addedManga = MangaDetailsRealm()
         
         addedManga.name = name
@@ -38,19 +39,36 @@ class RealmManager {
         }
     }
     
-    
     func readFavoritedMangas() {
         if realm.objects(MangaDetailsRealm.self).count > 0 {
+            
+            favoritedManga.removeAll()
+            
             for i in 0..<realm.objects(MangaDetailsRealm.self).count {
                 favoritedManga.append(realm.objects(MangaDetailsRealm.self)[i])
             }
-            
-            print(favoritedManga)
             
         } else {
             print("There's no data.")
         }
     }
+    
+    func deleteFavoritedManga(id: String) {
+        let mangas = realm.objects(MangaDetailsRealm.self).filter("id = %@", id)
+        
+        if let manga = mangas.first {
+            
+            guard manga.id == id else {
+                print("ID does not exist")
+                return
+            }
+            
+            try! realm.write {
+                realm.delete(manga)
+            }
+        }
+    }
+    
     //MARK: - Viewed Chapter Methods
     func addViewedChapter(ID: String, chapterViewed: Bool) {
         guard chapterArray.isEmpty != true else {
