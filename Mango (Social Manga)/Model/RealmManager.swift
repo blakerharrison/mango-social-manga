@@ -36,9 +36,21 @@ class RealmManager {
         try! realm.write {
             realm.add(addedManga)
         }
-        
     }
     
+    
+    func readFavoritedMangas() {
+        if realm.objects(MangaDetailsRealm.self).count > 0 {
+            for i in 0..<realm.objects(MangaDetailsRealm.self).count {
+                favoritedManga.append(realm.objects(MangaDetailsRealm.self)[i])
+            }
+            
+            print(favoritedManga)
+            
+        } else {
+            print("There's no data.")
+        }
+    }
     //MARK: - Viewed Chapter Methods
     func addViewedChapter(ID: String, chapterViewed: Bool) {
         guard chapterArray.isEmpty != true else {
@@ -56,7 +68,6 @@ class RealmManager {
                     chapter.chapterID = ID
                     chapter.wasChapterViewed = true
                 }
-                
                 return
             }
 
@@ -67,9 +78,7 @@ class RealmManager {
                 chapterPersistance.wasChapterViewed = chapterViewed
                 self.realm.add(chapterPersistance)
             }
-
         }
-
     }
     
     func removeViewedChapter(ID: String) {

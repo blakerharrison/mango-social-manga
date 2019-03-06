@@ -50,7 +50,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            networking.fetchChapters(mangaID: selectedID)
+        networking.fetchChapters(mangaID: selectedID)
         
         let realmManager = RealmManager()
 
@@ -186,12 +186,18 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         guard currentManga.id != "" else {
             return
         }
+
+        let realmManager = RealmManager()
         
-        favoritedManga.append(currentManga)
-        
-        print(currentManga.name)
-        print(currentManga.imageURL)
-        print(currentManga.id)
+        realmManager.saveMangaToFavorites(name: currentManga.name,
+                                          author: currentManga.author,
+                                          category: currentManga.category,
+                                          released: currentManga.released,
+                                          about: currentManga.description,
+                                          imageURL: currentManga.imageURL,
+                                          status: currentManga.status,
+                                          id: currentManga.id)
+
     }
     
     @IBAction func reverseChapterOrder(_ sender: Any) {

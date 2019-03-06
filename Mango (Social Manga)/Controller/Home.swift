@@ -9,11 +9,13 @@
 import UIKit
 import SDWebImage
 
-var favoritedManga = [MangaDetails]()
+var favoritedManga = [MangaDetailsRealm]()
 
 //MARK: Object
 class Home: UIViewController {
 
+//    let realmManager = RealmManager()
+    
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +25,8 @@ class Home: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
+        RealmManager().readFavoritedMangas()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
