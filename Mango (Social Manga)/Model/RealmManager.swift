@@ -20,6 +20,26 @@ class RealmManager {
         print(Realm.Configuration.defaultConfiguration.fileURL ?? "No path found.")
     }
     
+    //MARK: - Manga Details Method
+    func saveMangaToFavorites(name: String, author: String, category: String, released: String, about: String, imageURL: String, status: String, id: String) {
+        let addedManga = MangaDetailsRealm()
+        
+        addedManga.name = name
+        addedManga.author = author
+        addedManga.category = category
+        addedManga.released = released
+        addedManga.about = about
+        addedManga.imageURL = imageURL
+        addedManga.status = status
+        addedManga.id = id
+        
+        try! realm.write {
+            realm.add(addedManga)
+        }
+        
+    }
+    
+    //MARK: - Viewed Chapter Methods
     func addViewedChapter(ID: String, chapterViewed: Bool) {
         guard chapterArray.isEmpty != true else {
             return
