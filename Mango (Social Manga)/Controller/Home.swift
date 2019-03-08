@@ -54,6 +54,8 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.selectionStyle = .none
+        
         if favoritedManga.count > 0 {
             var mangaTitle = UILabel()
             mangaTitle = cell.viewWithTag(1001) as! UILabel

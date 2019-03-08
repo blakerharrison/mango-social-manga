@@ -251,12 +251,11 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
         if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
-  
-            let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
+
+            let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter(NSPredicate(format: "chapterID = %@ AND chapterNumber = %@", chapterArray[indexPath.row].id, chapterArray[indexPath.row].number))
             
             if let chapter = chapters.first
             {
-// && chapterArray[indexPath.row].id == chapter.chapter
                 if chapter.wasChapterViewed == true  {
                     cell.accessoryType = .checkmark
                 }
@@ -272,7 +271,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         let realmManager = RealmManager()
         
-        realmManager.addViewedChapter(ID: chapterArray[indexPath.row].id, chapterViewed: true)
+        realmManager.addViewedChapter(chapterTitle: chapterArray[indexPath.row].title, ID: chapterArray[indexPath.row].id, number: chapterArray[indexPath.row].number, chapterViewed: true)
         
         print(chapterArray[indexPath.row])
 
@@ -297,12 +296,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
                 print("There's data!")
                 
-                let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
+                let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter(NSPredicate(format: "chapterID = %@ AND chapterNumber = %@", chapterArray[indexPath.row].id, chapterArray[indexPath.row].number))
 
                 if let chapter = chapters.first
                 {
                     if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
-                        realmManager.removeViewedChapter(ID: chapterArray[indexPath.row].id)
+                        realmManager.removeViewedChapter(chapterTitle: chapterArray[indexPath.row].title, ID: chapterArray[indexPath.row].id, number: chapterArray[indexPath.row].number)
                         cell.accessoryType = .none
                         tableView.reloadData()
                     }

@@ -70,20 +70,22 @@ class RealmManager {
     }
     
     //MARK: - Viewed Chapter Methods
-    func addViewedChapter(ID: String, chapterViewed: Bool) {
+    func addViewedChapter(chapterTitle: String, ID: String, number: String, chapterViewed: Bool) {
         guard chapterArray.isEmpty != true else {
             return
         }
         
-        let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", ID)
+        let chapters = realm.objects(MangaChapterPersistance.self).filter(NSPredicate(format: "chapterID = %@ AND chapterNumber = %@", ID, number))
         
         if let chapter = chapters.first {
             
             guard chapter.wasChapterViewed == true else {
-                print("CHAPTER WAS VIEWED I FALSE")
+                print("CHAPTER WAS VIEWED IS FALSE")
                 
                 try! realm.write {
+                    chapter.chapterTitle = chapterTitle
                     chapter.chapterID = ID
+                    chapter.chapterNumber = number
                     chapter.wasChapterViewed = true
                 }
                 return
@@ -92,19 +94,21 @@ class RealmManager {
         } else {
             print("New item added to realm")
             try! self.realm.write {
+                chapterPersistance.chapterTitle = chapterTitle
                 chapterPersistance.chapterID = ID
+                chapterPersistance.chapterNumber = number
                 chapterPersistance.wasChapterViewed = chapterViewed
                 self.realm.add(chapterPersistance)
             }
         }
     }
     
-    func removeViewedChapter(ID: String) {
+    func removeViewedChapter(chapterTitle: String, ID: String, number: String) {
         guard chapterArray.isEmpty != true else {
             return
         }
         
-        let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", ID)
+        let chapters = realm.objects(MangaChapterPersistance.self).filter("chapterID = %@ && chapterNumber = %@", ID, number)
         
         if let chapter = chapters.first
         {
