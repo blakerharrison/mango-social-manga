@@ -33,10 +33,7 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         tableView.reloadData()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        tableView.reloadData()
-    }
+
 }
 
 //MARK: TableView
@@ -75,7 +72,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
             mangaTitle = cell.viewWithTag(1001) as! UILabel
             mangaTitle.text = nil
         }
-
+        
         return cell
     }
     
