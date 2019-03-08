@@ -13,7 +13,7 @@ var favoritedManga = [MangaDetailsRealm]()
 
 //MARK: Object
 class Home: UIViewController {
-
+    
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,9 @@ class Home: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.dragDelegate = self
+        tableView.dragInteractionEnabled = true
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
@@ -37,7 +40,16 @@ class Home: UIViewController {
 }
 
 //MARK: TableView
-extension Home: UITableViewDelegate, UITableViewDataSource {
+extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
+    //MARK: - Drag Action
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item = favoritedManga[indexPath.row].name
+        let itemProvider = NSItemProvider(object: item as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        
+        return [dragItem]
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
