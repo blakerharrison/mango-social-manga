@@ -256,8 +256,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             if let chapter = chapters.first
             {
-
-                if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {
+// && chapterArray[indexPath.row].id == chapter.chapter
+                if chapter.wasChapterViewed == true  {
                     cell.accessoryType = .checkmark
                 }
             }
@@ -280,6 +280,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         currentChapter = String(chapterArray[indexPath.row].number)
 
+        print("")
+        print("Selected chapter ID")
+        print("\(chapterArray[indexPath.row].id)")
+        print("")
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
@@ -294,7 +298,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 print("There's data!")
                 
                 let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter("chapterID = %@", chapterArray[indexPath.row].id)
-                
+
                 if let chapter = chapters.first
                 {
                     if chapter.wasChapterViewed == true && chapterArray[indexPath.row].id == chapter.chapterID {

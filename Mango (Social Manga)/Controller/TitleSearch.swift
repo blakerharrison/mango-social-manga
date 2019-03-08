@@ -26,8 +26,6 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        RealmManager().deleteEverything()
 
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTable(notification:)), name: NSNotification.Name(rawValue: "finishedGettingTitles"), object: nil)
         

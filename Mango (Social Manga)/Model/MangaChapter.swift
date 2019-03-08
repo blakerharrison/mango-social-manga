@@ -27,6 +27,8 @@ struct MangaChapter {
 
 //Realm
 final class MangaChapterPersistance: Object {
+    @objc dynamic var chapterTitle: String = ""
+    @objc dynamic var chapterNumber: String = ""
     @objc dynamic var chapterID: String = ""
     @objc dynamic var wasChapterViewed: Bool = true
 }
