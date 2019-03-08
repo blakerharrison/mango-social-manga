@@ -215,22 +215,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @IBAction func reverseChapterOrder(_ sender: Any) {
-        guard mangaDataStructure.isMangaChaptersReversed == false else {
-            
-            mangaDataStructure.mangaChaptersString.reverse()
-            mangaDataStructure.reverseIDs()
-            tableView.reloadData()
-            mangaDataStructure.isMangaChaptersReversed = false
-            return
-        }
-        
-        mangaDataStructure.mangaChaptersString.reverse()
-        mangaDataStructure.reverseIDs()
+        chapterArray.reverse()
         tableView.reloadData()
-        
-        mangaDataStructure.isMangaChaptersReversed = true
-        
-        print("Structure of the Manga is \(mangaDataStructure.isMangaChaptersReversed)")
     }
 
     //MARK: - Table View
