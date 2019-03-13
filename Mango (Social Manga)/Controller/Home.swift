@@ -46,8 +46,6 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
 
         let element = favoritedManga.remove(at: sourceIndexPath.row)
         favoritedManga.insert(element, at: destinationIndexPath.row)
-        
-        print("New favorited manga order \(favoritedManga)")
 
         tableView.reloadData()
         
