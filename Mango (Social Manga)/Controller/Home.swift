@@ -97,22 +97,14 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         performSegue(withIdentifier: "userSelected", sender: self)
     }
     
+
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
             RealmManager().deleteFavoritedManga(id: favoritedManga[indexPath.row].id)
             favoritedManga.remove(at: indexPath.row)
             
-            for i in 0..<favoritedManga.count {
-                let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", favoritedManga[i].id)
-                
-                if let manga = mangas.first {
-                    
-                    try! Realm().write {
-                        manga.order = i
-                        try! Realm().add(manga)
-                    }
-                }
-            }
+            RealmManager().reorderFavorites()
             
             tableView.reloadData()
         }
@@ -122,21 +114,10 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
     }
     
     func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-
         let element = favoritedManga.remove(at: sourceIndexPath.row)
         favoritedManga.insert(element, at: destinationIndexPath.row)
         
-        for i in 0..<favoritedManga.count {
-            let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", favoritedManga[i].id)
-            
-            if let manga = mangas.first {
-                
-                try! Realm().write {
-                    manga.order = i
-                    try! Realm().add(manga)
-                }
-            }
-        }
+        RealmManager().reorderFavorites()
 
         tableView.reloadData()
     }

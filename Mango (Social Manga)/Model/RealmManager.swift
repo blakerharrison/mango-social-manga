@@ -56,6 +56,20 @@ class RealmManager {
         }
     }
     
+    func reorderFavorites() {
+        for i in 0..<favoritedManga.count {
+            let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", favoritedManga[i].id)
+            
+            if let manga = mangas.first {
+                
+                try! Realm().write {
+                    manga.order = i
+                    try! Realm().add(manga)
+                }
+            }
+        }
+    }
+    
     func deleteFavoritedManga(id: String) {
         let mangas = realm.objects(MangaDetailsRealm.self).filter("id = %@", id)
         
