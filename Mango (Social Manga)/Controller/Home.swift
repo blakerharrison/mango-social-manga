@@ -13,6 +13,17 @@ import RealmSwift
 
 var favoritedManga = [MangaDetailsRealm]()
 
+class MangaFavorites: Object {
+    @objc var title = ""
+    let tags = List<MangaDetailsRealm>()
+    
+    convenience init(title: String, tag: MangaDetailsRealm) {
+        self.init()
+        self.title = title
+        self.tags.append(MangaDetailsRealm())
+    }
+}
+
 //MARK: Object
 class Home: UIViewController {
     
