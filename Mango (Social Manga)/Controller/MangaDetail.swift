@@ -209,7 +209,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                           about: currentManga.description,
                                           imageURL: currentManga.imageURL,
                                           status: currentManga.status,
-                                          id: currentManga.id)
+                                          id: currentManga.id,
+                                          order: favoritedManga.count)
         
         RealmManager().readFavoritedMangas()
     }

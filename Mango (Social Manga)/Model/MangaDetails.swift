@@ -43,4 +43,5 @@ class MangaDetailsRealm: Object {
     @objc dynamic var imageURL: String = ""
     @objc dynamic var status: String = ""
     @objc dynamic var id: String = ""
+    @objc dynamic var order: Int = 0
 }

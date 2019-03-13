@@ -24,11 +24,14 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        RealmManager().printFilePath()
+        
         tableView.reorder.delegate = self
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         RealmManager().readFavoritedMangas()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,15 +45,6 @@ class Home: UIViewController {
 
 //MARK: TableView
 extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDelegate {
-    func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-
-        let element = favoritedManga.remove(at: sourceIndexPath.row)
-        favoritedManga.insert(element, at: destinationIndexPath.row)
-
-        tableView.reloadData()
-        
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard favoritedManga.count > 0 else {
             return 0
@@ -103,17 +97,29 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         performSegue(withIdentifier: "userSelected", sender: self)
     }
     
+
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        let markUnread = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
+        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
             RealmManager().deleteFavoritedManga(id: favoritedManga[indexPath.row].id)
             favoritedManga.remove(at: indexPath.row)
+            
+            RealmManager().reorderFavorites()
+            
             tableView.reloadData()
         }
-        markUnread.backgroundColor = .red
+        remove.backgroundColor = .red
         
-        return [markUnread]
+        return [remove]
+    }
+    
+    func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let element = favoritedManga.remove(at: sourceIndexPath.row)
+        favoritedManga.insert(element, at: destinationIndexPath.row)
+        
+        RealmManager().reorderFavorites()
+
+        tableView.reloadData()
     }
 }
 
