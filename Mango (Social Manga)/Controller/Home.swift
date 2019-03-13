@@ -25,6 +25,7 @@ class Home: UIViewController {
         tableView.dragDelegate = self
         tableView.dragInteractionEnabled = true
         
+        
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
         RealmManager().readFavoritedMangas()
@@ -40,7 +41,7 @@ class Home: UIViewController {
 }
 
 //MARK: TableView
-extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
+extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UITableViewDropDelegate {
     //MARK: - Drag Action
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let item = favoritedManga[indexPath.row].name
@@ -49,6 +50,16 @@ extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDeleg
         dragItem.localObject = item
         
         return [dragItem]
+    }
+    
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        print("Dropped")
+    }
+    
+    func tableView(_ tableView: UITableView, dragPreviewParametersForRowAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let book = UIDragPreviewParameters()
+        book.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0)
+        return book
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
