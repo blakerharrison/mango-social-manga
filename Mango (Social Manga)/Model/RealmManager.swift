@@ -38,7 +38,7 @@ class RealmManager {
             realm.add(addedManga)
         }
     }
-    
+
     func readFavoritedMangas() {
         if realm.objects(MangaDetailsRealm.self).count > 0 {
             

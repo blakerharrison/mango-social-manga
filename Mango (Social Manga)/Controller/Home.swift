@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import SwiftReorder
+import RealmSwift
 
 var favoritedManga = [MangaDetailsRealm]()
 
@@ -22,9 +24,7 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dragDelegate = self
-        tableView.dragInteractionEnabled = true
-        
+        tableView.reorder.delegate = self
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
@@ -41,29 +41,19 @@ class Home: UIViewController {
 }
 
 //MARK: TableView
-extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UITableViewDropDelegate {
-    //MARK: - Drag Action
-    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let item = favoritedManga[indexPath.row].name
-        let itemProvider = NSItemProvider(object: item as NSString)
-        let dragItem = UIDragItem(itemProvider: itemProvider)
-        dragItem.localObject = item
+extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDelegate {
+    func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+
+        let element = favoritedManga.remove(at: sourceIndexPath.row)
+        favoritedManga.insert(element, at: destinationIndexPath.row)
         
-        return [dragItem]
-    }
-    
-    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
-        print("Dropped")
-    }
-    
-    func tableView(_ tableView: UITableView, dragPreviewParametersForRowAt indexPath: IndexPath) -> UIDragPreviewParameters? {
-        let book = UIDragPreviewParameters()
-        book.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0)
-        return book
+        print("New favorited manga order \(favoritedManga)")
+
+        tableView.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard favoritedManga.count > 0 else {
             return 0
         }
@@ -73,6 +63,10 @@ extension Home: UITableViewDelegate, UITableViewDataSource, UITableViewDragDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        if let spacer = tableView.reorder.spacerCell(for: indexPath) {
+            return spacer
+        }
         
         cell.selectionStyle = .none
         
