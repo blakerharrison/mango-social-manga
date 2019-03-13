@@ -21,7 +21,7 @@ class RealmManager {
     }
     
     //MARK: - Manga Details Method
-    func saveMangaToFavorites(name: String, author: String, category: String, released: String, about: String, imageURL: String, status: String, id: String) {
+    func saveMangaToFavorites(name: String, author: String, category: String, released: String, about: String, imageURL: String, status: String, id: String, order: Int) {
 
         let addedManga = MangaDetailsRealm()
         
@@ -33,6 +33,7 @@ class RealmManager {
         addedManga.imageURL = imageURL
         addedManga.status = status
         addedManga.id = id
+        addedManga.order = order
         
         try! realm.write {
             realm.add(addedManga)
@@ -47,6 +48,8 @@ class RealmManager {
             for i in 0..<realm.objects(MangaDetailsRealm.self).count {
                 favoritedManga.append(realm.objects(MangaDetailsRealm.self)[i])
             }
+            
+            favoritedManga.sort { $0.order < $1.order }
             
         } else {
             print("There's no data.")

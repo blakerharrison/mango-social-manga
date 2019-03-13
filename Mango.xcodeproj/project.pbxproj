@@ -76,6 +76,7 @@
 		2C6CB34E212F802F00DDC522 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		2C7A219A222644CE00063942 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		2C8B1525214489BF00D2561B /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C8C3F7A2239BDDA0007F713 /* Mango (Social Manga).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mango (Social Manga).entitlements"; sourceTree = "<group>"; };
 		2CA0A2982134B7C7006844E3 /* TitleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearch.swift; sourceTree = "<group>"; };
 		2CA0A29B21375EA5006844E3 /* TitleS + UISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleS + UISearch.swift"; sourceTree = "<group>"; };
 		2CA0A29D21375FCB006844E3 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 		2C69A0032019C2E8001A60AE /* Mango (Social Manga) */ = {
 			isa = PBXGroup;
 			children = (
+				2C8C3F7A2239BDDA0007F713 /* Mango (Social Manga).entitlements */,
 				2C69A0042019C2E8001A60AE /* AppDelegate.swift */,
 				2C559CE42126220D008381A5 /* Networking */,
 				2CF1E576207AF0B100161D5F /* Model */,
@@ -305,6 +307,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -637,12 +644,14 @@
 			baseConfigurationReference = 5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA84G22696;
 				INFOPLIST_FILE = "Mango (Social Manga)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harrisonrblake.Mango--Social-Manga-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,12 +662,14 @@
 			baseConfigurationReference = 64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA84G22696;
 				INFOPLIST_FILE = "Mango (Social Manga)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harrisonrblake.Mango--Social-Manga-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

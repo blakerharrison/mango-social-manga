@@ -174,7 +174,7 @@ class MangoNetworking {
         
         let url = URL(string: mangaChapterURL + chapterID)
         
-        print("URL \(url)")
+        print("URL \(String(describing: url))")
         
         URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
             
