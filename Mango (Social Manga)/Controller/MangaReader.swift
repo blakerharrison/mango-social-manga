@@ -168,7 +168,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         cell.activityIndicator.isHidden = true
                                         cell.activityIndicator.stopAnimating()
                                         
-                                        self.hud.dismiss(animated: true)
+                                        self.hud.dismiss(animated: false)
                                         
                                         collectionView.isScrollEnabled = true
                                         
