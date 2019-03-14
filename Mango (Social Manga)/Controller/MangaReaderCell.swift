@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 //MARK: - Custom Cell
 class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {

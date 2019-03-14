@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 let myFetchTitlesGroup = DispatchGroup()
 
@@ -31,9 +32,12 @@ extension TitleSearch: UISearchBarDelegate {
 
         MangoNetworking().fetchMangaTitles(searchedManga: self.searchBar.text!)
 
-        activity.isHidden = false
-        activityView.isHidden = false
-        activity.startAnimating()
+//        activity.isHidden = false
+//        activityView.isHidden = false
+//        activity.startAnimating()
+        
+        hud.textLabel.text = "Searching"
+        hud.show(in: self.view)
         
         noTitleFoundImage.isHidden = true
         table.isHidden = true

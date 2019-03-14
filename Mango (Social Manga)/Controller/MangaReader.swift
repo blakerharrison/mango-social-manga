@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import JGProgressHUD
 
 var pages = [PageOfChapter]()
 
@@ -27,6 +28,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Properties
     let Networking = MangoNetworking()
     var refresher: UIRefreshControl!
+    let hud = JGProgressHUD(style: .extraLight)
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -37,9 +39,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
         self.Networking.fetchChapters(mangaID: selectedChapterID)
+
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
         
-        activityMain.isHidden = false
-        activityMain.startAnimating()
         collectionView.isScrollEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
@@ -67,8 +70,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.isNavigationBarHidden = false
-        
-//        pages.removeAll()
+
     }
     
     deinit {
@@ -78,8 +80,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Methods
     @objc func loadData() {
         pageNumberLabel.text = "Loading Previous Chapter"
-        activityMain.isHidden = false
-        activityMain.startAnimating()
 
         pages.removeAll()
 
@@ -155,8 +155,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
         activityMain.isHidden = true
         activityMain.stopAnimating()
-        cell.activityIndicator.isHidden = false
-        cell.activityIndicator.startAnimating()
 
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = String(pages[indexPath.row].pageNumber)
@@ -169,6 +167,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         
                                         cell.activityIndicator.isHidden = true
                                         cell.activityIndicator.stopAnimating()
+                                        
+                                        self.hud.dismiss(animated: true)
+                                        
                                         collectionView.isScrollEnabled = true
                                         
                                     }
@@ -187,6 +188,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageNumberLabel.text = "Loading Next Chapter"
             activityMain.isHidden = false
             activityMain.startAnimating()
+            hud.textLabel.text = "Loading"
+            hud.show(in: self.view)
 
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
@@ -202,10 +205,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             print("")
 
             print("Next chapter \(selectedChapterID)")
-
-//            self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         }
     }
+    
 }
 
 extension Notification.Name {
