@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Mango (Social Manga).entitlements">
+   </FileRef>
+   <FileRef
       location = "group:Mango.xcodeproj">
    </FileRef>
    <FileRef
