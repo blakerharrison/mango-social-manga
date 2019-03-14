@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: - Properties
     var isSearching: Bool = false
     var filteredArray: [String] = []
+    let hud = JGProgressHUD(style: .extraLight)
     
     let networking = MangoNetworking()
     
@@ -95,13 +97,15 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activity.isHidden = true
             self.activityView.isHidden = true
             self.activity.stopAnimating()
-            
+
             if resultsArray.count == 0 && self.isSearching == false {
                 self.noTitleFoundImage.isHidden = false
                 self.table.isHidden = true
             }
             
         }
+        self.hud.dismiss(animated: false)
+        
     }
     
     // method to run when table view cell is tapped
@@ -111,9 +115,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         selectedIndex = indexPath.row
         selectedID = searchedMangaList[indexPath.row].i!
-        
-//        networking.fetchChapters(mangaID: selectedID)
-        
+
         // Segue to the second view controller
         self.performSegue(withIdentifier: "DetailSegue", sender: self)
     }

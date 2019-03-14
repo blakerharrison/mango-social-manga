@@ -17,5 +17,6 @@ pod 'SDWebImage', '~> 4.0'
 pod 'RealmSwift'
 pod "SkeletonView"
 pod 'SwiftReorder', '~> 6.0'
+pod 'JGProgressHUD'
 
 end
