@@ -98,14 +98,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activityView.isHidden = true
             self.activity.stopAnimating()
             
-            self.hud.dismiss(animated: false)
-            
             if resultsArray.count == 0 && self.isSearching == false {
                 self.noTitleFoundImage.isHidden = false
                 self.table.isHidden = true
             }
             
         }
+        self.hud.dismiss(animated: false)
+        
     }
     
     // method to run when table view cell is tapped
