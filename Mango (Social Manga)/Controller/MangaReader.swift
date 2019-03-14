@@ -36,7 +36,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
-//        self.Networking.fetchMangaChapterInfo(chapterID: selectedChapterID)
         self.Networking.fetchChapters(mangaID: selectedChapterID)
         
         activityMain.isHidden = false

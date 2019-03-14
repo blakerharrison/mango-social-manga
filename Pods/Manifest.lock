@@ -1,17 +1,19 @@
 PODS:
+  - JGProgressHUD (2.0.3)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
-  - SDWebImage (4.4.5):
-    - SDWebImage/Core (= 4.4.5)
-  - SDWebImage/Core (4.4.5)
-  - SkeletonView (1.4.1)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SkeletonView (1.4.2)
   - SwiftReorder (6.0.2)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - JGProgressHUD
   - RealmSwift
   - SDWebImage (~> 4.0)
   - SkeletonView
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - JGProgressHUD
     - Realm
     - RealmSwift
     - SDWebImage
@@ -28,13 +31,14 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
-  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
-  SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SkeletonView: c2523c3c8c6510e273e49a3bf364a434744c3914
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 4242c96b1954bd4e56678e49eaa79955dbf933f7
+PODFILE CHECKSUM: 01d0920cf311462bf36e4a1abaf5b5cd8482b272
 
 COCOAPODS: 1.5.3
