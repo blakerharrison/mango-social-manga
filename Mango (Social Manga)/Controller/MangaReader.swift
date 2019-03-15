@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import JGProgressHUD
 
 var pages = [PageOfChapter]()
 
@@ -28,21 +27,20 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Properties
     let Networking = MangoNetworking()
     var refresher: UIRefreshControl!
-    let hud = JGProgressHUD(style: .extraLight)
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        activityMain.isHidden = false
+        activityMain.startAnimating()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
         self.Networking.fetchChapters(mangaID: selectedChapterID)
 
-        hud.textLabel.text = "Loading"
-        hud.show(in: self.view)
-        
         collectionView.isScrollEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(toggleNavBar(notification:)), name: .toggle, object: nil)
@@ -156,6 +154,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         activityMain.isHidden = true
         activityMain.stopAnimating()
 
+        cell.activityIndicator.isHidden = false
+        cell.activityIndicator.startAnimating()
+        
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = String(pages[indexPath.row].pageNumber)
             }
@@ -167,9 +168,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         
                                         cell.activityIndicator.isHidden = true
                                         cell.activityIndicator.stopAnimating()
-                                        
-                                        self.hud.dismiss(animated: false)
-                                        
                                         collectionView.isScrollEnabled = true
                                         
                                     }
@@ -188,8 +186,6 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageNumberLabel.text = "Loading Next Chapter"
             activityMain.isHidden = false
             activityMain.startAnimating()
-            hud.textLabel.text = "Loading"
-            hud.show(in: self.view)
 
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
