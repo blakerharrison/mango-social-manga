@@ -274,12 +274,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
     
+    //MARK: - Cell Swipe Methods
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
         
         let realmManager = RealmManager()
         
-        let markUnread = UITableViewRowAction(style: .normal, title: "Mark Unread") { action, index in
+        let markUnread = UITableViewRowAction(style: .normal, title: "Mark as Unread") { action, index in
             if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
                 print("There's data!")
                 
@@ -301,6 +303,43 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         return [markUnread]
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chapters", for: indexPath)
+        
+        let realmManager = RealmManager()
+        
+        let closeAction = UIContextualAction(style: .normal, title:  "Mark as Read", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            
+            if realmManager.realm.objects(MangaChapterPersistance.self).count > 0 {
+                print("There's data!")
+                
+                let chapters = realmManager.realm.objects(MangaChapterPersistance.self).filter(NSPredicate(format: "chapterID = %@ AND chapterNumber = %@", chapterArray[indexPath.row].id, chapterArray[indexPath.row].number))
+                
+                if let chapter = chapters.first
+                {
+                    if chapter.wasChapterViewed == false && chapterArray[indexPath.row].id == chapter.chapterID {
+                        realmManager.addViewedChapter(chapterTitle: chapterArray[indexPath.row].title, ID: chapterArray[indexPath.row].id, number: chapterArray[indexPath.row].number, chapterViewed: true)
+                        cell.accessoryType = .checkmark
+                        tableView.reloadData()
+                    }
+                } else {
+                    realmManager.addViewedChapter(chapterTitle: chapterArray[indexPath.row].title, ID: chapterArray[indexPath.row].id, number: chapterArray[indexPath.row].number, chapterViewed: true)
+//                    cell.accessoryType = .checkmark
+                    tableView.reloadData()
+                }
+            } else {
+                print("No realm data yet.")
+            }
+            
+            success(true)
+        })
+        closeAction.backgroundColor = .blue
+        return UISwipeActionsConfiguration(actions: [closeAction])
+        
+    }
+    
 }
 
 // URLContainer
