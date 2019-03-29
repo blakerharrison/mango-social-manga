@@ -19,3 +19,12 @@ Mango is a modern manga reader for iOS that focuses on minimizing distractions w
 
   ![](https://media.giphy.com/media/88hQpEhVpZh2LAjnBS/giphy.gif)
 
+* **Add/Remove favorites to your home screen**
+
+  ![](https://media.giphy.com/media/yNsRveQF6wNJL0fRR4/giphy.gif)
+  
+  ![](https://media.giphy.com/media/kigxjBhOUGeP2i6bJS/giphy.gif)
+  
+* **Chapters are marked as read by swipe or chapter selection**
+
+  ![](https://media.giphy.com/media/ckTuwncpk0Uqh2spya/giphy.gif)
