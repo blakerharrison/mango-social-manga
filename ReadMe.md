@@ -15,5 +15,7 @@ Mango is a modern manga reader for iOS that focuses on minimizing distractions w
 
   ![](https://media.giphy.com/media/5z9ISjpOXdmVyEa7Fb/giphy.gif)
 
-* ****
+* **Search 1000's of titles**
+
+  ![](https://media.giphy.com/media/88hQpEhVpZh2LAjnBS/giphy.gif)
 
