@@ -4,7 +4,7 @@
 
 ## Description
 
-Mango is a modern manga reader for iOS devices that focuses on minimizing distractions with a sleek and modern design to create the most immersive reading experience.
+Mango is a modern manga reader for iOS devices.
 
 ## Features
 
