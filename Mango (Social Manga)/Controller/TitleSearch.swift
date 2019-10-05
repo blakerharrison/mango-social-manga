@@ -24,6 +24,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var noTitleFoundImage: UIImageView!
+    @IBOutlet weak var darkModeBackground: UIVisualEffectView!
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -59,6 +61,10 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        if GeneralUtils.isDarkModeEnabled() {
+            darkModeBackground.isHidden = false
+        }
     }
     
     //MARK: - Methods

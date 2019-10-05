@@ -23,6 +23,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageChapterLabel: UILabel!
     @IBOutlet weak var statusBarBackgroundImage: UIImageView!
+    @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
     //MARK: - Properties
     let Networking = MangoNetworking()
@@ -60,6 +61,12 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if GeneralUtils.isDarkModeEnabled() {
+            darkModeBackground.isHidden = false
+            statusBarBackgroundImage.isHidden = true
+            
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,7 +119,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = true
             self.pageNumberLabel?.isHidden = true
             self.pageChapterLabel?.isHidden = true
-            self.statusBarBackgroundImage?.isHidden = true
+            if !GeneralUtils.isDarkModeEnabled() {
+                self.statusBarBackgroundImage?.isHidden = true
+            }
             return
         } else {
             print("Showing Nav Bar")
@@ -120,7 +129,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             self.toolBar?.isHidden = false
             self.pageNumberLabel?.isHidden = false
             self.pageChapterLabel?.isHidden = false
-            self.statusBarBackgroundImage?.isHidden = false
+            if !GeneralUtils.isDarkModeEnabled() {
+                self.statusBarBackgroundImage?.isHidden = false
+            }
         }
     }
 

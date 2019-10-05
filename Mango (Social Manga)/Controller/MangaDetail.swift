@@ -30,7 +30,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     let networking = MangoNetworking()
     var mangaChapters: [[MetadataType?]] = [[]]
-    
 
     //MARK: - Outlets
     @IBOutlet weak var mangaImage: UIImageView!
@@ -46,6 +45,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var activityDetails: UIActivityIndicatorView!
     @IBOutlet weak var activityImage: UIActivityIndicatorView!
     @IBOutlet weak var addMangaToFavorites: UIBarButtonItem!
+    @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -87,15 +87,17 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewWillAppear(_ animated: Bool) {
         networking.fetchChapterDetails(chapterID: selectedID)
         tableView.reloadData()
+        
+        if GeneralUtils.isDarkModeEnabled() {
+            darkModeBackground.isHidden = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedIndex = 0
-//        currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
     }
     
     deinit {
-        print("Memory to be released soon")
         chapterArray.removeAll()
         selectedID = ""
         navigationItem.title = ""
@@ -127,7 +129,10 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             self.activityDetails.isHidden = true
             self.activityDetails.stopAnimating()
             
-            self.addMangaToFavorites.isEnabled = true
+            if self.addMangaToFavorites != nil {
+                self.addMangaToFavorites.isEnabled = true
+            }
+            self.isMangaSaved()
         }
     }
     
@@ -147,6 +152,74 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func toggleIsMangaBeingViewed() {
         networking.isMangaDetailBeingViewed = false
     }
+    
+    func isMangaSaved() {
+           let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", currentManga.id)
+           
+           if mangas.first != nil {
+               self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop,
+                                                                        target: self,
+                                                                        action: #selector(removeFavorite))
+           } else {
+               self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                        target: self,
+                                                                        action: #selector(addFavorite))
+           }
+       }
+       
+       @objc func addFavorite() {
+           self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(removeFavorite))
+           
+           let alert = UIAlertController(title: "Succesfully Added",
+                                         message: "You can now access this Manga from your home library.",
+                                         preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "Ok",
+                                         style: .default,
+                                         handler: nil))
+           self.present(alert, animated: true)
+           
+           let realmManager = RealmManager()
+           
+           realmManager.saveMangaToFavorites(name: currentManga.name,
+                                             author: currentManga.author,
+                                             category: currentManga.category,
+                                             released: currentManga.released,
+                                             about: currentManga.description,
+                                             imageURL: currentManga.imageURL,
+                                             status: currentManga.status,
+                                             id: currentManga.id,
+                                             order: favoritedManga.count)
+           
+           RealmManager().readFavoritedMangas()
+       }
+
+       @objc func removeFavorite() {
+           self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFavorite))
+           
+           let mangas = try! Realm().objects(MangaDetailsRealm.self).filter("id = %@", currentManga.id)
+           
+           if let manga = mangas.first {
+               
+               RealmManager().deleteFavoritedManga(id: currentManga.id)
+//               RealmManager().readFavoritedMangas()
+            
+//            favoritedManga.removeAll()
+
+//               RealmManager().reorderFavorites()
+               print("Manga already exists. \(manga)")
+
+               let alert = UIAlertController(title: "Succesfully Removed",
+                                             message: "This Manga has been removed from your home library.",
+                                             preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Ok",
+                                             style: .default,
+                                             handler: nil))
+               self.present(alert, animated: true)
+               
+               return
+           }
+           
+       }
     
     //MARK: - Networking
     func fetchImage() { //TODO: Move to MangoNetworking
@@ -184,7 +257,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             }.resume()
     }
-
+    
+   
+    
     //MARK: - Actions
     @IBAction func favoriteButton(_ sender: Any) {
 
@@ -196,7 +271,8 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if let manga = mangas.first {
             
-           print("Manga already exists. \(manga)")
+            print("Manga already exists. \(manga)")
+
             return
         }
         
@@ -266,10 +342,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         currentChapter = String(chapterArray[indexPath.row].number)
 
-        print("")
-        print("Selected chapter ID")
-        print("\(chapterArray[indexPath.row].id)")
-        print("")
         self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "readerSegue", sender: self)
     }
@@ -326,7 +398,6 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     }
                 } else {
                     realmManager.addViewedChapter(chapterTitle: chapterArray[indexPath.row].title, ID: chapterArray[indexPath.row].id, number: chapterArray[indexPath.row].number, chapterViewed: true)
-//                    cell.accessoryType = .checkmark
                     tableView.reloadData()
                 }
             } else {

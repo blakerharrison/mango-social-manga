@@ -39,6 +39,7 @@
 		2CF1E5A3207B249400161D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF1E5A2207B249300161D5F /* LaunchScreen.storyboard */; };
 		2CFC0AED221661D10089531B /* MangaChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0AEC221661D00089531B /* MangaChapter.swift */; };
 		2CFC0AEF2217B8820089531B /* PageOfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0AEE2217B8820089531B /* PageOfChapter.swift */; };
+		AC75E747234940E100E8D3AB /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75E746234940E100E8D3AB /* GeneralUtils.swift */; };
 		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		5F13DB91985AC54417B74446 /* Pods-Mango (Social Manga).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).debug.xcconfig"; sourceTree = "<group>"; };
 		64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).release.xcconfig"; sourceTree = "<group>"; };
 		7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mango__Social_Manga_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC75E746234940E100E8D3AB /* GeneralUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtils.swift; sourceTree = "<group>"; };
 		C2BBC4B5371A32453F040D35 /* Pods-Mango (Social Manga)Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				2CA0A29A21375E32006844E3 /* Extensions */,
 				2C69A00B2019C2E8001A60AE /* Assets.xcassets */,
 				2C69A0102019C2E9001A60AE /* Info.plist */,
+				AC75E746234940E100E8D3AB /* GeneralUtils.swift */,
 			);
 			path = "Mango (Social Manga)";
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				2C3E5CA7212F8A1800BEFA67 /* MangaObject.swift in Sources */,
 				2CBD5A332153037D0035689B /* Reachability.swift in Sources */,
 				2C1D8EF921A728D8001C69FD /* MangaClass.swift in Sources */,
+				AC75E747234940E100E8D3AB /* GeneralUtils.swift in Sources */,
 				2C1F771221755A27000F4A20 /* MangaReaderCell.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
 				2C1F7710217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift in Sources */,
@@ -653,10 +657,10 @@
 				CODE_SIGN_ENTITLEMENTS = "Mango (Social Manga).entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Y3J75UWF3;
+				DEVELOPMENT_TEAM = X6JEFR9PZZ;
 				INFOPLIST_FILE = "Mango (Social Manga)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harrisonrblake.Mango;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrisonrblake.MangoManga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -672,10 +676,10 @@
 				CODE_SIGN_ENTITLEMENTS = "Mango (Social Manga).entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8Y3J75UWF3;
+				DEVELOPMENT_TEAM = X6JEFR9PZZ;
 				INFOPLIST_FILE = "Mango (Social Manga)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harrisonrblake.Mango;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrisonrblake.MangoManga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

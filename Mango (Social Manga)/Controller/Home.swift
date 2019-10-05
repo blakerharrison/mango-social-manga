@@ -19,6 +19,7 @@ class Home: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -38,6 +39,13 @@ class Home: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        RealmManager().readFavoritedMangas()
+        
+        if GeneralUtils.isDarkModeEnabled() {
+            darkModeBackground.isHidden = false
+        }
+        
         tableView.reloadData()
     }
 
@@ -62,7 +70,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         
         cell.selectionStyle = .none
         
-        if favoritedManga.count > 0 {
+        if !favoritedManga.isEmpty {
             var mangaTitle = UILabel()
             mangaTitle = cell.viewWithTag(1001) as! UILabel
             mangaTitle.text = favoritedManga[indexPath.row].name
@@ -73,7 +81,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
             mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
             mangaImageView.addShadow()
 
-        } else if favoritedManga.count == 0 {
+        } else if favoritedManga.isEmpty {
             var mangaCoverImage = UIImageView()
             mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
             mangaCoverImage.image = nil
