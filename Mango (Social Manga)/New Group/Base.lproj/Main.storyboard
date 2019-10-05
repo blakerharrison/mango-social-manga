@@ -113,6 +113,7 @@
                     <navigationItem key="navigationItem" title="MANGO" id="wXJ-MF-owG">
                         <barButtonItem key="backBarButtonItem" title=" " id="FVq-WM-2d7"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="GjS-76-Eop" kind="show" id="2AJ-zR-vuv"/>
                             </connections>
@@ -562,7 +563,7 @@
                                     <constraint firstAttribute="height" constant="21" id="4GM-kg-8AU"/>
                                     <constraint firstAttribute="width" constant="31" id="FnA-Uj-Tpv"/>
                                 </constraints>
-                                <state key="normal" image="SwapButton"/>
+                                <state key="normal" image="greenSwapButton"/>
                                 <connections>
                                     <action selector="reverseChapterOrder:" destination="1V7-gQ-nIo" eventType="touchUpInside" id="eTq-lz-SWB"/>
                                 </connections>
@@ -625,6 +626,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="807-97-djC">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ye-Pr-T8E"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="npy-zk-uKk">
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="favoriteButton:" destination="1V7-gQ-nIo" id="FJF-Su-Lub"/>
                             </connections>
@@ -676,10 +678,11 @@
         <image name="NoTitleFoundImageClear" width="1242" height="2688"/>
         <image name="SearchAMangaImage" width="1242" height="2688"/>
         <image name="StatusBarBackground" width="371" height="19"/>
-        <image name="SwapButton" width="66" height="66"/>
         <image name="TransitionScreenBW3" width="375" height="667"/>
+        <image name="greenSwapButton" width="132" height="132"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WAU-Cq-aJJ"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

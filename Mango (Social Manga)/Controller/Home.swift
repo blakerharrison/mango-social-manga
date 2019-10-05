@@ -49,7 +49,10 @@ class Home: UIViewController {
         }
         
         tableView.reloadData()
+        
     }
+    
+    
 
 }
 
