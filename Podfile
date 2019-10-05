@@ -4,6 +4,8 @@
 target 'Mango (Social Manga)' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  
+  inhibit_all_warnings!
 
   # Pods for Mango (Social Manga)
 
@@ -14,7 +16,7 @@ target 'Mango (Social Manga)' do
 
 pod 'SwiftyJSON', '~> 4.0'
 pod 'SDWebImage', '~> 4.0'
-pod 'RealmSwift'
+pod 'RealmSwift', '~> 3.19.0'
 pod "SkeletonView"
 pod 'SwiftReorder', '~> 6.0'
 pod 'JGProgressHUD'

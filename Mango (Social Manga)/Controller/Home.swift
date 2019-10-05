@@ -12,7 +12,7 @@ import SwiftReorder
 import RealmSwift
 
 var favoritedManga = [MangaDetailsRealm]()
-// MARK: Test
+
 //MARK: Object
 class Home: UIViewController {
     
