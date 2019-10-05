@@ -90,6 +90,14 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if GeneralUtils.isDarkModeEnabled() {
             darkModeBackground.isHidden = false
+            authorLabel.textColor = .white
+            statusLabel.textColor = .white
+            categoriesLabel.textColor = .white
+            releasedLabel.textColor = .white
+            descriptionTitle.textColor = .white
+            activity.color = .white
+            activityImage.color = .white
+            activityDetails.color = .white
         }
     }
     

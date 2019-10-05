@@ -14,7 +14,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     //MARK: - Properties
     var isSearching: Bool = false
     var filteredArray: [String] = []
-    let hud = JGProgressHUD(style: .extraLight)
+    var hud = JGProgressHUD(style: .extraLight)
     
     let networking = MangoNetworking()
     
@@ -64,6 +64,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if GeneralUtils.isDarkModeEnabled() {
             darkModeBackground.isHidden = false
+            hud = JGProgressHUD(style: .dark)
         }
     }
     
@@ -110,7 +111,8 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
             
         }
-        self.hud.dismiss(animated: false)
+        
+        hud.dismiss(animated: false)
         
     }
     

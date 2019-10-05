@@ -44,6 +44,8 @@ class Home: UIViewController {
         
         if GeneralUtils.isDarkModeEnabled() {
             darkModeBackground.isHidden = false
+        } else {
+            darkModeBackground.isHidden = true
         }
         
         tableView.reloadData()

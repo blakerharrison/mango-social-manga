@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import JGProgressHUD
 
 var pages = [PageOfChapter]()
 
@@ -28,13 +29,20 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK: - Properties
     let Networking = MangoNetworking()
     var refresher: UIRefreshControl!
+    var hud = JGProgressHUD(style: .extraLight)
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activityMain.isHidden = false
+        activityMain.isHidden = true
         activityMain.startAnimating()
+        
+        if GeneralUtils.isDarkModeEnabled() {
+            hud = JGProgressHUD(style: .dark)
+        }
+        
+        hud.show(in: collectionView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)), name: NSNotification.Name(rawValue: "load"), object: nil)
         
@@ -167,7 +175,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
         cell.activityIndicator.isHidden = false
         cell.activityIndicator.startAnimating()
-        
+        cell.activityIndicator.color = .white
+
         if let pageLabel = cell.viewWithTag(101) as? UILabel {
             pageLabel.text = String(pages[indexPath.row].pageNumber)
             }
@@ -179,6 +188,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
                                         
                                         cell.activityIndicator.isHidden = true
                                         cell.activityIndicator.stopAnimating()
+                                        self.hud.dismiss()
                                         collectionView.isScrollEnabled = true
                                         
                                     }
@@ -195,8 +205,9 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         } else {
             
             pageNumberLabel.text = "Loading Next Chapter"
-            activityMain.isHidden = false
-            activityMain.startAnimating()
+            hud.show(in: collectionView)
+//            activityMain.isHidden = false
+//            activityMain.startAnimating()
 
             print("Load next chapter.")
             print("Current chapter \(selectedChapterID)")
