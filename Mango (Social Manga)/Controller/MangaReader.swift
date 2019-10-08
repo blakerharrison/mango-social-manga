@@ -14,7 +14,7 @@ var pages = [PageOfChapter]()
 
 class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -26,8 +26,8 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var statusBarBackgroundImage: UIImageView!
     @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
-    //MARK: - Properties
-    let Networking = MangoNetworking()
+    // MARK: - Properties
+    let networking = MangoNetworking()
     var refresher: UIRefreshControl!
     var hud = JGProgressHUD(style: .extraLight)
 
@@ -48,7 +48,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitMangaReader(notification:)), name: .chaptersAreFinished, object: nil)
 
-        self.Networking.fetchChapters(mangaID: selectedChapterID)
+        self.networking.fetchChapters(mangaID: selectedChapterID)
 
         collectionView.isScrollEnabled = false
         
@@ -90,13 +90,13 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         pages.removeAll()
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     @objc func loadData() {
         pageNumberLabel.text = "Loading Previous Chapter"
 
         pages.removeAll()
 
-        self.Networking.fetchPages(chapterID: selectedChapterID)
+        self.networking.fetchPages(chapterID: selectedChapterID)
         
         stopRefresher()         //Call this to stop refresher
     }
@@ -110,7 +110,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             print("LOADED")
             self.collectionView.reloadData()
             self.collectionView.contentOffset = .zero
-            self.pageNumberLabel.text = "1 /\(self.Networking.fetchedPagesNumbers.count)"
+            self.pageNumberLabel.text = "1 /\(self.networking.fetchedPagesNumbers.count)"
         }
     }
     
@@ -143,7 +143,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
     }
 
-    //MARK: - Actions
+    // MARK: - Actions
     @IBAction func backButtonAction(_ sender: Any) {
         let _ = self.navigationController?.popViewController(animated: true)
     }
@@ -152,7 +152,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
         print("Shop button clicked")
     }
     
-    //MARK: - CollectionView
+    // MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count
     }
@@ -168,7 +168,10 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             return tranCell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as! MangaReaderCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCell", for: indexPath) as? MangaReaderCell else {
+            print("TAG - An error has occured")
+            return UICollectionViewCell()
+        }
 
         activityMain.isHidden = true
         activityMain.stopAnimating()
@@ -181,7 +184,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pageLabel.text = String(pages[indexPath.row].pageNumber)
             }
 
-        cell.pageImage.sd_setImage(with: URL(string: Networking.mangaImageURL + pages.reversed()[indexPath.row].imageURL)!, placeholderImage: UIImage(),
+        cell.pageImage.sd_setImage(with: URL(string: networking.mangaImageURL + pages.reversed()[indexPath.row].imageURL)!, placeholderImage: UIImage(),
                                    completed: { image, error, cacheType, imageURL in
                                     
                                     DispatchQueue.main.async {
@@ -198,7 +201,7 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if indexPath.row != Networking.fetchedPagesURLs.count - 1 {
+        if indexPath.row != networking.fetchedPagesURLs.count - 1 {
             
         pageNumberLabel.text = "Page \(pages.reversed()[indexPath.row].pageNumber + 1) /\(pages.count)"
             
@@ -214,11 +217,11 @@ class MangaReader: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
             mangaDataStructure.nextID()
 
-            selectedIndex = selectedIndex - 1
+            selectedIndex -= 1
             
             pages.removeAll()
             
-            Networking.fetchChapters(mangaID: selectedChapterID)
+            networking.fetchChapters(mangaID: selectedChapterID)
             
             print("")
 

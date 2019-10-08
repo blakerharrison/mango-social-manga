@@ -76,23 +76,25 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         cell.selectionStyle = .none
         
         if !favoritedManga.isEmpty {
-            var mangaTitle = UILabel()
-            mangaTitle = cell.viewWithTag(1001) as! UILabel
-            mangaTitle.text = favoritedManga[indexPath.row].name
-            mangaTitle.addLabelShadow()
+            if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
+                mangaTitle.text = favoritedManga[indexPath.row].name
+                mangaTitle.addLabelShadow()
+            }
             
-            var mangaImageView = UIImageView()
-            mangaImageView = cell.viewWithTag(1000) as! UIImageView
-            mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
-            mangaImageView.addShadow()
-
+            if let mangaImageView = cell.viewWithTag(1000) as? UIImageView {
+                mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
+                mangaImageView.addShadow()
+            }
+            
         } else if favoritedManga.isEmpty {
             var mangaCoverImage = UIImageView()
             mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
             mangaCoverImage.image = nil
-            var mangaTitle = UILabel()
-            mangaTitle = cell.viewWithTag(1001) as! UILabel
-            mangaTitle.text = nil
+            
+            if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
+                mangaTitle.text = nil
+            }
+            
         }
         
         return cell
@@ -109,8 +111,6 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         
         performSegue(withIdentifier: "userSelected", sender: self)
     }
-    
-
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
@@ -135,4 +135,3 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         tableView.reloadData()
     }
 }
-

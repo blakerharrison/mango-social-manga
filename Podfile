@@ -20,5 +20,6 @@ pod 'RealmSwift', '~> 3.19.0'
 pod "SkeletonView"
 pod 'SwiftReorder', '~> 6.0'
 pod 'JGProgressHUD'
+pod 'SwiftLint'
 
 end

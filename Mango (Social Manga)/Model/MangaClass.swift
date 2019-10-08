@@ -19,20 +19,20 @@ class MangaDataStructure {
     var currentChapterString = ""
     var isMangaChaptersReversed = true
     
-    //MARK: Methods
+    // MARK: Methods
     func nextID() {
         guard mangaChapterIDs.isEmpty != true else {
             return
         }
         
         if isMangaChaptersReversed == false {
-            currentChapterIndex = currentChapterIndex + 1
-            selectedIndex = selectedIndex + 1
+            currentChapterIndex += 1
+            selectedIndex += 1
             
             if currentChapterIndex == mangaChapterIDs.count {
                 print("Finished Manga")
-                currentChapterIndex = currentChapterIndex - 1
-                selectedIndex = selectedIndex - 1
+                currentChapterIndex -= 1
+                selectedIndex -= 1
                 NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
@@ -41,13 +41,13 @@ class MangaDataStructure {
             selectedChapterID = currentChapterID
             
         } else if isMangaChaptersReversed == true {
-            currentChapterIndex = currentChapterIndex - 1
-            selectedIndex = selectedIndex - 1
+            currentChapterIndex -= 1
+            selectedIndex -= 1
             
             if currentChapterIndex == -1 {
                 print("Finished Manga")
-                currentChapterIndex = currentChapterIndex + 1
-                selectedIndex = selectedIndex + 1
+                currentChapterIndex += 1
+                selectedIndex += 1
                 NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
@@ -67,13 +67,13 @@ class MangaDataStructure {
         }
         
         if isMangaChaptersReversed == true {
-            currentChapterIndex = currentChapterIndex + 1
-            selectedIndex = selectedIndex + 1
+            currentChapterIndex += 1
+            selectedIndex += 1
             
             if currentChapterIndex == mangaChapterIDs.count {
                 print("Finished Manga")
-                currentChapterIndex = currentChapterIndex - 1
-                selectedIndex = selectedIndex - 1
+                currentChapterIndex -= 1
+                selectedIndex -= 1
                 NotificationCenter.default.post(name: .chaptersAreFinished, object: nil)
                 return
             }
@@ -89,8 +89,8 @@ class MangaDataStructure {
                 return
             }
             
-            currentChapterIndex = currentChapterIndex - 1
-            selectedIndex = selectedIndex - 1
+            currentChapterIndex -= 1
+            selectedIndex -= 1
             
             currentChapterID = mangaChapterIDs[currentChapterIndex]
             selectedChapterID = currentChapterID

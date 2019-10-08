@@ -9,16 +9,16 @@
 import UIKit
 import JGProgressHUD
 
-//MARK: - Custom Cell
+// MARK: - Custom Cell
 class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
-    
+
     @IBOutlet weak var pageImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         self.pageImage.image = UIImage()
 
         self.scrollView.zoomScale = 1
@@ -37,7 +37,7 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
         let doubleTap =  UITapGestureRecognizer.init(target: self, action: #selector(self.TapGestureTapped(recognizer:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
-        
+
         singleTap.require(toFail: doubleTap)
     }
     
@@ -53,7 +53,7 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
             let x = touchPoint.x - (width/2.0)
             let y = touchPoint.y - (height/2.0)
             
-            let rect = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: width, height: height))
+            let rect = CGRect(origin: CGPoint(x: x, y: y), size: CGSize(width: width, height: height))
             scrollView.zoom(to: rect, animated: true)
         }
     }
@@ -61,7 +61,7 @@ class MangaReaderCell: UICollectionViewCell, UIScrollViewDelegate {
     @objc func TapGestureSingleTapped(recognizer: UITapGestureRecognizer) {
         NotificationCenter.default.post(name: .toggle, object: nil)
     }
-    
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.pageImage
     }
