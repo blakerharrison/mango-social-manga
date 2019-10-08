@@ -82,7 +82,12 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
 
         readButton.layer.cornerRadius = 5
+        
+        let tapOutTextField: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDescriptionPopup))
+        self.mangaDescription.addGestureRecognizer(tapOutTextField)
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         networking.fetchChapterDetails(chapterID: selectedID)
@@ -228,6 +233,13 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
            }
            
        }
+    
+    @objc func openDescriptionPopup() {
+//        let vc = viewCo
+        
+//        let vc = UIViewController(nibName: "mangaDescription", bundle: <#T##Bundle?#>)
+        
+    }
     
     //MARK: - Networking
     func fetchImage() { //TODO: Move to MangoNetworking

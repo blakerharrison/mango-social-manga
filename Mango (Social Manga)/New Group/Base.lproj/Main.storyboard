@@ -447,6 +447,32 @@
             </objects>
             <point key="canvasLocation" x="8511.5942028985519" y="-2078.5714285714284"/>
         </scene>
+        <!--Manga Description View Controller-->
+        <scene sceneID="4C5-yW-iXX">
+            <objects>
+                <viewController storyboardIdentifier="mangaDescription" id="LDa-qX-fDI" customClass="MangaDescriptionViewController" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="to3-yD-m7I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MintGBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9iD-tx-beh">
+                                <rect key="frame" x="0.0" y="-44" width="414" height="886"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9iD-tx-beh" firstAttribute="top" secondItem="d7Y-V2-IQj" secondAttribute="top" constant="-44" id="U3u-B6-9w8"/>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="bottom" secondItem="9iD-tx-beh" secondAttribute="bottom" constant="-34" id="Xnf-EC-nHx"/>
+                            <constraint firstItem="9iD-tx-beh" firstAttribute="leading" secondItem="d7Y-V2-IQj" secondAttribute="leading" id="dtX-c9-w7n"/>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="trailing" secondItem="9iD-tx-beh" secondAttribute="trailing" id="khx-1R-MSd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d7Y-V2-IQj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5t-EB-Ojg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7705.7971014492759" y="-1388.1696428571429"/>
+        </scene>
         <!--Manga Detail-->
         <scene sceneID="4mr-M2-92U">
             <objects>
@@ -648,6 +674,7 @@
                         <outlet property="statusLabel" destination="84i-wo-m2G" id="iaZ-9r-fr7"/>
                         <outlet property="tableView" destination="jSb-Pg-0Bt" id="c01-VB-Fit"/>
                         <segue destination="2Qe-Pf-OVp" kind="show" identifier="readerSegue" id="KON-uu-OUc"/>
+                        <segue destination="LDa-qX-fDI" kind="showDetail" identifier="descriptionSegue" id="iDM-6F-tvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
