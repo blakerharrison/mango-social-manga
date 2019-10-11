@@ -10,8 +10,12 @@ import UIKit
 
 class MangaDescriptionViewController: UIViewController {
     
+    var mangaDescripton = ""
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
-        
+        textView.text = mangaDescripton
     }
     
     
