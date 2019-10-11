@@ -82,6 +82,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         [NSAttributedString.Key.font: UIFont(name: Fonts.Knockout.rawValue, size: 21)!]
 
         readButton.layer.cornerRadius = 5
+        
+        let tapOutTextField: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDescriptionPopup))
+        self.mangaDescription.addGestureRecognizer(tapOutTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +115,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
         currentManga = MangaDetails(name: "", author: "", category: "", released: "", description: "", imageURL: "", status: "", id: "")
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     @objc func ReloadTableView(_ notification: Notification) {
         DispatchQueue.main.async {
             chapterArray.reverse()
@@ -228,6 +231,23 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
            }
            
        }
+    
+    @objc func openDescriptionPopup() {
+//        let vc = viewCo
+        print("TAG - Working")
+//        let vc = UIViewController(nibName: "mangaDescription", bundle: <#T##Bundle?#>)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "mangaDescription") as? MangaDescriptionViewController else {
+            return
+        }
+
+        vc.mangaDescripton = mangaDescription.text
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
     
     //MARK: - Networking
     func fetchImage() { //TODO: Move to MangoNetworking

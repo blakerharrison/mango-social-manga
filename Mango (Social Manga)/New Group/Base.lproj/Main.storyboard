@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g11-OW-JO9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g11-OW-JO9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,7 +113,7 @@
                     <navigationItem key="navigationItem" title="MANGO" id="wXJ-MF-owG">
                         <barButtonItem key="backBarButtonItem" title=" " id="FVq-WM-2d7"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="f6a-VF-2nM">
-                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="GjS-76-Eop" kind="show" id="2AJ-zR-vuv"/>
                             </connections>
@@ -447,6 +447,52 @@
             </objects>
             <point key="canvasLocation" x="8511.5942028985519" y="-2078.5714285714284"/>
         </scene>
+        <!--Manga Description View Controller-->
+        <scene sceneID="4C5-yW-iXX">
+            <objects>
+                <viewController storyboardIdentifier="mangaDescription" id="LDa-qX-fDI" customClass="MangaDescriptionViewController" customModule="Mango__Social_Manga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="to3-yD-m7I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3j5-c2-eyO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.25" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZWC-AK-aDP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-dU-2z2">
+                                <rect key="frame" x="15" y="15" width="384" height="778"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="BigNoodleTitling" family="BigNoodleTitling" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="trailing" secondItem="Oyr-dU-2z2" secondAttribute="trailing" constant="15" id="8lh-WP-sdh"/>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="trailing" secondItem="3j5-c2-eyO" secondAttribute="trailing" id="KNE-iu-jZG"/>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="bottom" secondItem="Oyr-dU-2z2" secondAttribute="bottom" constant="15" id="NJ5-dy-d5l"/>
+                            <constraint firstItem="3j5-c2-eyO" firstAttribute="leading" secondItem="d7Y-V2-IQj" secondAttribute="leading" id="Ogy-Xj-pBC"/>
+                            <constraint firstItem="Oyr-dU-2z2" firstAttribute="top" secondItem="d7Y-V2-IQj" secondAttribute="top" constant="15" id="ca4-jj-jDr"/>
+                            <constraint firstItem="Oyr-dU-2z2" firstAttribute="leading" secondItem="d7Y-V2-IQj" secondAttribute="leading" constant="15" id="g46-Sx-Xfh"/>
+                            <constraint firstItem="d7Y-V2-IQj" firstAttribute="bottom" secondItem="3j5-c2-eyO" secondAttribute="bottom" constant="-34" id="rAy-55-ZxW"/>
+                            <constraint firstItem="3j5-c2-eyO" firstAttribute="top" secondItem="d7Y-V2-IQj" secondAttribute="top" id="sHN-3M-myq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d7Y-V2-IQj"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Oyr-dU-2z2" id="wp0-NQ-1SK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5t-EB-Ojg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7705.7971014492759" y="-1388.1696428571429"/>
+        </scene>
         <!--Manga Detail-->
         <scene sceneID="4mr-M2-92U">
             <objects>
@@ -626,7 +672,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="807-97-djC">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ye-Pr-T8E"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="npy-zk-uKk">
-                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="favoriteButton:" destination="1V7-gQ-nIo" id="FJF-Su-Lub"/>
                             </connections>
@@ -648,6 +694,7 @@
                         <outlet property="statusLabel" destination="84i-wo-m2G" id="iaZ-9r-fr7"/>
                         <outlet property="tableView" destination="jSb-Pg-0Bt" id="c01-VB-Fit"/>
                         <segue destination="2Qe-Pf-OVp" kind="show" identifier="readerSegue" id="KON-uu-OUc"/>
+                        <segue destination="LDa-qX-fDI" kind="showDetail" identifier="descriptionSegue" id="iDM-6F-tvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-wz-rC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,5 +731,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="WAU-Cq-aJJ"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

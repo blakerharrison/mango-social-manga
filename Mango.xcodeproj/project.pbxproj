@@ -40,6 +40,7 @@
 		2CFC0AED221661D10089531B /* MangaChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0AEC221661D00089531B /* MangaChapter.swift */; };
 		2CFC0AEF2217B8820089531B /* PageOfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0AEE2217B8820089531B /* PageOfChapter.swift */; };
 		AC75E747234940E100E8D3AB /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75E746234940E100E8D3AB /* GeneralUtils.swift */; };
+		AC75E749234962C300E8D3AB /* MangaDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75E748234962C300E8D3AB /* MangaDescription.swift */; };
 		B85075BE8062909E87EE407A /* Pods_Mango__Social_Manga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C6E8D809DF50FEFFED86D /* Pods_Mango__Social_Manga_.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		64F9CB508785DE5FD3AB0DAB /* Pods-Mango (Social Manga).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga).release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)/Pods-Mango (Social Manga).release.xcconfig"; sourceTree = "<group>"; };
 		7760F7635E0D01631C3C00C5 /* Pods_Mango__Social_Manga_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mango__Social_Manga_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC75E746234940E100E8D3AB /* GeneralUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtils.swift; sourceTree = "<group>"; };
+		AC75E748234962C300E8D3AB /* MangaDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDescription.swift; sourceTree = "<group>"; };
 		C2BBC4B5371A32453F040D35 /* Pods-Mango (Social Manga)Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mango (Social Manga)Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mango (Social Manga)Tests/Pods-Mango (Social Manga)Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				2C63E2F12127CC9900F84AF1 /* Home.swift */,
 				2CA0A2982134B7C7006844E3 /* TitleSearch.swift */,
 				2CBB7B59214180D900411BA6 /* MangaDetail.swift */,
+				AC75E748234962C300E8D3AB /* MangaDescription.swift */,
 				2C6348972145AF29007671CF /* MangaReader.swift */,
 				2C1F771121755A27000F4A20 /* MangaReaderCell.swift */,
 			);
@@ -480,6 +483,7 @@
 				2C1F771221755A27000F4A20 /* MangaReaderCell.swift in Sources */,
 				2C69A0052019C2E8001A60AE /* AppDelegate.swift in Sources */,
 				2C1F7710217559AE000F4A20 /* MangaReader UICollectionViewDelegateFlowLayout.swift in Sources */,
+				AC75E749234962C300E8D3AB /* MangaDescription.swift in Sources */,
 				2CBB7B5A214180D900411BA6 /* MangaDetail.swift in Sources */,
 				2C6348982145AF29007671CF /* MangaReader.swift in Sources */,
 				2CA0A29C21375EA5006844E3 /* TitleS + UISearch.swift in Sources */,
