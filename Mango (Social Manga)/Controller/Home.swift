@@ -16,12 +16,14 @@ var favoritedManga = [MangaDetailsRealm]()
 //MARK: Object
 class Home: UIViewController {
     
-    //MARK: Outlets
+    // MARK: Outlets
+    
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,16 +53,15 @@ class Home: UIViewController {
         tableView.reloadData()
         
     }
-    
-    
 
 }
 
-//MARK: TableView
+// MARK: TableView
+
 extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard favoritedManga.count > 0 else {
-            return 0
+            return 1
         }
         
         return favoritedManga.count
@@ -76,6 +77,9 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         cell.selectionStyle = .none
         
         if !favoritedManga.isEmpty {
+            tableView.isScrollEnabled = true
+            tableView.rowHeight = 470
+            
             if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
                 mangaTitle.text = favoritedManga[indexPath.row].name
                 mangaTitle.addLabelShadow()
@@ -89,12 +93,24 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         } else if favoritedManga.isEmpty {
             var mangaCoverImage = UIImageView()
             mangaCoverImage = cell.viewWithTag(1000) as! UIImageView
-            mangaCoverImage.image = nil
+            mangaCoverImage.image = UIImage(named: "Splash1")!
             
             if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
-                mangaTitle.text = nil
+                mangaTitle.text =
+                """
+                You currently have no favorites.
+                Press on the magnifying glass on
+                the top left to add some!
+                """
+                
+                mangaTitle.numberOfLines = 0
+                mangaTitle.textAlignment = .center
+
             }
             
+            tableView.isScrollEnabled = false
+            tableView.rowHeight = tableView.frame.height
+
         }
         
         return cell
@@ -113,6 +129,11 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        if favoritedManga.isEmpty {
+            return nil
+        }
+        
         let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
             RealmManager().deleteFavoritedManga(id: favoritedManga[indexPath.row].id)
             favoritedManga.remove(at: indexPath.row)
@@ -134,4 +155,5 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
 
         tableView.reloadData()
     }
+    
 }
