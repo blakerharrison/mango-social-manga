@@ -211,13 +211,9 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
            
            if let manga = mangas.first {
                
-               RealmManager().deleteFavoritedManga(id: currentManga.id)
-//               RealmManager().readFavoritedMangas()
-            
-//            favoritedManga.removeAll()
+               RealmManager().deleteFavoritedManga(id: manga.id)
 
-//               RealmManager().reorderFavorites()
-               print("Manga already exists. \(manga)")
+               favoritedManga.removeAll()
 
                let alert = UIAlertController(title: "Succesfully Removed",
                                              message: "This Manga has been removed from your home library.",
@@ -233,10 +229,7 @@ class MangaDetail: UIViewController, UITableViewDelegate, UITableViewDataSource 
        }
     
     @objc func openDescriptionPopup() {
-//        let vc = viewCo
-        print("TAG - Working")
-//        let vc = UIViewController(nibName: "mangaDescription", bundle: <#T##Bundle?#>)
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         guard let vc = storyboard.instantiateViewController(withIdentifier: "mangaDescription") as? MangaDescriptionViewController else {
