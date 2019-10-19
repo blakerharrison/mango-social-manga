@@ -59,6 +59,7 @@ class Home: UIViewController {
 // MARK: TableView
 
 extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard favoritedManga.count > 0 else {
             return 1
@@ -75,19 +76,23 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         }
         
         cell.selectionStyle = .none
-        
+
         if !favoritedManga.isEmpty {
-            tableView.isScrollEnabled = true
-            tableView.rowHeight = 470
             
-            if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
-                mangaTitle.text = favoritedManga[indexPath.row].name
-                mangaTitle.addLabelShadow()
-            }
-            
-            if let mangaImageView = cell.viewWithTag(1000) as? UIImageView {
-                mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
-                mangaImageView.addShadow()
+           if !favoritedManga[indexPath.row].isInvalidated {
+                
+                tableView.isScrollEnabled = true
+                tableView.rowHeight = 470
+                
+                if let mangaTitle = cell.viewWithTag(1001) as? UILabel {
+                    mangaTitle.text = favoritedManga[indexPath.row].name
+                    mangaTitle.addLabelShadow()
+                }
+                
+                if let mangaImageView = cell.viewWithTag(1000) as? UIImageView {
+                    mangaImageView.sd_setImage(with: URL(string: favoritedManga[indexPath.row].imageURL), placeholderImage: UIImage(named: "TransitionScreenBW3"))
+                    mangaImageView.addShadow()
+                }
             }
             
         } else if favoritedManga.isEmpty {
@@ -124,8 +129,9 @@ extension Home: UITableViewDelegate, UITableViewDataSource, TableViewReorderDele
         }
 
         selectedID = favoritedManga[indexPath.row].id
-        
+
         performSegue(withIdentifier: "userSelected", sender: self)
+        
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

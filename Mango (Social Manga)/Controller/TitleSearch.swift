@@ -11,14 +11,13 @@ import JGProgressHUD
 
 class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    //MARK: - Properties
+    // MARK: - Properties
     var isSearching: Bool = false
     var filteredArray: [String] = []
     var hud = JGProgressHUD(style: .extraLight)
-    
     let networking = MangoNetworking()
     
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
@@ -27,14 +26,14 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var darkModeBackground: UIVisualEffectView!
     
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTable(notification:)), name: NSNotification.Name(rawValue: "finishedGettingTitles"), object: nil)
         
         setUpSearchBar()
-        self.searchBar.enablesReturnKeyAutomatically = true
+        
 
         navigationItem.title = "Search"
         
@@ -43,10 +42,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         activity.isHidden = true
         activityView.isHidden = true
-        
-        searchBar.becomeFirstResponder()
-        
-        searchBar.backgroundImage = UIImage()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,10 +64,15 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     private func setUpSearchBar() {
         searchBar.delegate = self
+        searchBar.enablesReturnKeyAutomatically = true
+        searchBar.becomeFirstResponder()
+        searchBar.backgroundImage = UIImage()
     }
+    
+    // MARK: - TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching {
@@ -82,6 +83,11 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             return resultsArray.count
         }
+        
+        guard !resultsArray.isEmpty else {
+            return 1
+        }
+        
         return resultsArray.count
     }
     
@@ -92,6 +98,7 @@ class TitleSearch: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     label.text = resultsArray[indexPath.row].replacingOccurrences(of: "%27", with: "'", options: .literal, range: nil)
                 }
         }
+        
         return cell
     }
     

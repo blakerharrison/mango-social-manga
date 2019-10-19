@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QP0-9J-9h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7705.7971014492759" y="-2809.1517857142858"/>
+            <point key="canvasLocation" x="7706" y="-2881"/>
         </scene>
         <!--Title Search-->
         <scene sceneID="If8-Kt-JEi">
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E35-FF-oGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8511.5942028985519" y="-2809.1517857142858"/>
+            <point key="canvasLocation" x="8512" y="-2881"/>
         </scene>
         <!--Manga Reader-->
         <scene sceneID="aEc-rI-hkX">
@@ -274,9 +274,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView hidden="YES" opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57A-P3-0Cb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TET-8B-Wse">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -363,7 +363,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Gr-NgC">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-PG-Gez">
@@ -430,6 +430,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lZC-VV-8KX"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mAW-hY-cmi"/>
                     <connections>
                         <outlet property="activityMain" destination="ZGu-PJ-GUn" id="IPf-oJ-XUm"/>
                         <outlet property="backButton" destination="U46-TU-YBf" id="XIG-oo-QvY"/>
@@ -716,7 +717,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZr-wR-jI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6907" y="-2809"/>
+            <point key="canvasLocation" x="6935" y="-2881"/>
         </scene>
     </scenes>
     <resources>
